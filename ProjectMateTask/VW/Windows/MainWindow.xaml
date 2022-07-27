@@ -1,0 +1,43 @@
+﻿<Window x:Class="ProjectMateTask.VW.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:ProjectMateTask.VW.Windows"
+        xmlns:VMD="clr-namespace:ProjectMateTask.VMD"
+        xmlns:pages="clr-namespace:ProjectMateTask.VW.Pages"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid >
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="60"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <!--VMD Pages-->
+        <ContentControl Grid.Column="1" Content="{Binding MainPageCurrentVmd}">
+            
+            <ContentControl.Resources>
+            
+                <DataTemplate DataType="{x:Type VMD:MainPageVmd}">
+                    <pages:MainPageVW />
+                </DataTemplate>
+                
+            </ContentControl.Resources>
+            
+        </ContentControl>
+        
+        <!--Menu-->
+        <ContentControl Grid.Column="0" Content="{Binding MainMenuCurrentVmd}">
+            
+            <ContentControl.Resources>
+                <DataTemplate DataType="{x:Type VMD:MainMenuVmd}">
+                    <pages:MainMenuVW />
+                </DataTemplate>
+            </ContentControl.Resources>
+            
+        </ContentControl>
+        
+    </Grid>
+</Window>
