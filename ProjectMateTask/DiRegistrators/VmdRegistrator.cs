@@ -13,9 +13,9 @@ internal static class VmdRegistrator
     {
         
         services.AddSingleton(s => new MainWindowVmd(
-            s.GetRequiredService<MainPageNavigationStore>()));
+            s.GetRequiredService<MainPageNavigationStore>(),s.GetRequiredService<MainMenuNavigationStore>()));
 
-        services.AddSingleton<MainMenuVmd>();
+        services.AddSingleton(s=> new MainMenuVmd(CreateMainPageNavigationServices(s),CreateMainPageNavigationServices(s)));
 
         services.AddTransient<MainPageVmd>();
 

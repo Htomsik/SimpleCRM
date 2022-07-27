@@ -11,11 +11,11 @@
 
     <ItemGroup>
       <Folder Include="Infrastructure" />
-      <Folder Include="Models" />
       <Folder Include="Services" />
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="MaterialDesignThemes" Version="4.5.0" />
       <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
     </ItemGroup>
 

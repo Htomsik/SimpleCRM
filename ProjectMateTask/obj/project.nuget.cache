@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "hKT5IWawsSbi53j4lCOTppzfVK1LAspiBYfnVwwebCb2tNE6Z95ymgJngAi39iFHZMO5NePWRIwQvRWDvcaR0w==",
+  "dgSpecHash": "FvE5RgNflGCcSC4Knn1xbREzhd0EJWoRQzrTZ3fSou7jtyPwem1vs08wDOQKw0IGXPFpWCVh160yU/bk+vScyw==",
   "success": true,
   "projectFilePath": "C:\\Users\\USER\\RiderProjects\\ProjectMateTask\\ProjectMateTask\\ProjectMateTask.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\USER\\.nuget\\packages\\materialdesigncolors\\2.0.6\\materialdesigncolors.2.0.6.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\materialdesignthemes\\4.5.0\\materialdesignthemes.4.5.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.0\\microsoft.extensions.configuration.6.0.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.extensions.configuration.binder\\6.0.0\\microsoft.extensions.configuration.binder.6.0.0.nupkg.sha512",

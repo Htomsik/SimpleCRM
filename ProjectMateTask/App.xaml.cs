@@ -32,6 +32,7 @@ namespace ProjectMateTask
             
             initialNavigationServices.Navigate();
             
+            
             MainWindow = host.Services.GetRequiredService<MainWindow>();
 
             MainWindow.Show();
