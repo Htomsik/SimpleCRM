@@ -8,6 +8,7 @@ using System.Windows;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ProjectMateTask.DiRegistrators;
+using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
 using ProjectMateTask.VMD;
 using ProjectMateTask.VW.Windows;
 
@@ -26,6 +27,10 @@ namespace ProjectMateTask
         protected override async void OnStartup(StartupEventArgs e)
         {
             var host = Host;
+
+            var initialNavigationServices = host.Services.GetRequiredService<INavigationService>();
+            
+            initialNavigationServices.Navigate();
             
             MainWindow = host.Services.GetRequiredService<MainWindow>();
 
