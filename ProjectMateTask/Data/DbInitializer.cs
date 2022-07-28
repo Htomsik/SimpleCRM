@@ -57,11 +57,10 @@ public class DbInitializer
         var loggerTimer = Stopwatch.StartNew();
         
         _logger.LogInformation("Инициализация тестовых данных в базе данных...");
-        
+
         await InitializeTestProductsAsync();
         await InitializeTestManagersAsync();
         await InitializeTestClientsAsync();
-        
         _logger.LogInformation("Инициализация тестовых данных выполнена за {0} c", loggerTimer.Elapsed.TotalSeconds);
     }
 
@@ -106,7 +105,7 @@ public class DbInitializer
         };
 
        await _db.ClientStatus.AddRangeAsync(_clientTypes);
-       await _db.SaveChangesAsync();
+       _db.SaveChanges();
        
        _logger.LogInformation("Инициализация типов клиентов выполнена за {0} мс", loggerTimer.Elapsed.TotalMilliseconds);
     }
@@ -132,12 +131,12 @@ public class DbInitializer
         };
 
         await _db.ProductTypes.AddRangeAsync(_productTypes);
-        await _db.SaveChangesAsync();
+        _db.SaveChanges();
         
         _logger.LogInformation("Инициализация типов продуктов выполнена за {0} мс", loggerTimer.Elapsed.TotalMilliseconds);
     }
 
-    private const int TestProductsCount = 100;
+    private const int TestProductsCount = 20;
     private Product[] _testProducts;
     /// <summary>
     /// Иницилизация тестовых значений продуктов в бд
@@ -150,9 +149,7 @@ public class DbInitializer
         
         _logger.LogInformation("Инициализация продуктов ...");
         
-      
         var productTypes = _db.ProductTypes.ToArray();
-           
         
         _testProducts = Enumerable.Range(0, TestProductsCount)
             .Select(i=> new Product
@@ -163,13 +160,13 @@ public class DbInitializer
             }).ToArray();
 
         await _db.Products.AddRangeAsync(_testProducts);
-        await _db.SaveChangesAsync();
+         _db.SaveChanges();
         
         _logger.LogInformation("Инициализация продуктов выполнена за {0} мс", loggerTimer.Elapsed.TotalMilliseconds);
     }
     
     
-    private const int TestManagersCount = 100;
+    private const int TestManagersCount = 20;
     private Manager[] _testManagers;
     /// <summary>
     /// Иницилизация тестовых значений продуктов в бд
@@ -187,12 +184,12 @@ public class DbInitializer
             }).ToArray();
         
         await _db.Managers.AddRangeAsync(_testManagers);
-        await _db.SaveChangesAsync();
+        _db.SaveChanges();
         
         _logger.LogInformation("Инициализация менеджеров выполнена за {0} мс", loggerTimer.Elapsed.TotalMilliseconds);
     }
     
-    private const int TestClientsCount = 100;
+    private const int TestClientsCount = 20;
     private Client[] _testClients;
     /// <summary>
     /// Иницилизация тестовых значений клиентов в бд
@@ -219,7 +216,7 @@ public class DbInitializer
             }).ToArray();
         
         await _db.Clients.AddRangeAsync(_testClients);
-        await _db.SaveChangesAsync();
+        _db.SaveChanges();
 
         _logger.LogInformation("Инициализация клиентов выполнена за {0} мс", loggerTimer.Elapsed.TotalMilliseconds);
     }

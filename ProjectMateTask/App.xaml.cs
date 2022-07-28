@@ -33,7 +33,7 @@ namespace ProjectMateTask
             //Инициализция бд
             using (var scope = host.Services.CreateScope())
             {
-                scope.ServiceProvider.GetRequiredService<DbInitializer>().InitializeTestDataAsync().Wait();
+                scope.ServiceProvider.GetRequiredService<DbInitializer>().InitializeAsync().Wait();
             }
             
             //Инициализация MainPageNavigationServices
