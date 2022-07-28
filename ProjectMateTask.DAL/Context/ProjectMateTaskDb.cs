@@ -12,8 +12,7 @@ public class ProjectMateTaskDb:DbContext
 
     public DbSet<Manager> Managers { get; set; }
 
-    public DbSet<ClientStatus> ClientTypes { get; set; }
-
+    public DbSet<ClientStatus> ClientStatus { get; set; }
     public DbSet<ProductType> ProductTypes { get; set; }
 
     public ProjectMateTaskDb(DbContextOptions<ProjectMateTaskDb> options) : base(options)

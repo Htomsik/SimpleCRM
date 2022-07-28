@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
@@ -22,30 +23,94 @@ public class DbInitializer
         
         _logger = logger;
     }
+    /// <summary>
+    /// Инициализация Бд
+    /// </summary>
     public async Task InitializeAsync()
     {
-        //В случае если нету базы создает ее и накатывает миграции
+        var loggerTimer = Stopwatch.StartNew();
+        
+        _logger.LogInformation("Инициализация базы данных...");
+        
+        _logger.LogInformation("Миграция базы данных...");
+        
         await _db.Database.MigrateAsync().ConfigureAwait(false);
         
-        if(await  _db.ClientTypes.AnyAsync()) return;
+        _logger.LogInformation("Миграция базы данных выполнена за {0} мс", loggerTimer.ElapsedMilliseconds);
+        
+        
+        if(await  _db.ClientStatus.AnyAsync()) return;
+
+        
+        await InitializeClientTypesAsync();
+        
+        await InitializeProductTypeAsync();
+        
+        _logger.LogInformation("Инициализация базы данных выполнена за {0} c", loggerTimer.Elapsed.TotalSeconds);
     }
 
+    /// <summary>
+    /// Инициализация тестовых данных в бд
+    /// </summary>
+    public async Task InitializeTestDataAsync()
+    {
+        var loggerTimer = Stopwatch.StartNew();
+        
+        _logger.LogInformation("Инициализация тестовых данных в базе данных...");
+        
+        await _db.Database.EnsureDeletedAsync().ConfigureAwait(false);
+        
+        await InitializeTestProductsAsync();
+        await InitializeTestManagersAsync();
+        await InitializeTestClientsAsync();
+        
+        _logger.LogInformation("Инициализация тестовых данных выполнена за {0} c", loggerTimer.Elapsed.TotalSeconds);
+    }
+
+
+    /// <summary>
+    /// Откат базы данных к исходному состоянию
+    /// </summary>
+    public async Task RebuildDataBaseAsync()
+    {
+        var loggerTimer = Stopwatch.StartNew();
+        
+        _logger.LogInformation("Пересоздание базы данных...");
+        
+        _logger.LogInformation("Удаление старой базы данных...");
+        
+        await _db.Database.EnsureDeletedAsync().ConfigureAwait(false);
+        
+        _logger.LogInformation("Удаление старой базы данных выполнена за {0} мс", loggerTimer.ElapsedMilliseconds);
+
+       await InitializeAsync();
+       
+       _logger.LogInformation("Пересоздание базы данных выполнено за {0} c", loggerTimer.Elapsed.TotalSeconds);
+    }
+    
+    
     private const int ClientTypesCount = 2;
     private ClientStatus[] _clientTypes;
     
     /// <summary>
     /// Инициализация типов клиентов
     /// </summary>
-    private async Task InitializeClientTypes()
+    private async Task InitializeClientTypesAsync()
     {
+        var loggerTimer = Stopwatch.StartNew();
+        
+        _logger.LogInformation("Инициализация типов клиентов ...");
+        
         _clientTypes = new ClientStatus[ClientTypesCount]
         {
             new ClientStatus{Name = "Ключевой"},
             new ClientStatus{Name = "Обычный"}
         };
 
-       await _db.ClientTypes.AddRangeAsync(_clientTypes);
+       await _db.ClientStatus.AddRangeAsync(_clientTypes);
        await _db.SaveChangesAsync();
+       
+       _logger.LogInformation("Инициализация типов клиентов выполнена за {0} мс", loggerTimer.Elapsed.TotalMilliseconds);
     }
     
     private const int ProductTypeCount = 4;
@@ -54,8 +119,12 @@ public class DbInitializer
     /// <summary>
     /// Инициализация типов продукта
     /// </summary>
-    private async Task InitializeProductType()
+    private async Task InitializeProductTypeAsync()
     {
+        var loggerTimer = Stopwatch.StartNew();
+        
+        _logger.LogInformation("Инициализация типов продуктов ...");
+        
         _productTypes = new ProductType[ProductTypeCount]
         {
             new ProductType{Name = "Постоянная лицензия"},
@@ -66,6 +135,8 @@ public class DbInitializer
 
         await _db.ProductTypes.AddRangeAsync(_productTypes);
         await _db.SaveChangesAsync();
+        
+        _logger.LogInformation("Инициализация типов продуктов выполнена за {0} мс", loggerTimer.Elapsed.TotalMilliseconds);
     }
 
     private const int TestProductsCount = 100;
@@ -73,20 +144,30 @@ public class DbInitializer
     /// <summary>
     /// Иницилизация тестовых значений продуктов в бд
     /// </summary>
-    private async Task InitializeTestProduct()
+    private async Task InitializeTestProductsAsync()
     {
+        var loggerTimer = Stopwatch.StartNew();
+        
         Random rnd = new Random();
+        
+        _logger.LogInformation("Инициализация продуктов ...");
+        
+      
+        var productTypes = _db.ProductTypes.ToArray();
+           
         
         _testProducts = Enumerable.Range(0, TestProductsCount)
             .Select(i=> new Product
             {
                 Name = $"Тестовый продукт #{i}",
-                Type = rnd.NextItem(_productTypes)
+                Type = rnd.NextItem(productTypes)
                 
             }).ToArray();
 
         await _db.Products.AddRangeAsync(_testProducts);
         await _db.SaveChangesAsync();
+        
+        _logger.LogInformation("Инициализация продуктов выполнена за {0} мс", loggerTimer.Elapsed.TotalMilliseconds);
     }
     
     
@@ -95,8 +176,12 @@ public class DbInitializer
     /// <summary>
     /// Иницилизация тестовых значений продуктов в бд
     /// </summary>
-    private async Task InitializeTestManagers()
+    private async Task InitializeTestManagersAsync()
     {
+        var loggerTimer = Stopwatch.StartNew();
+        
+        _logger.LogInformation("Инициализация менеджеров ...");
+        
         _testManagers = Enumerable.Range(0, TestManagersCount)
             .Select(i=> new Manager()
             {
@@ -105,6 +190,8 @@ public class DbInitializer
         
         await _db.Managers.AddRangeAsync(_testManagers);
         await _db.SaveChangesAsync();
+        
+        _logger.LogInformation("Инициализация менеджеров выполнена за {0} мс", loggerTimer.Elapsed.TotalMilliseconds);
     }
     
     private const int TestClientsCount = 100;
@@ -112,20 +199,31 @@ public class DbInitializer
     /// <summary>
     /// Иницилизация тестовых значений клиентов в бд
     /// </summary>
-    private async Task InitializeTestClients()
+    private async Task InitializeTestClientsAsync()
     {
+        var loggerTimer = Stopwatch.StartNew();
+        
         Random rnd = new Random();
+        
+        _logger.LogInformation("Инициализация клиентов ...");
+
+        var managers = _db.Managers.ToArray();
+        
+        var clientTypes = _db.ClientStatus.ToArray();
+        
         _testClients = Enumerable.Range(0, TestClientsCount)
             .Select(i=> new Client()
             {
                 Name = $"Тестовый клиент #{i}",
-                Manager = rnd.NextItem(_testManagers),
-                Products = GenereteClientsProductsTest()
+                Manager = rnd.NextItem(managers),
+                Products = GenereteClientsProductsTest(),
+                Status = rnd.NextItem(clientTypes)
             }).ToArray();
         
         await _db.Clients.AddRangeAsync(_testClients);
         await _db.SaveChangesAsync();
 
+        _logger.LogInformation("Инициализация клиентов выполнена за {0} мс", loggerTimer.Elapsed.TotalMilliseconds);
     }
 
     /// <summary>

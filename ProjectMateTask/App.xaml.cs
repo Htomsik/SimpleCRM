@@ -30,12 +30,13 @@ namespace ProjectMateTask
         {
             var host = Host;
 
+            //Инициализция бд
             using (var scope = host.Services.CreateScope())
             {
-                scope.ServiceProvider.GetRequiredService<DbInitializer>().InitializeAsync().Wait();
+                 scope.ServiceProvider.GetRequiredService<DbInitializer>().RebuildDataBaseAsync().Wait();
             }
             
-            
+            //Инициализация MainPageNavigationServices
             var initialNavigationServices = host.Services.GetRequiredService<INavigationService>();
             
             initialNavigationServices.Navigate();
