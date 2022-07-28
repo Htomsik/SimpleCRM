@@ -2,9 +2,9 @@
 
 namespace ProjectMateTask.VW.Pages;
 
-public partial class MainMenuVW : UserControl
+public partial class ClientsPageVW : UserControl
 {
-    public MainMenuVW()
+    public ClientsPageVW()
     {
         InitializeComponent();
     }

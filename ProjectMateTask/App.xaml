@@ -6,12 +6,10 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Resources/Base/Brushes.xaml" />
-                <ResourceDictionary Source="Resources/Styles/ListViewStyles.xaml" />
                 <materialDesign:BundledTheme
-                    BaseTheme="Light"
-                    PrimaryColor="DeepPurple"
-                    SecondaryColor="Lime" />
+                    BaseTheme="Dark"
+                    PrimaryColor="LightBlue"
+                    SecondaryColor="LightBlue" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

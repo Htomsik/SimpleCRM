@@ -4,45 +4,38 @@
     <projectFile>ProjectMateTask/ProjectMateTask.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Create Base Infrastructure">
-      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/NavigationCmd.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Models/AppInfrastructure/MainMenuItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/Buttons.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/ListViewStyles.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Stores/AppInfrastructure/NavigationStores/MainMenuNavigationStore.cs" afterDir="false" />
+    <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Добавил кнопки перехода по страницам">
+      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Models/Product.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Models/ProductType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/ClientsPageVmd.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/ManagersPageVmd.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/ProductPageVmd.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectMateTask/VW/AppInfrastructure/MainMenuVW.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/ClientsPageVW.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/ClientsPageVW.xaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/ManagersPageVW.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/ManagersPageVW.xaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/ProductsPageVW.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/ProductsPageVW.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/App.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/App.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/DiRegistrators/StoreRegistrator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/DiRegistrators/StoreRegistrator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/DiRegistrators/VmdRegistrator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/DiRegistrators/VmdRegistrator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/Base/BaseCmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/Base/BaseCmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/LambdaCmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/LambdaCmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/ProjectMateTask.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/ProjectMateTask.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/MainMenuVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/MainMenuVmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/MainWindowVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/MainWindowVmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/MainMenuVW.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/MainMenuVW.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/Buttons.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/ListViewStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/ListViewStyles.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Stores/AppInfrastructure/NavigationStores/MainMenuNavigationStore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Stores/AppInfrastructure/NavigationStores/MainMenuNavigationStore.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/MainMenuVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/AppInfrastructure/MainMenuVmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/MainPageVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/MainPageVmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/MainWindowVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/AppInfrastructure/MainWindowVmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/MainMenuVW.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/MainMenuVW.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/AppInfrastructure/MainMenuVW.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/Windows/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/Windows/MainWindow.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/App.baml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/App.baml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/App.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/App.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask_MarkupCompile.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask_MarkupCompile.lref" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTestTask_MarkupCompile.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTestTask_MarkupCompile.lref" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTest_MarkupCompile.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTest_MarkupCompile.lref" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Pages/MainMenuVW.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Pages/MainMenuVW.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Pages/MainMenuVW.g.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/ProjectMateTask.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/ProjectMateTask.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/ProjectMateTask.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/ProjectMateTask.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/ProjectMateTask.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/ProjectMateTask.csproj.nuget.g.targets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,9 +111,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1658916523884</updated>
-      <workItem from="1658916527681" duration="5589000" />
+      <workItem from="1658916527681" duration="17175000" />
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Добавил кнопки перехода по страницам">
+      <created>1658922448103</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1658922448103</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,38 +141,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Create Base Infrastructure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create Base Infrastructure" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/ProjectMateTask/VMD/MainMenuVmd.cs</url>
-          <line>30</line>
-          <properties documentPath="C:\Users\USER\RiderProjects\ProjectMateTask\ProjectMateTask\VMD\MainMenuVmd.cs" initialLine="30" containingFunctionPresentation="method 'OnMenuNavigationExecute'">
-            <startOffsets>
-              <option value="1057" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1109" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/LambdaCmd.cs</url>
-          <line>13</line>
-          <properties documentPath="C:\Users\USER\RiderProjects\ProjectMateTask\ProjectMateTask\Infrastructure\CMD\LambdaCmd.cs" initialLine="13" containingFunctionPresentation="constructor 'LambdaCmd'">
-            <startOffsets>
-              <option value="350" />
-            </startOffsets>
-            <endOffsets>
-              <option value="421" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Добавил кнопки перехода по страницам" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил кнопки перехода по страницам" />
   </component>
 </project>

@@ -10,6 +10,7 @@ using Microsoft.Extensions.Hosting;
 using ProjectMateTask.DiRegistrators;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
 using ProjectMateTask.VMD;
+using ProjectMateTask.VMD.AppInfrastructure;
 using ProjectMateTask.VW.Windows;
 
 namespace ProjectMateTask
