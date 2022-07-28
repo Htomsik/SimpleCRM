@@ -39,8 +39,8 @@ namespace ProjectMateTask
             MainWindow.Show();
             
             base.OnStartup(e);
-        
-            await host.StartAsync().ConfigureAwait(false);
+
+            await host.StartAsync();
         }
 
         protected override async void OnExit(ExitEventArgs e)
@@ -49,7 +49,7 @@ namespace ProjectMateTask
 
             base.OnExit(e);
 
-            await host.StopAsync().ConfigureAwait(false);
+            await host.StopAsync();
 
             host.Dispose();
             

@@ -19,5 +19,9 @@
       <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\ProjectMateTask.DAL\ProjectMateTask.DAL.csproj" />
+    </ItemGroup>
+
 </Project>
         
