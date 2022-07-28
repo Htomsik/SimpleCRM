@@ -9,7 +9,7 @@ using ProjectMateTask.VMD.Pages;
 
 namespace ProjectMateTask.DiRegistrators;
 
-internal static class VmdRegistrator
+internal  static class VmdRegistrator
 {
     public static IServiceCollection VmdRegistration(this IServiceCollection services)
     {
