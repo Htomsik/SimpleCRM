@@ -58,8 +58,6 @@ public class DbInitializer
         
         _logger.LogInformation("Инициализация тестовых данных в базе данных...");
         
-        await _db.Database.EnsureDeletedAsync().ConfigureAwait(false);
-        
         await InitializeTestProductsAsync();
         await InitializeTestManagersAsync();
         await InitializeTestClientsAsync();
