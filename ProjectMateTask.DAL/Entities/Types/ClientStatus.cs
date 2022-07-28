@@ -2,6 +2,6 @@
 
 namespace ProjectMateTask.DAL.Entities.Types;
 
-public sealed class ClientType:NamedEntity
+public sealed class ClientStatus:NamedEntity
 {
 }

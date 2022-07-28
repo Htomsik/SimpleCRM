@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ProjectMateTask.Data;
 using ProjectMateTask.DiRegistrators;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
 using ProjectMateTask.VMD;
@@ -29,6 +30,12 @@ namespace ProjectMateTask
         {
             var host = Host;
 
+            using (var scope = host.Services.CreateScope())
+            {
+                scope.ServiceProvider.GetRequiredService<DbInitializer>().InitializeAsync().Wait();
+            }
+            
+            
             var initialNavigationServices = host.Services.GetRequiredService<INavigationService>();
             
             initialNavigationServices.Navigate();
@@ -65,7 +72,8 @@ namespace ProjectMateTask
             services
                 .StoreRegistration()
                 .ServicesRegistration()
-                .VmdRegistration();
+                .VmdRegistration()
+                .AddDatabase(host.Configuration.GetSection("Database"));
         }
     }
 }

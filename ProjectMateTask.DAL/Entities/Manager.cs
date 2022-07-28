@@ -4,14 +4,6 @@ namespace ProjectMateTask.DAL.Entities;
 
 public sealed class Manager:NamedEntity
 {
-    public ICollection<Client> Clients { get; }
+    public ICollection<Client> Clients { get; set; }
 
-    public Manager(int id, string name, ICollection<Client> clients)
-    {
-        Id = id;
-        
-        Name = name;
-        
-        Clients = clients;
-    }
 }

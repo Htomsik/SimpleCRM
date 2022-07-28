@@ -1,29 +1,18 @@
 ﻿
+using System.ComponentModel.DataAnnotations;
 using ProjectMateTask.DAL.Entities.Base;
 using ProjectMateTask.DAL.Entities.Types;
 
 namespace ProjectMateTask.DAL.Entities;
 
-public class Client: NamedEntity
+public sealed class Client: NamedEntity
 {
-    public ClientType Type { get; }
-    
-    public Manager Manager { get; }
+    [Required]
+    public ClientStatus Status { get; set; }
 
-    private ICollection<Product> Products { get; }
+    public Manager Manager { get; set; }
 
-    public Client(int id, string name, ClientType type, Manager manager, ICollection<Product> products = null)
-    {
-        Id = id;
-        
-        Name = name;
-        
-        Type = type;
-        
-        Manager = manager;
-        
-        Products = products;
-    }
-    
-    
+    public ICollection<Product> Products { get; set; }
+
+   
 }
