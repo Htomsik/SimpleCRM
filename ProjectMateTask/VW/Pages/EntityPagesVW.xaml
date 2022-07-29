@@ -1,0 +1,70 @@
+﻿<UserControl
+    d:DesignHeight="300"
+    d:DesignWidth="300"
+    mc:Ignorable="d"
+    x:Class="ProjectMateTask.VW.Pages.EntityPagesVW"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:appInfrastructure="clr-namespace:ProjectMateTask.Infrastructure.CMD.AppInfrastructure"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ProjectMateTask.VW.Pages"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <UserControl.Resources>
+        <appInfrastructure:OpenDialogWindowCmd x:Key="OpenDialogWindowCmd" />
+    </UserControl.Resources>
+
+    <Grid>
+
+
+        <!--  <DataGrid  -->
+        <!--  CanUserAddRows="False"  -->
+        <!--  ItemsSource="{Binding Entities}"  -->
+        <!--  SelectionMode="Extended"  -->
+        <!--  SelectionUnit="Cell" />  -->
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+
+        <DockPanel MinWidth="150">
+
+            <!--  Строка поиска  -->
+            <Grid DockPanel.Dock="Top" Height="30">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="50" />
+                </Grid.ColumnDefinitions>
+
+                <Button
+                    Grid.Column="1"
+                    Height="30"
+                    HorizontalAlignment="Center"
+                    Style="{StaticResource MaterialDesignIconButton}"
+                    VerticalAlignment="Center"
+                    Width="30">
+                    <materialDesign:PackIcon Kind="Magnify" />
+                </Button>
+
+                <TextBox materialDesign:HintAssist.Hint="Поиск" />
+
+            </Grid>
+
+            <!--  Список Entity  -->
+            <ListView ItemsSource="{Binding Entities}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </DockPanel>
+
+    </Grid>
+</UserControl>

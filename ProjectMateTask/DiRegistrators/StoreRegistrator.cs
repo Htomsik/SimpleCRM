@@ -1,4 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using ProjectMateTask.DAL.Entities;
+using ProjectMateTask.DAL.Entities.Types;
+using ProjectMateTask.DAL.Repositories;
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores;
 
 namespace ProjectMateTask.DiRegistrators;
@@ -15,7 +18,6 @@ internal static class StoreRegistrator
         services.AddSingleton<MainMenuNavigationStore>();
 
         #endregion
-      
         
         return services;
     }

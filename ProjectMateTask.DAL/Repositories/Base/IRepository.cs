@@ -1,13 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Threading;
-using System.Threading.Tasks;
-using ProjectMateTask.DAL.Entities.Base;
+﻿using ProjectMateTask.DAL.Entities.Base;
 
-namespace ProjectMateTask.Stores.Repositories;
+namespace ProjectMateTask.DAL.Repositories;
 
-internal interface IRepository<T> where T:class,IEntity,new()
+public interface IRepository<T> where T:class,IEntity,new()
 {
     /// <summary>
     /// Коллекция всех сущностей
@@ -27,7 +22,7 @@ internal interface IRepository<T> where T:class,IEntity,new()
     /// <param name="id">id сущности</param>
     /// <param name="cancelToken">Токен отмены</param>
     /// <returns></returns>
-    Task<T?> GetAsync(int id, CancellationToken cancelToken = default);
+    Task<T> GetAsync(int id, CancellationToken cancelToken = default);
 
     /// <summary>
     /// Добавление новой сущности, ее первичный ключ

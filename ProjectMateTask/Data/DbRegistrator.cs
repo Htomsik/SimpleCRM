@@ -24,6 +24,7 @@ internal static class DbRegistrator
         });
 
         services.AddTransient<DbInitializer>();
+        
         return services;
     }
 }

@@ -7,7 +7,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using ProjectMateTask.DAL.Context;
 using ProjectMateTask.DAL.Entities;
+using ProjectMateTask.DAL.Entities.Actors;
 using ProjectMateTask.DAL.Entities.Types;
+using ProjectMateTask.Services.AppInfrastructure;
 
 namespace ProjectMateTask.Data;
 

@@ -1,13 +1,8 @@
-﻿using System;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using ProjectMateTask.DAL.Context;
 using ProjectMateTask.DAL.Entities.Base;
 
-
-namespace ProjectMateTask.Stores.Repositories;
+namespace ProjectMateTask.DAL.Repositories.Base;
 
 internal class DbRepository<T>:IRepository<T> where T : Entity, new()
 {
@@ -28,7 +23,7 @@ internal class DbRepository<T>:IRepository<T> where T : Entity, new()
         return Items.SingleOrDefault(item => item.Id == id)!;
     }
 
-    public async  Task<T?> GetAsync(int id, CancellationToken cancelToken = default)
+    public async  Task<T> GetAsync(int id, CancellationToken cancelToken = default)
     {
         return await Items.SingleOrDefaultAsync(item => item.Id == id, cancelToken).ConfigureAwait(true);
     }

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ProjectMateTask.DAL.DiRegistrators;
 using ProjectMateTask.Data;
 using ProjectMateTask.DiRegistrators;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
@@ -74,6 +75,7 @@ namespace ProjectMateTask
                 .StoreRegistration()
                 .ServicesRegistration()
                 .VmdRegistration()
+                .RepositoriesRegistration()
                 .AddDatabase(host.Configuration.GetSection("Database"));
         }
     }

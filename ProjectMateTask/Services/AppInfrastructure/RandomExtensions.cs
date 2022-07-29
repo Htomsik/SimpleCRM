@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace System;
+namespace ProjectMateTask.Services.AppInfrastructure;
 
 static class RandomExtensions
 {

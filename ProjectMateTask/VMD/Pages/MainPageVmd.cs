@@ -2,7 +2,7 @@
 
 namespace ProjectMateTask.VMD.Pages;
 
-public sealed class MainPageVmd:BaseVmd
+internal sealed class MainPageVmd:BaseVmd
 {
     
 }

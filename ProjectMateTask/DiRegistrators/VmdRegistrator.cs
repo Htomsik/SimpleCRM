@@ -6,6 +6,7 @@ using ProjectMateTask.Stores.AppInfrastructure.NavigationStores;
 using ProjectMateTask.VMD;
 using ProjectMateTask.VMD.AppInfrastructure;
 using ProjectMateTask.VMD.Pages;
+using ProjectMateTask.VMD.Pages.EntityPages;
 
 namespace ProjectMateTask.DiRegistrators;
 
