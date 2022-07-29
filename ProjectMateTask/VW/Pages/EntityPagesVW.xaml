@@ -82,7 +82,7 @@
             <!--  List Entity  -->
             <materialDesign:Badged
                 Badge="{Binding EntitiesFilteredView.Count}"
-                BadgePlacementMode="TopLeft"
+                BadgePlacementMode="Top"
                 HorizontalAlignment="Stretch"
                 HorizontalContentAlignment="Stretch"
                 Margin="0,15"
@@ -108,20 +108,11 @@
         </DockPanel>
 
         <!--  Информация о выбранном Entity  -->
-        <GroupBox
-            BorderThickness="0"
+        <ContentControl
+            Content="{Binding SelectedEntity}"
             Grid.Column="1"
-            Header="{Binding SelectedEntity.Name}"
-            Margin="5,0">
-
-            <ContentControl
-                Content="{Binding SelectedEntity}"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Top" />
-
-        </GroupBox>
-
-
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top" />
 
     </Grid>
 </UserControl>

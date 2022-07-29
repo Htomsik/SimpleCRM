@@ -18,55 +18,108 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Grid>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150" />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-
-        <!--  VMD Pages  -->
-        <ContentControl
-            Content="{Binding MainPageCurrentVmd}"
-            Grid.Column="1"
-            Margin="5,0,0,0">
-
-            <ContentControl.Resources>
-
-                <DataTemplate DataType="{x:Type VmdPages:MainPageVmd}">
-                    <pages:MainPageVW />
-                </DataTemplate>
-
-                <DataTemplate DataType="{x:Type entityPages:ClientsPageVmd}">
-                    <pages:EntityPagesVW />
-                </DataTemplate>
-
-                <DataTemplate DataType="{x:Type entityPages:ManagersPageVmd}">
-                    <pages:EntityPagesVW />
-                </DataTemplate>
-
-                <DataTemplate DataType="{x:Type entityPages:ProductPageVmd}">
-                    <pages:EntityPagesVW />
-                </DataTemplate>
-
-            </ContentControl.Resources>
-
-        </ContentControl>
-
-        <!--  VMD menu  -->
-        <ContentControl
-            Content="{Binding MainMenuCurrentVmd}"
-            Grid.Column="0"
-            HorizontalContentAlignment="Stretch"
-            VerticalAlignment="Stretch">
-
-            <ContentControl.Resources>
-                <DataTemplate DataType="{x:Type AppInfrastructure:MainMenuVmd}">
-                    <appInfrastructure:MainMenuVW />
-                </DataTemplate>
-            </ContentControl.Resources>
-
-        </ContentControl>
 
 
+
+        <materialDesign:DrawerHost x:Name="DrawerHost">
+
+            <materialDesign:DrawerHost.LeftDrawerContent>
+
+
+                <Grid>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="{Binding ElementName=TopDock, Path=ActualHeight, UpdateSourceTrigger=PropertyChanged}" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <!--  Кнопка закрытия меню  -->
+                    <ToggleButton
+                        CommandParameter="{x:Static Dock.Left}"
+                        HorizontalAlignment="Right"
+                        IsChecked="{Binding ElementName=DrawerHost, Path=IsLeftDrawerOpen, UpdateSourceTrigger=PropertyChanged}"
+                        Style="{DynamicResource MaterialDesignHamburgerToggleButton}" />
+
+                    <!--  VMD menu  -->
+                    <ContentControl
+                        Content="{Binding MainMenuCurrentVmd}"
+                        Grid.Column="0"
+                        Grid.Row="1"
+                        HorizontalContentAlignment="Stretch"
+                        VerticalAlignment="Stretch">
+
+                        <ContentControl.Resources>
+                            <DataTemplate DataType="{x:Type AppInfrastructure:MainMenuVmd}">
+                                <appInfrastructure:MainMenuVW />
+                            </DataTemplate>
+                        </ContentControl.Resources>
+
+                    </ContentControl>
+                </Grid>
+
+
+            </materialDesign:DrawerHost.LeftDrawerContent>
+
+
+
+            <DockPanel>
+
+                <!--  Верхнее меню  -->
+                <materialDesign:ColorZone
+                    DockPanel.Dock="Top"
+                    Mode="PrimaryMid"
+                    x:Name="TopDock">
+
+                    <Grid>
+
+                        <ToggleButton
+                            Command="{x:Static materialDesign:DrawerHost.OpenDrawerCommand}"
+                            CommandParameter="{x:Static Dock.Left}"
+                            HorizontalAlignment="Left"
+                            IsChecked="{Binding ElementName=DrawerHost, Path=IsLeftDrawerOpen, UpdateSourceTrigger=PropertyChanged}"
+                            Style="{DynamicResource MaterialDesignHamburgerToggleButton}" />
+
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            Text="test"
+                            VerticalAlignment="Center" />
+
+                    </Grid>
+                </materialDesign:ColorZone>
+
+
+                <!--  VMD Pages  -->
+                <ContentControl Content="{Binding MainPageCurrentVmd}" Margin="5,5,0,0">
+
+                    <ContentControl.Resources>
+
+                        <DataTemplate DataType="{x:Type VmdPages:MainPageVmd}">
+                            <pages:MainPageVW />
+                        </DataTemplate>
+
+                        <DataTemplate DataType="{x:Type entityPages:ClientsPageVmd}">
+                            <pages:EntityPagesVW />
+                        </DataTemplate>
+
+                        <DataTemplate DataType="{x:Type entityPages:ManagersPageVmd}">
+                            <pages:EntityPagesVW />
+                        </DataTemplate>
+
+                        <DataTemplate DataType="{x:Type entityPages:ProductPageVmd}">
+                            <pages:EntityPagesVW />
+                        </DataTemplate>
+
+                    </ContentControl.Resources>
+
+                </ContentControl>
+
+            </DockPanel>
+
+
+
+
+
+        </materialDesign:DrawerHost>
 
 
     </Grid>
