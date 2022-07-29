@@ -4,12 +4,16 @@
     <projectFile>ProjectMateTask/ProjectMateTask.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Добавление фильтрации по имени">
+    <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Добавление очистки фильтрации, а также счетчика элементов">
+      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/EntityCards.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/SimpleEntityCards.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Base/BaseEntityPageVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Base/BaseEntityPageVmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/Repositories/ClientRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/Repositories/ClientRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/Repositories/ProductRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/Repositories/ProductRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/EntityPagesVW.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/EntityPagesVW.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/App.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/App.g.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +110,7 @@
       <workItem from="1659006160478" duration="97000" />
       <workItem from="1659007614363" duration="1053000" />
       <workItem from="1659009797628" duration="23759000" />
-      <workItem from="1659084912216" duration="14609000" />
+      <workItem from="1659084912216" duration="20898000" />
     </task>
     <task id="LOCAL-00002" summary="Добавил кнопки перехода по страницам">
       <created>1658922448103</created>
@@ -192,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659103332985</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Добавление очистки фильтрации, а также счетчика элементов">
+      <created>1659105405965</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1659105405965</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,6 +235,7 @@
     <MESSAGE value="Добавление базового репозитория" />
     <MESSAGE value="Добавление системы при которой 1 стрничка на все Entity модели" />
     <MESSAGE value="Добавление фильтрации по имени" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавление фильтрации по имени" />
+    <MESSAGE value="Добавление очистки фильтрации, а также счетчика элементов" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавление очистки фильтрации, а также счетчика элементов" />
   </component>
 </project>

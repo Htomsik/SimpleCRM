@@ -12,7 +12,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <UserControl.Resources>
-        <appInfrastructure:OpenDialogWindowCmd x:Key="OpenDialogWindowCmd" />
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Resources/Styles/EntityCards.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <appInfrastructure:OpenDialogWindowCmd x:Key="OpenDialogWindowCmd" />
+        </ResourceDictionary>
     </UserControl.Resources>
 
     <Grid>
@@ -35,25 +40,21 @@
         <DockPanel MaxWidth="250" MinWidth="150">
 
             <!--  Строка поиска  -->
-            <Grid DockPanel.Dock="Top" Height="30">
+            <TextBox
+                DockPanel.Dock="Top"
+                FontSize="16"
+                Text="{Binding Filter, UpdateSourceTrigger=PropertyChanged}"
+                materialDesign:TextFieldAssist.HasClearButton="True">
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="30" />
-                </Grid.ColumnDefinitions>
+                <materialDesign:HintAssist.Hint>
+                    <StackPanel Margin="-2,0,0,0" Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Magnify" />
+                        <TextBlock Text="Поиск по имени" />
+                    </StackPanel>
+                </materialDesign:HintAssist.Hint>
+            </TextBox>
 
-                <Button
-                    Command="{Binding ClearFilterCommand}"
-                    Grid.Column="1"
-                    Height="25"
-                    Style="{StaticResource MaterialDesignIconButton}"
-                    Width="25">
-                    <materialDesign:PackIcon Kind="Backspace" />
-                </Button>
 
-                <TextBox Text="{Binding Filter, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Поиск" />
-
-            </Grid>
 
             <!--  Панель управления кнопок  -->
             <Grid DockPanel.Dock="Bottom" Height="30">
@@ -89,7 +90,11 @@
                     SelectedItem="{Binding SelectedEntity}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Name}" />
+                            <VirtualizingStackPanel Orientation="Vertical">
+                                <TextBlock Text="{Binding Name}" />
+                                <TextBlock Text="{Binding Type.Name}" />
+                            </VirtualizingStackPanel>
+
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
@@ -101,11 +106,12 @@
         </DockPanel>
 
 
-        <Grid Grid.Column="1">
-            <StackPanel>
-                <TextBlock Text="{Binding SelectedEntity.Id}" />
-            </StackPanel>
-        </Grid>
+        <!--  Информация о выбранном Entity  -->
+        <ContentControl
+            Content="{Binding SelectedEntity}"
+            Grid.Column="1"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center" />
 
     </Grid>
 </UserControl>

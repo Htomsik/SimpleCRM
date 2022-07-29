@@ -1,0 +1,14 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:actors="clr-namespace:ProjectMateTask.DAL.Entities.Actors;assembly=ProjectMateTask.DAL"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--  Продукты  -->
+    <DataTemplate DataType="{x:Type actors:Product}">
+        <VirtualizingStackPanel Orientation="Vertical">
+            <TextBlock Text="{Binding Name}" />
+            <TextBlock Text="{Binding Type.Name}" />
+        </VirtualizingStackPanel>
+    </DataTemplate>
+
+</ResourceDictionary>

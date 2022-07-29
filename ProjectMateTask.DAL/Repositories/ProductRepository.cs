@@ -9,7 +9,8 @@ namespace ProjectMateTask.DAL.Repositories;
 internal sealed class ProductRepository : DbRepository<Product>
 {
     public override IQueryable<Product> Items => base.Items
-        .Include(item => item.Clients);
+        .Include(item => item.Clients)
+        .Include(item => item.Type);
 
     public ProductRepository(ProjectMateTaskDb db) : base(db)
     {
