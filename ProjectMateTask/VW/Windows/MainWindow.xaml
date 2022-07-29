@@ -19,12 +19,15 @@
     <Grid>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="150" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
         <!--  VMD Pages  -->
-        <ContentControl Content="{Binding MainPageCurrentVmd}" Grid.Column="1">
+        <ContentControl
+            Content="{Binding MainPageCurrentVmd}"
+            Grid.Column="1"
+            Margin="5,0,0,0">
 
             <ContentControl.Resources>
 

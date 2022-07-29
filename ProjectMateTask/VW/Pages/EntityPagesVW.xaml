@@ -26,37 +26,58 @@
 
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition MaxWidth="200" MinWidth="150" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
 
-        <DockPanel MinWidth="150">
+        <!--  Панель выбора Entity  -->
+        <DockPanel MaxWidth="250" MinWidth="150">
 
             <!--  Строка поиска  -->
             <Grid DockPanel.Dock="Top" Height="30">
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
-                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="30" />
                 </Grid.ColumnDefinitions>
 
                 <Button
                     Grid.Column="1"
-                    Height="30"
-                    HorizontalAlignment="Center"
+                    Height="25"
                     Style="{StaticResource MaterialDesignIconButton}"
-                    VerticalAlignment="Center"
-                    Width="30">
+                    Width="25">
                     <materialDesign:PackIcon Kind="Magnify" />
                 </Button>
 
-                <TextBox materialDesign:HintAssist.Hint="Поиск" />
+                <TextBox Text="{Binding Filter, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Поиск" />
 
             </Grid>
 
+            <!--  Панель управления кнопок  -->
+            <Grid DockPanel.Dock="Bottom" Height="30">
+
+                <Button HorizontalAlignment="Left">
+                    <materialDesign:PackIcon
+                        Height="20"
+                        Kind="Plus"
+                        Width="20" />
+                </Button>
+
+                <Button HorizontalAlignment="Right">
+                    <materialDesign:PackIcon
+                        Height="20"
+                        Kind="Delete"
+                        Width="20" />
+                </Button>
+            </Grid>
+
+
             <!--  Список Entity  -->
-            <ListView ItemsSource="{Binding Entities}">
+            <ListView
+                ItemsSource="{Binding EntitiesFilteredView}"
+                Margin="0,5"
+                SelectedItem="{Binding SelectedEntity}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding Name}" />
@@ -64,7 +85,16 @@
                 </ListView.ItemTemplate>
             </ListView>
 
+
+
         </DockPanel>
+
+
+        <Grid Grid.Column="1">
+            <StackPanel>
+                <TextBlock Text="{Binding SelectedEntity.Id}" />
+            </StackPanel>
+        </Grid>
 
     </Grid>
 </UserControl>
