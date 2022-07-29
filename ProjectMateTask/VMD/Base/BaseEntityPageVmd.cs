@@ -2,10 +2,12 @@
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Data;
+using System.Windows.Input;
 using Microsoft.EntityFrameworkCore;
 using ProjectMateTask.DAL.Entities;
 using ProjectMateTask.DAL.Entities.Base;
 using ProjectMateTask.DAL.Repositories;
+using ProjectMateTask.Infrastructure.CMD;
 
 namespace ProjectMateTask.VMD.Base;
 
@@ -90,6 +92,10 @@ internal abstract class BaseEntityPageVmd<TEntity>:BaseVmd where TEntity:NamedEn
         _entitiesRepository = entitiesRepository;
         
         Entities = new ObservableCollection<TEntity>( _entitiesRepository.Items.ToArray());
+
+        ClearFilterCommand = new LambdaCmd(() => Filter = null,()=>!string.IsNullOrEmpty(Filter));
     }
 
+    
+    public ICommand ClearFilterCommand { get; }
 }

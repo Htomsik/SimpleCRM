@@ -43,11 +43,12 @@
                 </Grid.ColumnDefinitions>
 
                 <Button
+                    Command="{Binding ClearFilterCommand}"
                     Grid.Column="1"
                     Height="25"
                     Style="{StaticResource MaterialDesignIconButton}"
                     Width="25">
-                    <materialDesign:PackIcon Kind="Magnify" />
+                    <materialDesign:PackIcon Kind="Backspace" />
                 </Button>
 
                 <TextBox Text="{Binding Filter, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Поиск" />
@@ -73,17 +74,27 @@
             </Grid>
 
 
-            <!--  Список Entity  -->
-            <ListView
-                ItemsSource="{Binding EntitiesFilteredView}"
-                Margin="0,5"
-                SelectedItem="{Binding SelectedEntity}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding Name}" />
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+            <!--  List Entity  -->
+            <materialDesign:Badged
+                Badge="{Binding EntitiesFilteredView.Count}"
+                BadgePlacementMode="TopLeft"
+                HorizontalAlignment="Stretch"
+                HorizontalContentAlignment="Stretch"
+                Margin="0,15"
+                VerticalAlignment="Stretch">
+
+                <ListView
+                    HorizontalAlignment="Stretch"
+                    ItemsSource="{Binding EntitiesFilteredView}"
+                    SelectedItem="{Binding SelectedEntity}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </materialDesign:Badged>
 
 
 
