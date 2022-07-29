@@ -4,16 +4,20 @@
     <projectFile>ProjectMateTask/ProjectMateTask.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Добавление очистки фильтрации, а также счетчика элементов">
-      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/EntityCards.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/SimpleEntityCards.xaml" afterDir="false" />
+    <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Добавление карточки отображения продуктов у клиентов">
+      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/BaseEntityCard.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/ManagerEntityCard.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/ProductEntityCard.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/Repositories/ClientRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/Repositories/ClientRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/Repositories/ProductRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/Repositories/ProductRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/App.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/EntityCards.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/ClientEntityCard.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/SimpleEntityCards.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/SimpleEntityCard.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/EntityPagesVW.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/EntityPagesVW.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/App.baml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/App.baml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/App.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/App.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +114,7 @@
       <workItem from="1659006160478" duration="97000" />
       <workItem from="1659007614363" duration="1053000" />
       <workItem from="1659009797628" duration="23759000" />
-      <workItem from="1659084912216" duration="20898000" />
+      <workItem from="1659084912216" duration="27821000" />
     </task>
     <task id="LOCAL-00002" summary="Добавил кнопки перехода по страницам">
       <created>1658922448103</created>
@@ -203,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659105405965</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Добавление карточки отображения продуктов у клиентов">
+      <created>1659111767373</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1659111767373</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,6 +247,7 @@
     <MESSAGE value="Добавление системы при которой 1 стрничка на все Entity модели" />
     <MESSAGE value="Добавление фильтрации по имени" />
     <MESSAGE value="Добавление очистки фильтрации, а также счетчика элементов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавление очистки фильтрации, а также счетчика элементов" />
+    <MESSAGE value="Добавление карточки отображения продуктов у клиентов" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавление карточки отображения продуктов у клиентов" />
   </component>
 </project>
