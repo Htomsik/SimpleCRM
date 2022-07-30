@@ -1,29 +1,64 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Input;
 using Microsoft.EntityFrameworkCore;
-using ProjectMateTask.DAL.Entities;
 using ProjectMateTask.DAL.Entities.Base;
 using ProjectMateTask.DAL.Repositories;
 using ProjectMateTask.Infrastructure.CMD;
 
 namespace ProjectMateTask.VMD.Base;
 
-internal abstract class BaseEntityPageVmd<TEntity>:BaseNotGenericEntityVmd where TEntity:NamedEntity,new()
+internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd where TEntity : NamedEntity, new()
 {
     private readonly IRepository<TEntity> _entitiesRepository;
-    public bool IsEditButtonsEnable => SelectedEntity is not null && !IsEditMode;
 
+    public BaseEntityPageVmd(IRepository<TEntity> entitiesRepository)
+    {
+        _entitiesRepository = entitiesRepository;
+
+        InitializeRepositoryAsync();
+
+        #region Команды
+
+        ClearFilterCommand = new LambdaCmd(() => Filter = null, () => !string.IsNullOrEmpty(Filter));
+
+        OpenEditModeCommand = new LambdaCmd(OnEditEntityExecute, CanOpenEditMode);
+
+        OpenAddModeCommand = new LambdaCmd(OnOpenAddEntityMode, CanOpenAddMode);
+
+        DeleteSelectedEntityCommand = new AsyncLambdaCmd(OnDeleteSelectedEntity, CanDeleteSelectedEntity);
+
+        CloseAllModsCommand = new LambdaCmd(OnCloseAllMods);
+
+        AddNewEntity = new AsyncLambdaCmd(OnAddNewEntity, CanAddNewEntity);
+
+        #endregion
+    }
+
+    /// <summary>
+    /// Название страницы
+    /// </summary>
+    public override string Tittle => typeof(TEntity).Name;
+
+    /// <summary>
+    ///     Флаг режима редактирования
+    /// </summary>
     public override bool IsEditMode
     {
         get => _isEditMode;
-        set
-        {
-            Set(ref _isEditMode, value);
-            OnPropertyChanged(nameof(IsEditButtonsEnable));
-        }
+        set => Set(ref _isEditMode, value);
+    }
+
+    /// <summary>
+    ///     Очистка фильтра поиска
+    /// </summary>
+    public ICommand ClearFilterCommand { get; }
+
+    private async Task InitializeRepositoryAsync()
+    {
+        Entities = new ObservableCollection<TEntity>(await _entitiesRepository.Items.ToArrayAsync());
     }
 
 
@@ -41,49 +76,47 @@ internal abstract class BaseEntityPageVmd<TEntity>:BaseNotGenericEntityVmd where
                 Source = value,
                 SortDescriptions =
                 {
-                    new SortDescription("Name",ListSortDirection.Ascending)
+                    new SortDescription("Name", ListSortDirection.Ascending)
                 }
             };
 
             _entitiesViewSource.Filter += OnEntityFilter;
             _entitiesViewSource.View.Refresh();
-            
+
             OnPropertyChanged(nameof(EntitiesFilteredView));
         }
     }
 
-  
-
     #endregion
-    
+
     #region фильтация списка
 
-        private string _filter;
-        
-        public string Filter
-        {
-            get => _filter;
-            set
-            {
-               if(Set(ref _filter, value.ToLower()))
-                   _entitiesViewSource.View.Refresh();
-            }
-        }
+    private string _filter;
 
-        private void OnEntityFilter(object sender, FilterEventArgs e)
+    public string Filter
+    {
+        get => _filter;
+        set
         {
-            if(!(e.Item is NamedEntity entity) || string.IsNullOrEmpty(Filter)) return;
-
-            if (!entity.Name.ToLower().Contains(Filter)) e.Accepted = false;
+            if (Set(ref _filter, value.ToLower()))
+                _entitiesViewSource.View.Refresh();
         }
+    }
+
+    private void OnEntityFilter(object sender, FilterEventArgs e)
+    {
+        if (!(e.Item is NamedEntity entity) || string.IsNullOrEmpty(Filter)) return;
+
+        if (!entity.Name.ToLower().Contains(Filter)) e.Accepted = false;
+    }
 
     #endregion
-    
+
     #region Отфильтрованный список
 
     private CollectionViewSource _entitiesViewSource;
 
-    public ICollectionView EntitiesFilteredView => _entitiesViewSource.View;
+    public ICollectionView? EntitiesFilteredView => _entitiesViewSource?.View;
 
     #endregion
 
@@ -94,44 +127,96 @@ internal abstract class BaseEntityPageVmd<TEntity>:BaseNotGenericEntityVmd where
     public TEntity SelectedEntity
     {
         get => _selectedEntity;
-        set
-        {
-            Set(ref _selectedEntity, value);
-            OnPropertyChanged(nameof(IsEditButtonsEnable));
-        } 
+        set => Set(ref _selectedEntity, value);
     }
-    
+
     #endregion
-    
-    public BaseEntityPageVmd(IRepository<TEntity> entitiesRepository)
-    {
-        _entitiesRepository = entitiesRepository;
-        
-        Entities = new ObservableCollection<TEntity>( _entitiesRepository.Items.ToArray());
 
-        #region Команды
+    #region OpenEditModeCommand : Команда открытия режима редактирования сущности
 
-        ClearFilterCommand = new LambdaCmd(() => Filter = null,()=>!string.IsNullOrEmpty(Filter));
-
-        EditEntityCommand = new LambdaCmd(OnEditEntityExecute);
-
-        #endregion
-        
-        Tittle = typeof(TEntity).Name;
-    }
-
-    
     /// <summary>
-    /// Очистка фильтра поиска
+    ///     Команда редактирования
     /// </summary>
-    public ICommand ClearFilterCommand { get; }
-    
-    
-    public ICommand EditEntityCommand { get; }
+    public ICommand OpenEditModeCommand { get; }
 
     private void OnEditEntityExecute()
     {
         IsEditMode = true;
     }
-    
+
+    private bool CanOpenEditMode()
+    {
+        return SelectedEntity is not null && !IsEditMode;
+    }
+
+    #endregion
+
+    #region OpenAddModeCommand : Команда открытия режима добавления новой сущности
+
+    public ICommand OpenAddModeCommand { get; }
+
+    private void OnOpenAddEntityMode()
+    {
+        IsEditMode = true;
+        SelectedEntity = new TEntity();
+    }
+
+    private bool CanOpenAddMode()
+    {
+        return !IsEditMode;
+    }
+
+    #endregion
+
+    #region CloseAllMods : Команда закрытия режима редактирования/добавления
+
+    public ICommand CloseAllModsCommand { get; }
+
+    private void OnCloseAllMods()
+    {
+        SelectedEntity = null;
+        IsEditMode = false;
+    }
+
+    #endregion
+
+    #region DeleteSelectedEntityCommand : Команда удаления сущности
+
+    public ICommand DeleteSelectedEntityCommand { get; }
+
+    private async Task OnDeleteSelectedEntity()
+    {
+        var removedEntity = SelectedEntity;
+
+        await _entitiesRepository.RemoveAsync(removedEntity);
+
+        await InitializeRepositoryAsync();
+    }
+
+    private bool CanDeleteSelectedEntity()
+    {
+        return SelectedEntity is not null & !IsEditMode;
+    }
+
+    #endregion
+
+    #region AddNewEntity : Команда добавления сущности
+
+    public ICommand AddNewEntity { get; }
+
+    private async Task OnAddNewEntity()
+    {
+        var addedEntity = SelectedEntity;
+
+        await _entitiesRepository.AddAsync(addedEntity);
+
+        await InitializeRepositoryAsync();
+    }
+
+    private bool CanAddNewEntity()
+    {
+        return SelectedEntity is not null;
+    }
+
+    #endregion
 }

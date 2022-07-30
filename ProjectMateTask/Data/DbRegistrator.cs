@@ -23,7 +23,7 @@ internal static class DbRegistrator
             }
         });
 
-        services.AddTransient<DbInitializer>();
+        services.AddTransient<IDbInitializer,DbInitializer>();
         
         return services;
     }

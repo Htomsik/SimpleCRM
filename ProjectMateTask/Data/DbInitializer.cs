@@ -13,7 +13,7 @@ using ProjectMateTask.Services.AppInfrastructure;
 
 namespace ProjectMateTask.Data;
 
-public class DbInitializer
+public class DbInitializer:IDbInitializer
 {
     private readonly ProjectMateTaskDb _db;
     
@@ -39,14 +39,16 @@ public class DbInitializer
         await _db.Database.MigrateAsync().ConfigureAwait(false);
         
         _logger.LogInformation("Миграция базы данных выполнена за {0} мс", loggerTimer.ElapsedMilliseconds);
-        
-        
-        if(await  _db.ClientStatus.AnyAsync()) return;
 
-        
-        await InitializeClientTypesAsync();
-        
-        await InitializeProductTypeAsync();
+        if (!await _db.ClientStatus.AnyAsync())
+        {
+            await InitializeClientTypesAsync();
+        }
+
+        if (!await _db.ProductTypes.AnyAsync())
+        {
+            await InitializeProductTypeAsync();
+        }
         
         _logger.LogInformation("Инициализация базы данных выполнена за {0} c", loggerTimer.Elapsed.TotalSeconds);
     }
@@ -63,6 +65,7 @@ public class DbInitializer
         await InitializeTestProductsAsync();
         await InitializeTestManagersAsync();
         await InitializeTestClientsAsync();
+        
         _logger.LogInformation("Инициализация тестовых данных выполнена за {0} c", loggerTimer.Elapsed.TotalSeconds);
     }
 

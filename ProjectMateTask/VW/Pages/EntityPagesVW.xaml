@@ -1,4 +1,6 @@
 ﻿<UserControl
+    d:DataContext="{d:DesignInstance {x:Type vmd:ClientsPageVmd},
+                                     IsDesignTimeCreatable=True}"
     d:DesignHeight="300"
     d:DesignWidth="300"
     mc:Ignorable="d"
@@ -13,6 +15,7 @@
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:selectors="clr-namespace:ProjectMateTask.Infrastructure.Selectors"
+    xmlns:vmd="clr-namespace:ProjectMateTask.VMD.Pages.EntityPages"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <UserControl.Resources>
@@ -23,7 +26,6 @@
                 <ResourceDictionary Source="../../Resources/Styles/Entity/EditCards/ManagerEditCard.xaml" />
                 <ResourceDictionary Source="../../Resources/Styles/Entity/EditCards/ClientStatusesEditCard.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            <appInfrastructure:OpenDialogWindowCmd x:Key="OpenDialogWindowCmd" />
             <selectors:EditEntitySelector x:Key="EditEntitySelector" />
         </ResourceDictionary>
     </UserControl.Resources>
@@ -60,10 +62,7 @@
             <Grid DockPanel.Dock="Bottom" Height="30">
 
                 <!--  Добавление  -->
-                <Button
-                    Command="{Binding EditEntityCommand}"
-                    HorizontalAlignment="Left"
-                    IsEnabled="{Binding IsEditMode, Converter={StaticResource InvertBooleanConverter}}">
+                <Button Command="{Binding OpenAddModeCommand}" HorizontalAlignment="Left">
                     <materialDesign:PackIcon
                         Height="20"
                         Kind="Plus"
@@ -73,7 +72,7 @@
                 </Button>
 
                 <!--  Редактирование  -->
-                <Button HorizontalAlignment="Center" IsEnabled="{Binding IsEditButtonsEnable}">
+                <Button Command="{Binding OpenEditModeCommand}" HorizontalAlignment="Center">
                     <materialDesign:PackIcon
                         Height="20"
                         Kind="Pencil"
@@ -81,7 +80,7 @@
                 </Button>
 
                 <!--  Удаление  -->
-                <Button HorizontalAlignment="Right" IsEnabled="{Binding IsEditButtonsEnable}">
+                <Button Command="{Binding DeleteSelectedEntityCommand}" HorizontalAlignment="Right">
                     <materialDesign:PackIcon
                         Height="20"
                         Kind="Delete"
@@ -146,7 +145,7 @@
 
         </DockPanel>
 
-
+        <!--  Отображение выбанного/добавляемого/редактируемого entity  -->
         <DockPanel Grid.Column="1" HorizontalAlignment="Left">
 
             <!--  Информация о выбранном Entity  -->
@@ -180,7 +179,10 @@
                         Width="20" />
                 </Button>
 
-                <Button Grid.Column="1" HorizontalAlignment="Left">
+                <Button
+                    Command="{Binding CloseAllModsCommand}"
+                    Grid.Column="1"
+                    HorizontalAlignment="Left">
                     <materialDesign:PackIcon
                         Height="20"
                         Kind="CloseThick"

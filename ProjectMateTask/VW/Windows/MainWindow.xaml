@@ -1,5 +1,7 @@
 ﻿<Window
-    Height="450"
+    Height="600"
+    MinHeight="300"
+    MinWidth="400"
     Style="{StaticResource MaterialDesignWindow}"
     Title="MainWindow"
     Width="800"

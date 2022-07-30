@@ -22,7 +22,7 @@
 
             </StackPanel.Resources>
 
-            <!--  Имя  -->
+            <!--  Название  -->
             <TextBox
                 IsEnabled="{Binding Path=DataContext.IsEditMode, RelativeSource={RelativeSource AncestorType={x:Type ContentControl}}}"
                 MaxLength="50"
@@ -30,7 +30,7 @@
                 materialDesign:TextFieldAssist.HasClearButton="True">
                 <materialDesign:HintAssist.Hint>
                     <StackPanel Margin="-2,0,0,0" Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="Person" />
+                        <materialDesign:PackIcon Kind="AccountStar" />
                         <TextBlock Text="Название" />
                     </StackPanel>
                 </materialDesign:HintAssist.Hint>

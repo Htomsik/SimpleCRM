@@ -12,21 +12,23 @@ public class MainMenuVmd:BaseVmd
 {
     public ObservableCollection<MainMenuItem> MenuItems { get;}
     
-    public MainMenuVmd(INavigationService ManagersPageNavigationServices,
-        INavigationService ClientsPageNavigationService,
-        INavigationService ProductsPageNavigationService,
-        INavigationService HomePageNavigationService,
-        INavigationService ClientStatusesNavigationServices) 
+    public MainMenuVmd(INavigationService managersPageNavigationServices,
+        INavigationService clientsPageNavigationService,
+        INavigationService productsPageNavigationService,
+        INavigationService homePageNavigationService,
+        INavigationService clientStatusNavigationServices,
+        INavigationService productTypeNavigationServices) 
     {
         MenuNavigationCommand = new LambdaCmd(OnMenuNavigationExecute);
         
         MenuItems = new ObservableCollection<MainMenuItem>
         {
-            new MainMenuItem("Домашняя страниц",PackIconKind.Home,HomePageNavigationService),
-            new MainMenuItem("Managers",PackIconKind.AccountTie,ManagersPageNavigationServices),
-            new MainMenuItem("Clients",PackIconKind.Account,ClientsPageNavigationService),
-            new MainMenuItem("Products",PackIconKind.Shopping,ProductsPageNavigationService),
-            new MainMenuItem("Статусы клиентов",PackIconKind.Administrator,ClientStatusesNavigationServices)
+            new MainMenuItem("Домашняя страниц",PackIconKind.Home,homePageNavigationService),
+            new MainMenuItem("Managers",PackIconKind.AccountTie,managersPageNavigationServices),
+            new MainMenuItem("Clients",PackIconKind.Account,clientsPageNavigationService),
+            new MainMenuItem("Products",PackIconKind.Shopping,productsPageNavigationService),
+            new MainMenuItem("Статусы клиентов",PackIconKind.Administrator,clientStatusNavigationServices),
+            new MainMenuItem("Типы продуктов",PackIconKind.FileDocument,productTypeNavigationServices)
         };
 
     }

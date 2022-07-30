@@ -21,11 +21,12 @@ internal  static class VmdRegistrator
         services.AddSingleton(s => new MainWindowVmd(
             s.GetRequiredService<MainPageNavigationStore>(),s.GetRequiredService<MainMenuNavigationStore>()));
 
-        services.AddSingleton(s=> new MainMenuVmd(CreateManagersPageNavigationServices(s),
+        services.AddTransient(s=> new MainMenuVmd(CreateManagersPageNavigationServices(s),
             CreateClientsPageNavigationServices(s),
             CreateProductsPageNavigationServices(s),
             CreateMainPageNavigationServices(s),
-            CreateClientStatusesPageNavigationServices(s)));
+            CreateClientStatusesPageNavigationServices(s),
+            CreateProductTypesPageNavigationServices(s)));
 
         services.AddTransient<MainPageVmd>();
         
@@ -36,8 +37,10 @@ internal  static class VmdRegistrator
         services.AddTransient<BaseEntityPageVmd<Product>,ProductPageVmd>();
         
         services.AddTransient<BaseEntityPageVmd<ClientStatus>,ClientStatusesPageVmd>();
+        
+        services.AddTransient<BaseEntityPageVmd<ProductType>,ProductTypePageVmd>();
 
-        services.AddSingleton<INavigationService>(CreateMainPageNavigationServices);
+        services.AddTransient<INavigationService>(CreateMainPageNavigationServices);
         
         return services;
     }
@@ -69,11 +72,16 @@ internal  static class VmdRegistrator
             serviceProvider.GetRequiredService<BaseEntityPageVmd<Product>>);
     }
     
-    
     private static INavigationService CreateClientStatusesPageNavigationServices(IServiceProvider serviceProvider)
     {
         return new MainPageNavigationServices(serviceProvider.GetRequiredService<MainPageNavigationStore>(),
             serviceProvider.GetRequiredService<BaseEntityPageVmd<ClientStatus>>);
+    }
+    
+    private static INavigationService CreateProductTypesPageNavigationServices(IServiceProvider serviceProvider)
+    {
+        return new MainPageNavigationServices(serviceProvider.GetRequiredService<MainPageNavigationStore>(),
+            serviceProvider.GetRequiredService<BaseEntityPageVmd<ProductType>>);
     }
 }
 

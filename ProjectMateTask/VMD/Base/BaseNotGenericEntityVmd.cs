@@ -5,11 +5,11 @@ internal abstract class BaseNotGenericEntityVmd:BaseVmd
     /// <summary>
     /// Название страницы
     /// </summary>
-    public virtual string Tittle { get; protected set; }
+    public virtual string Tittle => "Не переопределенная страница";
     
     #region Режим редактирования
 
-    protected bool _isEditMode =false;
+    protected bool _isEditMode ;
 
     /// <summary>
     /// Указывает, запущен ли режим редактирования Entity обьекта
@@ -25,9 +25,5 @@ internal abstract class BaseNotGenericEntityVmd:BaseVmd
 
     #endregion
 
-
-    public BaseNotGenericEntityVmd()
-    {
-        Tittle = "Тестовая стрница";
-    }
+    
 }
