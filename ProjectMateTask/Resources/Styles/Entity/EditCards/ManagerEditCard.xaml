@@ -22,6 +22,7 @@
 
             <!--  Имя  -->
             <TextBox
+                IsEnabled="{Binding Path=DataContext.IsEditMode, RelativeSource={RelativeSource AncestorType={x:Type ContentControl}}}"
                 MaxLength="50"
                 Text="{Binding Name}"
                 materialDesign:TextFieldAssist.HasClearButton="True">

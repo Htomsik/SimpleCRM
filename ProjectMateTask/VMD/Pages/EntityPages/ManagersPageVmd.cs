@@ -5,9 +5,9 @@ using ProjectMateTask.VMD.Base;
 
 namespace ProjectMateTask.VMD.Pages.EntityPages;
 
-internal sealed class ManagersVmdEntityPageVmd:BaseNotGenericEntityVmdEntityPageVmd<Manager>
+internal sealed class ManagersPageVmd:BaseEntityPageVmd<Manager>
 {
-    public ManagersVmdEntityPageVmd(IRepository<Manager> entities) : base(entities)
+    public ManagersPageVmd(IRepository<Manager> entities) : base(entities)
     {
     }
 }

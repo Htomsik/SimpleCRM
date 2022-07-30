@@ -5,11 +5,11 @@ internal abstract class BaseNotGenericEntityVmd:BaseVmd
     /// <summary>
     /// Название страницы
     /// </summary>
-    public virtual string Tittle { get; }
+    public virtual string Tittle { get; protected set; }
     
     #region Режим редактирования
 
-    private bool _isEditMode;
+    protected bool _isEditMode =false;
 
     /// <summary>
     /// Указывает, запущен ли режим редактирования Entity обьекта

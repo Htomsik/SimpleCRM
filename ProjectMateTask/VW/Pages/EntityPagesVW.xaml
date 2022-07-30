@@ -42,6 +42,7 @@
             <TextBox
                 DockPanel.Dock="Top"
                 FontSize="16"
+                IsEnabled="{Binding IsEditMode, Converter={StaticResource InvertBooleanConverter}}"
                 Text="{Binding Filter, UpdateSourceTrigger=PropertyChanged}"
                 materialDesign:TextFieldAssist.HasClearButton="True">
 
@@ -58,19 +59,37 @@
             <!--  Панель управления кнопок  -->
             <Grid DockPanel.Dock="Bottom" Height="30">
 
-                <Button HorizontalAlignment="Left">
+                <!--  Добавление  -->
+                <Button
+                    Command="{Binding EditEntityCommand}"
+                    HorizontalAlignment="Left"
+                    IsEnabled="{Binding IsEditMode, Converter={StaticResource InvertBooleanConverter}}">
                     <materialDesign:PackIcon
                         Height="20"
                         Kind="Plus"
                         Width="20" />
+
+
                 </Button>
 
-                <Button HorizontalAlignment="Right">
+                <!--  Редактирование  -->
+                <Button HorizontalAlignment="Center" IsEnabled="{Binding IsEditButtonsEnable}">
+                    <materialDesign:PackIcon
+                        Height="20"
+                        Kind="Pencil"
+                        Width="20" />
+                </Button>
+
+                <!--  Удаление  -->
+                <Button HorizontalAlignment="Right" IsEnabled="{Binding IsEditButtonsEnable}">
                     <materialDesign:PackIcon
                         Height="20"
                         Kind="Delete"
                         Width="20" />
                 </Button>
+
+
+
             </Grid>
 
 
@@ -80,6 +99,7 @@
                 BadgePlacementMode="Top"
                 HorizontalAlignment="Stretch"
                 HorizontalContentAlignment="Stretch"
+                IsEnabled="{Binding IsEditMode, Converter={StaticResource InvertBooleanConverter}}"
                 Margin="0,15"
                 VerticalAlignment="Stretch">
 
@@ -126,14 +146,51 @@
 
         </DockPanel>
 
-        <!--  Информация о выбранном Entity  -->
-        <ContentControl
-            Content="{Binding SelectedEntity}"
-            ContentTemplateSelector="{StaticResource EditEntitySelector}"
-            Grid.Column="1"
-            HorizontalAlignment="Left"
-            Margin="8,0,0,0"
-            VerticalAlignment="Top" />
+
+        <DockPanel Grid.Column="1" HorizontalAlignment="Left">
+
+            <!--  Информация о выбранном Entity  -->
+            <ContentControl
+                Content="{Binding SelectedEntity}"
+                ContentTemplateSelector="{StaticResource EditEntitySelector}"
+                DockPanel.Dock="Top"
+                Margin="8,0,0,0"
+                VerticalAlignment="Top" />
+
+
+            <!--  Панель управления кнопок редактирования  -->
+            <Grid
+                DockPanel.Dock="Bottom"
+                Height="30"
+                VerticalAlignment="Bottom"
+                Visibility="{Binding IsEditMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Button
+                    Grid.Column="0"
+                    HorizontalAlignment="Right"
+                    Margin="0,0,10,0">
+                    <materialDesign:PackIcon
+                        Height="20"
+                        Kind="Check"
+                        Width="20" />
+                </Button>
+
+                <Button Grid.Column="1" HorizontalAlignment="Left">
+                    <materialDesign:PackIcon
+                        Height="20"
+                        Kind="CloseThick"
+                        Width="20" />
+                </Button>
+
+            </Grid>
+
+        </DockPanel>
+
 
     </Grid>
 </UserControl>

@@ -11,9 +11,21 @@ using ProjectMateTask.Infrastructure.CMD;
 
 namespace ProjectMateTask.VMD.Base;
 
-internal abstract class BaseNotGenericEntityVmdEntityPageVmd<TEntity>:BaseNotGenericEntityVmd where TEntity:NamedEntity,new()
+internal abstract class BaseEntityPageVmd<TEntity>:BaseNotGenericEntityVmd where TEntity:NamedEntity,new()
 {
     private readonly IRepository<TEntity> _entitiesRepository;
+    public bool IsEditButtonsEnable => SelectedEntity is not null && !IsEditMode;
+
+    public override bool IsEditMode
+    {
+        get => _isEditMode;
+        set
+        {
+            Set(ref _isEditMode, value);
+            OnPropertyChanged(nameof(IsEditButtonsEnable));
+        }
+    }
+
 
     #region Оригинльный список
 
@@ -82,20 +94,44 @@ internal abstract class BaseNotGenericEntityVmdEntityPageVmd<TEntity>:BaseNotGen
     public TEntity SelectedEntity
     {
         get => _selectedEntity;
-        set => Set(ref _selectedEntity, value);
+        set
+        {
+            Set(ref _selectedEntity, value);
+            OnPropertyChanged(nameof(IsEditButtonsEnable));
+        } 
     }
     
     #endregion
     
-    public BaseNotGenericEntityVmdEntityPageVmd(IRepository<TEntity> entitiesRepository)
+    public BaseEntityPageVmd(IRepository<TEntity> entitiesRepository)
     {
         _entitiesRepository = entitiesRepository;
         
         Entities = new ObservableCollection<TEntity>( _entitiesRepository.Items.ToArray());
 
+        #region Команды
+
         ClearFilterCommand = new LambdaCmd(() => Filter = null,()=>!string.IsNullOrEmpty(Filter));
+
+        EditEntityCommand = new LambdaCmd(OnEditEntityExecute);
+
+        #endregion
+        
+        Tittle = typeof(TEntity).Name;
     }
 
     
+    /// <summary>
+    /// Очистка фильтра поиска
+    /// </summary>
     public ICommand ClearFilterCommand { get; }
+    
+    
+    public ICommand EditEntityCommand { get; }
+
+    private void OnEditEntityExecute()
+    {
+        IsEditMode = true;
+    }
+    
 }

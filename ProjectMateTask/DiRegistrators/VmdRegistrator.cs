@@ -29,13 +29,13 @@ internal  static class VmdRegistrator
 
         services.AddTransient<MainPageVmd>();
         
-        services.AddTransient<BaseNotGenericEntityVmdEntityPageVmd<Manager>,ManagersVmdEntityPageVmd>();
+        services.AddTransient<BaseEntityPageVmd<Manager>,ManagersPageVmd>();
         
-        services.AddTransient<BaseNotGenericEntityVmdEntityPageVmd<Client>,ClientsVmdEntityPageVmd>();
+        services.AddTransient<BaseEntityPageVmd<Client>,ClientsPageVmd>();
         
-        services.AddTransient<BaseNotGenericEntityVmdEntityPageVmd<Product>,ProductVmdEntityPageVmd>();
+        services.AddTransient<BaseEntityPageVmd<Product>,ProductPageVmd>();
         
-        services.AddTransient<BaseNotGenericEntityVmdEntityPageVmd<ClientStatus>,ClientStatusesVmdEntityPageVmd>();
+        services.AddTransient<BaseEntityPageVmd<ClientStatus>,ClientStatusesPageVmd>();
 
         services.AddSingleton<INavigationService>(CreateMainPageNavigationServices);
         
@@ -54,26 +54,26 @@ internal  static class VmdRegistrator
     private static INavigationService CreateManagersPageNavigationServices(IServiceProvider serviceProvider)
     {
         return new MainPageNavigationServices(serviceProvider.GetRequiredService<MainPageNavigationStore>(),
-            serviceProvider.GetRequiredService<BaseNotGenericEntityVmdEntityPageVmd<Manager>>);
+            serviceProvider.GetRequiredService<BaseEntityPageVmd<Manager>>);
     }
     
     private static INavigationService CreateClientsPageNavigationServices(IServiceProvider serviceProvider)
     {
         return new MainPageNavigationServices(serviceProvider.GetRequiredService<MainPageNavigationStore>(),
-            serviceProvider.GetRequiredService<BaseNotGenericEntityVmdEntityPageVmd<Client>>);
+            serviceProvider.GetRequiredService<BaseEntityPageVmd<Client>>);
     }
     
     private static INavigationService CreateProductsPageNavigationServices(IServiceProvider serviceProvider)
     {
         return new MainPageNavigationServices(serviceProvider.GetRequiredService<MainPageNavigationStore>(),
-            serviceProvider.GetRequiredService<BaseNotGenericEntityVmdEntityPageVmd<Product>>);
+            serviceProvider.GetRequiredService<BaseEntityPageVmd<Product>>);
     }
     
     
     private static INavigationService CreateClientStatusesPageNavigationServices(IServiceProvider serviceProvider)
     {
         return new MainPageNavigationServices(serviceProvider.GetRequiredService<MainPageNavigationStore>(),
-            serviceProvider.GetRequiredService<BaseNotGenericEntityVmdEntityPageVmd<ClientStatus>>);
+            serviceProvider.GetRequiredService<BaseEntityPageVmd<ClientStatus>>);
     }
 }
 

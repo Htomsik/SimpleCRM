@@ -73,6 +73,7 @@
 
                     <Grid>
 
+                        <!--  Кнопка открытия меню  -->
                         <ToggleButton
                             Command="{x:Static materialDesign:DrawerHost.OpenDrawerCommand}"
                             CommandParameter="{x:Static Dock.Left}"
@@ -80,10 +81,16 @@
                             IsChecked="{Binding ElementName=DrawerHost, Path=IsLeftDrawerOpen, UpdateSourceTrigger=PropertyChanged}"
                             Style="{DynamicResource MaterialDesignHamburgerToggleButton}" />
 
+
+                        <!--  Название текущей модели представления  -->
                         <TextBlock
+                            Grid.Column="0"
                             HorizontalAlignment="Center"
+                            Margin="0,0,10,0"
+                            Style="{DynamicResource MaterialDesignHeadline5TextBlock}"
                             Text="{Binding ElementName=VmdPagesContent, Path=Content.Tittle}"
                             VerticalAlignment="Center" />
+
 
                     </Grid>
                 </materialDesign:ColorZone>

@@ -24,6 +24,7 @@
 
             <!--  Имя  -->
             <TextBox
+                IsEnabled="{Binding Path=DataContext.IsEditMode, RelativeSource={RelativeSource AncestorType={x:Type ContentControl}}}"
                 MaxLength="50"
                 Text="{Binding Name}"
                 materialDesign:TextFieldAssist.HasClearButton="True">
@@ -37,6 +38,7 @@
 
             <!--  Статус  -->
             <TextBox
+                IsEnabled="{Binding Path=DataContext.IsEditMode, RelativeSource={RelativeSource AncestorType={x:Type ContentControl}}}"
                 MaxLength="50"
                 Text="{Binding Status.Name}"
                 VerticalAlignment="Center"
@@ -51,6 +53,7 @@
 
             <!--  Менеджер  -->
             <TextBox
+                IsEnabled="{Binding Path=DataContext.IsEditMode, RelativeSource={RelativeSource AncestorType={x:Type ContentControl}}}"
                 MaxLength="50"
                 Text="{Binding Manager.Name}"
                 VerticalAlignment="Center"
