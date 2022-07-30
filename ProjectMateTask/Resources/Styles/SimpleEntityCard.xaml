@@ -3,21 +3,52 @@
     xmlns:actors="clr-namespace:ProjectMateTask.DAL.Entities.Actors;assembly=ProjectMateTask.DAL"
     xmlns:base="clr-namespace:ProjectMateTask.DAL.Entities.Base;assembly=ProjectMateTask.DAL"
     xmlns:collections="clr-namespace:System.Collections;assembly=System.Runtime"
+    xmlns:types="clr-namespace:ProjectMateTask.DAL.Entities.Types;assembly=ProjectMateTask.DAL"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+
+    <!--  Описание для simple entity textblock  -->
+    <Style
+        BasedOn="{StaticResource {x:Type TextBlock}}"
+        TargetType="TextBlock"
+        x:Key="DescriptionEntityTextBlock">
+        <Setter Property="Opacity" Value="0.56" />
+        <Setter Property="FontSize" Value="11" />
+    </Style>
+
     <!--  Продукты  -->
-    <DataTemplate DataType="{x:Type actors:Product}" x:Key="SimpleProductCard">
+    <DataTemplate DataType="{x:Type actors:Product}">
         <VirtualizingStackPanel Orientation="Vertical">
-            <TextBlock Text="{Binding Name}" />
-            <TextBlock Text="{Binding Type.Name}" />
+            <TextBlock Style="{StaticResource MaterialDesignSubtitle2TextBlock}" Text="{Binding Name}" />
+            <TextBlock Style="{StaticResource DescriptionEntityTextBlock}" Text="{Binding Type.Name, StringFormat={}Тип: {0}}" />
         </VirtualizingStackPanel>
     </DataTemplate>
 
     <!--  Клиенты  -->
-    <DataTemplate DataType="{x:Type actors:Client}" x:Key="SimpleClientCard">
+    <DataTemplate DataType="{x:Type actors:Client}">
         <VirtualizingStackPanel Orientation="Vertical">
-            <TextBlock Text="{Binding Name}" />
-            <TextBlock Text="{Binding Status.Name}" />
+            <TextBlock Style="{StaticResource MaterialDesignSubtitle2TextBlock}" Text="{Binding Name}" />
+            <TextBlock Style="{StaticResource DescriptionEntityTextBlock}" Text="{Binding Status.Name, StringFormat={}Статус: {0}}" />
+            <TextBlock Style="{StaticResource DescriptionEntityTextBlock}" Text="{Binding Products.Count, StringFormat={}Количество товаров: {0}}" />
+        </VirtualizingStackPanel>
+    </DataTemplate>
+
+    <!--  Менеджеры  -->
+    <DataTemplate DataType="{x:Type actors:Manager}">
+        <VirtualizingStackPanel Orientation="Vertical">
+            <TextBlock
+                Margin="0,0,0,2"
+                Style="{StaticResource MaterialDesignSubtitle2TextBlock}"
+                Text="{Binding Name}" />
+            <TextBlock Style="{StaticResource DescriptionEntityTextBlock}" Text="{Binding Clients.Count, StringFormat={}Количество клиентов: {0}}" />
+        </VirtualizingStackPanel>
+    </DataTemplate>
+
+    <!--  Статусы клиентов  -->
+    <DataTemplate DataType="{x:Type types:ClientStatus}">
+        <VirtualizingStackPanel Orientation="Vertical">
+            <TextBlock Style="{StaticResource MaterialDesignSubtitle2TextBlock}" Text="{Binding Name}" />
+            <TextBlock Style="{StaticResource DescriptionEntityTextBlock}" Text="{Binding Clients.Count, StringFormat={}Количество клиентов: {0}}" />
         </VirtualizingStackPanel>
     </DataTemplate>
 

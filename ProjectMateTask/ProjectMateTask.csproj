@@ -10,7 +10,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Infrastructure" />
+      <Folder Include="Infrastructure\Converters" />
       <Folder Include="Services" />
     </ItemGroup>
 

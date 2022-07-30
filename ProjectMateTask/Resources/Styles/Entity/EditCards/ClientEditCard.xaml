@@ -7,7 +7,7 @@
 
 
     <!--  Карточка редактирования клиентов  -->
-    <DataTemplate DataType="{x:Type actors:Client}">
+    <DataTemplate DataType="{x:Type actors:Client}" x:Key="EditClientCard">
 
         <StackPanel>
 

@@ -2,10 +2,12 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:actors="clr-namespace:ProjectMateTask.DAL.Entities.Actors;assembly=ProjectMateTask.DAL"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:types="clr-namespace:ProjectMateTask.DAL.Entities.Types;assembly=ProjectMateTask.DAL"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <!--  Карточка редактирования менеджеров  -->
-    <DataTemplate DataType="{x:Type actors:Manager}">
+
+    <!--  Карточка редактирования Статусов клиентов  -->
+    <DataTemplate DataType="{x:Type types:ClientStatus}" x:Key="EditClientStatusCard">
 
         <StackPanel>
 

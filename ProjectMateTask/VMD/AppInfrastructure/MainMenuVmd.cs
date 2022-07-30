@@ -12,16 +12,21 @@ public class MainMenuVmd:BaseVmd
 {
     public ObservableCollection<MainMenuItem> MenuItems { get;}
     
-    public MainMenuVmd(INavigationService ManagersPageNavigationServices,INavigationService ClientsPageNavigationService, INavigationService ProductsPageNavigationService, INavigationService HomePageNavigationService) 
+    public MainMenuVmd(INavigationService ManagersPageNavigationServices,
+        INavigationService ClientsPageNavigationService,
+        INavigationService ProductsPageNavigationService,
+        INavigationService HomePageNavigationService,
+        INavigationService ClientStatusesNavigationServices) 
     {
         MenuNavigationCommand = new LambdaCmd(OnMenuNavigationExecute);
         
         MenuItems = new ObservableCollection<MainMenuItem>
         {
-            new MainMenuItem("Home",PackIconKind.Home,HomePageNavigationService),
+            new MainMenuItem("Домашняя страниц",PackIconKind.Home,HomePageNavigationService),
             new MainMenuItem("Managers",PackIconKind.AccountTie,ManagersPageNavigationServices),
             new MainMenuItem("Clients",PackIconKind.Account,ClientsPageNavigationService),
-            new MainMenuItem("Products",PackIconKind.Shopping,ProductsPageNavigationService)
+            new MainMenuItem("Products",PackIconKind.Shopping,ProductsPageNavigationService),
+            new MainMenuItem("Статусы клиентов",PackIconKind.Administrator,ClientStatusesNavigationServices)
         };
 
     }

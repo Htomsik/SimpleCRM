@@ -4,11 +4,8 @@
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-
-
-
-    <!--  Карточка редактирования продуктов  -->
-    <DataTemplate DataType="{x:Type actors:Product}">
+    <!--  Карточка редактирования менеджеров  -->
+    <DataTemplate DataType="{x:Type actors:Manager}" x:Key="EditManagerCard">
 
         <StackPanel>
 
@@ -23,7 +20,7 @@
 
             </StackPanel.Resources>
 
-            <!--  Название продукта  -->
+            <!--  Имя  -->
             <TextBox
                 MaxLength="50"
                 Text="{Binding Name}"
@@ -36,22 +33,8 @@
                 </materialDesign:HintAssist.Hint>
             </TextBox>
 
-            <!--  Тип продукта  -->
-            <TextBox
-                MaxLength="50"
-                Text="{Binding Type.Name}"
-                VerticalAlignment="Center"
-                materialDesign:TextFieldAssist.HasClearButton="True">
-                <materialDesign:HintAssist.Hint>
-                    <StackPanel Margin="-2,0,0,0" Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="AccountStar" />
-                        <TextBlock Text="Статус" />
-                    </StackPanel>
-                </materialDesign:HintAssist.Hint>
-            </TextBox>
 
-
-            <!--  Клиенты, купившие продукты  -->
+            <!--  Клиенты, работающие с менеджером  -->
             <Expander Header="Клиенты:">
                 <ListView ItemTemplate="{DynamicResource SimpleClientCard}" ItemsSource="{Binding Clients}" />
             </Expander>

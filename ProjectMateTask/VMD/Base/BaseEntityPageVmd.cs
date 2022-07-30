@@ -11,7 +11,7 @@ using ProjectMateTask.Infrastructure.CMD;
 
 namespace ProjectMateTask.VMD.Base;
 
-internal abstract class BaseEntityPageVmd<TEntity>:BaseVmd where TEntity:NamedEntity,new()
+internal abstract class BaseNotGenericEntityVmdEntityPageVmd<TEntity>:BaseNotGenericEntityVmd where TEntity:NamedEntity,new()
 {
     private readonly IRepository<TEntity> _entitiesRepository;
 
@@ -53,7 +53,7 @@ internal abstract class BaseEntityPageVmd<TEntity>:BaseVmd where TEntity:NamedEn
             get => _filter;
             set
             {
-               if(Set(ref _filter, value))
+               if(Set(ref _filter, value.ToLower()))
                    _entitiesViewSource.View.Refresh();
             }
         }
@@ -62,7 +62,7 @@ internal abstract class BaseEntityPageVmd<TEntity>:BaseVmd where TEntity:NamedEn
         {
             if(!(e.Item is NamedEntity entity) || string.IsNullOrEmpty(Filter)) return;
 
-            if (!entity.Name.Contains(Filter)) e.Accepted = false;
+            if (!entity.Name.ToLower().Contains(Filter)) e.Accepted = false;
         }
 
     #endregion
@@ -71,7 +71,7 @@ internal abstract class BaseEntityPageVmd<TEntity>:BaseVmd where TEntity:NamedEn
 
     private CollectionViewSource _entitiesViewSource;
 
-    public ICollectionView? EntitiesFilteredView => _entitiesViewSource?.View;
+    public ICollectionView EntitiesFilteredView => _entitiesViewSource.View;
 
     #endregion
 
@@ -87,7 +87,7 @@ internal abstract class BaseEntityPageVmd<TEntity>:BaseVmd where TEntity:NamedEn
     
     #endregion
     
-    public BaseEntityPageVmd(IRepository<TEntity> entitiesRepository)
+    public BaseNotGenericEntityVmdEntityPageVmd(IRepository<TEntity> entitiesRepository)
     {
         _entitiesRepository = entitiesRepository;
         

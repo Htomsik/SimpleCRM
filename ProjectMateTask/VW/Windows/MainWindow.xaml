@@ -9,6 +9,7 @@
     xmlns:AppInfrastructure="clr-namespace:ProjectMateTask.VMD.AppInfrastructure"
     xmlns:VmdPages="clr-namespace:ProjectMateTask.VMD.Pages"
     xmlns:appInfrastructure="clr-namespace:ProjectMateTask.VW.AppInfrastructure"
+    xmlns:base="clr-namespace:ProjectMateTask.VMD.Base"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:entityPages="clr-namespace:ProjectMateTask.VMD.Pages.EntityPages"
     xmlns:local="clr-namespace:ProjectMateTask.VW.Windows"
@@ -81,7 +82,7 @@
 
                         <TextBlock
                             HorizontalAlignment="Center"
-                            Text="test"
+                            Text="{Binding ElementName=VmdPagesContent, Path=Content.Tittle}"
                             VerticalAlignment="Center" />
 
                     </Grid>
@@ -89,23 +90,20 @@
 
 
                 <!--  VMD Pages  -->
-                <ContentControl Content="{Binding MainPageCurrentVmd}" Margin="5,5,0,0">
+                <ContentControl
+                    Content="{Binding MainPageCurrentVmd}"
+                    Margin="5,5,0,0"
+                    x:Name="VmdPagesContent">
 
                     <ContentControl.Resources>
 
+                        <!--  Главная страница  -->
                         <DataTemplate DataType="{x:Type VmdPages:MainPageVmd}">
                             <pages:MainPageVW />
                         </DataTemplate>
 
-                        <DataTemplate DataType="{x:Type entityPages:ClientsPageVmd}">
-                            <pages:EntityPagesVW />
-                        </DataTemplate>
-
-                        <DataTemplate DataType="{x:Type entityPages:ManagersPageVmd}">
-                            <pages:EntityPagesVW />
-                        </DataTemplate>
-
-                        <DataTemplate DataType="{x:Type entityPages:ProductPageVmd}">
+                        <!--  Все Entity страницы  -->
+                        <DataTemplate DataType="{x:Type base:BaseNotGenericEntityVmd}">
                             <pages:EntityPagesVW />
                         </DataTemplate>
 
