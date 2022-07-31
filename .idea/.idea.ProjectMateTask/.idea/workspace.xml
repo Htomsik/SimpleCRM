@@ -4,28 +4,45 @@
     <projectFile>ProjectMateTask/ProjectMateTask.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Добавление визуального режима редактирования">
-      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Data/IDbInitializer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AsyncLambdaCmd.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/EntityPages/ProductTypePageVmd.cs" afterDir="false" />
+    <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Изменение режима редактирования, добавление заглушки в EntityPagesVW.xaml в виде второго Control для режима редактирования">
+      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/Entity/EditCards/OurEditCards.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/App.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Data/DbInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Data/DbInitializer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Data/DbRegistrator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Data/DbRegistrator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/DiRegistrators/VmdRegistrator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/DiRegistrators/VmdRegistrator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/Context/ProjectMateTaskDb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/Context/ProjectMateTaskDb.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/DiRegistrators/RepositoriesRegistrator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/DiRegistrators/RepositoriesRegistrator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/Entities/Actors/Client.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/Entities/Actors/Client.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/Entities/Actors/Manager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/Entities/Actors/Manager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/Entities/Actors/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/Entities/Actors/Product.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/Entities/Base/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/Entities/Base/Entity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/Entities/Base/NamedEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/Entities/Base/NamedEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/Entities/Types/ProductType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/Entities/Types/ProductType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/ProjectMateTask.DAL.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/ProjectMateTask.DAL.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/Repositories/Base/DbRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/Repositories/Base/DbRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/Repositories/Base/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/Repositories/Base/IRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/Repositories/ClientRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/Repositories/ClientRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/Repositories/ClientStatusRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/Repositories/ClientStatusRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/Repositories/ManagerRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/Repositories/ManagerRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/Repositories/ProductRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/Repositories/ProductRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/Repositories/ProductTypesRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/Repositories/ProductTypesRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/ProjectMateTask.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/ProjectMateTask.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/Entity/EditCards/ClientEditCard.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/Entity/EditCards/ClientEditCard.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/Entity/EditCards/ClientStatusesEditCard.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/Entity/EditCards/ClientStatusesEditCard.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/Entity/EditCards/ManagerEditCard.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/Entity/EditCards/ManagerEditCard.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/Entity/EditCards/ProductEditCard.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/Entity/EditCards/ProductEditCard.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/AppInfrastructure/MainMenuVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/AppInfrastructure/MainMenuVmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/SimpleEntityCard.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/SimpleEntityCard.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Base/BaseEntityPageVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Base/BaseEntityPageVmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Base/BaseNotGenericEntityVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Base/BaseNotGenericEntityVmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/MainPageVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/MainPageVmd.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/EntityPagesVW.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/EntityPagesVW.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/MainPageVW.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/MainPageVW.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/Windows/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/Windows/MainWindow.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Pages/MainPageVW.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Pages/MainPageVW.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Pages/MainPageVW.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Pages/MainPageVW.g.i.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.i.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/ProjectMateTask.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/ProjectMateTask.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,15 +67,18 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1b0533e64a734ffcb8be02a66d5f67fa2800/3d/d606b2a0/PackIconExtension.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a326c33272f448f6b38c34ccf1fe92a96aa600/52/db3179d7/MaterialIconKind.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/bef2c1437eec48c7b5d812f6bf85e03d107e8/f7/c262ef03/SqlCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d84fbd81022442c4ac7d736c97fabf76f87a80/d1/395f2276/XamlParseException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dcac68e73d1e42a3ab2ea47f475055288ae800/11/b18ed4e5/DialogHost.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dcac68e73d1e42a3ab2ea47f475055288ae800/37/ae0e7b4d/DrawerHost.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dcac68e73d1e42a3ab2ea47f475055288ae800/86/84d8631a/DrawerHostOpenMode.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dcac68e73d1e42a3ab2ea47f475055288ae800/96/ee6ca857/PackIcon.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1bdc36dd4183e28bfc782d741e368f6faf4ad8397bd232ec65613e2373e/Object.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/23e31092363db7107ca21367adea927bccc2e7cf2075f9ee398ad1175b8e87/Nullable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/27b91272f348469b8fccc471c1ccd767f57a64f55a44975790bfae805b4ebb/Future.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5939cc1db917894f431a56f3c68e6bef1ade5c56e1cc94de5f14d5305d7e2af3/InvalidOperationException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a683b4d0bbcb4c3e98a3c7cffd352553a23690/_4c146/ICollection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectMateTask/DiRegistrators/ServicesRegistrator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Resources/Styles/SimpleEntityCard.xaml" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Pages/EntityPagesVW.g.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -71,22 +91,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.42565265&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "XThreadsFramesViewSplitterKey": "0.50274724",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlserver.localdb&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlserver.localdb"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="ProjectMateTask" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -127,7 +147,7 @@
       <workItem from="1659006160478" duration="97000" />
       <workItem from="1659007614363" duration="1053000" />
       <workItem from="1659009797628" duration="23759000" />
-      <workItem from="1659084912216" duration="70271000" />
+      <workItem from="1659084912216" duration="91900000" />
     </task>
     <task id="LOCAL-00002" summary="Добавил кнопки перехода по страницам">
       <created>1658922448103</created>
@@ -255,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659180461206</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Добавление возможности удаление Entity">
+      <created>1659201137338</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1659201137338</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,7 +320,9 @@
     <MESSAGE value="Изменение навигации в главном окне" />
     <MESSAGE value="Добавление каточки редактирования для статусов клиентов&#10;&#10;Добавление нескольких элементов для украшения" />
     <MESSAGE value="Добавление визуального режима редактирования" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавление визуального режима редактирования" />
+    <MESSAGE value="Добавление возможности удаление Entity" />
+    <MESSAGE value="Изменение режима редактирования, добавление заглушки в EntityPagesVW.xaml в виде второго Control для режима редактирования" />
+    <option name="LAST_COMMIT_MESSAGE" value="Изменение режима редактирования, добавление заглушки в EntityPagesVW.xaml в виде второго Control для режима редактирования" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

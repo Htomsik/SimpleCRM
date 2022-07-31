@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Input;
+using Mapster;
 using Microsoft.EntityFrameworkCore;
 using ProjectMateTask.DAL.Entities.Base;
 using ProjectMateTask.DAL.Repositories;
@@ -24,7 +25,7 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
 
         ClearFilterCommand = new LambdaCmd(() => Filter = null, () => !string.IsNullOrEmpty(Filter));
 
-        OpenEditModeCommand = new LambdaCmd(OnEditEntityExecute, CanOpenEditMode);
+        OpenEditModeCommand = new LambdaCmd(OnOpenEditModeExecute, CanOpenEditMode);
 
         OpenAddModeCommand = new LambdaCmd(OnOpenAddEntityMode, CanOpenAddMode);
 
@@ -33,6 +34,8 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
         CloseAllModsCommand = new LambdaCmd(OnCloseAllMods);
 
         AddNewEntity = new AsyncLambdaCmd(OnAddNewEntity, CanAddNewEntity);
+
+        AcceptEditEntityCommand = new LambdaCmd(OnAcceptEditEntity, CanAcceptEditEntity);
 
         #endregion
     }
@@ -132,6 +135,29 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
 
     #endregion
 
+    #region редактиуемая сущность
+
+    private TEntity _editableEntity;
+    public TEntity EditableEntity
+    {
+        get => _editableEntity;
+        set => Set(ref _editableEntity, value);
+    }
+
+    #endregion
+
+    #region Оригинальная сущность
+
+    private TEntity _orignalEntity;
+    public TEntity OriginalEntity
+    {
+        get => _orignalEntity;
+        set => Set(ref _orignalEntity, value);
+    }
+
+    #endregion
+ 
+
     #region OpenEditModeCommand : Команда открытия режима редактирования сущности
 
     /// <summary>
@@ -139,15 +165,22 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
     /// </summary>
     public ICommand OpenEditModeCommand { get; }
 
-    private void OnEditEntityExecute()
+    private void OnOpenEditModeExecute()
     {
+        //Клонирование сущности для редактирования
+        EditableEntity =  (TEntity)SelectedEntity.Clone();
+
+        //Сохранение оригинальной редактируемой сущности
+        OriginalEntity = (TEntity)SelectedEntity.Clone();
+
+        //Обнуление выбранного элемента для того чтобы wpf подхватил EditableEntity
+        SelectedEntity = null;
+        
         IsEditMode = true;
     }
 
-    private bool CanOpenEditMode()
-    {
-        return SelectedEntity is not null && !IsEditMode;
-    }
+    private bool CanOpenEditMode() => SelectedEntity is not null && !IsEditMode;
+   
 
     #endregion
 
@@ -217,6 +250,28 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
     {
         return SelectedEntity is not null;
     }
+
+    #endregion
+
+    #region AceeptEditEntity : Команда принятия изменений
+
+    public ICommand AcceptEditEntityCommand { get; set; }
+
+    private void OnAcceptEditEntity()
+    {
+   
+    }
+
+    private bool CanAcceptEditEntity()
+    {
+        if (SelectedEntity is null)
+            return false;
+        
+        var test = OriginalEntity?.Equals(SelectedEntity);
+        
+        return !test ?? false;
+    }
+
 
     #endregion
 }

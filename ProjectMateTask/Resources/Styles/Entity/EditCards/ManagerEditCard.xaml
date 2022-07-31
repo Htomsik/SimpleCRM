@@ -21,23 +21,16 @@
             </StackPanel.Resources>
 
             <!--  Имя  -->
-            <TextBox
-                IsEnabled="{Binding Path=DataContext.IsEditMode, RelativeSource={RelativeSource AncestorType={x:Type ContentControl}}}"
-                MaxLength="50"
-                Text="{Binding Name}"
-                materialDesign:TextFieldAssist.HasClearButton="True">
-                <materialDesign:HintAssist.Hint>
-                    <StackPanel Margin="-2,0,0,0" Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="Person" />
-                        <TextBlock Text="Название" />
-                    </StackPanel>
-                </materialDesign:HintAssist.Hint>
-            </TextBox>
+            <ContentControl
+                Content="{Binding Path=.}"
+                ContentTemplate="{DynamicResource EntityFieldEdit}"
+                ToolTip="Имя" />
+
 
 
             <!--  Клиенты, работающие с менеджером  -->
             <Expander Header="Клиенты:">
-                <ListView ItemTemplate="{DynamicResource SimpleClientCard}" ItemsSource="{Binding Clients}" />
+                <ContentControl Content="{Binding Clients}" ContentTemplate="{DynamicResource EditCollectionCard}" />
             </Expander>
 
         </StackPanel>

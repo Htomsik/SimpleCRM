@@ -1,0 +1,63 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:base="clr-namespace:ProjectMateTask.DAL.Entities.Base;assembly=ProjectMateTask.DAL"
+    xmlns:collections="clr-namespace:System.Collections;assembly=System.Runtime"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:system="clr-namespace:System;assembly=System.Runtime"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+
+    <!--  Редактирование всех коллекций  -->
+    <DataTemplate DataType="{x:Type collections:ICollection}" x:Key="EditCollectionCard">
+        <ListView ItemsSource="{Binding}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150" />
+                            <ColumnDefinition Width="25" />
+                        </Grid.ColumnDefinitions>
+
+                        <ContentControl Content="{Binding}" />
+
+                        <!--  Кнопка удаления  -->
+                        <!--  БИНДИНГ ПО ИМЕНИ КОНТРОЛА, ПО ВОЗМОЖНОСТИ УДАЛИ  -->
+                        <Button
+                            Grid.Column="1"
+                            Height="15"
+                            HorizontalAlignment="Center"
+                            IsEnabled="{Binding Path=DataContext.IsEditMode, ElementName=SelectedEntityContentControl}"
+                            Style="{StaticResource MaterialDesignIconButton}"
+                            VerticalAlignment="Center"
+                            Visibility="{Binding Path=DataContext.IsEditMode, ElementName=SelectedEntityContentControl, Converter={StaticResource BooleanToVisibilityConverter}}"
+                            Width="15">
+                            <materialDesign:PackIcon
+                                Height="13"
+                                Kind="Delete"
+                                Width="13" />
+                        </Button>
+
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </DataTemplate>
+
+
+
+    <!--  Для всех стринговых значений  -->
+    <DataTemplate DataType="{x:Type base:NamedEntity}" x:Key="EntityFieldEdit">
+
+        <TextBox
+            IsEnabled="{Binding Path=DataContext.IsEditMode, RelativeSource={RelativeSource AncestorType={x:Type ContentControl}, AncestorLevel=2}, UpdateSourceTrigger=PropertyChanged}"
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+            Text="{Binding Name}"
+            VerticalAlignment="Center"
+            materialDesign:HintAssist.Hint="{Binding Path=ToolTip, RelativeSource={RelativeSource FindAncestor, AncestorType=ContentControl}}"
+            materialDesign:TextFieldAssist.HasClearButton="True" />
+
+    </DataTemplate>
+
+</ResourceDictionary>   

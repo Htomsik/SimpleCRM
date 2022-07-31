@@ -5,6 +5,9 @@
     xmlns:types="clr-namespace:ProjectMateTask.DAL.Entities.Types;assembly=ProjectMateTask.DAL"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="OurEditCards.xaml" />
+    </ResourceDictionary.MergedDictionaries>
 
     <!--  Карточка редактирования Статусов клиентов  -->
     <DataTemplate DataType="{x:Type types:ClientStatus}" x:Key="EditClientStatusCard">
@@ -23,23 +26,15 @@
             </StackPanel.Resources>
 
             <!--  Название  -->
-            <TextBox
-                IsEnabled="{Binding Path=DataContext.IsEditMode, RelativeSource={RelativeSource AncestorType={x:Type ContentControl}}}"
-                MaxLength="50"
-                Text="{Binding Name}"
-                materialDesign:TextFieldAssist.HasClearButton="True">
-                <materialDesign:HintAssist.Hint>
-                    <StackPanel Margin="-2,0,0,0" Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="AccountStar" />
-                        <TextBlock Text="Название" />
-                    </StackPanel>
-                </materialDesign:HintAssist.Hint>
-            </TextBox>
+            <ContentControl
+                Content="{Binding Path=.}"
+                ContentTemplate="{DynamicResource EntityFieldEdit}"
+                ToolTip="Назвние статуса:" />
 
 
-            <!--  Клиенты, работающие с менеджером  -->
+            <!--  Клиенты, c такими статусами  -->
             <Expander Header="Клиенты:">
-                <ListView ItemTemplate="{DynamicResource SimpleClientCard}" ItemsSource="{Binding Clients}" />
+                <ContentControl Content="{Binding Clients}" ContentTemplate="{DynamicResource EditCollectionCard}" />
             </Expander>
 
         </StackPanel>

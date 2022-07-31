@@ -4,7 +4,9 @@
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="OurEditCards.xaml" />
+    </ResourceDictionary.MergedDictionaries>
 
     <!--  Карточка редактирования клиентов  -->
     <DataTemplate DataType="{x:Type actors:Client}" x:Key="EditClientCard">
@@ -23,54 +25,29 @@
             </StackPanel.Resources>
 
             <!--  Имя  -->
-            <TextBox
-                IsEnabled="{Binding Path=DataContext.IsEditMode, RelativeSource={RelativeSource AncestorType={x:Type ContentControl}}}"
-                MaxLength="50"
-                Text="{Binding Name}"
-                materialDesign:TextFieldAssist.HasClearButton="True">
-                <materialDesign:HintAssist.Hint>
-                    <StackPanel Margin="-2,0,0,0" Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="Person" />
-                        <TextBlock Text="Имя" />
-                    </StackPanel>
-                </materialDesign:HintAssist.Hint>
-            </TextBox>
+            <ContentControl
+                Content="{Binding Path=.}"
+                ContentTemplate="{DynamicResource EntityFieldEdit}"
+                ToolTip="Имя" />
+
 
             <!--  Статус  -->
-            <TextBox
-                IsEnabled="{Binding Path=DataContext.IsEditMode, RelativeSource={RelativeSource AncestorType={x:Type ContentControl}}}"
-                MaxLength="50"
-                Text="{Binding Status.Name}"
-                VerticalAlignment="Center"
-                materialDesign:TextFieldAssist.HasClearButton="True">
-                <materialDesign:HintAssist.Hint>
-                    <StackPanel Margin="-2,0,0,0" Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="AccountStar" />
-                        <TextBlock Text="Статус" />
-                    </StackPanel>
-                </materialDesign:HintAssist.Hint>
-            </TextBox>
+            <ContentControl
+                Content="{Binding Status}"
+                ContentTemplate="{DynamicResource EntityFieldEdit}"
+                ToolTip="Статус" />
 
             <!--  Менеджер  -->
-            <TextBox
-                IsEnabled="{Binding Path=DataContext.IsEditMode, RelativeSource={RelativeSource AncestorType={x:Type ContentControl}}}"
-                MaxLength="50"
-                Text="{Binding Manager.Name}"
-                VerticalAlignment="Center"
-                materialDesign:TextFieldAssist.HasClearButton="True">
-                <materialDesign:HintAssist.Hint>
-                    <StackPanel Margin="-2,0,0,0" Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="AccountTie" />
-                        <TextBlock Text="Менеджер" />
-                    </StackPanel>
-                </materialDesign:HintAssist.Hint>
-            </TextBox>
-
+            <ContentControl
+                Content="{Binding Manager}"
+                ContentTemplate="{DynamicResource EntityFieldEdit}"
+                ToolTip="Менеджер" />
 
             <!--  Купленные продукты  -->
-            <Expander Header="Приобретенные товары">
-                <ListView ItemTemplate="{DynamicResource SimpleProductCard}" ItemsSource="{Binding Products}" />
+            <Expander Header="Клиенты:">
+                <ContentControl Content="{Binding Products}" ContentTemplate="{DynamicResource EditCollectionCard}" />
             </Expander>
+
 
         </StackPanel>
 

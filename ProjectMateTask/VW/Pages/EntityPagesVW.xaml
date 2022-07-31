@@ -10,6 +10,7 @@
     xmlns:appInfrastructure="clr-namespace:ProjectMateTask.Infrastructure.CMD.AppInfrastructure"
     xmlns:collections="clr-namespace:System.Collections;assembly=System.Runtime"
     xmlns:componentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+    xmlns:converters="clr-namespace:ProjectMateTask.Infrastructure.Converters"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:ProjectMateTask.VW.Pages"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
@@ -25,6 +26,7 @@
                 <ResourceDictionary Source="../../Resources/Styles/Entity/EditCards/ProductEditCard.xaml" />
                 <ResourceDictionary Source="../../Resources/Styles/Entity/EditCards/ManagerEditCard.xaml" />
                 <ResourceDictionary Source="../../Resources/Styles/Entity/EditCards/ClientStatusesEditCard.xaml" />
+
             </ResourceDictionary.MergedDictionaries>
             <selectors:EditEntitySelector x:Key="EditEntitySelector" />
         </ResourceDictionary>
@@ -86,8 +88,6 @@
                         Kind="Delete"
                         Width="20" />
                 </Button>
-
-
 
             </Grid>
 
@@ -153,8 +153,20 @@
                 Content="{Binding SelectedEntity}"
                 ContentTemplateSelector="{StaticResource EditEntitySelector}"
                 DockPanel.Dock="Top"
+                IsEnabled="{Binding IsEditMode, Converter={StaticResource InvertBooleanConverter}}"
                 Margin="8,0,0,0"
                 VerticalAlignment="Top" />
+
+            <!--  Режим редатирования выбранного Entity  -->
+            <ContentControl
+                Content="{Binding EditableEntity}"
+                ContentTemplateSelector="{StaticResource EditEntitySelector}"
+                DockPanel.Dock="Top"
+                IsEnabled="{Binding IsEditMode}"
+                Margin="8,0,0,0"
+                VerticalAlignment="Top"
+                Visibility="{Binding IsEditMode, Converter={StaticResource BooleanToVisibilityConverter}}"
+                x:Name="SelectedEntityContentControl" />
 
 
             <!--  Панель управления кнопок редактирования  -->
@@ -170,6 +182,7 @@
                 </Grid.ColumnDefinitions>
 
                 <Button
+                    Command="{Binding AcceptEditEntityCommand, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                     Grid.Column="0"
                     HorizontalAlignment="Right"
                     Margin="0,0,10,0">
@@ -192,6 +205,9 @@
             </Grid>
 
         </DockPanel>
+
+
+
 
 
     </Grid>
