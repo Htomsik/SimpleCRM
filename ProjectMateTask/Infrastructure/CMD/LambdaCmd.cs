@@ -18,7 +18,8 @@ public class LambdaCmd : BaseCmd
 
     public LambdaCmd(Action execute, Func<bool> canExecute = null)
         : this(p => execute(), canExecute is null ? null : p => canExecute()){}
-   
+
+
 
     protected override bool CanExecute(object parameter) => _canExecute?.Invoke(parameter) ?? true;
 

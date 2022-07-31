@@ -1,10 +1,14 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Input;
+using System.Xml.Linq;
 using Mapster;
 using Microsoft.EntityFrameworkCore;
+using ProjectMateTask.DAL.Entities.Actors;
 using ProjectMateTask.DAL.Entities.Base;
 using ProjectMateTask.DAL.Repositories;
 using ProjectMateTask.Infrastructure.CMD;
@@ -37,6 +41,8 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
 
         AcceptEditEntityCommand = new LambdaCmd(OnAcceptEditEntity, CanAcceptEditEntity);
 
+        DeleteSubEntityFromCollection = new LambdaCmd(OnDeleteSubEntityFromCollectionOriginal);
+
         #endregion
     }
 
@@ -64,6 +70,20 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
         Entities = new ObservableCollection<TEntity>(await _entitiesRepository.Items.ToArrayAsync());
     }
 
+
+    #region SubEntity
+
+
+    private IEntity _selectedSubEntity;
+    
+    public IEntity SelectedSubEntity 
+    { 
+        get => _selectedSubEntity; 
+        set=> Set(ref _selectedSubEntity,value);
+        
+    }
+
+    #endregion
 
     #region Оригинльный список
 
@@ -156,8 +176,7 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
     }
 
     #endregion
- 
-
+    
     #region OpenEditModeCommand : Команда открытия режима редактирования сущности
 
     /// <summary>
@@ -253,7 +272,7 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
 
     #endregion
 
-    #region AceeptEditEntity : Команда принятия изменений
+    #region AcсeptEditEntity : Команда принятия изменений
 
     public ICommand AcceptEditEntityCommand { get; set; }
 
@@ -271,6 +290,21 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
         
         return !test ?? false;
     }
+
+
+    #endregion
+
+    #region DeleteSubEntityFromCollection : Команда удаления сущности из списа связанных элементов
+
+    public ICommand DeleteSubEntityFromCollection { get; }
+
+
+    private void OnDeleteSubEntityFromCollectionOriginal(object p)
+    {
+        OnDeleteSubEntityFromCollection(p);
+        OnPropertyChanged(nameof(EditableEntity));
+    }
+    protected abstract void OnDeleteSubEntityFromCollection(object p);
 
 
     #endregion

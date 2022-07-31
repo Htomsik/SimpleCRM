@@ -158,7 +158,7 @@
 
             <!--  Режим редатирования выбранного Entity  -->
             <ContentControl
-                Content="{Binding EditableEntity}"
+                Content="{Binding EditableEntity, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                 ContentTemplateSelector="{StaticResource EditEntitySelector}"
                 DockPanel.Dock="Top"
                 IsEnabled="{Binding IsEditMode}"

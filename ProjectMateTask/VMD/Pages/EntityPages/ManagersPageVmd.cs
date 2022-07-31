@@ -1,5 +1,7 @@
-﻿using ProjectMateTask.DAL.Entities;
+﻿using System.Linq;
+using ProjectMateTask.DAL.Entities;
 using ProjectMateTask.DAL.Entities.Actors;
+using ProjectMateTask.DAL.Entities.Base;
 using ProjectMateTask.DAL.Repositories;
 using ProjectMateTask.VMD.Base;
 
@@ -9,5 +11,13 @@ internal sealed class ManagersPageVmd:BaseEntityPageVmd<Manager>
 {
     public ManagersPageVmd(IRepository<Manager> entities) : base(entities)
     {
+    }
+
+
+    protected override void OnDeleteSubEntityFromCollection(object p)
+    {
+        var deleteitem =  EditableEntity.Clients.First(x => x.Id == ((IEntity)p).Id);
+
+        EditableEntity.Clients.Remove(deleteitem);
     }
 }
