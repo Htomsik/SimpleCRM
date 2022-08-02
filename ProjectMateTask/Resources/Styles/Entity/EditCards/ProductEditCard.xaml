@@ -30,17 +30,15 @@
 
             <!--  Название продукта  -->
             <ContentControl
-                Content="{Binding Path=., UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                Content="{Binding Path=.}"
                 ContentTemplate="{DynamicResource EntityFieldEdit}"
                 ToolTip="Название продукта" />
 
             <!--  Тип продукта  -->
             <ContentControl
-                Content="{Binding Type, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                Content="{Binding Type}"
                 ContentTemplate="{DynamicResource EntityFieldEdit}"
                 ToolTip="Тип продукта" />
-
-
 
             <!--  Клиенты, купившие продукты  -->
             <Expander Header="Клиенты:">

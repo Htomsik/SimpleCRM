@@ -1,6 +1,6 @@
 ﻿namespace ProjectMateTask.DAL.Entities.Base;
 
-public abstract class Entity : IEntity, ICloneable, IEquatable<Entity>
+public abstract class Entity : IEntity
 {
     public virtual object Clone()
     {
@@ -9,23 +9,14 @@ public abstract class Entity : IEntity, ICloneable, IEquatable<Entity>
 
     public int Id { get; set; }
 
-    public bool Equals(Entity other)
+    protected virtual bool Equals(IEntity other)
     {
-        if (other == null)
-            return false;
-
-        if (ReferenceEquals(this, other))
-            return true;
-
-        if (GetType() != other.GetType())
-            return false;
-
         if (Id.Equals(other.Id))
             return true;
         return false;
     }
 
-    public override bool Equals(object other)
+     bool IEquatable<object>.Equals(object other)
     {
         if (other == null)
             return false;
@@ -36,6 +27,6 @@ public abstract class Entity : IEntity, ICloneable, IEquatable<Entity>
         if (GetType() != other.GetType())
             return false;
 
-        return Equals(other as Entity);
+        return Equals(other as IEntity);
     }
 }

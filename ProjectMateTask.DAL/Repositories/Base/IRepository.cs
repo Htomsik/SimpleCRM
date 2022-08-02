@@ -2,7 +2,7 @@
 
 namespace ProjectMateTask.DAL.Repositories;
 
-public interface IRepository<T> where T : class, IEntity, new()
+public interface IRepository<T> where T : IEntity, new()
 {
     /// <summary>
     ///     Коллекция всех сущностей

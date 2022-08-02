@@ -68,6 +68,6 @@ internal class DbRepository<T> : IRepository<T> where T : Entity, new()
     {
         if (item is null) throw new ArgumentNullException(nameof(item) + " не должным будть пустым");
         _db.Remove(item);
-        await _db.SaveChangesAsync(cancelToken).ConfigureAwait(false);
+         await _db.SaveChangesAsync(cancelToken).ConfigureAwait(false);
     }
 }

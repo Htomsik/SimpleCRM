@@ -26,14 +26,14 @@
 
             <!--  Имя  -->
             <ContentControl
-                Content="{Binding Path=.}"
+                Content="{Binding Path=., Mode=TwoWay}"
                 ContentTemplate="{DynamicResource EntityFieldEdit}"
                 ToolTip="Имя" />
 
 
             <!--  Статус  -->
             <ContentControl
-                Content="{Binding Status}"
+                Content="{Binding Status, Mode=TwoWay}"
                 ContentTemplate="{DynamicResource EntityFieldEdit}"
                 ToolTip="Статус" />
 
@@ -44,7 +44,7 @@
                 ToolTip="Менеджер" />
 
             <!--  Купленные продукты  -->
-            <Expander Header="Клиенты:">
+            <Expander Header="Продукты:">
                 <ContentControl Content="{Binding Products}" ContentTemplate="{DynamicResource EditCollectionCard}" />
             </Expander>
 

@@ -2,37 +2,18 @@
 
 namespace ProjectMateTask.DAL.Entities.Base;
 
-public abstract class NamedEntity : Entity
+public abstract class NamedEntity : Entity,INamedEntity
 {
     [Required] public string Name { get; set; }
 
-    public override bool Equals(object other)
+
+    protected override bool Equals(IEntity other)
     {
-        if (other == null)
-            return false;
-
-        if (ReferenceEquals(this, other))
-            return true;
-
-        if (GetType() != other.GetType())
-            return false;
-
-        return Equals(other as NamedEntity);
-    }
-
-    public bool Equals(NamedEntity other)
-    {
-        if (other == null)
-            return false;
-
-        if (ReferenceEquals(this, other))
-            return true;
-
-        if (GetType() != other.GetType())
-            return false;
-
-        if (base.Equals(other) && string.Compare(Name, other.Name, StringComparison.CurrentCulture) == 0)
+        var otherNamedEntity = other as NamedEntity;
+        
+        if (base.Equals(other) && string.Compare(Name, otherNamedEntity!.Name, StringComparison.CurrentCulture) == 0)
             return true;
         return false;
     }
+    
 }

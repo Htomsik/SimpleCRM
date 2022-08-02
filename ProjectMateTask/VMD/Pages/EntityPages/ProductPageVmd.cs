@@ -20,4 +20,6 @@ internal sealed class ProductPageVmd:BaseEntityPageVmd<Product>
 
         EditableEntity.Clients.Remove(deleteitem);
     }
+    
+  
 }

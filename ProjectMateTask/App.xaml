@@ -16,6 +16,7 @@
 
                 <ResourceDictionary Source="Resources/Styles/BaseEntityCard.xaml" />
                 <ResourceDictionary Source="Resources/Styles/SimpleEntityCard.xaml" />
+
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

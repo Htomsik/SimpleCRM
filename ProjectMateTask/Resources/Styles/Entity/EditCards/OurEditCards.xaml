@@ -21,7 +21,7 @@
                             <ColumnDefinition Width="25" />
                         </Grid.ColumnDefinitions>
 
-                        <ContentControl Content="{Binding}" x:Name="DataContentControl" />
+                        <ContentControl Content="{Binding Path=., Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" x:Name="DataContentControl" />
 
                         <!--  Кнопка удаления  -->
                         <!--  БИНДИНГ ПО ИМЕНИ КОНТРОЛА, ПО ВОЗМОЖНОСТИ УДАЛИ  -->

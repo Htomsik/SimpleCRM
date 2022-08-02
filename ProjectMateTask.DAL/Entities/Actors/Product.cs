@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 using ProjectMateTask.DAL.Entities.Base;
 using ProjectMateTask.DAL.Entities.Types;
 
@@ -8,35 +9,39 @@ public sealed class Product : NamedEntity
 {
     [Required] public ProductType Type { get; set; }
 
-    public ICollection<Client> Clients { get; set; }
+    public ICollection<Client> Clients { get; set; } = new ObservableCollection<Client>();
     
-    public override bool Equals(object other)
+    protected override bool Equals(IEntity other)
     {
-        if (other == null)
-            return false;
+        var otherProductEntity = other as Product;
 
-        if (ReferenceEquals(this, other))
-            return true;
-
-        if (GetType() != other.GetType())
-            return false;
-
-        return Equals(other as Product);
-    }
-
-    public bool Equals(Product other)
-    {
-        if (other == null)
-            return false;
-
-        if (ReferenceEquals(this, other))
-            return true;
-
-        if (GetType() != other.GetType())
-            return false;
-
-        if (base.Equals(other) && Type.Equals(other.Type) && Equals(Clients, other.Clients))
+        if (otherProductEntity is null )
+        {
+            throw new TypeAccessException($"Неправильный тип данных, требуемый тип: {this.GetType()}, фактический тип: {other.GetType()}");
+        }
+        
+        if (base.Equals(other) && Type.Equals(otherProductEntity!.Type) && !Clients.Except(otherProductEntity.Clients).Any())
             return true;
         return false;
     }
+
+    public override object Clone() =>
+        new Product(this.Id,
+        this.Name,
+        this.Type,
+        new ObservableCollection<Client>(
+            Clients.Select(item => item).ToArray()
+        ));
+    
+    
+    public Product(){}
+
+    public Product(int id,string name, ProductType productType, ICollection<Client> clients)
+    {
+        Id = id;
+        Name = name;
+        Type = productType;
+        Clients = clients;
+    }
+   
 }

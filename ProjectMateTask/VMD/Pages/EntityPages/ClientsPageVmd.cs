@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Mapster;
 using ProjectMateTask.DAL.Entities;
 using ProjectMateTask.DAL.Entities.Actors;
 using ProjectMateTask.DAL.Entities.Base;
@@ -19,8 +20,7 @@ internal sealed class ClientsPageVmd:BaseEntityPageVmd<Client>
      var deleteitem =  EditableEntity.Products.First(x => x.Id == ((IEntity)p).Id);
 
      EditableEntity.Products.Remove(deleteitem);
-     
-  
 
     }
+    
 }

@@ -10,12 +10,13 @@ using Mapster;
 using Microsoft.EntityFrameworkCore;
 using ProjectMateTask.DAL.Entities.Actors;
 using ProjectMateTask.DAL.Entities.Base;
+using ProjectMateTask.DAL.Entities.Types;
 using ProjectMateTask.DAL.Repositories;
 using ProjectMateTask.Infrastructure.CMD;
 
 namespace ProjectMateTask.VMD.Base;
 
-internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd where TEntity : NamedEntity, new()
+internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd where TEntity : INamedEntity,new()
 {
     private readonly IRepository<TEntity> _entitiesRepository;
 
@@ -45,7 +46,7 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
 
         #endregion
     }
-
+    
     /// <summary>
     /// Название страницы
     /// </summary>
@@ -94,6 +95,9 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
         get => _entities;
         set
         {
+            
+            if (!Set(ref _entities, value)) return;
+            
             _entitiesViewSource = new CollectionViewSource
             {
                 Source = value,
@@ -193,7 +197,7 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
         OriginalEntity = (TEntity)SelectedEntity.Clone();
 
         //Обнуление выбранного элемента для того чтобы wpf подхватил EditableEntity
-        SelectedEntity = null;
+        SelectedEntity = default;
         
         IsEditMode = true;
     }
@@ -226,7 +230,7 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
 
     private void OnCloseAllMods()
     {
-        SelectedEntity = null;
+        SelectedEntity = default;
         IsEditMode = false;
     }
 
@@ -242,7 +246,7 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
 
         await _entitiesRepository.RemoveAsync(removedEntity);
 
-        await InitializeRepositoryAsync();
+        Entities.Remove(removedEntity);
     }
 
     private bool CanDeleteSelectedEntity()
@@ -265,11 +269,7 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
         await InitializeRepositoryAsync();
     }
 
-    private bool CanAddNewEntity()
-    {
-        return SelectedEntity is not null;
-    }
-
+    private bool CanAddNewEntity() => !IsEditMode;
     #endregion
 
     #region AcсeptEditEntity : Команда принятия изменений
@@ -281,17 +281,11 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
    
     }
 
-    private bool CanAcceptEditEntity()
+    protected virtual bool CanAcceptEditEntity()
     {
-        if (SelectedEntity is null)
-            return false;
-        
-        var test = OriginalEntity?.Equals(SelectedEntity);
-        
-        return !test ?? false;
+        return !OriginalEntity?.Equals(EditableEntity) ?? false;
     }
-
-
+    
     #endregion
 
     #region DeleteSubEntityFromCollection : Команда удаления сущности из списа связанных элементов
