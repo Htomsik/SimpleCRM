@@ -13,16 +13,18 @@ public sealed class Product : NamedEntity
     
     protected override bool Equals(IEntity other)
     {
-        var otherProductEntity = other as Product;
+        var otherEntity = other as Product;
 
-        if (otherProductEntity is null )
+        if (otherEntity is null )
         {
             throw new TypeAccessException($"Неправильный тип данных, требуемый тип: {this.GetType()}, фактический тип: {other.GetType()}");
         }
         
-        if (base.Equals(other) && Type.Equals(otherProductEntity!.Type) && !Clients.Except(otherProductEntity.Clients).Any())
-            return true;
-        return false;
+        
+        if (!base.Equals(other) || !Type.Equals(otherEntity.Type) || Clients.Count != otherEntity.Clients.Count) return false;
+            
+        return Clients.Any(origin => otherEntity.Clients.Any(copy => copy.Id != origin.Id));
+        
     }
 
     public override object Clone() =>

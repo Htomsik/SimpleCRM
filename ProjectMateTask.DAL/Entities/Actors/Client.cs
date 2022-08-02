@@ -16,18 +16,22 @@ public sealed class Client : NamedEntity
     
     protected override bool Equals(IEntity other)
     {
-        var otherProductEntity = other as Client;
+        var otherEntity = other as Client;
 
-        if (otherProductEntity is null )
+        if (otherEntity is null )
         {
             throw new TypeAccessException($"Неправильный тип данных, требуемый тип: {this.GetType()}, фактический тип: {other.GetType()}");
         }
         
-        if (Status.Equals(otherProductEntity.Status) 
-            && Manager.Equals(otherProductEntity.Manager) 
-            && !Products.Except(otherProductEntity.Products).Any())
-            return true;
-        return false;
+      
+        
+        if (!base.Equals(other) 
+            || Manager.Equals(otherEntity.Manager) 
+            || Status.Equals(otherEntity.Status) 
+            || Products.Count != otherEntity.Products.Count) 
+            return false;
+            
+        return Products.Any(origin => otherEntity.Products.Any(copy => copy.Id != origin.Id));
     }
     
     

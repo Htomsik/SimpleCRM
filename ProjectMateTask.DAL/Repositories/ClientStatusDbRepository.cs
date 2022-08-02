@@ -5,12 +5,12 @@ using ProjectMateTask.DAL.Repositories.Base;
 
 namespace ProjectMateTask.DAL.Repositories;
 
-internal class ClientStatusRepository : DbRepository<ClientStatus>
+internal class ClientStatusDbRepository : DbRepository<ClientStatus>
 {
-    public ClientStatusRepository(ProjectMateTaskDb db) : base(db)
+    public ClientStatusDbRepository(ProjectMateTaskDb db) : base(db)
     {
     }
 
-    public override IQueryable<ClientStatus> Items => base.Items
+    public override IQueryable<ClientStatus> Items => base.Items.AsNoTrackingWithIdentityResolution()
         .Include(item => item.Clients);
 }

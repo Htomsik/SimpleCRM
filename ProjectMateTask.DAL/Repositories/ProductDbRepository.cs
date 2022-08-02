@@ -5,16 +5,16 @@ using ProjectMateTask.DAL.Repositories.Base;
 
 namespace ProjectMateTask.DAL.Repositories;
 
-internal sealed class ProductRepository : DbRepository<Product>
+internal sealed class ProductDbRepository : DbRepository<Product>
 {
-    public ProductRepository(ProjectMateTaskDb db) : base(db)
+    public ProductDbRepository(ProjectMateTaskDb db) : base(db)
     {
     }
 
-    public override IQueryable<Product> Items => base.Items
+    public override IQueryable<Product> Items => base.Items.AsNoTrackingWithIdentityResolution()
         .Include(item => item.Clients)
-        .ThenInclude(item => item.Products)
+            .ThenInclude(item => item.Products)
         .Include(item => item.Clients)
-        .ThenInclude(item => item.Status)
+            .ThenInclude(item => item.Status)
         .Include(item => item.Type);
 }

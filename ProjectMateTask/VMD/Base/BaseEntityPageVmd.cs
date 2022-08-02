@@ -191,10 +191,10 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
     private void OnOpenEditModeExecute()
     {
         //Клонирование сущности для редактирования
-        EditableEntity =  (TEntity)SelectedEntity.Clone();
+        EditableEntity = _entitiesRepository.Get(SelectedEntity.Id);
 
         //Сохранение оригинальной редактируемой сущности
-        OriginalEntity = (TEntity)SelectedEntity.Clone();
+        OriginalEntity = _entitiesRepository.Get(SelectedEntity.Id);
 
         //Обнуление выбранного элемента для того чтобы wpf подхватил EditableEntity
         SelectedEntity = default;
@@ -278,13 +278,23 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
 
     private void OnAcceptEditEntity()
     {
-   
+        
+        _entitiesRepository.Update(EditableEntity);
+
+        IsEditMode = false;
+
+        EditableEntity = default;
+
+        OriginalEntity = default;
+
+        InitializeRepositoryAsync();
     }
 
-    protected virtual bool CanAcceptEditEntity()
+    private bool CanAcceptEditEntity()
     {
         return !OriginalEntity?.Equals(EditableEntity) ?? false;
     }
+    
     
     #endregion
 

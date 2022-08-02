@@ -10,16 +10,17 @@ public sealed class ProductType : NamedEntity
     
     protected override bool Equals(IEntity other)
     {
-        var otherProductEntity = other as ProductType;
+        var otherEntity = other as ProductType;
 
-        if (otherProductEntity is null )
+        if (otherEntity is null )
         {
             throw new TypeAccessException($"Неправильный тип данных, требуемый тип: {this.GetType()}, фактический тип: {other.GetType()}");
         }
+
+        if (!base.Equals(other) || Products.Count != otherEntity.Products.Count) return false;
         
-        if (!Products.Except(otherProductEntity.Products).Any())
-            return true;
-        return false;
+        return Products.Any(origin => otherEntity.Products.Any(copy => copy.Id != origin.Id));
+        
     }
     
     

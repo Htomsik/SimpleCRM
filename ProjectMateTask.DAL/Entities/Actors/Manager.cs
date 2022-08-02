@@ -10,16 +10,17 @@ public sealed class Manager : NamedEntity
     
     protected override bool Equals(IEntity other)
     {
-        var otherProductEntity = other as Manager;
+        var otherEntity = other as Manager;
 
-        if (otherProductEntity is null )
+        if (otherEntity is null )
         {
             throw new TypeAccessException($"Неправильный тип данных, требуемый тип: {this.GetType()}, фактический тип: {other.GetType()}");
         }
         
-        if (!Clients.Except(otherProductEntity.Clients).Any())
-            return true;
-        return false;
+        
+        if (!base.Equals(other) || Clients.Count != otherEntity.Clients.Count) return false;
+            
+        return Clients.Any(origin => otherEntity.Clients.Any(copy => copy.Id != origin.Id));
     }
     
     

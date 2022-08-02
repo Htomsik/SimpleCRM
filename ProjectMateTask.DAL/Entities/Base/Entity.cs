@@ -16,7 +16,7 @@ public abstract class Entity : IEntity
         return false;
     }
 
-     bool IEquatable<object>.Equals(object other)
+   public  bool  Equals(object other)
     {
         if (other == null)
             return false;
