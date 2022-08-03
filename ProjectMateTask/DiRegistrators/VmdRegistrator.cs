@@ -10,6 +10,7 @@ using ProjectMateTask.VMD.AppInfrastructure;
 using ProjectMateTask.VMD.Base;
 using ProjectMateTask.VMD.Pages;
 using ProjectMateTask.VMD.Pages.EntityPages;
+using ProjectMateTask.VMD.Pages.SelectEntityPages;
 
 namespace ProjectMateTask.DiRegistrators;
 
@@ -18,28 +19,26 @@ internal  static class VmdRegistrator
     public static IServiceCollection VmdRegistration(this IServiceCollection services)
     {
         
-        services.AddSingleton(s => new MainWindowVmd(
-            s.GetRequiredService<MainPageNavigationStore>(),s.GetRequiredService<MainMenuNavigationStore>()));
+        services.AddSingleton<MainWindowVmd>(CreateMainWindowVmd);
 
-        services.AddTransient(s=> new MainMenuVmd(CreateManagersPageNavigationServices(s),
-            CreateClientsPageNavigationServices(s),
-            CreateProductsPageNavigationServices(s),
-            CreateMainPageNavigationServices(s),
-            CreateClientStatusesPageNavigationServices(s),
-            CreateProductTypesPageNavigationServices(s)));
+        services.AddTransient<MainMenuVmd>(CreateMainMenuVmd);
 
         services.AddTransient<MainPageVmd>();
         
-        services.AddTransient<BaseEntityPageVmd<Manager>,ManagersPageVmd>();
+        services.AddTransient<ManagersPageVmd>();
         
-        services.AddTransient<BaseEntityPageVmd<Client>,ClientsPageVmd>();
+        services.AddTransient<ClientsPageVmd>();
         
-        services.AddTransient<BaseEntityPageVmd<Product>,ProductPageVmd>();
+        services.AddTransient<ProductPageVmd>();
         
-        services.AddTransient<BaseEntityPageVmd<ClientStatus>,ClientStatusesPageVmd>();
+        services.AddTransient<ClientStatusesPageVmd>();
         
-        services.AddTransient<BaseEntityPageVmd<ProductType>,ProductTypePageVmd>();
+        services.AddTransient<ProductTypePageVmd>();
 
+        services.AddTransient<ClientSelectEntityPage>();
+        
+        
+        
         services.AddTransient<INavigationService>(CreateMainPageNavigationServices);
         
         return services;
@@ -69,21 +68,53 @@ internal  static class VmdRegistrator
     private static INavigationService CreateProductsPageNavigationServices(IServiceProvider serviceProvider)
     {
         return new MainPageNavigationServices(serviceProvider.GetRequiredService<MainPageNavigationStore>(),
-            serviceProvider.GetRequiredService<BaseEntityPageVmd<Product>>);
+            serviceProvider.GetRequiredService<ProductPageVmd>);
     }
     
     private static INavigationService CreateClientStatusesPageNavigationServices(IServiceProvider serviceProvider)
     {
         return new MainPageNavigationServices(serviceProvider.GetRequiredService<MainPageNavigationStore>(),
-            serviceProvider.GetRequiredService<BaseEntityPageVmd<ClientStatus>>);
+            serviceProvider.GetRequiredService<ClientStatusesPageVmd>);
     }
     
     private static INavigationService CreateProductTypesPageNavigationServices(IServiceProvider serviceProvider)
     {
         return new MainPageNavigationServices(serviceProvider.GetRequiredService<MainPageNavigationStore>(),
-            serviceProvider.GetRequiredService<BaseEntityPageVmd<ProductType>>);
+            serviceProvider.GetRequiredService<ProductTypePageVmd>);
     }
-}
+    #endregion
+
+    #region EntityPageVmdsNavifationServices
+
+    private static INavigationService CreateClientSelectPageNavigationStore(IServiceProvider serviceProvider)
+    {
+        return new EntityPageNavigationServices(serviceProvider.GetRequiredService<EntityPageNavigationStore>(),
+            serviceProvider.GetRequiredService<ClientSelectEntityPage>);
+    }
 
     #endregion
+
+    #region Vmds
+
+    private static MainMenuVmd CreateMainMenuVmd(IServiceProvider s)
+    {
+        return new MainMenuVmd(CreateManagersPageNavigationServices(s),
+            CreateClientsPageNavigationServices(s),
+            CreateProductsPageNavigationServices(s),
+            CreateMainPageNavigationServices(s),
+            CreateClientStatusesPageNavigationServices(s),
+            CreateProductTypesPageNavigationServices(s));
+    }
+
+    private static MainWindowVmd CreateMainWindowVmd(IServiceProvider s)
+    {
+        return new MainWindowVmd(
+            s.GetRequiredService<MainPageNavigationStore>(),
+            s.GetRequiredService<MainMenuNavigationStore>());
+    }
+
+    #endregion
+}
+
+   
    

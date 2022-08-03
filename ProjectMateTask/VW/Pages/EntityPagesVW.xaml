@@ -36,6 +36,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition MaxWidth="250" MinWidth="150" />
             <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
         <!--  Панель выбора Entity  -->
@@ -207,6 +208,7 @@
 
         </Grid>
 
+        <ContentControl Grid.Column="2" />
 
 
 

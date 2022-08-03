@@ -1,4 +1,5 @@
 ﻿using System;
+using ProjectMateTask.Stores.Base;
 using ProjectMateTask.VMD.Base;
 
 namespace ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;

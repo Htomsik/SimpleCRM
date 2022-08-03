@@ -6,7 +6,7 @@ using ProjectMateTask.VMD.Base;
 
 namespace ProjectMateTask.VMD.Pages;
 
-internal sealed class MainPageVmd:BaseVmd
+internal sealed class MainPageVmd:BaseNotGenericEntityVmd
 {
     /// <summary>
     /// Сервис Инициализации бд

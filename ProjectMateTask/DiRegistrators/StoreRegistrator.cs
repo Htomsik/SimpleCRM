@@ -3,6 +3,7 @@ using ProjectMateTask.DAL.Entities;
 using ProjectMateTask.DAL.Entities.Types;
 using ProjectMateTask.DAL.Repositories;
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores;
+using ProjectMateTask.Stores.TemporaryStores;
 
 namespace ProjectMateTask.DiRegistrators;
 
@@ -16,6 +17,8 @@ internal static class StoreRegistrator
         services.AddSingleton<MainPageNavigationStore>();
         
         services.AddSingleton<MainMenuNavigationStore>();
+
+        services.AddSingleton<SubEntityReadOnlyCollectionStore>();
 
         #endregion
         

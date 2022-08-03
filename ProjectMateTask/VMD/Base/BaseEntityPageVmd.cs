@@ -13,12 +13,15 @@ using ProjectMateTask.DAL.Entities.Base;
 using ProjectMateTask.DAL.Entities.Types;
 using ProjectMateTask.DAL.Repositories;
 using ProjectMateTask.Infrastructure.CMD;
+using ProjectMateTask.VMD.Pages.SelectEntityPages;
 
 namespace ProjectMateTask.VMD.Base;
 
 internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd where TEntity : INamedEntity,new()
 {
     private readonly IRepository<TEntity> _entitiesRepository;
+
+    public BaseVmd CurrentSelectEntityPageVmd;
 
     public BaseEntityPageVmd(IRepository<TEntity> entitiesRepository)
     {

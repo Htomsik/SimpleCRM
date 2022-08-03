@@ -22,9 +22,11 @@ namespace ProjectMateTask
     /// </summary>
     public partial class App : Application
     {
-        private IHost? _host;
+        private static IHost? _host;
 
-        public IHost Host => _host ?? Program.CreateHostBuilder(Environment.GetCommandLineArgs()).Build();
+        public static IHost Host => _host ?? Program.CreateHostBuilder(Environment.GetCommandLineArgs()).Build();
+        
+        public static IServiceProvider Services => Host.Services;
 
    
         protected override async void OnStartup(StartupEventArgs e)

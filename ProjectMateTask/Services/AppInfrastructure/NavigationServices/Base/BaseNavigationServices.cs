@@ -6,9 +6,9 @@ namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
 
 internal abstract class BaseNavigationServices<TVmd>:INavigationService where TVmd : BaseVmd
 {
-    private readonly INavigationStore _navigationStore;
+    protected readonly INavigationStore _navigationStore;
     
-    private readonly Func<TVmd> _createVmd;
+    protected readonly Func<TVmd> _createVmd;
 
     public BaseNavigationServices(INavigationStore navigationStore, Func<TVmd> createVmd)
     {
