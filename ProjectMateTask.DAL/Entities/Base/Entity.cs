@@ -9,14 +9,7 @@ public abstract class Entity : IEntity
 
     public int Id { get; set; }
 
-    protected virtual bool Equals(IEntity other)
-    {
-        if (Id.Equals(other.Id))
-            return true;
-        return false;
-    }
-
-   public  bool  Equals(object other)
+    public bool Equals(object other)
     {
         if (other == null)
             return false;
@@ -29,6 +22,11 @@ public abstract class Entity : IEntity
 
         return Equals(other as IEntity);
     }
-   
-   
+
+    protected virtual bool Equals(IEntity other)
+    {
+        if (Id.Equals(other.Id))
+            return true;
+        return false;
+    }
 }

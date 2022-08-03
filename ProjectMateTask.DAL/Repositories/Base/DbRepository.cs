@@ -48,14 +48,14 @@ internal abstract class DbRepository<T> : IRepository<T> where T : Entity, new()
     public void Add(T item)
     {
         if(!NullChecker(item)) return;
-        _db.Add(item);
+        _db.Entry(item).State = EntityState.Added;
         _db.SaveChanges();
     }
 
     public async Task AddAsync(T item, CancellationToken cancelToken = default)
     {
         if(!NullChecker(item)) return;
-        _db.Add(item);
+        _db.Entry(item).State = EntityState.Added;
         await _db.SaveChangesAsync(cancelToken).ConfigureAwait(false);
     }
 
@@ -69,16 +69,13 @@ internal abstract class DbRepository<T> : IRepository<T> where T : Entity, new()
     public async Task AddCollectionAsync(IEnumerable<T> items, CancellationToken cancelToken = default)
     {
         if (!CollectionNullChecker(items)) return;
-        await _db.AddRangeAsync(items);
+        await _db.AddRangeAsync(items, cancelToken);
         await _db.SaveChangesAsync(cancelToken).ConfigureAwait(false);
     }
 
     public void Update(T item)
     {
         if(!NullChecker(item)) return;
-        
-        
-            
         _db.Entry(item).State = EntityState.Modified;
         _db.SaveChanges();
     }
@@ -109,14 +106,14 @@ internal abstract class DbRepository<T> : IRepository<T> where T : Entity, new()
     public void Remove(T item)
     {
         if(!NullChecker(item)) return;
-        _db.Remove(item);
+        _db.Entry(item).State = EntityState.Deleted;
         _db.SaveChanges();
     }
 
     public async Task RemoveAsync(T item, CancellationToken cancelToken = default)
     {
         if(!NullChecker(item)) return;
-        _db.Remove(item);
+        _db.Entry(item).State = EntityState.Deleted;
          await _db.SaveChangesAsync(cancelToken).ConfigureAwait(false);
     }
     

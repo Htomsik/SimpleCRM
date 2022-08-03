@@ -1,46 +1,48 @@
 ﻿using System.Collections.ObjectModel;
 using ProjectMateTask.DAL.Entities.Actors;
 using ProjectMateTask.DAL.Entities.Base;
+using ProjectMateTask.DAL.Entities.Services;
 
 namespace ProjectMateTask.DAL.Entities.Types;
 
 public sealed class ProductType : NamedEntity
 {
-    public ICollection<Product> Products { get; set; }
-    
-    protected override bool Equals(IEntity other)
+    public ProductType()
     {
-        var otherEntity = other as ProductType;
-
-        if (otherEntity is null )
-        {
-            throw new TypeAccessException($"Неправильный тип данных, требуемый тип: {this.GetType()}, фактический тип: {other.GetType()}");
-        }
-
-        if (!base.Equals(other) || Products.Count != otherEntity.Products.Count) return false;
-        
-        return Products.Any(origin => otherEntity.Products.Any(copy => copy.Id != origin.Id));
-        
     }
-    
-    
-    public ProductType(){}
 
-    public ProductType(int id, string name,ICollection<Product> products)
+    public ProductType(int id, string name, ICollection<Product> products)
     {
         Id = id;
         Name = name;
         Products = products;
     }
-    
-    public override object Clone() =>
-        new ProductType(this.Id,
-            this.Name,
+
+    public ProductType(int id, string name) : base(id, name)
+    {
+    }
+
+    public ICollection<Product> Products { get; set; } = new ObservableCollection<Product>();
+
+    protected override bool Equals(IEntity other)
+    {
+        var otherEntity = other as ProductType;
+
+        if (otherEntity is null)
+            throw new TypeAccessException(
+                $"Неправильный тип данных, требуемый тип: {GetType()}, фактический тип: {other.GetType()}");
+
+        if (!base.Equals(other)) return false;
+
+        return EntityServices<Product>.IsCollectionsEqualsNoDeep(Products, otherEntity.Products);
+    }
+
+    public override object Clone()
+    {
+        return new ProductType(Id,
+            Name,
             new ObservableCollection<Product>(
                 Products.Select(item => item).ToArray()
             ));
-
-
-  
-    
+    }
 }
