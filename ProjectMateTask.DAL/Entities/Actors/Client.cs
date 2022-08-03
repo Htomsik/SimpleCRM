@@ -23,8 +23,6 @@ public sealed class Client : NamedEntity
             throw new TypeAccessException($"Неправильный тип данных, требуемый тип: {this.GetType()}, фактический тип: {other.GetType()}");
         }
         
-      
-        
         if (!base.Equals(other) 
             || Manager.Equals(otherEntity.Manager) 
             || Status.Equals(otherEntity.Status) 

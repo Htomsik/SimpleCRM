@@ -68,7 +68,7 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
 
     private async Task InitializeRepositoryAsync()
     {
-        Entities = new ObservableCollection<TEntity>(await _entitiesRepository.Items.ToArrayAsync());
+        Entities = new ObservableCollection<TEntity>(await _entitiesRepository.PartTrackingItems.ToArrayAsync());
     }
 
 
@@ -191,10 +191,10 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
     private void OnOpenEditModeExecute()
     {
         //Клонирование сущности для редактирования
-        EditableEntity = _entitiesRepository.Get(SelectedEntity.Id);
+        EditableEntity = _entitiesRepository.GetAsFullTracking(SelectedEntity.Id);
 
         //Сохранение оригинальной редактируемой сущности
-        OriginalEntity = _entitiesRepository.Get(SelectedEntity.Id);
+        OriginalEntity = _entitiesRepository.GetAsPartTracking(SelectedEntity.Id);
 
         //Обнуление выбранного элемента для того чтобы wpf подхватил EditableEntity
         SelectedEntity = default;
@@ -260,14 +260,21 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
 
     public ICommand AddNewEntity { get; }
 
-    private async Task OnAddNewEntity()
+    private  async Task OnAddNewEntity()
     {
-        var addedEntity = SelectedEntity;
-
-        await _entitiesRepository.AddAsync(addedEntity);
-
-        await InitializeRepositoryAsync();
+      //   var addedEntity = SelectedEntity;
+      //   
+      // Task addAsync =  _entitiesRepository.AddAsync(addedEntity);
+      //   
+      // Task addAsyncSubEntities =  OnAddSubEntities();
+      //
+      // await Task.WhenAll(addAsync, addAsyncSubEntities);
+      //
+      // await InitializeRepositoryAsync();
     }
+
+    protected virtual async Task OnAddSubEntities() {}
+    
 
     private bool CanAddNewEntity() => !IsEditMode;
     #endregion
@@ -278,9 +285,8 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
 
     private void OnAcceptEditEntity()
     {
-        
         _entitiesRepository.Update(EditableEntity);
-
+        
         IsEditMode = false;
 
         EditableEntity = default;
@@ -292,7 +298,8 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
 
     private bool CanAcceptEditEntity()
     {
-        return !OriginalEntity?.Equals(EditableEntity) ?? false;
+         return !OriginalEntity?.Equals(EditableEntity) ?? false;
+        
     }
     
     

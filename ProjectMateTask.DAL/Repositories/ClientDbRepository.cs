@@ -10,9 +10,11 @@ internal sealed class ClientDbRepository : DbRepository<Client>
     {
     }
 
-    public override IQueryable<Client> Items => base.Items.AsNoTrackingWithIdentityResolution()
+    public override IQueryable<Client> TrackingItems => base.TrackingItems
         .Include(item => item.Manager)
         .Include(item => item.Status)
         .Include(item => item.Products)
         .ThenInclude(item => item.Type);
+
+   
 }

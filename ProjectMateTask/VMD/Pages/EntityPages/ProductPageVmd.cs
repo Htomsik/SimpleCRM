@@ -22,4 +22,6 @@ internal sealed class ProductPageVmd:BaseEntityPageVmd<Product>
     }
     
   
+    
+  
 }

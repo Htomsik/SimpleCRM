@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using ProjectMateTask.DAL.Context;
 using ProjectMateTask.DAL.Entities.Actors;
 
@@ -10,9 +11,11 @@ internal sealed class ManagerDbRepository : DbRepository<Manager>
     {
     }
 
-    public override IQueryable<Manager> Items => base.Items.AsNoTrackingWithIdentityResolution()
+    public override IQueryable<Manager> TrackingItems => base.TrackingItems
         .Include(item => item.Clients)
         .ThenInclude(item => item.Products)
         .Include(item => item.Clients)
         .ThenInclude(item => item.Status);
+
+    
 }

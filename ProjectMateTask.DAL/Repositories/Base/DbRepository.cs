@@ -1,14 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using ProjectMateTask.DAL.Context;
+using ProjectMateTask.DAL.Entities.Actors;
 using ProjectMateTask.DAL.Entities.Base;
 
 namespace ProjectMateTask.DAL.Repositories;
 
-internal class DbRepository<T> : IRepository<T> where T : Entity, new()
+internal abstract class DbRepository<T> : IRepository<T> where T : Entity, new()
 {
-    private readonly ProjectMateTaskDb _db;
+    protected readonly ProjectMateTaskDb _db;
 
-    private readonly DbSet<T> _set;
+    protected readonly DbSet<T> _set;
 
     public DbRepository(ProjectMateTaskDb db)
     {
@@ -16,17 +18,31 @@ internal class DbRepository<T> : IRepository<T> where T : Entity, new()
         _set = _db.Set<T>();
     }
 
-    public virtual IQueryable<T> Items => _set;
+    public IQueryable<T> PartTrackingItems => TrackingItems.AsNoTrackingWithIdentityResolution();
+    
+    public virtual IQueryable<T> TrackingItems => _set;
 
-    public T Get(int id)
+    public virtual T GetAsPartTracking(int id)
     {
-        return Items.SingleOrDefault(item => item.Id == id)!;
+        return PartTrackingItems.FirstOrDefault(item => item.Id == id)!;
+    }
+    
+    public async Task<T> GetAsPartTrackingAsync(int id, CancellationToken cancelToken = default)
+    {
+        return (await PartTrackingItems.FirstOrDefaultAsync(item => item.Id == id, cancelToken).ConfigureAwait(true))!;
     }
 
-    public async Task<T> GetAsync(int id, CancellationToken cancelToken = default)
+    public virtual T GetAsFullTracking(int id)
     {
-        return await Items.SingleOrDefaultAsync(item => item.Id == id, cancelToken).ConfigureAwait(true);
+        return TrackingItems.FirstOrDefault(item => item.Id == id)!;
     }
+
+
+    public virtual T GetAsFullTrackingAsync(int id, CancellationToken cancelToken = default)
+    {
+        return TrackingItems.FirstOrDefault(item => item.Id == id)!;
+    }
+   
 
 
     public void Add(T item)
@@ -60,14 +76,17 @@ internal class DbRepository<T> : IRepository<T> where T : Entity, new()
     public void Update(T item)
     {
         if(!NullChecker(item)) return;
-        _db.Update(item);
+        
+        
+            
+        _db.Entry(item).State = EntityState.Modified;
         _db.SaveChanges();
     }
     
     public async Task UpdateAsync(T item, CancellationToken cancelToken = default)
     {
         if(!NullChecker(item)) return;
-        _db.Update(item);
+        _db.Entry(item).State = EntityState.Modified;
         await _db.SaveChangesAsync(cancelToken).ConfigureAwait(false);
     }
 

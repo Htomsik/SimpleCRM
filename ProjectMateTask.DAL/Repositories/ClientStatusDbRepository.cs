@@ -10,6 +10,7 @@ internal class ClientStatusDbRepository : DbRepository<ClientStatus>
     {
     }
 
-    public override IQueryable<ClientStatus> Items => base.Items.AsNoTrackingWithIdentityResolution()
+    public override IQueryable<ClientStatus> TrackingItems => base.TrackingItems
         .Include(item => item.Clients);
+
 }

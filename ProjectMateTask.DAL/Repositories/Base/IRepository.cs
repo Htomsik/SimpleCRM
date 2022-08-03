@@ -1,4 +1,6 @@
-﻿using ProjectMateTask.DAL.Entities.Base;
+﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
+using ProjectMateTask.DAL.Entities.Actors;
+using ProjectMateTask.DAL.Entities.Base;
 
 namespace ProjectMateTask.DAL.Repositories;
 
@@ -7,22 +9,37 @@ public interface IRepository<T> where T : IEntity, new()
     /// <summary>
     ///     Коллекция всех сущностей
     /// </summary>
-    IQueryable<T> Items { get; }
+    IQueryable<T> PartTrackingItems { get; }
 
     /// <summary>
-    ///     Получение сущности по id
+    ///     Получение сущности по id c частичным отслеживанием (Коллекции не отслеживаются)
     /// </summary>
     /// <param name="id">id сущности</param>
     /// <returns></returns>
-    T Get(int id);
+    T GetAsPartTracking(int id);
 
     /// <summary>
-    ///     Асинхронное получение сущности по id
+    ///     Асинхронное получение сущности по id c частичным отслеживанием (Коллекции не отслеживаются)
     /// </summary>
     /// <param name="id">id сущности</param>
     /// <param name="cancelToken">Токен отмены</param>
     /// <returns></returns>
-    Task<T> GetAsync(int id, CancellationToken cancelToken = default);
+    Task<T> GetAsPartTrackingAsync(int id, CancellationToken cancelToken = default);
+
+    /// <summary>
+    ///  Получение сущности по id c полным отслеживанием
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    T GetAsFullTracking(int id);
+
+    // <summary>
+    ///  Асинхронное получение сущности по id c полным отслеживанием
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="cancelToken">Токен отмены</param>
+    /// <returns></returns>
+    T GetAsFullTrackingAsync(int id, CancellationToken cancelToken = default);
 
     /// <summary>
     ///     Добавление новой сущности, ее первичный ключ
