@@ -37,8 +37,6 @@ internal  static class VmdRegistrator
 
         services.AddTransient<ClientSelectEntityPage>();
         
-        
-        
         services.AddTransient<INavigationService>(CreateMainPageNavigationServices);
         
         return services;
@@ -56,13 +54,13 @@ internal  static class VmdRegistrator
     private static INavigationService CreateManagersPageNavigationServices(IServiceProvider serviceProvider)
     {
         return new MainPageNavigationServices(serviceProvider.GetRequiredService<MainPageNavigationStore>(),
-            serviceProvider.GetRequiredService<BaseEntityPageVmd<Manager>>);
+            serviceProvider.GetRequiredService<ManagersPageVmd>);
     }
     
     private static INavigationService CreateClientsPageNavigationServices(IServiceProvider serviceProvider)
     {
         return new MainPageNavigationServices(serviceProvider.GetRequiredService<MainPageNavigationStore>(),
-            serviceProvider.GetRequiredService<BaseEntityPageVmd<Client>>);
+            serviceProvider.GetRequiredService<ClientsPageVmd>);
     }
     
     private static INavigationService CreateProductsPageNavigationServices(IServiceProvider serviceProvider)
