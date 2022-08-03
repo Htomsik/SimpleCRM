@@ -40,6 +40,20 @@ public interface IRepository<T> where T : IEntity, new()
     Task AddAsync(T item, CancellationToken cancelToken = default);
 
     /// <summary>
+    ///     Добавление коллекции сущностей
+    /// </summary>
+    /// <param name="items">Коллекция сущностей</param>
+    void AddCollection(IEnumerable<T> items);
+
+    /// <summary>
+    ///     Асинхронное добавление коллекции сущностей
+    /// </summary>
+    /// <param name="items">Коллекция сущностей</param>
+    /// <param name="cancelToken">Токен отмены</param>
+    /// <returns></returns>
+    Task AddCollectionAsync(IEnumerable<T> items, CancellationToken cancelToken = default);
+
+    /// <summary>
     ///     Обновление сущности
     /// </summary>
     /// <param name="item">Обновляемая сущность</param>
@@ -54,6 +68,20 @@ public interface IRepository<T> where T : IEntity, new()
     Task UpdateAsync(T item, CancellationToken cancelToken = default);
 
     /// <summary>
+    ///     Обновление коллекции сущностей
+    /// </summary>
+    /// <param name="items">Коллекция сущностей</param>
+    void UpdateCollection(IEnumerable<T> items);
+
+    /// <summary>
+    ///     Асинхронное обновление сущностей
+    /// </summary>
+    /// <param name="items">Коллекция сущностей</param>
+    /// <param name="cancelToken">Токен отмены</param>
+    /// <returns></returns>
+    Task UpdateCollectionAsync(IEnumerable<T> items, CancellationToken cancelToken = default);
+
+    /// <summary>
     ///     Удаление сущности
     /// </summary>
     /// <param name="item">Обновляемая сущность</param>
@@ -66,4 +94,17 @@ public interface IRepository<T> where T : IEntity, new()
     /// <param name="cancelToken">Токен отмены</param>
     /// <returns></returns>
     Task RemoveAsync(T item, CancellationToken cancelToken = default);
+
+    /// <summary>
+    ///     Удаление коллекции сущностей
+    /// </summary>
+    /// <param name="items">Коллекция сущностей</param>
+    void RemoveCollection(IEnumerable<T> items);
+
+    /// <summary>
+    ///     Асинхронное удаление коллекции сущностей
+    /// </summary>
+    /// <param name="items">Коллекция сущностей</param>
+    /// <param name="cancelToken">Токен отмены</param>
+    Task RemoveCollectionAsync(IEnumerable<T> items, CancellationToken cancelToken = default);
 }

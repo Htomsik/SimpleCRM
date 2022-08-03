@@ -2,7 +2,7 @@
 using ProjectMateTask.DAL.Context;
 using ProjectMateTask.DAL.Entities.Base;
 
-namespace ProjectMateTask.DAL.Repositories.Base;
+namespace ProjectMateTask.DAL.Repositories;
 
 internal class DbRepository<T> : IRepository<T> where T : Entity, new()
 {
@@ -31,43 +31,100 @@ internal class DbRepository<T> : IRepository<T> where T : Entity, new()
 
     public void Add(T item)
     {
-        if (item is null) throw new ArgumentNullException(nameof(item) + " не должным будть пустым");
-        _db.Entry(item).State = EntityState.Added;
+        if(!NullChecker(item)) return;
+        _db.Add(item);
         _db.SaveChanges();
     }
 
     public async Task AddAsync(T item, CancellationToken cancelToken = default)
     {
-        if (item is null) throw new ArgumentNullException(nameof(item) + " не должным будть пустым");
-        _db.Entry(item).State = EntityState.Added;
+        if(!NullChecker(item)) return;
+        _db.Add(item);
+        await _db.SaveChangesAsync(cancelToken).ConfigureAwait(false);
+    }
+
+    public void AddCollection(IEnumerable<T> items)
+    {
+        if (!CollectionNullChecker(items)) return;
+        _db.AddRange(items);
+        _db.SaveChanges();
+    }
+
+    public async Task AddCollectionAsync(IEnumerable<T> items, CancellationToken cancelToken = default)
+    {
+        if (!CollectionNullChecker(items)) return;
+        await _db.AddRangeAsync(items);
         await _db.SaveChangesAsync(cancelToken).ConfigureAwait(false);
     }
 
     public void Update(T item)
     {
-        if (item is null) throw new ArgumentNullException(nameof(item) + " не должным будть пустым");
-        _db.Entry(item).State = EntityState.Modified;
+        if(!NullChecker(item)) return;
+        _db.Update(item);
         _db.SaveChanges();
     }
-
+    
     public async Task UpdateAsync(T item, CancellationToken cancelToken = default)
     {
-        if (item is null) throw new ArgumentNullException(nameof(item) + " не должным будть пустым");
-        _db.Entry(item).State = EntityState.Modified;
+        if(!NullChecker(item)) return;
+        _db.Update(item);
         await _db.SaveChangesAsync(cancelToken).ConfigureAwait(false);
     }
 
+    
+    public void UpdateCollection(IEnumerable<T> items)
+    {
+        if (!CollectionNullChecker(items)) return;
+        _db.UpdateRange(items);
+        _db.SaveChanges();
+    }
+
+    public async Task UpdateCollectionAsync(IEnumerable<T> items, CancellationToken cancelToken = default)
+    {
+        if (!CollectionNullChecker(items)) return;
+        _db.UpdateRange(items);
+        await _db.SaveChangesAsync(cancelToken).ConfigureAwait(false);
+    }
+
+
     public void Remove(T item)
     {
-        if (item is null) throw new ArgumentNullException(nameof(item) + " не должным будть пустым");
+        if(!NullChecker(item)) return;
         _db.Remove(item);
         _db.SaveChanges();
     }
 
     public async Task RemoveAsync(T item, CancellationToken cancelToken = default)
     {
-        if (item is null) throw new ArgumentNullException(nameof(item) + " не должным будть пустым");
+        if(!NullChecker(item)) return;
         _db.Remove(item);
          await _db.SaveChangesAsync(cancelToken).ConfigureAwait(false);
+    }
+    
+    public void RemoveCollection(IEnumerable<T> items)
+    {
+        if (!CollectionNullChecker(items)) return;
+        _db.RemoveRange(items);
+        _db.SaveChanges();
+
+    }
+
+    public async Task RemoveCollectionAsync(IEnumerable<T> items, CancellationToken cancelToken = default)
+    {
+        if (!CollectionNullChecker(items)) return;
+        _db.RemoveRange(items);
+        await _db.SaveChangesAsync(cancelToken).ConfigureAwait(false);
+    }
+
+    protected bool NullChecker(T item)
+    {
+        if (item is null) throw new ArgumentNullException(nameof(item) + " не должным будть пустым");
+        return true;
+    }
+
+    protected bool CollectionNullChecker(IEnumerable<T> items)
+    {
+        if (items is null || items.All(item=>item is null)) throw new ArgumentNullException(nameof(items) + " не должным будть пустым");
+        return true;
     }
 }

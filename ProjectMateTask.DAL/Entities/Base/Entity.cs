@@ -29,4 +29,6 @@ public abstract class Entity : IEntity
 
         return Equals(other as IEntity);
     }
+   
+   
 }
