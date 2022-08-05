@@ -2,9 +2,9 @@
 using System.Linq;
 using ProjectMateTask.DAL.Entities.Actors;
 using ProjectMateTask.DAL.Entities.Base;
-using ProjectMateTask.DAL.Entities.Services;
 using ProjectMateTask.DAL.Entities.Types;
 using ProjectMateTask.DAL.Repositories;
+using ProjectMateTask.DAL.Services;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores;

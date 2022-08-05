@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using ProjectMateTask.DAL.Entities.Actors;
 using ProjectMateTask.DAL.Entities.Base;
-using ProjectMateTask.DAL.Entities.Services;
+using ProjectMateTask.DAL.Services;
 
 namespace ProjectMateTask.DAL.Entities.Types;
 

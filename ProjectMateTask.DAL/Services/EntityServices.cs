@@ -1,6 +1,6 @@
 ﻿using ProjectMateTask.DAL.Entities.Base;
 
-namespace ProjectMateTask.DAL.Entities.Services;
+namespace ProjectMateTask.DAL.Services;
 
 public static class EntityServices<T> where T : IEntity
 {
