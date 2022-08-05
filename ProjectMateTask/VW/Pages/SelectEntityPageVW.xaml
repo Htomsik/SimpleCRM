@@ -1,5 +1,5 @@
 ﻿<UserControl
-    d:DataContext="{d:DesignInstance {x:Type vmd:ClientsPageVmd},
+    d:DataContext="{d:DesignInstance {x:Type selectEntityPages:ClientSelectPageVmd},
                                      IsDesignTimeCreatable=True}"
     d:DesignHeight="200"
     d:DesignWidth="100"
@@ -10,6 +10,7 @@
     xmlns:local="clr-namespace:ProjectMateTask.VW.Pages"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:selectEntityPages="clr-namespace:ProjectMateTask.VMD.Pages.SelectEntityPages"
     xmlns:vmd="clr-namespace:ProjectMateTask.VMD.Pages.EntityPages"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <DockPanel>
@@ -40,12 +41,51 @@
             Margin="0,15"
             VerticalAlignment="Stretch">
 
-            <ContentControl Content="{Binding EntitiesFilteredView, UpdateSourceTrigger=PropertyChanged}">
+            <ContentControl Content="{Binding EntitiesFilteredView, UpdateSourceTrigger=PropertyChanged}" x:Name="ListContentControl">
 
                 <ContentControl.Resources>
 
                     <DataTemplate DataType="{x:Type ListCollectionView}" x:Key="Default">
-                        <ListView ItemsSource="{Binding}" SelectedItem="{Binding RelativeSource={RelativeSource AncestorType=ContentControl}, Path=DataContext.SelectedEntity}" />
+
+                        <ListView ItemsSource="{Binding}">
+
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition />
+                                            <ColumnDefinition Width="25" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <ContentControl Content="{Binding Path=.}" x:Name="SubItemsContentControl" />
+
+                                        <!--  Кнопка добавление  -->
+                                        <Button
+                                            Command="{Binding DataContext.AddEntityCommand, ElementName=ListContentControl}"
+                                            Grid.Column="1"
+                                            Height="15"
+                                            HorizontalAlignment="Center"
+                                            Style="{StaticResource MaterialDesignIconButton}"
+                                            VerticalAlignment="Center"
+                                            Width="15">
+
+                                            <materialDesign:PackIcon
+                                                Height="13"
+                                                Kind="Add"
+                                                Width="13" />
+
+                                            <Button.CommandParameter>
+                                                <Binding ElementName="SubItemsContentControl" Path="DataContext" />
+                                            </Button.CommandParameter>
+
+                                        </Button>
+
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
                     </DataTemplate>
 
                     <DataTemplate DataType="{x:Type ListCollectionView}" x:Key="NoFind">

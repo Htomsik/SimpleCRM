@@ -11,7 +11,7 @@ internal sealed class ManagerDbRepository : DbRepository<Manager>
     {
     }
 
-    public override IQueryable<Manager> TrackingItems => base.TrackingItems
+    public override IQueryable<Manager> FullTrackingItems => base.FullTrackingItems
         .Include(item => item.Clients)
         .ThenInclude(item => item.Products)
         .Include(item => item.Clients)

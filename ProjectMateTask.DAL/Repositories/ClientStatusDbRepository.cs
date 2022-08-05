@@ -10,7 +10,7 @@ internal class ClientStatusDbRepository : DbRepository<ClientStatus>
     {
     }
 
-    public override IQueryable<ClientStatus> TrackingItems => base.TrackingItems
+    public override IQueryable<ClientStatus> FullTrackingItems => base.FullTrackingItems
         .Include(item => item.Clients);
 
 }

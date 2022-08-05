@@ -18,9 +18,9 @@ internal abstract class DbRepository<T> : IRepository<T> where T : Entity, new()
         _set = _db.Set<T>();
     }
 
-    public IQueryable<T> PartTrackingItems => TrackingItems.AsNoTrackingWithIdentityResolution();
+    public IQueryable<T> PartTrackingItems => FullTrackingItems.AsNoTrackingWithIdentityResolution();
     
-    public virtual IQueryable<T> TrackingItems => _set;
+    public virtual IQueryable<T> FullTrackingItems => _set;
 
     public virtual T GetAsPartTracking(int id)
     {
@@ -34,13 +34,13 @@ internal abstract class DbRepository<T> : IRepository<T> where T : Entity, new()
 
     public virtual T GetAsFullTracking(int id)
     {
-        return TrackingItems.FirstOrDefault(item => item.Id == id)!;
+        return FullTrackingItems.FirstOrDefault(item => item.Id == id)!;
     }
 
 
     public virtual T GetAsFullTrackingAsync(int id, CancellationToken cancelToken = default)
     {
-        return TrackingItems.FirstOrDefault(item => item.Id == id)!;
+        return FullTrackingItems.FirstOrDefault(item => item.Id == id)!;
     }
    
 

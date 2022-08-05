@@ -10,7 +10,7 @@ internal sealed class ClientDbRepository : DbRepository<Client>
     {
     }
 
-    public override IQueryable<Client> TrackingItems => base.TrackingItems
+    public override IQueryable<Client> FullTrackingItems => base.FullTrackingItems
         .Include(item => item.Manager)
         .Include(item => item.Status)
         .Include(item => item.Products)

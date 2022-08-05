@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows.Data;
@@ -7,30 +8,16 @@ using Microsoft.EntityFrameworkCore;
 using ProjectMateTask.DAL.Entities.Base;
 using ProjectMateTask.DAL.Repositories;
 using ProjectMateTask.Infrastructure.CMD;
-using ProjectMateTask.Infrastructure.MessageBuses;
 using ProjectMateTask.Stores.Base;
+using ProjectMateTask.VMD.Base;
 
-namespace ProjectMateTask.VMD.Base;
+namespace ProjectMateTask.VMD.Pages.SelectEntityPages;
 
-internal class BaseSelectEntityVmd<TEntity> : BaseVmd where TEntity: INamedEntity,new()
+internal class BaseSelectEntityVmd<TEntity> : BaseVmd,ISelectEntityVmd where TEntity: INamedEntity,new()
 {
     private readonly IRepository<TEntity> _entitiesRepository;
     
-    private readonly IReadOnlyCollectionStore<IEntity> _subReadOnlyCollectionStore;
-
-    #region SelectedEntity : Выбранная сущность
-
-    private TEntity _selectedEntity;
-
-    public TEntity SelectedEntity
-    {
-        get => _selectedEntity;
-        set => Set(ref _selectedEntity, value);
-    }
-
-    #endregion
-    
-    #region Отфильтрованный список
+    #region EntitiesFilteredView : фильтрованный список Entity
 
     private CollectionViewSource _entitiesViewSource;
 
@@ -38,7 +25,7 @@ internal class BaseSelectEntityVmd<TEntity> : BaseVmd where TEntity: INamedEntit
 
     #endregion
     
-    #region Оригинльный список
+    #region Entities : Оригинльный список Entity
 
     private ObservableCollection<TEntity> _entities;
 
@@ -68,7 +55,7 @@ internal class BaseSelectEntityVmd<TEntity> : BaseVmd where TEntity: INamedEntit
 
     #endregion
     
-    #region фильтация списка
+    #region Filter : Фильтр списка Entity
 
     private string _filter;
 
@@ -99,11 +86,11 @@ internal class BaseSelectEntityVmd<TEntity> : BaseVmd where TEntity: INamedEntit
     }
     #endregion
 
-    public BaseSelectEntityVmd(IRepository<TEntity> entitiesRepository,IReadOnlyCollectionStore<IEntity> subReadOnlyCollectionStore)
+    public BaseSelectEntityVmd(
+        IRepository<TEntity> entitiesRepository)
     {
         _entitiesRepository = entitiesRepository;
         
-        _subReadOnlyCollectionStore = subReadOnlyCollectionStore;
 
         InitializeRepositoryAsync();
 
@@ -119,14 +106,16 @@ internal class BaseSelectEntityVmd<TEntity> : BaseVmd where TEntity: INamedEntit
 
     public ICommand AddEntityCommand { get; }
 
-    private void OnAddEntity()
+    private void OnAddEntity(object p)
     {
-        SelectedSubEntityMessageBus.Send(SelectedEntity);
+        TEntity foundInRepository = _entitiesRepository.GetAsFullTracking(((TEntity)p).Id);
+        
+        AddEntityNotifier?.Invoke(foundInRepository);
     }
 
     #endregion
-    
-    
+
+    public event Action<INamedEntity>? AddEntityNotifier;
     
     
 }

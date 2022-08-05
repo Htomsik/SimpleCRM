@@ -30,7 +30,6 @@
                 ContentTemplate="{DynamicResource EntityFieldEdit}"
                 ToolTip="Имя" />
 
-
             <!--  Статус  -->
             <ContentControl
                 Content="{Binding Status, Mode=TwoWay}"
@@ -44,9 +43,12 @@
                 ToolTip="Менеджер" />
 
             <!--  Купленные продукты  -->
-            <Expander Header="Продукты:">
-                <ContentControl Content="{Binding Products}" ContentTemplate="{DynamicResource EditCollectionCard}" />
-            </Expander>
+            <ContentControl
+                Content="{Binding Products}"
+                ContentTemplate="{DynamicResource EditCollectionCard}"
+                ToolTip="Продукты:" />
+
+
 
 
         </StackPanel>

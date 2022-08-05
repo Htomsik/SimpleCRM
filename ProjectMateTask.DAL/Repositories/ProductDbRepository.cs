@@ -10,7 +10,7 @@ internal sealed class ProductDbRepository : DbRepository<Product>
     {
     }
     
-    public override IQueryable<Product> TrackingItems => base.TrackingItems
+    public override IQueryable<Product> FullTrackingItems => base.FullTrackingItems
         .Include(item => item.Clients)
         .ThenInclude(item => item.Products)
         .Include(item => item.Clients)

@@ -11,46 +11,87 @@
 
     <!--  Редактирование всех коллекций  -->
     <DataTemplate DataType="{x:Type collections:ICollection}" x:Key="EditCollectionCard">
-        <ListView ItemsSource="{Binding Path=., Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
 
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="150" />
-                            <ColumnDefinition Width="25" />
-                        </Grid.ColumnDefinitions>
+        <Expander>
 
-                        <ContentControl Content="{Binding Path=., Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" x:Name="DataContentControl" />
+            <!--  Коллекция сущностей  -->
+            <ListView ItemsSource="{Binding Path=., Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
 
-                        <!--  Кнопка удаления  -->
-                        <!--  БИНДИНГ ПО ИМЕНИ КОНТРОЛА, ПО ВОЗМОЖНОСТИ УДАЛИ  -->
-                        <Button
-                            Command="{Binding DataContext.DeleteSubEntityFromCollection, ElementName=SelectedEntityContentControl}"
-                            Grid.Column="1"
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="25" />
+                            </Grid.ColumnDefinitions>
+
+                            <ContentControl Content="{Binding Path=., Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" x:Name="DataContentControl" />
+
+                            <!--  Кнопка удаления  -->
+                            <!--  БИНДИНГ ПО ИМЕНИ КОНТРОЛА, ПО ВОЗМОЖНОСТИ УДАЛИ  -->
+                            <Button
+                                Command="{Binding DataContext.DeleteSubEntityFromCollection, ElementName=SelectedEntityContentControl}"
+                                Grid.Column="1"
+                                Height="15"
+                                HorizontalAlignment="Center"
+                                IsEnabled="{Binding Path=DataContext.IsEditMode, ElementName=SelectedEntityContentControl}"
+                                Style="{StaticResource MaterialDesignIconButton}"
+                                VerticalAlignment="Center"
+                                Visibility="{Binding Path=DataContext.IsEditMode, ElementName=SelectedEntityContentControl, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                Width="15">
+                                <materialDesign:PackIcon
+                                    Height="13"
+                                    Kind="Delete"
+                                    Width="13" />
+
+                                <Button.CommandParameter>
+
+                                    <Binding ElementName="DataContentControl" Path="DataContext" />
+
+                                </Button.CommandParameter>
+                            </Button>
+
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Expander.Header>
+                <Grid>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock
+                        Grid.Column="1"
+                        HorizontalAlignment="Center"
+                        Text="{Binding Path=ToolTip, RelativeSource={RelativeSource FindAncestor, AncestorType=ContentControl, AncestorLevel=3}}"
+                        VerticalAlignment="Center" />
+
+                    <Button
+                        Command="{Binding DataContext.OpenAddSubEntityModeCommand, ElementName=SelectedEntityContentControl}"
+                        CommandParameter="{Binding}"
+                        Grid.Column="0"
+                        Height="20"
+                        HorizontalAlignment="Center"
+                        IsEnabled="{Binding Path=DataContext.IsEditMode, ElementName=SelectedEntityContentControl}"
+                        Style="{StaticResource MaterialDesignIconButton}"
+                        VerticalAlignment="Center"
+                        Visibility="{Binding Path=DataContext.IsEditMode, ElementName=SelectedEntityContentControl, Converter={StaticResource BooleanToVisibilityConverter}}"
+                        Width="20">
+                        <materialDesign:PackIcon
                             Height="15"
-                            HorizontalAlignment="Center"
-                            IsEnabled="{Binding Path=DataContext.IsEditMode, ElementName=SelectedEntityContentControl}"
-                            Style="{StaticResource MaterialDesignIconButton}"
-                            VerticalAlignment="Center"
-                            Visibility="{Binding Path=DataContext.IsEditMode, ElementName=SelectedEntityContentControl, Converter={StaticResource BooleanToVisibilityConverter}}"
-                            Width="15">
-                            <materialDesign:PackIcon
-                                Height="13"
-                                Kind="Delete"
-                                Width="13" />
+                            Kind="Add"
+                            Width="15" />
+                    </Button>
+                </Grid>
 
-                            <Button.CommandParameter>
+            </Expander.Header>
 
-                                <Binding ElementName="DataContentControl" Path="DataContext" />
+        </Expander>
 
-                            </Button.CommandParameter>
-                        </Button>
-
-                    </Grid>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
     </DataTemplate>
 
 

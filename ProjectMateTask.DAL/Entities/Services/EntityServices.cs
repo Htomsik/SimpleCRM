@@ -11,6 +11,11 @@ public static class EntityServices<T> where T : IEntity
         if (mainCollection.Count == 0 && subCollection.Count == 0) return true;
 
         return mainCollection.Count(item => subCollection.All(subItem => subItem.Id != item.Id)) == 0;
-        ;
+      
+    }
+    
+    public static T FindElemByIdInCollection(IEnumerable<T> scanCollection,int id)
+    {
+        return scanCollection.FirstOrDefault(elem => elem.Id == id)!;
     }
 }

@@ -6,9 +6,9 @@ using ProjectMateTask.VMD.Base;
 
 namespace ProjectMateTask.VMD.Pages.SelectEntityPages;
 
-internal sealed class ClientSelectEntityPage:BaseSelectEntityVmd<Client>
+internal sealed class ManagerSelectPageVmd:BaseSelectEntityVmd<Manager>
 {
-    public ClientSelectEntityPage(IRepository<Client> entitiesRepository, IReadOnlyCollectionStore<IEntity> subReadOnlyCollectionStore) : base(entitiesRepository, subReadOnlyCollectionStore)
+    public ManagerSelectPageVmd(IRepository<Manager> entitiesRepository) : base(entitiesRepository)
     {
     }
 }

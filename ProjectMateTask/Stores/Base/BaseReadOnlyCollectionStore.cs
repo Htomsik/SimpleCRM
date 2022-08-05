@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using ProjectMateTask.DAL.Entities.Actors;
+using ProjectMateTask.DAL.Entities.Base;
 
 namespace ProjectMateTask.Stores.Base;
 
-internal abstract class BaseReadOnlyCollectionStore<T> : IReadOnlyCollectionStore<T>
+internal abstract class BaseReadOnlyCollectionStore<T> : IReadOnlyCollectionStore<T> where T : INamedEntity
 {
     private ICollection<T> _currentItems;
-    public IReadOnlyCollection<T> CurrentItems => (_currentItems as ReadOnlyObservableCollection<T>)!;
+    public IReadOnlyCollection<T> CurrentItems => (new ReadOnlyObservableCollection<T>(new ObservableCollection<T>(_currentItems)));
     
     public event Action? CurrentItemChanged;
     
@@ -25,6 +27,7 @@ internal abstract class BaseReadOnlyCollectionStore<T> : IReadOnlyCollectionStor
         OnCurrentItemChanged();
     }
     
+    
     protected virtual void Remove(T item)
     {
         var findItem = CurrentItems.FirstOrDefault(item);
@@ -37,7 +40,7 @@ internal abstract class BaseReadOnlyCollectionStore<T> : IReadOnlyCollectionStor
 
     public virtual void Add(T item)
     {
-        var findItem = CurrentItems.FirstOrDefault(item);
+        T findItem = _currentItems.FirstOrDefault(el => el.Equals(item),default);
 
         if (findItem is not null)
             throw new ArgumentException($"Элемент {nameof(item)} уже присутсвует в {nameof(this.GetType)}");

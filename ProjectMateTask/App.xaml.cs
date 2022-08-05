@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ProjectMateTask.DAL.DiRegistrators;
 using ProjectMateTask.Data;
-using ProjectMateTask.DiRegistrators;
+using ProjectMateTask.IOC;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
 using ProjectMateTask.VMD;
 using ProjectMateTask.VMD.AppInfrastructure;
@@ -22,9 +22,10 @@ namespace ProjectMateTask
     /// </summary>
     public partial class App : Application
     {
-        private static IHost? _host;
+        private static IHost _host;
 
-        public static IHost Host => _host ?? Program.CreateHostBuilder(Environment.GetCommandLineArgs()).Build();
+        public static IHost Host
+            => _host ??= Program.CreateHostBuilder(Environment.GetCommandLineArgs()).Build();
         
         public static IServiceProvider Services => Host.Services;
 
@@ -66,7 +67,7 @@ namespace ProjectMateTask
             
         }
 
-        public static void ConfigureServices(HostBuilderContext host, IServiceCollection services)
+        internal static void ConfigureServices(HostBuilderContext host, IServiceCollection services)
         {
             services.AddSingleton(s => new MainWindow
             {

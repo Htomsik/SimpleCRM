@@ -33,9 +33,12 @@
 
 
             <!--  Клиенты, c такими статусами  -->
-            <Expander Header="Клиенты:">
-                <ContentControl Content="{Binding Clients}" ContentTemplate="{DynamicResource EditCollectionCard}" />
-            </Expander>
+
+            <ContentControl
+                Content="{Binding Clients}"
+                ContentTemplate="{DynamicResource EditCollectionCard}"
+                ToolTip="Клиенты:" />
+
 
         </StackPanel>
 

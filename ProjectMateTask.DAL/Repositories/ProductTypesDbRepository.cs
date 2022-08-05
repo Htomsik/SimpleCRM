@@ -10,7 +10,7 @@ internal sealed class ProductTypesDbRepository : DbRepository<ProductType>
     {
     }
 
-    public override IQueryable<ProductType> TrackingItems => base.TrackingItems.AsNoTrackingWithIdentityResolution()
+    public override IQueryable<ProductType> FullTrackingItems => base.FullTrackingItems.AsNoTrackingWithIdentityResolution()
         .Include(item => item.Products);
 
    

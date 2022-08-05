@@ -7,9 +7,14 @@ namespace ProjectMateTask.DAL.Repositories;
 public interface IRepository<T> where T : IEntity, new()
 {
     /// <summary>
-    ///     Коллекция всех сущностей
+    ///     Коллекция всех частично отслеживаемых сущностей
     /// </summary>
     IQueryable<T> PartTrackingItems { get; }
+    
+    /// <summary>
+    ///     Коллекция всех частично отслеживаемых сущностей
+    /// </summary>
+    IQueryable<T> FullTrackingItems { get; }
 
     /// <summary>
     ///     Получение сущности по id c частичным отслеживанием (Коллекции не отслеживаются)

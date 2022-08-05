@@ -11,7 +11,9 @@
 
     <ItemGroup>
       <Folder Include="Infrastructure\Converters" />
+      <Folder Include="Infrastructure\MessageBuses" />
       <Folder Include="Services" />
+      <Folder Include="Stores\TemporaryStores" />
     </ItemGroup>
 
     <ItemGroup>
