@@ -17,6 +17,8 @@ public sealed class Client : NamedEntity
 
     public Client()
     {
+        Status = new ClientStatus();
+        Manager = new Manager();
     }
 
     public Client(int id, string name, ClientStatus clientStatus, Manager manager, ICollection<Product> products) :

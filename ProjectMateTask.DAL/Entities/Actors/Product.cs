@@ -13,6 +13,7 @@ public sealed class Product : NamedEntity
 
     public Product()
     {
+        Type = new ProductType();
     }
 
     public Product(int id, string name, ProductType productType, ICollection<Client> clients) : base(id, name)

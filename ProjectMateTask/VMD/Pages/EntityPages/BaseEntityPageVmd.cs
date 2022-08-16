@@ -51,10 +51,12 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
         DeleteSelectedEntityCommand = new AsyncLambdaCmd(OnDeleteSelectedEntity, CanDeleteSelectedEntity);
 
         CloseAllModsCommand = new LambdaCmd(OnCloseAllMods,CanCloseAllMods);
+        
 
-        AddNewEntity = new AsyncLambdaCmd(OnAddNewEntity, CanAddNewEntity);
+        AcceptAddEntityModeCommand = new AsyncLambdaCmd(OnAddNewEntity, CanAddNewEntity);
 
-        AcceptEditEntityCommand = new LambdaCmd(OnAcceptEditEntity, CanAcceptEditEntity);
+        AcceptEditEntityModeCommand = new LambdaCmd(OnAcceptEditEntity, CanAcceptEditEntity);
+        
 
         DeleteSubEntityFromCollection = new LambdaCmd(OnDeleteSubEntityFromCollectionOriginal);
 
@@ -76,11 +78,26 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
     public override bool IsEditMode
     {
         get => _isEditMode;
-        set => Set(ref _isEditMode, value);
+        set
+        {
+            if (!Set(ref _isEditMode, value)) return;
+            
+            if (value == false)
+            {
+                EditableEntity = default;
+                OriginalEntity = default;
+            }
+            else
+            {
+                SelectedEntity = default;
+                OriginalEntity = (TEntity?)EditableEntity!.Clone();
+            }
+            
+        } 
     }
-
+    
     #region IsSubAddMode : Флаг режима добавления subEntity
-    public bool IsSubAddMode => CurrentSelectedEntityPageVmd is not null;
+    public bool IsSubAddMode => CurrentSelectedEntityPageVmd is not null && IsEditMode;
     
     #endregion
 
@@ -173,7 +190,10 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
     public TEntity? EditableEntity
     {
         get => _editableEntity;
-        set => Set(ref _editableEntity, value);
+        set
+        {
+            Set(ref _editableEntity, value);
+        } 
     }
 
     #endregion
@@ -199,16 +219,12 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
     private void OnOpenEditModeExecute()
     {
         var selectedEntityId = SelectedEntity.Id;
-        //Клонирование сущности для редактирования
+        
         EditableEntity = EntitiesRepository.GetAsFullTracking(selectedEntityId);
-
-        //Сохранение оригинальной редактируемой сущности
-        OriginalEntity = (TEntity)EditableEntity.Clone();
-
-        //Обнуление выбранного элемента для того чтобы wpf подхватил EditableEntity
-        SelectedEntity = default;
         
         IsEditMode = true;
+        AcceptModsCommand = AcceptEditEntityModeCommand;
+        OnPropertyChanged(nameof(AcceptModsCommand));
     }
 
     private bool CanOpenEditMode() => SelectedEntity is not null && !IsEditMode;
@@ -222,10 +238,13 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
 
     private void OnOpenAddEntityMode()
     {
-        IsEditMode = true;
         EditableEntity = new TEntity();
-    }
 
+        IsEditMode = true;
+        AcceptModsCommand = AcceptAddEntityModeCommand;
+        OnPropertyChanged(nameof(AcceptModsCommand));
+    }
+    
     private bool CanOpenAddMode() => !IsEditMode;
     
     #endregion
@@ -234,13 +253,8 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
 
     public ICommand CloseAllModsCommand { get; }
 
-    private void OnCloseAllMods()
-    {
-        EditableEntity = default;
-        SelectedEntity = default;
-        IsEditMode = false;
-    }
-
+    private void OnCloseAllMods() => IsEditMode = false;
+    
     private bool CanCloseAllMods() => !IsSubAddMode;
 
     #endregion
@@ -262,41 +276,37 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
     
     #endregion
 
-    #region AddNewEntity : Команда добавления сущности
+    #region AcceptAddEntityModeCommand : Команда добавления сущности
 
-    public ICommand AddNewEntity { get; }
+    public ICommand AcceptAddEntityModeCommand { get; }
 
     private  async Task OnAddNewEntity()
     {
-      //   var addedEntity = SelectedEntity;
-      //   
-      // Task addAsync =  _entitiesRepository.AddAsync(addedEntity);
-      //   
-      // Task addAsyncSubEntities =  OnAddSubEntities();
-      //
-      // await Task.WhenAll(addAsync, addAsyncSubEntities);
-      //
-      // await InitializeRepositoryAsync();
+        EntitiesRepository.Add(EditableEntity);
+        
+        IsEditMode = false;
+
+        await  InitializeRepositoryAsync();
     }
-    private bool CanAddNewEntity() => !IsEditMode;
+    private bool CanAddNewEntity() =>  !IsSubAddMode && (!OriginalEntity?.Equals(EditableEntity) ?? false);
     
+    #endregion
+
+    #region AcceptModsCommand : Свич команда между режимами
+
+    public ICommand AcceptModsCommand { get; set; }
+
     #endregion
 
     #region AcсeptEditEntity : Команда принятия изменений
 
-    public ICommand AcceptEditEntityCommand { get; set; }
+    public ICommand AcceptEditEntityModeCommand { get; set; }
 
-    private void OnAcceptEditEntity()
+    private async void OnAcceptEditEntity()
     {
         EntitiesRepository.Update(EditableEntity);
-        
         IsEditMode = false;
-
-        EditableEntity = default;
-
-        OriginalEntity = default;
-
-        InitializeRepositoryAsync();
+       await InitializeRepositoryAsync();
     }
 
     private bool CanAcceptEditEntity() => !IsSubAddMode && (!OriginalEntity?.Equals(EditableEntity) ?? false);
@@ -337,8 +347,7 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
     protected abstract void AddSubEntityInCollection(INamedEntity entity);
     
     #endregion
-
-
+    
     #region OpenChangeSubEntityMode : команда добавления/изменения дочерней сущности
 
     public ICommand OpenChangeSubEntityMode { get; }
@@ -364,9 +373,6 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
 
     #endregion
     
-    
-   
-
     #region Dispose
 
     public override void Dispose()

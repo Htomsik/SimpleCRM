@@ -15,7 +15,7 @@ public sealed class Manager : NamedEntity
 
     public Manager(int id, string name, ICollection<Client> clients) : base(id, name)
     {
-        Clients = new EntityCollectionStore<Client>(clients);;
+        Clients = new EntityCollectionStore<Client>(clients);
     }
 
     public Manager(int id, string name) : base(id, name)

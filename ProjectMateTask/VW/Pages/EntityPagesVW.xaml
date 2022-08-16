@@ -184,7 +184,7 @@
                 </Grid.ColumnDefinitions>
 
                 <Button
-                    Command="{Binding AcceptEditEntityCommand, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                    Command="{Binding AcceptModsCommand, UpdateSourceTrigger=PropertyChanged}"
                     Grid.Column="0"
                     HorizontalAlignment="Right"
                     Margin="0,0,10,0">
