@@ -1,12 +1,16 @@
 ﻿using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations.Schema;
 using ProjectMateTask.DAL.Entities.Actors;
 using ProjectMateTask.DAL.Entities.Base;
 using ProjectMateTask.DAL.Services;
+using ProjectMateTask.DAL.Stores;
 
 namespace ProjectMateTask.DAL.Entities.Types;
 
 public sealed class ClientStatus : NamedEntity
 {
+    #region Конструкторы
+
     public ClientStatus()
     {
     }
@@ -20,8 +24,9 @@ public sealed class ClientStatus : NamedEntity
     {
     }
 
-    public ICollection<Client> Clients { get; set; } = new ObservableCollection<Client>();
-
+    #endregion
+    
+    public ICollection<Client> Clients { get; set; } = new EntityCollectionStore<Client>();
 
     protected override bool Equals(IEntity other)
     {
@@ -40,7 +45,7 @@ public sealed class ClientStatus : NamedEntity
     {
         return new ClientStatus(Id,
             Name,
-            new ObservableCollection<Client>(
+            new EntityCollectionStore<Client>(
                 Clients.Select(item => item).ToArray()
             ));
     }

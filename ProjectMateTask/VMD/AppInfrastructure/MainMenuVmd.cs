@@ -8,7 +8,7 @@ using ProjectMateTask.VMD.Base;
 
 namespace ProjectMateTask.VMD.AppInfrastructure;
 
-public class MainMenuVmd:BaseVmd
+internal sealed class MainMenuVmd:BaseVmd
 {
     public ObservableCollection<MainMenuItem> MenuItems { get;}
     

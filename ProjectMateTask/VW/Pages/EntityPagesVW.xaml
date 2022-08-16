@@ -26,7 +26,6 @@
                 <ResourceDictionary Source="../../Resources/Styles/Entity/EditCards/ProductEditCard.xaml" />
                 <ResourceDictionary Source="../../Resources/Styles/Entity/EditCards/ManagerEditCard.xaml" />
                 <ResourceDictionary Source="../../Resources/Styles/Entity/EditCards/ClientStatusesEditCard.xaml" />
-
             </ResourceDictionary.MergedDictionaries>
             <selectors:EditEntitySelector x:Key="EditEntitySelector" />
         </ResourceDictionary>
@@ -162,7 +161,7 @@
 
             <!--  Режим редатирования выбранного Entity  -->
             <ContentControl
-                Content="{Binding EditableEntity}"
+                Content="{Binding EditableEntity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                 ContentTemplateSelector="{StaticResource EditEntitySelector}"
                 Grid.Row="0"
                 IsEnabled="{Binding IsEditMode}"

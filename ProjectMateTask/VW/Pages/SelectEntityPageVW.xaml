@@ -31,6 +31,21 @@
             </materialDesign:HintAssist.Hint>
         </TextBox>
 
+        <!--  Панель управления кнопок  -->
+        <Grid DockPanel.Dock="Bottom" Height="30">
+
+
+            <!--  Редактирование  -->
+            <Button Command="{Binding CloseSubEntityPageCommand}" HorizontalAlignment="Center">
+                <materialDesign:PackIcon
+                    Height="20"
+                    Kind="Check"
+                    Width="20" />
+            </Button>
+
+
+        </Grid>
+
         <!--  List Entity  -->
         <materialDesign:Badged
             Badge="{Binding EntitiesFilteredView.Count}"
@@ -47,15 +62,15 @@
 
                     <DataTemplate DataType="{x:Type ListCollectionView}" x:Key="Default">
 
-                        <ListView ItemsSource="{Binding}">
+                        <ListView  ItemsSource="{Binding}">
 
                             <ListView.ItemTemplate>
                                 <DataTemplate>
-                                    <Grid>
+                                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition />
-                                            <ColumnDefinition Width="25" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
                                         </Grid.ColumnDefinitions>
 
                                         <ContentControl Content="{Binding Path=.}" x:Name="SubItemsContentControl" />
@@ -65,9 +80,8 @@
                                             Command="{Binding DataContext.AddEntityCommand, ElementName=ListContentControl}"
                                             Grid.Column="1"
                                             Height="15"
-                                            HorizontalAlignment="Center"
+                                            HorizontalAlignment="Right"
                                             Style="{StaticResource MaterialDesignIconButton}"
-                                            VerticalAlignment="Center"
                                             Width="15">
 
                                             <materialDesign:PackIcon
@@ -120,5 +134,9 @@
             </ContentControl>
 
         </materialDesign:Badged>
+
+
+
+
     </DockPanel>
 </UserControl>

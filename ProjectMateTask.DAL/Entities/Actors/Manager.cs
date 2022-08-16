@@ -1,27 +1,30 @@
 ﻿using System.Collections.ObjectModel;
 using ProjectMateTask.DAL.Entities.Base;
 using ProjectMateTask.DAL.Services;
+using ProjectMateTask.DAL.Stores;
 
 namespace ProjectMateTask.DAL.Entities.Actors;
 
 public sealed class Manager : NamedEntity
 {
+    #region Конструкторы
+
     public Manager()
     {
     }
 
     public Manager(int id, string name, ICollection<Client> clients) : base(id, name)
     {
-        Clients = clients;
+        Clients = new EntityCollectionStore<Client>(clients);;
     }
 
     public Manager(int id, string name) : base(id, name)
     {
     }
 
-    public ICollection<Client> Clients { get; set; } = new ObservableCollection<Client>();
-
-
+    #endregion
+    public ICollection<Client> Clients { get; set; } = new EntityCollectionStore<Client>();
+    
     protected override bool Equals(IEntity other)
     {
         var otherEntity = other as Manager;
@@ -40,8 +43,8 @@ public sealed class Manager : NamedEntity
     {
         return new Manager(Id,
             Name,
-            new ObservableCollection<Client>(
-                Clients.Select(item => item).ToArray()
+            new EntityCollectionStore<Client>(
+                Clients.Select(item => item)
             ));
     }
 }

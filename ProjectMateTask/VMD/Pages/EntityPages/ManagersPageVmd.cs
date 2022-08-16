@@ -20,32 +20,18 @@ internal sealed class ManagersPageVmd:BaseEntityPageVmd<Manager>
 {
     
 
-    protected override void OnAddSubEntity(INamedEntity entity)
-    {
-        var foundEntity = EntityServices<Client>.FindElemByIdInCollection(EditableEntity.Clients, entity.Id);
-
-        if (foundEntity is not null) return;
-       
-        EditableEntity.Clients.Add((Client)entity);
-        
-    }
-
-    protected override void OnDeleteSubEntityFromCollection(object p)
-    {
-        var deleteitem =  EditableEntity.Clients.First(x => x.Id == ((IEntity)p).Id);
-
-        EditableEntity.Clients.Remove(deleteitem);
-    }
-
- 
+    protected override void OnDeleteSubEntityFromCollection(object p) => EditableEntity.Clients.Remove((Client)p);
+    
+    protected override void AddSubEntityInCollection(INamedEntity entity)=> EditableEntity.Clients.Add((Client)entity);
+    
 
 
     public ManagersPageVmd(
-        IRepository<Manager> entitiesRepository,
-        EntityPageNavigationServices selectedEntityPageNavigationServices,
+        IRepository<Manager?> entitiesRepository,
+        SubEntityNavigationServices selectedSubEntityNavigationServices,
         EntityPageNavigationStore selectedEntityNavigationStore ) 
         : base(
             entitiesRepository, 
-            selectedEntityPageNavigationServices, 
+            selectedSubEntityNavigationServices, 
             selectedEntityNavigationStore){}
 }

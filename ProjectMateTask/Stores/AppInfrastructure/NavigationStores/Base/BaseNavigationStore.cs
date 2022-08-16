@@ -6,9 +6,9 @@ namespace ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
 
 internal abstract class BaseNavigationStore : INavigationStore
 {
-    private BaseVmd _currentVmd;
+    private BaseVmd? _currentVmd;
 
-    public BaseVmd CurrentVmd
+    public BaseVmd? CurrentVmd
     {
         get => _currentVmd;
         set

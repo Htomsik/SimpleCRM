@@ -9,13 +9,14 @@ internal static class ServicesRegistrator
 {
     public static IServiceCollection ServicesRegistration(this IServiceCollection services)
     {
-        services.AddTransient(CreateClientSelectPageNavigationStore);
+        services.AddTransient(CreateSelectPageNavigationStore);
 
         return services;
     }
 
-    private static EntityPageNavigationServices CreateClientSelectPageNavigationStore(IServiceProvider serviceProvider)
+    private static SubEntityNavigationServices CreateSelectPageNavigationStore(IServiceProvider serviceProvider)
     {
-        return new EntityPageNavigationServices(serviceProvider.GetRequiredService<EntityPageNavigationStore>());
+        return new SubEntityNavigationServices(serviceProvider.GetRequiredService<EntityPageNavigationStore>());
     }
+    
 }

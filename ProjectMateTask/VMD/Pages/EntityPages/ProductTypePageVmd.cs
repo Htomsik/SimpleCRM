@@ -18,29 +18,18 @@ namespace ProjectMateTask.VMD.Pages.EntityPages;
 internal sealed class ProductTypePageVmd:BaseEntityPageVmd<ProductType>
 {
     
-    protected override void OnDeleteSubEntityFromCollection(object p)
-    {
-        var deleteitem =  EditableEntity.Products.First(x => x.Id == ((IEntity)p).Id);
-
-        EditableEntity.Products.Remove(deleteitem);
-    }
+    protected override void OnDeleteSubEntityFromCollection(object p) => EditableEntity.Products.Remove((Product)p);
     
-    protected override void OnAddSubEntity(INamedEntity entity)
-    {
-        var foundEntity = EntityServices<Product>.FindElemByIdInCollection(EditableEntity.Products, entity.Id);
+    protected override void AddSubEntityInCollection(INamedEntity entity)=> EditableEntity.Products.Add((Product)entity);
+    
 
-        if (foundEntity is not null) return;
-       
-        EditableEntity.Products.Add((Product)entity);
-        
-    }
 
     public ProductTypePageVmd(
-        IRepository<ProductType> entitiesRepository,
-        EntityPageNavigationServices selectedEntityPageNavigationServices,
+        IRepository<ProductType?> entitiesRepository,
+        SubEntityNavigationServices selectedSubEntityNavigationServices,
         EntityPageNavigationStore selectedEntityNavigationStore ) 
         : base(
             entitiesRepository, 
-            selectedEntityPageNavigationServices, 
+            selectedSubEntityNavigationServices, 
             selectedEntityNavigationStore){}
 }

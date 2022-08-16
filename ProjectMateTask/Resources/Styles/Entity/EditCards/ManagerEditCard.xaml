@@ -23,7 +23,7 @@
             <!--  Имя  -->
             <ContentControl
                 Content="{Binding Path=.}"
-                ContentTemplate="{DynamicResource EntityFieldEdit}"
+                ContentTemplate="{DynamicResource NonKeyFieldEditTemplate}"
                 ToolTip="Имя" />
 
 

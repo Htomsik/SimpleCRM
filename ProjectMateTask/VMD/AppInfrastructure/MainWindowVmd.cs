@@ -18,9 +18,9 @@ internal sealed class MainWindowVmd:BaseVmd
         _mainPageNavigationStore.CurrentVmdChanged += CurrentVmdPageCanges;
     }
 
-    public BaseVmd MainPageCurrentVmd => _mainPageNavigationStore.CurrentVmd;
+    public BaseVmd? MainPageCurrentVmd => _mainPageNavigationStore.CurrentVmd;
 
-    public BaseVmd MainMenuCurrentVmd => _mainMenuNavigationStore.CurrentVmd;
+    public BaseVmd? MainMenuCurrentVmd => _mainMenuNavigationStore.CurrentVmd;
 
     private void CurrentVmdPageCanges()
     {

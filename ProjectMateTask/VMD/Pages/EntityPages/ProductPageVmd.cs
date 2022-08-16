@@ -3,6 +3,7 @@ using System.Linq;
 using ProjectMateTask.DAL.Entities;
 using ProjectMateTask.DAL.Entities.Actors;
 using ProjectMateTask.DAL.Entities.Base;
+using ProjectMateTask.DAL.Entities.Types;
 using ProjectMateTask.DAL.Repositories;
 using ProjectMateTask.DAL.Services;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices;
@@ -17,32 +18,26 @@ namespace ProjectMateTask.VMD.Pages.EntityPages;
 
 internal sealed class ProductPageVmd:BaseEntityPageVmd<Product>
 {
-   
-
-    protected override void OnDeleteSubEntityFromCollection(object p)
+    
+    protected override void OnDeleteSubEntityFromCollection(object p) => EditableEntity.Clients.Remove((Client)p);
+    
+    protected override void AddSubEntityInCollection(INamedEntity entity)=> EditableEntity.Clients.Add((Client)entity);
+    protected override void ChangeSubEntity(INamedEntity entity)
     {
-        var deleteitem =  EditableEntity.Clients.First(x => x.Id == ((IEntity)p).Id);
-
-        EditableEntity.Clients.Remove(deleteitem);
+        if (entity is ProductType)
+        {
+            EditableEntity!.Type = (ProductType)entity;
+        }
+      
     }
 
-   
-    protected override void OnAddSubEntity(INamedEntity entity)
-    {
-        var foundEntity = EntityServices<Client>.FindElemByIdInCollection(EditableEntity.Clients, entity.Id);
-
-        if (foundEntity is not null) return;
-       
-        EditableEntity.Clients.Add((Client)entity);
-        
-    }
 
     public ProductPageVmd(
-        IRepository<Product> entitiesRepository,
-        EntityPageNavigationServices selectedEntityPageNavigationServices,
+        IRepository<Product?> entitiesRepository,
+        SubEntityNavigationServices selectedSubEntityNavigationServices,
         EntityPageNavigationStore selectedEntityNavigationStore) 
         : base(
             entitiesRepository, 
-            selectedEntityPageNavigationServices, 
+            selectedSubEntityNavigationServices, 
             selectedEntityNavigationStore){}
 }

@@ -5,6 +5,7 @@
     Style="{StaticResource MaterialDesignWindow}"
     Title="MainWindow"
     Width="800"
+    WindowStartupLocation="CenterScreen"
     mc:Ignorable="d"
     x:Class="ProjectMateTask.VW.Windows.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"

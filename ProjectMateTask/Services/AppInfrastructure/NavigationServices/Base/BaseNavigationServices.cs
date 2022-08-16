@@ -21,4 +21,9 @@ internal abstract class BaseNavigationServices<TVmd>:INavigationService where TV
     {
         _navigationStore.CurrentVmd = _createVmd();
     }
+
+    public void Close()
+    {
+        _navigationStore.CurrentVmd = null;
+    }
 }

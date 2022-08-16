@@ -22,4 +22,9 @@ internal class BaseTypeNavigationServices:ITypeNavigationServices
           : throw new ArgumentNullException($"Отсуствует зарегистрированная Viewmodel для {vmdType}");
 
     }
+
+    public void Close()
+    {
+        _navigationStore.CurrentVmd = null;
+    }
 }

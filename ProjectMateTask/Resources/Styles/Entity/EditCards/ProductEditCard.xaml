@@ -31,13 +31,13 @@
             <!--  Название продукта  -->
             <ContentControl
                 Content="{Binding Path=.}"
-                ContentTemplate="{DynamicResource EntityFieldEdit}"
+                ContentTemplate="{DynamicResource NonKeyFieldEditTemplate}"
                 ToolTip="Название продукта" />
 
             <!--  Тип продукта  -->
             <ContentControl
                 Content="{Binding Type}"
-                ContentTemplate="{DynamicResource EntityFieldEdit}"
+                ContentTemplate="{DynamicResource KeyEntityEditTemplate}"
                 ToolTip="Тип продукта" />
 
             <!--  Клиенты, купившие продукты  -->

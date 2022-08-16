@@ -47,8 +47,7 @@ internal static class VmdRegistrator
         services.AddTransient<ClientStatusSelectPageVmd>();
 
         #endregion
-
-
+        
         services.AddTransient(CreateMainPageNavigationServices);
 
 

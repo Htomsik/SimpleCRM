@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ using ProjectMateTask.DAL.Context;
 using ProjectMateTask.DAL.Entities;
 using ProjectMateTask.DAL.Entities.Actors;
 using ProjectMateTask.DAL.Entities.Types;
+using ProjectMateTask.DAL.Stores;
 using ProjectMateTask.Services.AppInfrastructure;
 
 namespace ProjectMateTask.Data;
@@ -210,17 +212,20 @@ public class DbInitializer:IDbInitializer
         var managers = _db.Managers.ToArray();
         
         var clientTypes = _db.ClientStatus.ToArray();
+
+        var products = _db.Products.ToArray();
         
         _testClients = Enumerable.Range(0, TestClientsCount)
             .Select(i=> new Client()
             {
                 Name = $"Тестовый клиент #{i}",
                 Manager = rnd.NextItem(managers),
-                Products = GenereteClientsProductsTest(),
-                Status = rnd.NextItem(clientTypes)
+                Status = rnd.NextItem(clientTypes),
+                Products = GenereteClientsProductsTest(products)
             }).ToArray();
         
-        await _db.Clients.AddRangeAsync(_testClients);
+         _db.Clients.AddRange(_testClients);
+        
         _db.SaveChanges();
 
         _logger.LogInformation("Инициализация клиентов выполнена за {0} мс", loggerTimer.Elapsed.TotalMilliseconds);
@@ -230,7 +235,7 @@ public class DbInitializer:IDbInitializer
     /// Генеарация тестовых значений продуктов для клиентов
     /// </summary>
     /// <returns></returns>
-    private Product[] GenereteClientsProductsTest()
+    private Product[] GenereteClientsProductsTest(Product[] dbProducts)
     {
         Random rnd = new Random();
         
@@ -238,7 +243,7 @@ public class DbInitializer:IDbInitializer
 
         for (int i = 0; i < products.Length; i++)
         {
-            products[i] = rnd.NextItem(_testProducts);
+            products[i] = rnd.NextItem(dbProducts);
         }
 
         return products;

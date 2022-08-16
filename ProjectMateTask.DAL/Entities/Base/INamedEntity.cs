@@ -1,6 +1,8 @@
-﻿namespace ProjectMateTask.DAL.Entities.Base;
+﻿using System.ComponentModel;
 
-public interface INamedEntity : IEntity
+namespace ProjectMateTask.DAL.Entities.Base;
+
+public interface INamedEntity : IEntity, INotifyPropertyChanged
 {
     string Name { get; set; }
 }

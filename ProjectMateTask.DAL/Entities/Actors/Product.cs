@@ -3,11 +3,14 @@ using System.ComponentModel.DataAnnotations;
 using ProjectMateTask.DAL.Entities.Base;
 using ProjectMateTask.DAL.Entities.Types;
 using ProjectMateTask.DAL.Services;
+using ProjectMateTask.DAL.Stores;
 
 namespace ProjectMateTask.DAL.Entities.Actors;
 
 public sealed class Product : NamedEntity
 {
+    #region Конструкторы
+
     public Product()
     {
     }
@@ -15,7 +18,7 @@ public sealed class Product : NamedEntity
     public Product(int id, string name, ProductType productType, ICollection<Client> clients) : base(id, name)
     {
         Type = productType;
-        Clients = clients;
+        Clients = new EntityCollectionStore<Client>(clients);
     }
 
     public Product(int id, string name, ProductType productType) : base(id, name)
@@ -23,9 +26,22 @@ public sealed class Product : NamedEntity
         Type = productType;
     }
 
-    [Required] public ProductType Type { get; set; }
+    #endregion
+    
+    #region Type : тип продукта
 
-    public ICollection<Client> Clients { get; set; } = new ObservableCollection<Client>();
+    private ProductType _type;
+
+    [Required]
+    public ProductType Type
+    {
+        get => _type;
+        set => Set(ref _type,value);
+    }
+
+    #endregion
+    
+    public ICollection<Client> Clients { get; set; } = new EntityCollectionStore<Client>();
 
     protected override bool Equals(IEntity other)
     {
@@ -45,8 +61,8 @@ public sealed class Product : NamedEntity
         return new Product(Id,
             Name,
             Type,
-            new ObservableCollection<Client>(
-                Clients.Select(item => item).ToArray()
+            new EntityCollectionStore<Client>(
+                Clients.Select(item => item)
             ));
     }
 }

@@ -3,7 +3,7 @@ using ProjectMateTask.Infrastructure.CMD.Base;
 
 namespace ProjectMateTask.Infrastructure.CMD;
 
-public class LambdaCmd : BaseCmd
+public sealed class LambdaCmd : BaseCmd
 {
     private readonly Func<object, bool> _canExecute;
     

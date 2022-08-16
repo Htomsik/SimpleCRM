@@ -5,7 +5,7 @@ using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
 
 namespace ProjectMateTask.Models.AppInfrastructure;
 
-public sealed class MainMenuItem
+internal sealed class MainMenuItem
 {
     public  string Name { get; }
 

@@ -3,6 +3,7 @@ using ProjectMateTaskDalTests.Resources;
 
 namespace ProjectMateTaskDalTests.EnitiesTests;
 
+[TestClass]
 public class ClientStatusTests
 {
     [TestMethod]

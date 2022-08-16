@@ -1,6 +1,8 @@
 ﻿namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
 
-public interface INavigationService
+internal interface INavigationService : ICloseNavigationServices
 {
     public void Navigate();
+
+   
 }

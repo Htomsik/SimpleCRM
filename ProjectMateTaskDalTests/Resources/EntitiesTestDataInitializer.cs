@@ -1,5 +1,6 @@
 ﻿using ProjectMateTask.DAL.Entities.Actors;
 using ProjectMateTask.DAL.Entities.Types;
+using ProjectMateTask.DAL.Stores;
 
 namespace ProjectMateTaskDalTests.Resources;
 
@@ -104,7 +105,7 @@ internal class EntitiesTestDataInitializer
                 Id = i,
                 Name = $"Тестовый клиент #{i}",
                 Manager = TestManagers[_rnd.Next(0,TestManagersCount)],
-                Products = RandomClientsProductsTest(),
+                Products = new EntityCollectionStore<Product>(RandomClientsProductsTest()),
                 Status = ClientTypes[_rnd.Next(0,TestClientTypesCount)]
             }).ToArray();
         

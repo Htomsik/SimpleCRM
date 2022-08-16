@@ -10,9 +10,9 @@ using ProjectMateTask.VMD.Pages.SelectEntityPages;
 
 namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices;
 
-internal sealed class EntityPageNavigationServices: BaseTypeNavigationServices
+internal sealed class SubEntityNavigationServices: BaseTypeNavigationServices
 {
-    public EntityPageNavigationServices(INavigationStore navigationStore) : base(navigationStore)
+    public SubEntityNavigationServices(INavigationStore navigationStore) : base(navigationStore)
     {
     }
     
@@ -21,7 +21,7 @@ internal sealed class EntityPageNavigationServices: BaseTypeNavigationServices
         {typeof(Client),typeof(ClientSelectPageVmd)},
         {typeof(Product),typeof(ProductSelectPageVmd)},
         {typeof(Manager),typeof(ManagerSelectPageVmd)},
-        {typeof(ProductType),typeof(ProductSelectPageVmd)},
+        {typeof(ProductType),typeof(ProductTypeSelectPageVmd)},
         {typeof(ClientStatus),typeof(ClientStatusSelectPageVmd)}
     };
 

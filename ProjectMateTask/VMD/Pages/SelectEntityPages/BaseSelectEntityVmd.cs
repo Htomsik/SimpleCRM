@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using ProjectMateTask.DAL.Entities.Base;
 using ProjectMateTask.DAL.Repositories;
 using ProjectMateTask.Infrastructure.CMD;
+using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
 using ProjectMateTask.Stores.Base;
 using ProjectMateTask.VMD.Base;
 
@@ -87,21 +88,24 @@ internal class BaseSelectEntityVmd<TEntity> : BaseVmd,ISelectEntityVmd where TEn
     #endregion
 
     public BaseSelectEntityVmd(
-        IRepository<TEntity> entitiesRepository)
+        IRepository<TEntity> entitiesRepository, ICloseNavigationServices closeNavigationServices)
     {
         _entitiesRepository = entitiesRepository;
         
-
         InitializeRepositoryAsync();
 
         #region Команды
 
             AddEntityCommand = new LambdaCmd(OnAddEntity);
 
+            CloseSubEntityPageCommand = new CloseNavigationCmd(closeNavigationServices);
+            
         #endregion
-        
+
     }
 
+    public ICommand CloseSubEntityPageCommand { get; }
+    
     #region AddEntityCommand : Добавление новой сущности 
 
     public ICommand AddEntityCommand { get; }

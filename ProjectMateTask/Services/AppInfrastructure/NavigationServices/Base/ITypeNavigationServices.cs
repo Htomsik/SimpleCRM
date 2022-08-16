@@ -2,7 +2,8 @@
 
 namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
 
-public interface ITypeNavigationServices
+internal interface ITypeNavigationServices : ICloseNavigationServices
 {
     void Navigate(Type vmdType);
+    
 }

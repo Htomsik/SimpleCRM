@@ -20,28 +20,23 @@ namespace ProjectMateTask.VMD.Pages.EntityPages;
 
 internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd where TEntity : INamedEntity,new()
 {
-    private readonly ITypeNavigationServices _selectedEntityPageNavigationServices;
+    private readonly ITypeNavigationServices _selectedSubEntityNavigationServices;
     
     private readonly INavigationStore _selectedEntityNavigationStore;
 
-    protected readonly IRepository<TEntity> _entitiesRepository;
-    public ISelectEntityVmd CurrentSelectedEntityPageVmd => (ISelectEntityVmd)_selectedEntityNavigationStore.CurrentVmd;
-    public void OnCurrentSelectedEntityPageChanged()
-    {
-        OnPropertyChanged(nameof(CurrentSelectedEntityPageVmd));
-        OnPropertyChanged(nameof(IsSubAddMode));
-    }
+    protected readonly IRepository<TEntity> EntitiesRepository;
+    public ISelectEntityVmd? CurrentSelectedEntityPageVmd => (ISelectEntityVmd)_selectedEntityNavigationStore.CurrentVmd;
     public BaseEntityPageVmd(IRepository<TEntity> entitiesRepository,
-        ITypeNavigationServices selectedEntityPageNavigationServices,
+        ITypeNavigationServices selectedSubEntityNavigationServices,
         INavigationStore selectedEntityNavigationStore)
     {
-        _selectedEntityPageNavigationServices = selectedEntityPageNavigationServices;
+        _selectedSubEntityNavigationServices = selectedSubEntityNavigationServices;
         
         _selectedEntityNavigationStore = selectedEntityNavigationStore;
 
-        _entitiesRepository = entitiesRepository;
+        EntitiesRepository = entitiesRepository;
         
-        _selectedEntityNavigationStore.CurrentVmdChanged += OnCurrentSelectedEntityPageChanged;
+        _selectedEntityNavigationStore.CurrentVmdChanged += () => OnPropertyChanged(nameof(CurrentSelectedEntityPageVmd));
         
         InitializeRepositoryAsync();
 
@@ -63,7 +58,9 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
 
         DeleteSubEntityFromCollection = new LambdaCmd(OnDeleteSubEntityFromCollectionOriginal);
 
-        OpenAddSubEntityModeCommand = new LambdaCmd(OnOpenAddSubEntityMode);
+        OpenAddSubEntityModeInCollectionCommand = new LambdaCmd(OnOpenAddSubEntityModeInCollection);
+
+        OpenChangeSubEntityMode = new LambdaCmd(OnOpenChangeSubEntityMode);
 
         #endregion
     }
@@ -94,7 +91,7 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
 
     private async Task InitializeRepositoryAsync()
     {
-        Entities = new ObservableCollection<TEntity>(await _entitiesRepository.PartTrackingItems.ToArrayAsync());
+        Entities = new ObservableCollection<TEntity>(await EntitiesRepository.PartTrackingItems.ToArrayAsync());
     }
     
     #region Оригинльный список
@@ -160,9 +157,9 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
 
     #region Выбранная сущность из списка
 
-    private TEntity _selectedEntity;
+    private TEntity? _selectedEntity;
 
-    public TEntity SelectedEntity
+    public TEntity? SelectedEntity
     {
         get => _selectedEntity;
         set => Set(ref _selectedEntity, value);
@@ -172,8 +169,8 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
 
     #region редактиуемая сущность
 
-    private TEntity _editableEntity;
-    public TEntity EditableEntity
+    private TEntity? _editableEntity;
+    public TEntity? EditableEntity
     {
         get => _editableEntity;
         set => Set(ref _editableEntity, value);
@@ -183,8 +180,8 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
 
     #region Оригинальная сущность
 
-    private TEntity _orignalEntity;
-    public TEntity OriginalEntity
+    private TEntity? _orignalEntity;
+    public TEntity? OriginalEntity
     {
         get => _orignalEntity;
         set => Set(ref _orignalEntity, value);
@@ -203,7 +200,7 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
     {
         var selectedEntityId = SelectedEntity.Id;
         //Клонирование сущности для редактирования
-        EditableEntity = _entitiesRepository.GetAsFullTracking(selectedEntityId);
+        EditableEntity = EntitiesRepository.GetAsFullTracking(selectedEntityId);
 
         //Сохранение оригинальной редактируемой сущности
         OriginalEntity = (TEntity)EditableEntity.Clone();
@@ -226,14 +223,11 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
     private void OnOpenAddEntityMode()
     {
         IsEditMode = true;
-        SelectedEntity = new TEntity();
+        EditableEntity = new TEntity();
     }
 
-    private bool CanOpenAddMode()
-    {
-        return !IsEditMode;
-    }
-
+    private bool CanOpenAddMode() => !IsEditMode;
+    
     #endregion
 
     #region CloseAllMods : Команда закрытия режима редактирования/добавления
@@ -242,6 +236,7 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
 
     private void OnCloseAllMods()
     {
+        EditableEntity = default;
         SelectedEntity = default;
         IsEditMode = false;
     }
@@ -258,16 +253,13 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
     {
         var removedEntity = SelectedEntity;
 
-         await _entitiesRepository.RemoveAsync(removedEntity);
+         await EntitiesRepository.RemoveAsync(removedEntity);
 
         Entities.Remove(removedEntity);
     }
 
-    private bool CanDeleteSelectedEntity()
-    {
-        return SelectedEntity is not null & !IsEditMode;
-    }
-
+    private bool CanDeleteSelectedEntity() => SelectedEntity is not null & !IsEditMode;
+    
     #endregion
 
     #region AddNewEntity : Команда добавления сущности
@@ -286,10 +278,6 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
       //
       // await InitializeRepositoryAsync();
     }
-
-    protected virtual async Task OnAddSubEntities() {}
-    
-
     private bool CanAddNewEntity() => !IsEditMode;
     
     #endregion
@@ -300,7 +288,7 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
 
     private void OnAcceptEditEntity()
     {
-        _entitiesRepository.Update(EditableEntity);
+        EntitiesRepository.Update(EditableEntity);
         
         IsEditMode = false;
 
@@ -311,12 +299,7 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
         InitializeRepositoryAsync();
     }
 
-    private bool CanAcceptEditEntity()
-    {
-         return !OriginalEntity?.Equals(EditableEntity) ?? false;
-        
-    }
-    
+    private bool CanAcceptEditEntity() => !IsSubAddMode && (!OriginalEntity?.Equals(EditableEntity) ?? false);
     
     #endregion
 
@@ -335,22 +318,63 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
 
     #endregion
 
-    #region OpenAddSubEntityModeCommand : Команда открытия режима добавления новой дочерней сущности к существующей 
+    #region OpenAddSubEntityModeInCollectionCommand : Команда открытия режима добавления новой дочерней сущности в коллекцию 
     
-    public ICommand OpenAddSubEntityModeCommand { get; }
+    public ICommand OpenAddSubEntityModeInCollectionCommand { get; }
 
-    private void OnOpenAddSubEntityMode(object p)
+    protected virtual void OnOpenAddSubEntityModeInCollection(object p)
     {
         //Получение типа Entity в коллекции
+        
         var subEntityType = p.GetType().GenericTypeArguments;
         
-        _selectedEntityPageNavigationServices.Navigate(subEntityType[0]);
+        _selectedSubEntityNavigationServices.Navigate(subEntityType[0]);
 
-        CurrentSelectedEntityPageVmd.AddEntityNotifier += OnAddSubEntity;
+        CurrentSelectedEntityPageVmd!.AddEntityNotifier += AddSubEntityInCollection;
 
     }
     
-    protected abstract void OnAddSubEntity(INamedEntity entity);
+    protected abstract void AddSubEntityInCollection(INamedEntity entity);
     
+    #endregion
+
+
+    #region OpenChangeSubEntityMode : команда добавления/изменения дочерней сущности
+
+    public ICommand OpenChangeSubEntityMode { get; }
+    
+    protected virtual void OnOpenChangeSubEntityMode(object p)
+    {
+        
+        var subEntityType = p.GetType();
+        
+        _selectedSubEntityNavigationServices.Navigate(subEntityType);
+
+        
+        CurrentSelectedEntityPageVmd!.AddEntityNotifier += ChangeSubEntity;
+
+    }
+
+
+    protected virtual void ChangeSubEntity(INamedEntity entity)
+    {
+        
+    }
+   
+
+    #endregion
+    
+    
+   
+
+    #region Dispose
+
+    public override void Dispose()
+    {
+       _selectedSubEntityNavigationServices.Close();
+      
+        base.Dispose();
+    }
+
     #endregion
 }

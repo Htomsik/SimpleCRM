@@ -28,7 +28,7 @@
             <!--  Название  -->
             <ContentControl
                 Content="{Binding Path=.}"
-                ContentTemplate="{DynamicResource EntityFieldEdit}"
+                ContentTemplate="{DynamicResource NonKeyFieldEditTemplate}"
                 ToolTip="Назвние статуса:" />
 
 
