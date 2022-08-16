@@ -46,7 +46,7 @@
             <ContentControl
                 Content="{Binding Products}"
                 ContentTemplate="{DynamicResource EditCollectionCard}"
-                ToolTip="Продукты:" />
+                ToolTip="Товары:" />
 
 
 

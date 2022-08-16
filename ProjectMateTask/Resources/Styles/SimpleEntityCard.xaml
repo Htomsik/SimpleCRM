@@ -53,4 +53,12 @@
         </VirtualizingStackPanel>
     </DataTemplate>
 
+    <!--  Типы продуктов  -->
+    <DataTemplate DataType="{x:Type types:ProductType}">
+        <VirtualizingStackPanel Orientation="Vertical">
+            <TextBlock Style="{StaticResource MaterialDesignSubtitle2TextBlock}" Text="{Binding Name}" />
+            <TextBlock Style="{StaticResource DescriptionEntityTextBlock}" Text="{Binding Products.Count, StringFormat={}Количество товаров: {0}}" />
+        </VirtualizingStackPanel>
+    </DataTemplate>
+
 </ResourceDictionary>

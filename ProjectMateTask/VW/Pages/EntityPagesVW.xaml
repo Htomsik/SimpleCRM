@@ -25,6 +25,7 @@
                 <ResourceDictionary Source="../../Resources/Styles/Entity/EditCards/ClientEditCard.xaml" />
                 <ResourceDictionary Source="../../Resources/Styles/Entity/EditCards/ProductEditCard.xaml" />
                 <ResourceDictionary Source="../../Resources/Styles/Entity/EditCards/ManagerEditCard.xaml" />
+                <ResourceDictionary Source="../../Resources/Styles/Entity/EditCards/ProductTypeEditCard.xaml" />
                 <ResourceDictionary Source="../../Resources/Styles/Entity/EditCards/ClientStatusesEditCard.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <selectors:EditEntitySelector x:Key="EditEntitySelector" />
@@ -67,7 +68,6 @@
                         Height="20"
                         Kind="Plus"
                         Width="20" />
-
 
                 </Button>
 
