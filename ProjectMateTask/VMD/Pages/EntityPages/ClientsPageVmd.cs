@@ -35,7 +35,7 @@ internal sealed class ClientsPageVmd:BaseEntityPageVmd<Client>
         }
      
     }
-
+    
     public ClientsPageVmd(
         IRepository<Client?> entitiesRepository,
         SubEntityNavigationServices selectedSubEntityNavigationServices,

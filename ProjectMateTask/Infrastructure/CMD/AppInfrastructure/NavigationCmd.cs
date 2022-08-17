@@ -2,7 +2,7 @@
 using ProjectMateTask.Infrastructure.CMD.Base;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
 
-namespace ProjectMateTask.Infrastructure.CMD;
+namespace ProjectMateTask.Infrastructure.CMD.AppInfrastructure;
 
 internal sealed class NavigationCmd:BaseCmd
 {

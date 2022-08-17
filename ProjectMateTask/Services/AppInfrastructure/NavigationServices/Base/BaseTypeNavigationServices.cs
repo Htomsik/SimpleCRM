@@ -16,7 +16,7 @@ internal class BaseTypeNavigationServices:ITypeNavigationServices
     public virtual void Navigate(Type vmdType)
     {
         
-        var iocVmd = (BaseVmd)App.Services.GetService(vmdType)!;
+        var iocVmd = (BaseVmd)App.Services.GetService(vmdType);
 
       _navigationStore.CurrentVmd = iocVmd is not null ? iocVmd 
           : throw new ArgumentNullException($"Отсуствует зарегистрированная Viewmodel для {vmdType}");

@@ -11,7 +11,6 @@
 
     <ItemGroup>
       <Folder Include="Infrastructure\Converters" />
-      <Folder Include="Infrastructure\MessageBuses" />
       <Folder Include="Services" />
       <Folder Include="Stores\TemporaryStores" />
     </ItemGroup>
@@ -25,6 +24,7 @@
       </PackageReference>
       <PackageReference Include="Microsoft.Extensions.Caching.SqlServer" Version="6.0.7" />
       <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+      <PackageReference Include="Serilog.AspNetCore" Version="6.0.1" />
     </ItemGroup>
 
     <ItemGroup>

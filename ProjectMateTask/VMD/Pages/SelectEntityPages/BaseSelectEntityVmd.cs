@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using ProjectMateTask.DAL.Entities.Base;
 using ProjectMateTask.DAL.Repositories;
 using ProjectMateTask.Infrastructure.CMD;
+using ProjectMateTask.Infrastructure.CMD.AppInfrastructure;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
 using ProjectMateTask.Stores.Base;
 using ProjectMateTask.VMD.Base;

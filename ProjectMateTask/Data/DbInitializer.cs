@@ -33,26 +33,54 @@ public class DbInitializer:IDbInitializer
     public async Task InitializeAsync()
     {
         var loggerTimer = Stopwatch.StartNew();
+     
+        byte errorCounter = 0;
         
         _logger.LogInformation("Инициализация базы данных...");
         
         _logger.LogInformation("Миграция базы данных...");
+
+        try
+        {
+            await _db.Database.MigrateAsync().ConfigureAwait(false);
+        }
+        catch (Exception e)
+        {
+            _logger.LogCritical(e,"Ошибка миграции базы данных.");
+            errorCounter++;
+        }
         
-        await _db.Database.MigrateAsync().ConfigureAwait(false);
-        
-        _logger.LogInformation("Миграция базы данных выполнена за {0} мс", loggerTimer.ElapsedMilliseconds);
+        _logger.LogInformation("Миграция базы данных выполнена c {0} ошибками за {1} мс", errorCounter, loggerTimer.ElapsedMilliseconds);
 
         if (!await _db.ClientStatus.AnyAsync())
         {
-            await InitializeClientTypesAsync();
+            try
+            {
+                await InitializeClientTypesAsync();
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e,"Ошибка инициализации типов клиентов в бд.");
+                errorCounter++;
+            }
+           
         }
 
         if (!await _db.ProductTypes.AnyAsync())
         {
-            await InitializeProductTypeAsync();
+            
+            try
+            {
+                await InitializeProductTypeAsync();
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e,"Ошибка инициализации типов продуктов в бд.");
+                errorCounter++;
+            }
         }
         
-        _logger.LogInformation("Инициализация базы данных выполнена за {0} c", loggerTimer.Elapsed.TotalSeconds);
+        _logger.LogInformation("Инициализация базы данных выполнена c {0} за {1} c", errorCounter, loggerTimer.Elapsed.TotalSeconds);
     }
 
     /// <summary>
@@ -64,11 +92,39 @@ public class DbInitializer:IDbInitializer
         
         _logger.LogInformation("Инициализация тестовых данных в базе данных...");
 
-        await InitializeTestProductsAsync();
-        await InitializeTestManagersAsync();
-        await InitializeTestClientsAsync();
+        byte errorCounter = 0;
         
-        _logger.LogInformation("Инициализация тестовых данных выполнена за {0} c", loggerTimer.Elapsed.TotalSeconds);
+        try
+        {
+            await InitializeTestProductsAsync();
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e,"Ошибка инициализации тестовых продуктов в бд.");
+            errorCounter++;
+        }
+        
+        try
+        {
+            await InitializeTestManagersAsync();
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e,"Ошибка инициализации тестовых менеджеров в бд.");
+            errorCounter++;
+        }
+      
+        try
+        {
+            await InitializeTestClientsAsync();
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e,"Ошибка инициализации тестовых клиентов в бд.");
+            errorCounter++;
+        }
+        
+        _logger.LogInformation("Инициализация тестовых данных выполнена с {0} ошибками за {1} c",errorCounter , loggerTimer.Elapsed.TotalSeconds);
     }
 
 
@@ -79,17 +135,25 @@ public class DbInitializer:IDbInitializer
     {
         var loggerTimer = Stopwatch.StartNew();
         
+        
         _logger.LogInformation("Пересоздание базы данных...");
         
         _logger.LogInformation("Удаление старой базы данных...");
-        
-        await _db.Database.EnsureDeletedAsync().ConfigureAwait(false);
-        
-        _logger.LogInformation("Удаление старой базы данных выполнена за {0} мс", loggerTimer.ElapsedMilliseconds);
 
-       await InitializeAsync();
-       
-       _logger.LogInformation("Пересоздание базы данных выполнено за {0} c", loggerTimer.Elapsed.TotalSeconds);
+        try
+        {
+            await _db.Database.EnsureDeletedAsync().ConfigureAwait(false);
+            _logger.LogInformation("Удаление базы данных выполнено за {0} мс", loggerTimer.ElapsedMilliseconds);
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e,"Ошибка удаления базы данных.");
+            return;
+        }
+        
+        await InitializeAsync();
+        
+        _logger.LogInformation("Пересоздание базы данных выполнено за {0} c", loggerTimer.Elapsed.TotalSeconds);
     }
     
     

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using System.Windows;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,6 +15,7 @@ using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
 using ProjectMateTask.VMD;
 using ProjectMateTask.VMD.AppInfrastructure;
 using ProjectMateTask.VW.Windows;
+using Serilog;
 
 namespace ProjectMateTask
 {
@@ -39,12 +41,11 @@ namespace ProjectMateTask
             {
                 scope.ServiceProvider.GetRequiredService<IDbInitializer>().InitializeAsync().Wait();
             }
-            
+              
             //Инициализация MainPageNavigationServices
             var initialNavigationServices = host.Services.GetRequiredService<INavigationService>();
             
             initialNavigationServices.Navigate();
-            
             
             MainWindow = host.Services.GetRequiredService<MainWindow>();
 
@@ -66,7 +67,7 @@ namespace ProjectMateTask
             host.Dispose();
             
         }
-
+        
         internal static void ConfigureServices(HostBuilderContext host, IServiceCollection services)
         {
             services.AddSingleton(s => new MainWindow
@@ -81,5 +82,7 @@ namespace ProjectMateTask
                 .RepositoriesRegistration()
                 .AddDatabase(host.Configuration.GetSection("Database"));
         }
+
+        
     }
 }

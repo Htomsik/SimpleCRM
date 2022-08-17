@@ -1,6 +1,9 @@
 ﻿using System;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
+using ProjectMateTask.Infrastructure.Logging;
+using Serilog;
+using Serilog.Events;
 
 namespace ProjectMateTask;
 
@@ -21,6 +24,16 @@ public class Program
         var hostBuilder = Host.CreateDefaultBuilder(Args)
             .UseContentRoot(Environment.CurrentDirectory)
             .ConfigureServices(App.ConfigureServices)
+            .UseSerilog((host, loggerConfiguration) =>
+            {
+                loggerConfiguration
+                    .WriteTo.File("Log-.txt", rollingInterval: RollingInterval.Day)
+                    .WriteTo.Sink(new MessageBusLogSink())
+                    .MinimumLevel.Information()
+                    .MinimumLevel.Override(nameof(Microsoft),LogEventLevel.Error)
+                    ;
+
+            })
             .ConfigureAppConfiguration((host, cfg) => cfg
                 .SetBasePath(Environment.CurrentDirectory)
                 .AddJsonFile("appsettings.json", true, true)

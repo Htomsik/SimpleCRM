@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.Extensions.Logging;
 using ProjectMateTask.DAL.Context;
 using ProjectMateTask.DAL.Entities.Actors;
 using ProjectMateTask.DAL.Entities.Base;
@@ -9,12 +10,15 @@ namespace ProjectMateTask.DAL.Repositories;
 internal abstract class DbRepository<T> : IRepository<T> where T : Entity, new()
 {
     protected readonly ProjectMateTaskDb _db;
-
+    
+    private readonly ILogger<DbRepository<T>> _logger;
+    
     protected readonly DbSet<T> _set;
 
-    public DbRepository(ProjectMateTaskDb db)
+    public DbRepository(ProjectMateTaskDb db, ILogger<DbRepository<T>> logger)
     {
         _db = db;
+        _logger = logger;
         _set = _db.Set<T>();
     }
 
@@ -47,89 +51,241 @@ internal abstract class DbRepository<T> : IRepository<T> where T : Entity, new()
 
     public void Add(T item)
     {
-        if(!NullChecker(item)) return;
-        _db.Entry(item).State = EntityState.Added;
-        _db.SaveChanges();
+        _logger.LogInformation($"Добавление {item.GetType().Name} в бд...");
+        
+        try
+        {
+            if(!NullChecker(item)) return;
+            _db.Entry(item).State = EntityState.Added;
+            _db.SaveChanges();
+            
+            _logger.LogInformation($"Добавление {item.GetType().Name} в бд прошло успешно");
+        }
+        catch (Exception e)
+        {
+          _logger.LogError(e,$"Ошибка добавления {item.GetType().Name} в бд");
+        }
+        
     }
 
     public async Task AddAsync(T item, CancellationToken cancelToken = default)
     {
-        if(!NullChecker(item)) return;
-        _db.Entry(item).State = EntityState.Added;
-        await _db.SaveChangesAsync(cancelToken).ConfigureAwait(false);
+        
+        _logger.LogInformation($"Асинхронное добавление {item.GetType().Name} в бд...");
+
+        try
+        {
+            if(!NullChecker(item)) return;
+            _db.Entry(item).State = EntityState.Added;
+            await _db.SaveChangesAsync(cancelToken).ConfigureAwait(false);
+            
+            _logger.LogInformation($"Асинхронное добавление {item.GetType().Name} в бд успешно");
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e,$"Ошибка асинхронного добавления {item.GetType().Name} в бд");
+        }
+    
+      
     }
 
     public void AddCollection(IEnumerable<T> items)
     {
-        if (!CollectionNullChecker(items)) return;
-        _db.AddRange(items);
-        _db.SaveChanges();
+
+        _logger.LogInformation($"Добавление коллекции в бд...");
+        
+        try
+        {
+            if (!CollectionNullChecker(items)) return;
+            _db.AddRange(items);
+            _db.SaveChanges();
+            
+            _logger.LogInformation($"Добавление коллекции в бд прошло успешно");
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e,$"Ошибка добавления коллекции в бд");
+        }
+        
     }
 
     public async Task AddCollectionAsync(IEnumerable<T> items, CancellationToken cancelToken = default)
     {
-        if (!CollectionNullChecker(items)) return;
-        await _db.AddRangeAsync(items, cancelToken);
-        await _db.SaveChangesAsync(cancelToken).ConfigureAwait(false);
+        
+        _logger.LogInformation($"Добавление коллекции в бд...");
+        
+        try
+        {
+            if (!CollectionNullChecker(items)) return;
+            await _db.AddRangeAsync(items, cancelToken);
+            await _db.SaveChangesAsync(cancelToken).ConfigureAwait(false);
+            
+            _logger.LogInformation($"Асинхронное добавление коллекции в бд прошло успешно");
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e,$"Ошибка асинхронного добавления коллекции в бд");
+        }
     }
 
     public void Update(T item)
     {
-        if(!NullChecker(item)) return;
-        _db.Entry(item).State = EntityState.Modified;
-        _db.SaveChanges();
+        
+        _logger.LogInformation($"Обновление {item.GetType().Name} в бд...");
+        
+        try
+        {
+            if(!NullChecker(item)) return;
+            _db.Entry(item).State = EntityState.Modified;
+            _db.SaveChanges();
+            
+            _logger.LogInformation($"Обновление {item.GetType().Name} в бд прошло успешно");
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e,$"Ошибка обновление {item.GetType().Name} в бд");
+        }
+        
+     
     }
     
     public async Task UpdateAsync(T item, CancellationToken cancelToken = default)
     {
-        if(!NullChecker(item)) return;
-        _db.Entry(item).State = EntityState.Modified;
-        await _db.SaveChangesAsync(cancelToken).ConfigureAwait(false);
+
+        _logger.LogInformation($"Асинхронное обновление {item.GetType().Name} в бд...");
+        
+        try
+        {
+            if(!NullChecker(item)) return;
+            _db.Entry(item).State = EntityState.Modified;
+            await _db.SaveChangesAsync(cancelToken).ConfigureAwait(false);
+            
+            _logger.LogInformation($"Асинхронное обновление {item.GetType().Name} в бд прошло успешно");
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e,$"Ошибка асинхронного обновление {item.GetType().Name} в бд");
+        }
     }
 
     
     public void UpdateCollection(IEnumerable<T> items)
     {
-        if (!CollectionNullChecker(items)) return;
-        _db.UpdateRange(items);
-        _db.SaveChanges();
+        
+        _logger.LogInformation($"Обновление коллекции c {items.GetType().GenericTypeArguments} в бд...");
+        
+        try
+        {
+            if (!CollectionNullChecker(items)) return;
+            _db.UpdateRange(items);
+            _db.SaveChanges();
+            
+            _logger.LogInformation($"Обновление коллекции c {items.GetType().GenericTypeArguments} в бд прошло успешно");
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e,$"Ошибка обновления коллекции c {items.GetType().GenericTypeArguments} в бд");
+        }
     }
 
     public async Task UpdateCollectionAsync(IEnumerable<T> items, CancellationToken cancelToken = default)
     {
-        if (!CollectionNullChecker(items)) return;
-        _db.UpdateRange(items);
-        await _db.SaveChangesAsync(cancelToken).ConfigureAwait(false);
+        
+        _logger.LogInformation($"Асинхронное обновление коллекции c {items.GetType().GenericTypeArguments} в бд...");
+        
+        try
+        {
+            if (!CollectionNullChecker(items)) return;
+            _db.UpdateRange(items);
+            await _db.SaveChangesAsync(cancelToken).ConfigureAwait(false);
+            
+            _logger.LogInformation($"Асинхронное обновление коллекции c {items.GetType().GenericTypeArguments} в бд прошло успешно");
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e,$"Ошибка асинхронного обновления коллекции c {items.GetType().GenericTypeArguments} в бд");
+        }
+        
+        
+ 
     }
 
 
     public void Remove(T item)
     {
-        if(!NullChecker(item)) return;
-        _db.Entry(item).State = EntityState.Deleted;
-        _db.SaveChanges();
+        
+        _logger.LogInformation($"Удаление {item.GetType().Name} в бд...");
+        
+        try
+        {
+            if(!NullChecker(item)) return;
+            _db.Entry(item).State = EntityState.Deleted;
+            _db.SaveChanges();
+            
+            _logger.LogInformation($"Удаление {item.GetType().Name} в бд прошло успешно");
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e,$"Ошибка удаления {item.GetType().Name} в бд");
+        }
     }
 
     public async Task RemoveAsync(T item, CancellationToken cancelToken = default)
     {
-        if(!NullChecker(item)) return;
-        _db.Entry(item).State = EntityState.Deleted;
-         await _db.SaveChangesAsync(cancelToken).ConfigureAwait(false);
+        
+         _logger.LogInformation($"Асинхронное удаление {item.GetType().Name} в бд...");
+        
+         try
+         {
+             if(!NullChecker(item)) return;
+             _db.Entry(item).State = EntityState.Deleted;
+             await _db.SaveChangesAsync(cancelToken).ConfigureAwait(false);
+            
+             _logger.LogInformation($"Асинхронное удаление {item.GetType().Name} в бд прошло успешно");
+         }
+         catch (Exception e)
+         {
+             _logger.LogError(e,$"Ошибка асинхонного удаления {item.GetType().Name} в бд");
+         }
     }
     
     public void RemoveCollection(IEnumerable<T> items)
     {
-        if (!CollectionNullChecker(items)) return;
-        _db.RemoveRange(items);
-        _db.SaveChanges();
+        
+        _logger.LogInformation($"Удаление коллекции c {items.GetType().GenericTypeArguments} в бд...");
+        
+        try
+        {
+            if (!CollectionNullChecker(items)) return;
+            _db.RemoveRange(items);
+            _db.SaveChanges();
+            
+            _logger.LogInformation($"Удаление коллекции c {items.GetType().GenericTypeArguments} в бд прошло успешно");
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e,$"Ошибка удаления c {items.GetType().GenericTypeArguments} данных в бд");
+        }
 
     }
 
     public async Task RemoveCollectionAsync(IEnumerable<T> items, CancellationToken cancelToken = default)
     {
-        if (!CollectionNullChecker(items)) return;
-        _db.RemoveRange(items);
-        await _db.SaveChangesAsync(cancelToken).ConfigureAwait(false);
+        
+        _logger.LogInformation($"Асинхронное удаление c {items.GetType().GenericTypeArguments} данных в бд...");
+        
+        try
+        {
+            if (!CollectionNullChecker(items)) return;
+            _db.RemoveRange(items);
+            await _db.SaveChangesAsync(cancelToken).ConfigureAwait(false);
+            
+            _logger.LogInformation($"Асинхронное удаление c {items.GetType().GenericTypeArguments} данных в бд прошло успешно");
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e,$"Ошибка асинхронного удаления c {items.GetType().GenericTypeArguments} данных в бд");
+        }
     }
 
     protected bool NullChecker(T item)

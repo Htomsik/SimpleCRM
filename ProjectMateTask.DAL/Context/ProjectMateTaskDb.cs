@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using ProjectMateTask.DAL.Entities.Actors;
 using ProjectMateTask.DAL.Entities.Types;
 
@@ -8,7 +9,11 @@ public class ProjectMateTaskDb : DbContext
 {
     public ProjectMateTaskDb(DbContextOptions<ProjectMateTaskDb> options) : base(options)
     {
+        
     }
+    
+    
+  
 
     public DbSet<Client> Clients { get; set; }
 
