@@ -26,25 +26,25 @@
 
             <!--  Имя  -->
             <ContentControl
-                Content="{Binding Path=., Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Content="{Binding Path=., Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=False}"
                 ContentTemplate="{DynamicResource NonKeyFieldEditTemplate}"
                 ToolTip="Имя" />
 
             <!--  Статус  -->
             <ContentControl
-                Content="{Binding Status, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Content="{Binding Status, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=False}"
                 ContentTemplate="{DynamicResource KeyEntityEditTemplate}"
                 ToolTip="Статус" />
 
             <!--  Менеджер  -->
             <ContentControl
-                Content="{Binding Manager}"
+                Content="{Binding Manager, ValidatesOnNotifyDataErrors=False}"
                 ContentTemplate="{DynamicResource KeyEntityEditTemplate}"
                 ToolTip="Менеджер" />
 
             <!--  Купленные продукты  -->
             <ContentControl
-                Content="{Binding Products}"
+                Content="{Binding Products, ValidatesOnNotifyDataErrors=False}"
                 ContentTemplate="{DynamicResource EditCollectionCard}"
                 ToolTip="Товары:" />
 

@@ -26,13 +26,13 @@
 
             <!--  Название типа продукта  -->
             <ContentControl
-                Content="{Binding Path=.}"
+                Content="{Binding Path=., ValidatesOnNotifyDataErrors=False}"
                 ContentTemplate="{DynamicResource NonKeyFieldEditTemplate}"
                 ToolTip="Название типа" />
 
             <!--  Продукты у конкретного типа  -->
             <ContentControl
-                Content="{Binding Products}"
+                Content="{Binding Products, ValidatesOnNotifyDataErrors=False}"
                 ContentTemplate="{DynamicResource EditCollectionCard}"
                 ToolTip="Товары:" />
 

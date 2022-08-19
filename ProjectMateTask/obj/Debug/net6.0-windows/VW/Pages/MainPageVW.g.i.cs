@@ -57,7 +57,7 @@ namespace ProjectMateTask.VW.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ProjectMateTask;V1.0.0.0;component/vw/pages/mainpagevw.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ProjectMateTask;component/vw/pages/mainpagevw.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\VW\Pages\MainPageVW.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

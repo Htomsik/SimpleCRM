@@ -14,7 +14,7 @@ public class ClientStatusTests
         
         var initializer = new EntitiesTestDataInitializer();
         
-        ProductType randomEntity = initializer.ProductTypes[rnd.Next(0, EntitiesTestDataInitializer.TestProductTypesCount)];
+        ClientStatus randomEntity = initializer.ClientTypes[rnd.Next(0, EntitiesTestDataInitializer.TestClientTypesCount)];
 
         ClientStatus randomEntityCopy = (ClientStatus)randomEntity.Clone();
         

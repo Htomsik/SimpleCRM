@@ -2,7 +2,7 @@
 
 namespace ProjectMateTask.DAL.Entities.Base;
 
-public interface INamedEntity : IEntity, INotifyPropertyChanged
+public interface INamedEntity : IEntity, INotifyPropertyChanged,INotifyDataErrorInfo
 {
-    string Name { get; set; }
+    string Name { get; set; } 
 }

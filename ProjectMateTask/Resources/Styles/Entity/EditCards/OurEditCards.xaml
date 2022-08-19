@@ -4,6 +4,7 @@
     xmlns:collections="clr-namespace:System.Collections;assembly=System.Runtime"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:system="clr-namespace:System;assembly=System.Runtime"
+    xmlns:validations="clr-namespace:ProjectMateTask.Infrastructure.Validations"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
 
@@ -112,14 +113,14 @@
                 Grid.Column="0"
                 IsReadOnly="True"
                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                Text="{Binding Name}"
+                Text="{Binding Name, ValidatesOnNotifyDataErrors=True, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}"
                 VerticalAlignment="Center"
                 materialDesign:HintAssist.Hint="{Binding Path=ToolTip, RelativeSource={RelativeSource FindAncestor, AncestorType=ContentControl}}" />
 
             <!--  Кнопка режима смены сущности  -->
             <Button
                 Command="{Binding DataContext.OpenChangeSubEntityMode, ElementName=SelectedEntityContentControl}"
-                CommandParameter="{Binding}"
+                CommandParameter="{Binding ., ValidatesOnNotifyDataErrors=False}"
                 Grid.Column="1"
                 Height="20"
                 HorizontalAlignment="Right"
@@ -148,9 +149,24 @@
         <TextBox
             IsEnabled="{Binding Path=DataContext.IsEditMode, RelativeSource={RelativeSource AncestorType={x:Type ContentControl}, AncestorLevel=2}, UpdateSourceTrigger=PropertyChanged}"
             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-            Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
             VerticalAlignment="Center"
-            materialDesign:HintAssist.Hint="{Binding Path=ToolTip, RelativeSource={RelativeSource FindAncestor, AncestorType=ContentControl}}" />
+            materialDesign:HintAssist.Hint="{Binding Path=ToolTip, RelativeSource={RelativeSource FindAncestor, AncestorType=ContentControl}}">
+            <TextBox.Text>
+                <Binding
+                    Mode="TwoWay"
+                    Path="Name"
+                    UpdateSourceTrigger="PropertyChanged"
+                    ValidatesOnNotifyDataErrors="True">
+
+
+
+                    <!-- <Binding.ValidationRules> -->
+                    <!--     <validations:NotEmptyValidationRule /> -->
+                    <!-- </Binding.ValidationRules> -->
+
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
 
 
     </DataTemplate>

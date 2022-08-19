@@ -220,7 +220,7 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
     {
         var selectedEntityId = SelectedEntity.Id;
         
-        EditableEntity = EntitiesRepository.GetAsFullTracking(selectedEntityId);
+        EditableEntity = EntitiesRepository.GetAsPartTracking(selectedEntityId);
         
         IsEditMode = true;
         AcceptModsCommand = AcceptEditEntityModeCommand;
@@ -239,7 +239,6 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
     private void OnOpenAddEntityMode()
     {
         EditableEntity = new TEntity();
-
         IsEditMode = true;
         AcceptModsCommand = AcceptAddEntityModeCommand;
         OnPropertyChanged(nameof(AcceptModsCommand));
@@ -288,7 +287,7 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
 
         await  InitializeRepositoryAsync();
     }
-    private bool CanAddNewEntity() =>  !IsSubAddMode && (!OriginalEntity?.Equals(EditableEntity) ?? false);
+    private bool CanAddNewEntity() =>  !IsSubAddMode && (!OriginalEntity?.Equals(EditableEntity) ?? false) && !EditableEntity!.HasErrors;
     
     #endregion
 
@@ -309,7 +308,7 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
        await InitializeRepositoryAsync();
     }
 
-    private bool CanAcceptEditEntity() => !IsSubAddMode && (!OriginalEntity?.Equals(EditableEntity) ?? false);
+    private bool CanAcceptEditEntity() => !IsSubAddMode && (!OriginalEntity?.Equals(EditableEntity) ?? false) && !EditableEntity!.HasErrors;
     
     #endregion
 

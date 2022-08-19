@@ -99,12 +99,12 @@
                 Margin="0,15"
                 VerticalAlignment="Stretch">
 
-                <ContentControl Content="{Binding EntitiesFilteredView, UpdateSourceTrigger=PropertyChanged}">
+                <ContentControl Content="{Binding EntitiesFilteredView, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=False}">
 
                     <ContentControl.Resources>
 
                         <DataTemplate DataType="{x:Type ListCollectionView}" x:Key="Default">
-                            <ListView ItemsSource="{Binding}" SelectedItem="{Binding RelativeSource={RelativeSource AncestorType=ContentControl}, Path=DataContext.SelectedEntity}" />
+                            <ListView ItemsSource="{Binding ., ValidatesOnNotifyDataErrors=False}" SelectedItem="{Binding ValidatesOnNotifyDataErrors=False, RelativeSource={RelativeSource AncestorType=ContentControl}, Path=DataContext.SelectedEntity}" />
                         </DataTemplate>
 
                         <DataTemplate DataType="{x:Type ListCollectionView}" x:Key="NoFind">
@@ -152,7 +152,7 @@
 
             <!--  Информация о выбранном Entity  -->
             <ContentControl
-                Content="{Binding SelectedEntity}"
+                Content="{Binding SelectedEntity, ValidatesOnNotifyDataErrors=False}"
                 ContentTemplateSelector="{StaticResource EditEntitySelector}"
                 Grid.Row="0"
                 IsEnabled="{Binding IsEditMode, Converter={StaticResource InvertBooleanConverter}}"
@@ -161,7 +161,7 @@
 
             <!--  Режим редатирования выбранного Entity  -->
             <ContentControl
-                Content="{Binding EditableEntity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Content="{Binding EditableEntity, ValidatesOnNotifyDataErrors=False}"
                 ContentTemplateSelector="{StaticResource EditEntitySelector}"
                 Grid.Row="0"
                 IsEnabled="{Binding IsEditMode}"
@@ -209,7 +209,7 @@
         </Grid>
 
         <ContentControl
-            Content="{Binding CurrentSelectedEntityPageVmd}"
+            Content="{Binding CurrentSelectedEntityPageVmd, ValidatesOnNotifyDataErrors=False}"
             Grid.Column="2"
             HorizontalAlignment="Left"
             Margin="5,0,0,0">

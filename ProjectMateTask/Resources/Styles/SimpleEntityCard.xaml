@@ -19,18 +19,18 @@
     <!--  Продукты  -->
     <DataTemplate DataType="{x:Type actors:Product}">
         <VirtualizingStackPanel Orientation="Vertical">
-            <TextBlock Style="{StaticResource MaterialDesignSubtitle2TextBlock}" Text="{Binding Name}" />
-            <TextBlock Style="{StaticResource DescriptionEntityTextBlock}" Text="{Binding Type.Name, StringFormat={}Тип: {0}}" />
-            <TextBlock Style="{StaticResource DescriptionEntityTextBlock}" Text="{Binding Clients.Count, StringFormat={}Количество клиентов: {0}}" />
+            <TextBlock Style="{StaticResource MaterialDesignSubtitle2TextBlock}" Text="{Binding Name, ValidatesOnNotifyDataErrors=False}" />
+            <TextBlock Style="{StaticResource DescriptionEntityTextBlock}" Text="{Binding Type.Name, StringFormat={}Тип: {0}, ValidatesOnNotifyDataErrors=False}" />
+            <TextBlock Style="{StaticResource DescriptionEntityTextBlock}" Text="{Binding Clients.Count, StringFormat={}Количество клиентов: {0}, ValidatesOnNotifyDataErrors=False}" />
         </VirtualizingStackPanel>
     </DataTemplate>
 
     <!--  Клиенты  -->
     <DataTemplate DataType="{x:Type actors:Client}">
         <VirtualizingStackPanel Orientation="Vertical">
-            <TextBlock Style="{StaticResource MaterialDesignSubtitle2TextBlock}" Text="{Binding Name}" />
-            <TextBlock Style="{StaticResource DescriptionEntityTextBlock}" Text="{Binding Status.Name, StringFormat={}Статус: {0}}" />
-            <TextBlock Style="{StaticResource DescriptionEntityTextBlock}" Text="{Binding Products.Count, StringFormat={}Количество товаров: {0}}" />
+            <TextBlock Style="{StaticResource MaterialDesignSubtitle2TextBlock}" Text="{Binding Name, ValidatesOnNotifyDataErrors=False}" />
+            <TextBlock Style="{StaticResource DescriptionEntityTextBlock}" Text="{Binding Status.Name, StringFormat={}Статус: {0}, ValidatesOnNotifyDataErrors=False}" />
+            <TextBlock Style="{StaticResource DescriptionEntityTextBlock}" Text="{Binding Products.Count, StringFormat={}Количество товаров: {0}, ValidatesOnNotifyDataErrors=False}" />
         </VirtualizingStackPanel>
     </DataTemplate>
 
@@ -41,7 +41,7 @@
                 Margin="0,0,0,2"
                 Style="{StaticResource MaterialDesignSubtitle2TextBlock}"
                 Text="{Binding Name}" />
-            <TextBlock Style="{StaticResource DescriptionEntityTextBlock}" Text="{Binding Clients.Count, StringFormat={}Количество клиентов: {0}}" />
+            <TextBlock Style="{StaticResource DescriptionEntityTextBlock}" Text="{Binding Clients.Count, StringFormat={}Количество клиентов: {0}, ValidatesOnNotifyDataErrors=False}" />
         </VirtualizingStackPanel>
     </DataTemplate>
 
@@ -49,7 +49,7 @@
     <DataTemplate DataType="{x:Type types:ClientStatus}">
         <VirtualizingStackPanel Orientation="Vertical">
             <TextBlock Style="{StaticResource MaterialDesignSubtitle2TextBlock}" Text="{Binding Name}" />
-            <TextBlock Style="{StaticResource DescriptionEntityTextBlock}" Text="{Binding Clients.Count, StringFormat={}Количество клиентов: {0}}" />
+            <TextBlock Style="{StaticResource DescriptionEntityTextBlock}" Text="{Binding Clients.Count, StringFormat={}Количество клиентов: {0}, ValidatesOnNotifyDataErrors=False}" />
         </VirtualizingStackPanel>
     </DataTemplate>
 
@@ -57,7 +57,7 @@
     <DataTemplate DataType="{x:Type types:ProductType}">
         <VirtualizingStackPanel Orientation="Vertical">
             <TextBlock Style="{StaticResource MaterialDesignSubtitle2TextBlock}" Text="{Binding Name}" />
-            <TextBlock Style="{StaticResource DescriptionEntityTextBlock}" Text="{Binding Products.Count, StringFormat={}Количество товаров: {0}}" />
+            <TextBlock Style="{StaticResource DescriptionEntityTextBlock}" Text="{Binding Products.Count, StringFormat={}Количество товаров: {0}, ValidatesOnNotifyDataErrors=False}" />
         </VirtualizingStackPanel>
     </DataTemplate>
 

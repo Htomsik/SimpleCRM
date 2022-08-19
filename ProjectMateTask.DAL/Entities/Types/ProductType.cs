@@ -14,6 +14,10 @@ public sealed class ProductType : NamedEntity
     public ProductType()
     {
     }
+    
+    public ProductType(string name):base(name)
+    {
+    }
 
     public ProductType(int id, string name, ICollection<Product> products)
     {
@@ -42,6 +46,9 @@ public sealed class ProductType : NamedEntity
 
         return EntityServices<Product>.IsCollectionsEqualsNoDeep(Products, otherEntity.Products);
     }
+
+    protected override bool SubHasErrors() => false;
+    
 
     public override object Clone()
     {

@@ -57,6 +57,8 @@ public sealed class Product : NamedEntity
         return EntityServices<Client>.IsCollectionsEqualsNoDeep(Clients, otherEntity.Clients);
     }
 
+    protected override bool SubHasErrors() => Type.HasErrors;
+    
     public override object Clone()
     {
         return new Product(Id,

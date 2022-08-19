@@ -8,7 +8,7 @@
     <!--  Для всех Entity если не переопределен  -->
     <DataTemplate DataType="{x:Type base:NamedEntity}">
         <VirtualizingStackPanel Orientation="Vertical">
-            <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Text="{Binding Name}" />
+            <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Text="{Binding Name, ValidatesOnNotifyDataErrors=False}" />
         </VirtualizingStackPanel>
     </DataTemplate>
 

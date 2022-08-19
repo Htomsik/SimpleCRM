@@ -22,7 +22,7 @@
 
             <!--  Имя  -->
             <ContentControl
-                Content="{Binding Path=.}"
+                Content="{Binding Path=., ValidatesOnNotifyDataErrors=False}"
                 ContentTemplate="{DynamicResource NonKeyFieldEditTemplate}"
                 ToolTip="Имя" />
 
@@ -30,7 +30,7 @@
 
             <!--  Клиенты, работающие с менеджером  -->
             <ContentControl
-                Content="{Binding Clients}"
+                Content="{Binding Clients, ValidatesOnNotifyDataErrors=False}"
                 ContentTemplate="{DynamicResource EditCollectionCard}"
                 ToolTip="Клиенты:" />
 

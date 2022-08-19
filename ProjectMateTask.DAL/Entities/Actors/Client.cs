@@ -20,7 +20,7 @@ public sealed class Client : NamedEntity
         Status = new ClientStatus();
         Manager = new Manager();
     }
-
+    
     public Client(int id, string name, ClientStatus clientStatus, Manager manager, ICollection<Product> products) :
         this(id, name, clientStatus, manager)
     {
@@ -30,6 +30,8 @@ public sealed class Client : NamedEntity
     public Client(int id, string name) : base(id, name)
     {
     }
+    
+    public Client(string name):base(name){}
 
     public Client(int id, string name, ClientStatus clientStatus, Manager manager) : this(id, name, clientStatus)
     {
@@ -51,7 +53,10 @@ public sealed class Client : NamedEntity
     public ClientStatus Status
     {
         get => _status;
-        set => Set(ref _status,value);
+        set
+        {
+            Set(ref _status,value);
+        }
     }
 
     #endregion
@@ -66,7 +71,8 @@ public sealed class Client : NamedEntity
     }
 
     #endregion
-    
+
+
     public ICollection<Product> Products { get; set; } = new EntityCollectionStore<Product>();
 
     protected override bool Equals(IEntity other)
@@ -96,6 +102,9 @@ public sealed class Client : NamedEntity
                 Products.Select(item => item)
             ));
     }
+
+    protected override bool SubHasErrors() => Status.HasErrors || Manager.HasErrors;
+    
 }
 
    

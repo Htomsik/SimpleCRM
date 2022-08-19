@@ -21,6 +21,10 @@ public sealed class Manager : NamedEntity
     public Manager(int id, string name) : base(id, name)
     {
     }
+    
+    public Manager(string name) : base(name)
+    {
+    }
 
     #endregion
     public ICollection<Client> Clients { get; set; } = new EntityCollectionStore<Client>();
@@ -37,6 +41,9 @@ public sealed class Manager : NamedEntity
 
         return EntityServices<Client>.IsCollectionsEqualsNoDeep(Clients, otherEntity.Clients);
     }
+
+    protected override bool SubHasErrors() => false;
+    
 
 
     public override object Clone()

@@ -27,7 +27,7 @@
 
             <!--  Название  -->
             <ContentControl
-                Content="{Binding Path=.}"
+                Content="{Binding Path=., ValidatesOnNotifyDataErrors=False}"
                 ContentTemplate="{DynamicResource NonKeyFieldEditTemplate}"
                 ToolTip="Назвние статуса:" />
 
@@ -35,7 +35,7 @@
             <!--  Клиенты, c такими статусами  -->
 
             <ContentControl
-                Content="{Binding Clients}"
+                Content="{Binding Clients, ValidatesOnNotifyDataErrors=False}"
                 ContentTemplate="{DynamicResource EditCollectionCard}"
                 ToolTip="Клиенты:" />
 

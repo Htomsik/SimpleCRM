@@ -30,19 +30,19 @@
 
             <!--  Название продукта  -->
             <ContentControl
-                Content="{Binding Path=.}"
+                Content="{Binding Path=., ValidatesOnNotifyDataErrors=False}"
                 ContentTemplate="{DynamicResource NonKeyFieldEditTemplate}"
                 ToolTip="Название продукта" />
 
             <!--  Тип продукта  -->
             <ContentControl
-                Content="{Binding Type}"
+                Content="{Binding Type, ValidatesOnNotifyDataErrors=False}"
                 ContentTemplate="{DynamicResource KeyEntityEditTemplate}"
                 ToolTip="Тип продукта" />
 
             <!--  Клиенты, купившие продукты  -->
             <ContentControl
-                Content="{Binding Clients}"
+                Content="{Binding Clients, ValidatesOnNotifyDataErrors=False}"
                 ContentTemplate="{DynamicResource EditCollectionCard}"
                 ToolTip="Клиенты:" />
 

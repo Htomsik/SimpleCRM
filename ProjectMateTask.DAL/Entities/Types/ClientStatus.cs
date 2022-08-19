@@ -23,6 +23,10 @@ public sealed class ClientStatus : NamedEntity
     public ClientStatus(int id, string name) : base(id, name)
     {
     }
+    
+    public ClientStatus(string name) : base(name)
+    {
+    }
 
     #endregion
     
@@ -40,6 +44,9 @@ public sealed class ClientStatus : NamedEntity
 
         return EntityServices<Client>.IsCollectionsEqualsNoDeep(Clients, otherEntity.Clients);
     }
+
+    protected override bool SubHasErrors() => false;
+   
 
     public override object Clone()
     {
