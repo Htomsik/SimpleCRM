@@ -1,6 +1,7 @@
 ﻿using System;
 using ProjectMateTask.Infrastructure.CMD.Base;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
+using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.NavigationServices;
 
 namespace ProjectMateTask.Infrastructure.CMD.AppInfrastructure;
 
@@ -25,7 +26,7 @@ internal sealed class NavigationCmd:BaseCmd
     public NavigationCmd(INavigationService navigationService,Func<bool> canExecute = null)
         :this(navigationService,canExecute is null ? null : p => canExecute()){}
 
-  
+   
 
     protected override void Execute(object? parameter) => _navigationService.Navigate();
     protected override bool CanExecute(object parameter) => _canExecute(parameter);

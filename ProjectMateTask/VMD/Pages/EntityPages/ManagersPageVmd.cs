@@ -28,10 +28,10 @@ internal sealed class ManagersPageVmd:BaseEntityPageVmd<Manager>
 
     public ManagersPageVmd(
         IRepository<Manager?> entitiesRepository,
-        SubEntityNavigationServices selectedSubEntityNavigationServices,
-        EntityPageNavigationStore selectedEntityNavigationStore ) 
+        SubEntityNavigationService selectedSubEntityNavigationService,
+        EntityPageSubNavigationStore selectedEntitySubNavigationStore ) 
         : base(
             entitiesRepository, 
-            selectedSubEntityNavigationServices, 
-            selectedEntityNavigationStore){}
+            selectedSubEntityNavigationService, 
+            selectedEntitySubNavigationStore){}
 }

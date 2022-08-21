@@ -5,7 +5,7 @@ using ProjectMateTask.VMD.Base;
 
 namespace ProjectMateTask.VMD.AppInfrastructure;
 
-public class DialogWindowVmd:BaseVmd
+internal sealed class DialogWindowVmd:BaseVmd
 {
     
     public BaseVmd CurrentDialogVmd { get; }

@@ -2,13 +2,13 @@
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
 using ProjectMateTask.VMD.Base;
 
-namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
+namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.TyeNavigationServices;
 
-internal class BaseTypeNavigationServices:ITypeNavigationServices
+internal class BaseTypeNavigationServices<TVmd>:ITypeNavigationServices where TVmd: BaseVmd
 {
-    private readonly INavigationStore _navigationStore;
+    private readonly INavigationStore<TVmd> _navigationStore;
 
-    public BaseTypeNavigationServices(INavigationStore navigationStore)
+    public BaseTypeNavigationServices(INavigationStore<TVmd> navigationStore)
     {
         _navigationStore = navigationStore;
     }
@@ -16,7 +16,7 @@ internal class BaseTypeNavigationServices:ITypeNavigationServices
     public virtual void Navigate(Type vmdType)
     {
         
-        var iocVmd = (BaseVmd)App.Services.GetService(vmdType);
+        var iocVmd = (TVmd)App.Services.GetService(vmdType);
 
       _navigationStore.CurrentVmd = iocVmd is not null ? iocVmd 
           : throw new ArgumentNullException($"Отсуствует зарегистрированная Viewmodel для {vmdType}");

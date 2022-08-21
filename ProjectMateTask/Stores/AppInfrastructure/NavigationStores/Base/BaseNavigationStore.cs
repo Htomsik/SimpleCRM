@@ -4,11 +4,11 @@ using ProjectMateTask.VMD.Base;
 
 namespace ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
 
-internal abstract class BaseNavigationStore : INavigationStore
+internal abstract class BaseNavigationStore<TVmd> : INavigationStore<TVmd> where TVmd : BaseVmd
 {
-    private BaseVmd? _currentVmd;
+    private TVmd? _currentVmd;
 
-    public BaseVmd? CurrentVmd
+    public TVmd? CurrentVmd
     {
         get => _currentVmd;
         set

@@ -1,6 +1,7 @@
 ﻿using System;
 using ProjectMateTask.Infrastructure.CMD.Base;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
+using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.CloseNavigationServices;
 
 namespace ProjectMateTask.Infrastructure.CMD.AppInfrastructure;
 

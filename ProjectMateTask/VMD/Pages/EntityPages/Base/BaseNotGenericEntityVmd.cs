@@ -1,6 +1,8 @@
-﻿namespace ProjectMateTask.VMD.Base;
+﻿using ProjectMateTask.VMD.Base;
 
-public abstract class BaseNotGenericEntityVmd:BaseVmd
+namespace ProjectMateTask.VMD.Pages.EntityPages;
+
+internal abstract class BaseNotGenericEntityVmd:BaseVmd
 {
     /// <summary>
     /// Название страницы

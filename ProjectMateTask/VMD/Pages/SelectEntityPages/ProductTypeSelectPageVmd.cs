@@ -5,12 +5,13 @@ using ProjectMateTask.Services.AppInfrastructure.NavigationServices;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
 using ProjectMateTask.Stores.Base;
 using ProjectMateTask.VMD.Base;
+using ProjectMateTask.VMD.Pages.SelectEntityPages.Base;
 
 namespace ProjectMateTask.VMD.Pages.SelectEntityPages;
 
 internal sealed class ProductTypeSelectPageVmd:BaseSelectEntityVmd<ProductType>
 {
-    public ProductTypeSelectPageVmd(IRepository<ProductType> entitiesRepository, SubEntityNavigationServices closeNavigationServices) : base(entitiesRepository, closeNavigationServices)
+    public ProductTypeSelectPageVmd(IRepository<ProductType> entitiesRepository, SubEntityNavigationService closeNavigationService) : base(entitiesRepository, closeNavigationService)
     {
     }
 }

@@ -2,9 +2,12 @@
 using Microsoft.Extensions.DependencyInjection;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
+using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.CloseNavigationServices;
+using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.NavigationServices;
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores;
 using ProjectMateTask.VMD.AppInfrastructure;
 using ProjectMateTask.VMD.Pages;
+using ProjectMateTask.VMD.Pages.AdditionalPages;
 using ProjectMateTask.VMD.Pages.EntityPages;
 using ProjectMateTask.VMD.Pages.SelectEntityPages;
 
@@ -47,6 +50,13 @@ internal static class VmdRegistrator
         services.AddTransient<ClientStatusSelectPageVmd>();
 
         #endregion
+
+
+        #region Additional Vmds
+
+        services.AddTransient<SettingsAdditionalPageVmd>();
+
+        #endregion
         
         services.AddTransient(CreateMainPageNavigationServices);
 
@@ -55,47 +65,55 @@ internal static class VmdRegistrator
     }
 
 
-    #region MainPageVmdsNavigationServices
+    #region MainEntityPageVmdsNavigationServices
 
     private static INavigationService CreateMainPageNavigationServices(IServiceProvider serviceProvider)
     {
-        return new MainPageNavigationServices(serviceProvider.GetRequiredService<MainPageNavigationStore>(),
+        return new MainEntityPageNavigationService(serviceProvider.GetRequiredService<MainEntityPageNavigationStore>(),
             serviceProvider.GetRequiredService<MainPageVmd>);
     }
 
     private static INavigationService CreateManagersPageNavigationServices(IServiceProvider serviceProvider)
     {
-        return new MainPageNavigationServices(serviceProvider.GetRequiredService<MainPageNavigationStore>(),
+        return new MainEntityPageNavigationService(serviceProvider.GetRequiredService<MainEntityPageNavigationStore>(),
             serviceProvider.GetRequiredService<ManagersPageVmd>);
     }
 
     private static INavigationService CreateClientsPageNavigationServices(IServiceProvider serviceProvider)
     {
-        return new MainPageNavigationServices(serviceProvider.GetRequiredService<MainPageNavigationStore>(),
+        return new MainEntityPageNavigationService(serviceProvider.GetRequiredService<MainEntityPageNavigationStore>(),
             serviceProvider.GetRequiredService<ClientsPageVmd>);
     }
 
     private static INavigationService CreateProductsPageNavigationServices(IServiceProvider serviceProvider)
     {
-        return new MainPageNavigationServices(serviceProvider.GetRequiredService<MainPageNavigationStore>(),
+        return new MainEntityPageNavigationService(serviceProvider.GetRequiredService<MainEntityPageNavigationStore>(),
             serviceProvider.GetRequiredService<ProductPageVmd>);
     }
 
     private static INavigationService CreateClientStatusesPageNavigationServices(IServiceProvider serviceProvider)
     {
-        return new MainPageNavigationServices(serviceProvider.GetRequiredService<MainPageNavigationStore>(),
+        return new MainEntityPageNavigationService(serviceProvider.GetRequiredService<MainEntityPageNavigationStore>(),
             serviceProvider.GetRequiredService<ClientStatusesPageVmd>);
     }
 
     private static INavigationService CreateProductTypesPageNavigationServices(IServiceProvider serviceProvider)
     {
-        return new MainPageNavigationServices(serviceProvider.GetRequiredService<MainPageNavigationStore>(),
+        return new MainEntityPageNavigationService(serviceProvider.GetRequiredService<MainEntityPageNavigationStore>(),
             serviceProvider.GetRequiredService<ProductTypePageVmd>);
     }
 
     #endregion
 
-    #region EntityPageVmdsNavifationServices
+    #region AdditionalPdgeVmdsNavigationServices
+
+    private static INavigationService CreateSettingsAdditionalPageNavigationServices(IServiceProvider serviceProvider)
+    {
+        return new AdditionalPageNavigationService(serviceProvider.GetRequiredService<AdditionalPageNavigationStore>(),
+            serviceProvider.GetRequiredService<SettingsAdditionalPageVmd>);
+    }
+        
+  
 
     #endregion
 
@@ -114,9 +132,11 @@ internal static class VmdRegistrator
     private static MainWindowVmd CreateMainWindowVmd(IServiceProvider s)
     {
         return new MainWindowVmd(
-            s.GetRequiredService<MainPageNavigationStore>(),
-            s.GetRequiredService<MainMenuNavigationStore>());
+            s.GetRequiredService<MainEntityPageNavigationStore>(),
+            s.GetRequiredService<MainMenuNavigationStore>(),
+            s.GetRequiredService<AdditionalPageNavigationStore>(),CreateSettingsAdditionalPageNavigationServices(s));
     }
 
+    
     #endregion
 }

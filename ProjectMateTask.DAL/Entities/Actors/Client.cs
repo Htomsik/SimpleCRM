@@ -3,7 +3,6 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.CompilerServices;
-using ProjectMateTask.DAL.Annotations;
 using ProjectMateTask.DAL.Entities.Base;
 using ProjectMateTask.DAL.Entities.Types;
 using ProjectMateTask.DAL.Services;

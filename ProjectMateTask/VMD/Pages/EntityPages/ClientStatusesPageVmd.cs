@@ -24,10 +24,10 @@ internal sealed class ClientStatusesPageVmd : BaseEntityPageVmd<ClientStatus>
     
     public ClientStatusesPageVmd(
         IRepository<ClientStatus?> entitiesRepository,
-        SubEntityNavigationServices selectedSubEntityNavigationServices,
-        EntityPageNavigationStore selectedEntityNavigationStore ) 
+        SubEntityNavigationService selectedSubEntityNavigationService,
+        EntityPageSubNavigationStore selectedEntitySubNavigationStore ) 
         : base(
             entitiesRepository, 
-            selectedSubEntityNavigationServices, 
-            selectedEntityNavigationStore){}
+            selectedSubEntityNavigationService, 
+            selectedEntitySubNavigationStore){}
 }

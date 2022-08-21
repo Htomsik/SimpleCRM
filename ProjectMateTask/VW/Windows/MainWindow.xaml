@@ -22,11 +22,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:pages="clr-namespace:ProjectMateTask.VW.Pages"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
     <Grid>
-
-
-
-
         <materialDesign:DrawerHost x:Name="DrawerHost">
 
             <materialDesign:DrawerHost.LeftDrawerContent>
@@ -42,11 +39,26 @@
                     <!--  Кнопка закрытия меню  -->
                     <ToggleButton
                         CommandParameter="{x:Static Dock.Left}"
+                        Grid.Row="0"
                         HorizontalAlignment="Right"
                         IsChecked="{Binding ElementName=DrawerHost, Path=IsLeftDrawerOpen, UpdateSourceTrigger=PropertyChanged}"
-                        Style="{DynamicResource MaterialDesignHamburgerToggleButton}" />
+                        Style="{DynamicResource MaterialDesignHamburgerToggleButton}"
+                        x:Name="CloseMenuButton" />
 
-                    <!--  VMD menu  -->
+                    <!--  Кнопка открытия настроек  -->
+                    <Button
+                        Command="{Binding OpenSettingsCommand}"
+                        Height="30"
+                        HorizontalAlignment="Left"
+                        Opacity="0.65"
+                        Style="{StaticResource MaterialDesignIconForegroundButton}"
+                        VerticalAlignment="Center"
+                        Width="30">
+
+                        <materialDesign:PackIcon Kind="Settings" />
+                    </Button>
+
+                    <!--  EntityPages меню  -->
                     <ContentControl
                         Content="{Binding MainMenuCurrentVmd}"
                         Grid.Column="0"
@@ -67,7 +79,7 @@
             </materialDesign:DrawerHost.LeftDrawerContent>
 
 
-
+            <!--  Основное окно  -->
             <DockPanel>
 
                 <!--  Верхнее меню  -->
@@ -100,7 +112,6 @@
                     </Grid>
                 </materialDesign:ColorZone>
 
-
                 <!--  Строка выполнения  -->
                 <materialDesign:ColorZone DockPanel.Dock="Bottom" MaxHeight="30">
 
@@ -113,7 +124,7 @@
 
                 <!--  VMD Pages  -->
                 <ContentControl
-                    Content="{Binding MainPageCurrentVmd}"
+                    Content="{Binding EntityPageCurrentVmd}"
                     Margin="5,5,0,0"
                     x:Name="VmdPagesContent">
 
@@ -125,7 +136,7 @@
                         </DataTemplate>
 
                         <!--  Все Entity страницы  -->
-                        <DataTemplate DataType="{x:Type base:BaseNotGenericEntityVmd}">
+                        <DataTemplate DataType="{x:Type entityPages:BaseNotGenericEntityVmd}">
                             <pages:EntityPagesVW />
                         </DataTemplate>
 
@@ -140,6 +151,13 @@
 
         </materialDesign:DrawerHost>
 
-
+        <!--  Дополнительное окно (Настройки,Модальные окна и тд)  -->
+        <Grid>
+            <ContentControl Content="{Binding AdditionalCurrenVmd}" />
+        </Grid>
     </Grid>
+
+
+
+
 </Window>

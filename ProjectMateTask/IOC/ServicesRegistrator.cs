@@ -7,16 +7,17 @@ namespace ProjectMateTask.IOC;
 
 internal static class ServicesRegistrator
 {
-    public static IServiceCollection ServicesRegistration(this IServiceCollection services)
-    {
-        services.AddTransient(CreateSelectPageNavigationStore);
+    public static IServiceCollection ServicesRegistration(this IServiceCollection services) =>
+        services.AddTransient(CreateSelectPageNavigationStore)
+            .AddTransient(createCloseAdditionalPageNavigationServices);
+ 
 
-        return services;
-    }
+    private static SubEntityNavigationService CreateSelectPageNavigationStore(IServiceProvider serviceProvider) => 
+        new (serviceProvider.GetRequiredService<EntityPageSubNavigationStore>());
 
-    private static SubEntityNavigationServices CreateSelectPageNavigationStore(IServiceProvider serviceProvider)
-    {
-        return new SubEntityNavigationServices(serviceProvider.GetRequiredService<EntityPageNavigationStore>());
-    }
-    
+    private static CloseAdditionalPageNavigationServices createCloseAdditionalPageNavigationServices(
+        IServiceProvider serviceProvider) =>
+        new(serviceProvider.GetRequiredService<AdditionalPageNavigationStore>());
+
+
 }

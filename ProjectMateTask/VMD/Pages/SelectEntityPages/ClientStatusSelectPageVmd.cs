@@ -6,12 +6,13 @@ using ProjectMateTask.Services.AppInfrastructure.NavigationServices;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
 using ProjectMateTask.Stores.Base;
 using ProjectMateTask.VMD.Base;
+using ProjectMateTask.VMD.Pages.SelectEntityPages.Base;
 
 namespace ProjectMateTask.VMD.Pages.SelectEntityPages;
 
 internal sealed class ClientStatusSelectPageVmd : BaseSelectEntityVmd<ClientStatus>
 {
-    public ClientStatusSelectPageVmd(IRepository<ClientStatus> entitiesRepository, SubEntityNavigationServices closeNavigationServices) : base(entitiesRepository, closeNavigationServices)
+    public ClientStatusSelectPageVmd(IRepository<ClientStatus> entitiesRepository, SubEntityNavigationService closeNavigationService) : base(entitiesRepository, closeNavigationService)
     {
     }
 }

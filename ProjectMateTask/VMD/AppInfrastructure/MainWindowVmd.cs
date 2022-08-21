@@ -1,27 +1,49 @@
-﻿using ProjectMateTask.Infrastructure.MessageBuses;
+﻿using System.Windows.Input;
+using ProjectMateTask.Infrastructure.CMD.AppInfrastructure;
+using ProjectMateTask.Infrastructure.MessageBuses;
+using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
+using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.NavigationServices;
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
 using ProjectMateTask.VMD.Base;
+using ProjectMateTask.VMD.Pages.AdditionalPages.Base;
+using ProjectMateTask.VMD.Pages.EntityPages;
 
 namespace ProjectMateTask.VMD.AppInfrastructure;
 
 internal sealed class MainWindowVmd:BaseVmd
 {
-    private readonly INavigationStore _mainPageNavigationStore;
+    private readonly INavigationStore<BaseNotGenericEntityVmd> _mainEntityPageNavigationStore;
     
-    private readonly INavigationStore _mainMenuNavigationStore;
+    private readonly INavigationStore<BaseVmd> _mainMenuNavigationStore;
+    
+    private readonly INavigationStore<BaseAdditionalVmd> _additionalNavigationStore;
 
-    public MainWindowVmd(INavigationStore mainPageNavigationStore, INavigationStore mainMenuNavigationStore)
+    public MainWindowVmd(INavigationStore<BaseNotGenericEntityVmd> MainEntityPageNavigationStore,
+        INavigationStore<BaseVmd> mainMenuNavigationStore,
+        INavigationStore<BaseAdditionalVmd> additionalNavigationStore,
+        INavigationService openSettingsNavigationServices)
     {
-        _mainPageNavigationStore = mainPageNavigationStore;
+        _mainEntityPageNavigationStore = MainEntityPageNavigationStore;
         
         _mainMenuNavigationStore = mainMenuNavigationStore;
+        
+        _additionalNavigationStore = additionalNavigationStore;
 
-        _mainPageNavigationStore.CurrentVmdChanged += CurrentVmdPageCanges;
+        OpenSettingsCommand = new NavigationCmd(openSettingsNavigationServices, ()=> true);
+
+        _mainEntityPageNavigationStore.CurrentVmdChanged += () => OnPropertyChanged(nameof(EntityPageCurrentVmd));
+        
+        _additionalNavigationStore.CurrentVmdChanged += () => OnPropertyChanged(nameof(AdditionalCurrenVmd));
 
         LoggerMessageBus.Log += (logMes => LoggingInfo = logMes);
     }
 
-    public BaseVmd? MainPageCurrentVmd => _mainPageNavigationStore.CurrentVmd;
+
+    public ICommand OpenSettingsCommand { get; set; }
+
+    public BaseNotGenericEntityVmd? EntityPageCurrentVmd => _mainEntityPageNavigationStore.CurrentVmd;
+
+    public BaseAdditionalVmd? AdditionalCurrenVmd => _additionalNavigationStore.CurrentVmd;
 
     public BaseVmd? MainMenuCurrentVmd => _mainMenuNavigationStore.CurrentVmd;
 
@@ -33,8 +55,8 @@ internal sealed class MainWindowVmd:BaseVmd
         set => Set(ref _loggingInfo,value);
     }
 
-    private void CurrentVmdPageCanges()
-    {
-        OnPropertyChanged(nameof(MainPageCurrentVmd));
-    }
+
+ 
+
 }
+

@@ -2,6 +2,7 @@
 using MaterialDesignThemes.Wpf;
 using ProjectMateTask.Infrastructure.CMD;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
+using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.NavigationServices;
 
 namespace ProjectMateTask.Models.AppInfrastructure;
 

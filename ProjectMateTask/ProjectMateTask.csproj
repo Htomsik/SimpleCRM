@@ -10,7 +10,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Infrastructure\Converters" />
       <Folder Include="Services" />
       <Folder Include="Stores\TemporaryStores" />
     </ItemGroup>

@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using ProjectMateTask.DAL.Annotations;
 
 namespace ProjectMateTask.DAL.Entities.Base;
 

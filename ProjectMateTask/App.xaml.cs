@@ -12,6 +12,7 @@ using ProjectMateTask.DAL.DiRegistrators;
 using ProjectMateTask.Data;
 using ProjectMateTask.IOC;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
+using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.NavigationServices;
 using ProjectMateTask.VMD;
 using ProjectMateTask.VMD.AppInfrastructure;
 using ProjectMateTask.VW.Windows;
@@ -42,7 +43,7 @@ namespace ProjectMateTask
                 scope.ServiceProvider.GetRequiredService<IDbInitializer>().InitializeAsync().Wait();
             }
               
-            //Инициализация MainPageNavigationServices
+            //Инициализация MainEntityPageNavigationService
             var initialNavigationServices = host.Services.GetRequiredService<INavigationService>();
             
             initialNavigationServices.Navigate();

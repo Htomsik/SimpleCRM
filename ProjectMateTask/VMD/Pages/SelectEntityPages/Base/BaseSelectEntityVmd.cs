@@ -10,12 +10,11 @@ using ProjectMateTask.DAL.Repositories;
 using ProjectMateTask.Infrastructure.CMD;
 using ProjectMateTask.Infrastructure.CMD.AppInfrastructure;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
-using ProjectMateTask.Stores.Base;
-using ProjectMateTask.VMD.Base;
+using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.CloseNavigationServices;
 
-namespace ProjectMateTask.VMD.Pages.SelectEntityPages;
+namespace ProjectMateTask.VMD.Pages.SelectEntityPages.Base;
 
-internal class BaseSelectEntityVmd<TEntity> : BaseVmd,ISelectEntityVmd where TEntity: INamedEntity,new()
+internal class BaseSelectEntityVmd<TEntity> : BaseNotGenericSubEntityVmd,ISelectEntityVmd where TEntity: INamedEntity,new()
 {
     private readonly IRepository<TEntity> _entitiesRepository;
     
@@ -89,7 +88,7 @@ internal class BaseSelectEntityVmd<TEntity> : BaseVmd,ISelectEntityVmd where TEn
     #endregion
 
     public BaseSelectEntityVmd(
-        IRepository<TEntity> entitiesRepository, ICloseNavigationServices closeNavigationServices)
+        IRepository<TEntity> entitiesRepository, ICloseNavigationServices closeNavigationService)
     {
         _entitiesRepository = entitiesRepository;
         
@@ -99,7 +98,7 @@ internal class BaseSelectEntityVmd<TEntity> : BaseVmd,ISelectEntityVmd where TEn
 
             AddEntityCommand = new LambdaCmd(OnAddEntity);
 
-            CloseSubEntityPageCommand = new CloseNavigationCmd(closeNavigationServices);
+            CloseSubEntityPageCommand = new CloseNavigationCmd(closeNavigationService);
             
         #endregion
 

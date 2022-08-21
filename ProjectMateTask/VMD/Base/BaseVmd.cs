@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace ProjectMateTask.VMD.Base;
 
-public class BaseVmd:INotifyPropertyChanged
+public abstract class BaseVmd:INotifyPropertyChanged
 {
     public event PropertyChangedEventHandler? PropertyChanged;
     
