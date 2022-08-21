@@ -9,12 +9,8 @@ public class ProjectMateTaskDb : DbContext
 {
     public ProjectMateTaskDb(DbContextOptions<ProjectMateTaskDb> options) : base(options)
     {
-        
     }
     
-    
-  
-
     public DbSet<Client> Clients { get; set; }
 
     public DbSet<Product> Products { get; set; }

@@ -23,10 +23,10 @@ internal sealed class MainMenuVmd:BaseVmd
         
         MenuItems = new ObservableCollection<MainMenuItem>
         {
-            new MainMenuItem("Домашняя страниц",PackIconKind.Home,homePageNavigationService),
-            new MainMenuItem("Managers",PackIconKind.AccountTie,managersPageNavigationServices),
-            new MainMenuItem("Clients",PackIconKind.Account,clientsPageNavigationService),
-            new MainMenuItem("Products",PackIconKind.Shopping,productsPageNavigationService),
+            new MainMenuItem("Домашняя страница",PackIconKind.Home,homePageNavigationService),
+            new MainMenuItem("Менеджеры",PackIconKind.AccountTie,managersPageNavigationServices),
+            new MainMenuItem("Клиенты",PackIconKind.Account,clientsPageNavigationService),
+            new MainMenuItem("Продукты",PackIconKind.Shopping,productsPageNavigationService),
             new MainMenuItem("Статусы клиентов",PackIconKind.Administrator,clientStatusNavigationServices),
             new MainMenuItem("Типы продуктов",PackIconKind.FileDocument,productTypeNavigationServices)
         };

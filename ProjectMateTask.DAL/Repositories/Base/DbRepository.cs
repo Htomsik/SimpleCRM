@@ -146,7 +146,7 @@ internal abstract class DbRepository<T> : IRepository<T> where T : Entity, new()
             _logger.LogError(e,$"Ошибка обновление {item.GetType().Name} в бд");
         }
         
-     
+        
     }
     
     public async Task UpdateAsync(T item, CancellationToken cancelToken = default)

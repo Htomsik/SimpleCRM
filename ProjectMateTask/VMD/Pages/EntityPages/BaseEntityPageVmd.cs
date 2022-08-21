@@ -220,7 +220,7 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
     {
         var selectedEntityId = SelectedEntity.Id;
         
-        EditableEntity = EntitiesRepository.GetAsPartTracking(selectedEntityId);
+        EditableEntity = EntitiesRepository.GetAsFullTracking(selectedEntityId);
         
         IsEditMode = true;
         AcceptModsCommand = AcceptEditEntityModeCommand;
@@ -305,7 +305,7 @@ internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd whe
     {
         EntitiesRepository.Update(EditableEntity);
         IsEditMode = false;
-       await InitializeRepositoryAsync();
+        await InitializeRepositoryAsync();
     }
 
     private bool CanAcceptEditEntity() => !IsSubAddMode && (!OriginalEntity?.Equals(EditableEntity) ?? false) && !EditableEntity!.HasErrors;

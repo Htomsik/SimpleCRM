@@ -101,7 +101,7 @@
                 </materialDesign:ColorZone>
 
 
-                <!--  Верхнее меню  -->
+                <!--  Строка выполнения  -->
                 <materialDesign:ColorZone DockPanel.Dock="Bottom" MaxHeight="30">
 
                     <TextBlock
