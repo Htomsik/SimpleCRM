@@ -4,7 +4,7 @@ using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.NavigationServices;
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
 using ProjectMateTask.VMD.Base;
-using ProjectMateTask.VMD.Pages.EntityPages;
+using ProjectMateTask.VMD.Pages.EntityVmds;
 
 namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices;
 

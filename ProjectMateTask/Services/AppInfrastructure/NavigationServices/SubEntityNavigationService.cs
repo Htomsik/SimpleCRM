@@ -6,9 +6,8 @@ using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.TyeNavigationServices;
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
 using ProjectMateTask.VMD.Base;
-using ProjectMateTask.VMD.Pages.EntityPages;
-using ProjectMateTask.VMD.Pages.SelectEntityPages;
-using ProjectMateTask.VMD.Pages.SelectEntityPages.Base;
+using ProjectMateTask.VMD.Pages.SelectEntityVmds;
+using ProjectMateTask.VMD.Pages.SelectEntityVmds.Base;
 
 namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices;
 
@@ -20,11 +19,11 @@ internal sealed class SubEntityNavigationService: BaseTypeNavigationServices<Bas
     
     private static readonly Dictionary<Type,Type> VmdTypes = new()
     {
-        {typeof(Client),typeof(ClientSelectPageVmd)},
-        {typeof(Product),typeof(ProductSelectPageVmd)},
-        {typeof(Manager),typeof(ManagerSelectPageVmd)},
-        {typeof(ProductType),typeof(ProductTypeSelectPageVmd)},
-        {typeof(ClientStatus),typeof(ClientStatusSelectPageVmd)}
+        {typeof(Client),typeof(ClientSelectVmd)},
+        {typeof(Product),typeof(ProductSelectVmd)},
+        {typeof(Manager),typeof(ManagerSelectVmd)},
+        {typeof(ProductType),typeof(ProductTypeSelectVmd)},
+        {typeof(ClientStatus),typeof(ClientStatusSelectVmd)}
     };
 
     public override void Navigate(Type entityType)

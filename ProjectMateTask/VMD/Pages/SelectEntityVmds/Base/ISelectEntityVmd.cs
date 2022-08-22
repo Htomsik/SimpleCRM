@@ -1,7 +1,7 @@
 ﻿using System;
 using ProjectMateTask.DAL.Entities.Base;
 
-namespace ProjectMateTask.VMD.Pages.SelectEntityPages;
+namespace ProjectMateTask.VMD.Pages.SelectEntityVmds;
 
 public interface ISelectEntityVmd
 {

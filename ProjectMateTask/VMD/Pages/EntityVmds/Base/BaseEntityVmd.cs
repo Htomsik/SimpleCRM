@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Input;
@@ -10,35 +7,32 @@ using Microsoft.EntityFrameworkCore;
 using ProjectMateTask.DAL.Entities.Base;
 using ProjectMateTask.DAL.Repositories;
 using ProjectMateTask.Infrastructure.CMD;
-using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.TyeNavigationServices;
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
-using ProjectMateTask.Stores.Base;
-using ProjectMateTask.VMD.Base;
-using ProjectMateTask.VMD.Pages.SelectEntityPages;
-using ProjectMateTask.VMD.Pages.SelectEntityPages.Base;
+using ProjectMateTask.VMD.Pages.SelectEntityVmds;
+using ProjectMateTask.VMD.Pages.SelectEntityVmds.Base;
 
-namespace ProjectMateTask.VMD.Pages.EntityPages;
+namespace ProjectMateTask.VMD.Pages.EntityVmds;
 
-internal abstract class BaseEntityPageVmd<TEntity> : BaseNotGenericEntityVmd where TEntity : INamedEntity,new()
+internal abstract class BaseEntityVmd<TEntity> : BaseNotGenericEntityVmd where TEntity : INamedEntity,new()
 {
     private readonly ITypeNavigationServices _selectedSubEntityNavigationService;
     
-    private readonly INavigationStore<BaseNotGenericSubEntityVmd> _selectedEntitySubNavigationStore;
+    private readonly INavigationStore<BaseNotGenericSubEntityVmd> _selectedSelectedEntitySelectedNavigationStore;
 
     protected readonly IRepository<TEntity> EntitiesRepository;
-    public ISelectEntityVmd? CurrentSelectedEntityPageVmd => (ISelectEntityVmd)_selectedEntitySubNavigationStore.CurrentVmd;
-    public BaseEntityPageVmd(IRepository<TEntity> entitiesRepository,
+    public ISelectEntityVmd? CurrentSelectedEntityPageVmd => (ISelectEntityVmd)_selectedSelectedEntitySelectedNavigationStore.CurrentVmd;
+    public BaseEntityVmd(IRepository<TEntity> entitiesRepository,
         ITypeNavigationServices selectedSubEntityNavigationService,
-        INavigationStore<BaseNotGenericSubEntityVmd> selectedEntitySubNavigationStore)
+        INavigationStore<BaseNotGenericSubEntityVmd> selectedSelectedEntitySelectedNavigationStore)
     {
         _selectedSubEntityNavigationService = selectedSubEntityNavigationService;
         
-        _selectedEntitySubNavigationStore = selectedEntitySubNavigationStore;
+        _selectedSelectedEntitySelectedNavigationStore = selectedSelectedEntitySelectedNavigationStore;
 
         EntitiesRepository = entitiesRepository;
         
-        _selectedEntitySubNavigationStore.CurrentVmdChanged += () => OnPropertyChanged(nameof(CurrentSelectedEntityPageVmd));
+        _selectedSelectedEntitySelectedNavigationStore.CurrentVmdChanged += () => OnPropertyChanged(nameof(CurrentSelectedEntityPageVmd));
         
         InitializeRepositoryAsync();
 

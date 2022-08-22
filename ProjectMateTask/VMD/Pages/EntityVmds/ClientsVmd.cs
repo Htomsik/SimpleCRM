@@ -1,23 +1,13 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Mapster;
-using ProjectMateTask.DAL.Entities;
-using ProjectMateTask.DAL.Entities.Actors;
+﻿using ProjectMateTask.DAL.Entities.Actors;
 using ProjectMateTask.DAL.Entities.Base;
 using ProjectMateTask.DAL.Entities.Types;
 using ProjectMateTask.DAL.Repositories;
-using ProjectMateTask.DAL.Services;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices;
-using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores;
-using ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
-using ProjectMateTask.Stores.Base;
 
-using ProjectMateTask.VMD.Base;
+namespace ProjectMateTask.VMD.Pages.EntityVmds;
 
-namespace ProjectMateTask.VMD.Pages.EntityPages;
-
-internal sealed class ClientsPageVmd:BaseEntityPageVmd<Client>
+internal sealed class ClientsVmd:BaseEntityVmd<Client>
 {
     protected override void OnDeleteSubEntityFromCollection(object p) => EditableEntity.Products.Remove((Product)p);
     
@@ -36,13 +26,13 @@ internal sealed class ClientsPageVmd:BaseEntityPageVmd<Client>
      
     }
     
-    public ClientsPageVmd(
+    public ClientsVmd(
         IRepository<Client?> entitiesRepository,
         SubEntityNavigationService selectedSubEntityNavigationService,
-        EntityPageSubNavigationStore selectedEntitySubNavigationStore) 
+        SelectedEntityNavigationStore selectedSelectedEntitySelectedNavigationStore) 
         : base(
             entitiesRepository, 
             selectedSubEntityNavigationService, 
-            selectedEntitySubNavigationStore){}
+            selectedSelectedEntitySelectedNavigationStore){}
     
 }

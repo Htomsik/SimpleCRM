@@ -13,10 +13,12 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:AppInfrastructure="clr-namespace:ProjectMateTask.VMD.AppInfrastructure"
     xmlns:VmdPages="clr-namespace:ProjectMateTask.VMD.Pages"
+    xmlns:additionalPages="clr-namespace:ProjectMateTask.VMD.Pages.AdditionalPages"
+    xmlns:additionalPages1="clr-namespace:ProjectMateTask.VW.AdditionalPages"
     xmlns:appInfrastructure="clr-namespace:ProjectMateTask.VW.AppInfrastructure"
     xmlns:base="clr-namespace:ProjectMateTask.VMD.Base"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:entityPages="clr-namespace:ProjectMateTask.VMD.Pages.EntityPages"
+    xmlns:entityPages="clr-namespace:ProjectMateTask.VMD.Pages.EntityVmds"
     xmlns:local="clr-namespace:ProjectMateTask.VW.Windows"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -153,7 +155,14 @@
 
         <!--  Дополнительное окно (Настройки,Модальные окна и тд)  -->
         <Grid>
-            <ContentControl Content="{Binding AdditionalCurrenVmd}" />
+            <ContentControl Content="{Binding AdditionalCurrenVmd}">
+                <ContentControl.Resources>
+                    <!--  Главная страница  -->
+                    <DataTemplate DataType="{x:Type additionalPages:SettingsAdditionalPageVmd}">
+                        <additionalPages1:SettingsVW />
+                    </DataTemplate>
+                </ContentControl.Resources>
+            </ContentControl>
         </Grid>
     </Grid>
 

@@ -9,10 +9,9 @@ using ProjectMateTask.DAL.Entities.Base;
 using ProjectMateTask.DAL.Repositories;
 using ProjectMateTask.Infrastructure.CMD;
 using ProjectMateTask.Infrastructure.CMD.AppInfrastructure;
-using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.CloseNavigationServices;
 
-namespace ProjectMateTask.VMD.Pages.SelectEntityPages.Base;
+namespace ProjectMateTask.VMD.Pages.SelectEntityVmds.Base;
 
 internal class BaseSelectEntityVmd<TEntity> : BaseNotGenericSubEntityVmd,ISelectEntityVmd where TEntity: INamedEntity,new()
 {

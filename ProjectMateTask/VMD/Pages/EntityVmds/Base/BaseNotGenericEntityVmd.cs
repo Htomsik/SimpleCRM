@@ -1,6 +1,6 @@
 ﻿using ProjectMateTask.VMD.Base;
 
-namespace ProjectMateTask.VMD.Pages.EntityPages;
+namespace ProjectMateTask.VMD.Pages.EntityVmds;
 
 internal abstract class BaseNotGenericEntityVmd:BaseVmd
 {

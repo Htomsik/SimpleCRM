@@ -1,5 +1,5 @@
 ﻿<UserControl
-    d:DataContext="{d:DesignInstance {x:Type vmd:ClientsPageVmd},
+    d:DataContext="{d:DesignInstance {x:Type vmd:ClientsVmd},
                                      IsDesignTimeCreatable=True}"
     d:DesignHeight="300"
     d:DesignWidth="300"
@@ -16,7 +16,7 @@
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:selectors="clr-namespace:ProjectMateTask.Infrastructure.Selectors"
-    xmlns:vmd="clr-namespace:ProjectMateTask.VMD.Pages.EntityPages"
+    xmlns:vmd="clr-namespace:ProjectMateTask.VMD.Pages.EntityVmds"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <UserControl.Resources>

@@ -1,5 +1,5 @@
 ﻿<UserControl
-    d:DataContext="{d:DesignInstance {x:Type selectEntityPages:ClientSelectPageVmd},
+    d:DataContext="{d:DesignInstance {x:Type selectEntityPages:ClientSelectVmd},
                                      IsDesignTimeCreatable=True}"
     d:DesignHeight="200"
     d:DesignWidth="100"
@@ -10,8 +10,7 @@
     xmlns:local="clr-namespace:ProjectMateTask.VW.Pages"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:selectEntityPages="clr-namespace:ProjectMateTask.VMD.Pages.SelectEntityPages"
-    xmlns:vmd="clr-namespace:ProjectMateTask.VMD.Pages.EntityPages"
+    xmlns:selectEntityPages="clr-namespace:ProjectMateTask.VMD.Pages.SelectEntityVmds"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <DockPanel>
 
@@ -62,7 +61,7 @@
 
                     <DataTemplate DataType="{x:Type ListCollectionView}" x:Key="Default">
 
-                        <ListView  ItemsSource="{Binding}">
+                        <ListView ItemsSource="{Binding}">
 
                             <ListView.ItemTemplate>
                                 <DataTemplate>

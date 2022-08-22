@@ -3,7 +3,7 @@ using System.Windows.Input;
 using ProjectMateTask.Data;
 using ProjectMateTask.Infrastructure.CMD;
 using ProjectMateTask.VMD.Base;
-using ProjectMateTask.VMD.Pages.EntityPages;
+using ProjectMateTask.VMD.Pages.EntityVmds;
 
 namespace ProjectMateTask.VMD.Pages;
 
