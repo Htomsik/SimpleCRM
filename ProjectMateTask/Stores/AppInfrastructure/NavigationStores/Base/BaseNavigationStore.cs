@@ -4,7 +4,7 @@ using ProjectMateTask.VMD.Base;
 
 namespace ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
 
-internal abstract class BaseNavigationStore<TVmd> : INavigationStore<TVmd> where TVmd : BaseVmd
+internal class BaseNavigationStore<TVmd> : INavigationStore<TVmd> where TVmd : BaseVmd
 {
     private TVmd? _currentVmd;
 

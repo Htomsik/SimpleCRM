@@ -8,9 +8,9 @@ using ProjectMateTask.VMD.Pages.EntityVmds;
 
 namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices;
 
-internal sealed class MainEntityPageNavigationService:BaseNavigationServices<BaseNotGenericEntityVmd>
+internal sealed class MainEntityPageStoreNavigationService:BaseStoreNavigationServices<BaseNotGenericEntityVmd>
 {
-    public MainEntityPageNavigationService(INavigationStore<BaseNotGenericEntityVmd> navigationStore, Func<BaseNotGenericEntityVmd> createVmd) : base(navigationStore, createVmd)
+    public MainEntityPageStoreNavigationService(INavigationStore<BaseNotGenericEntityVmd> navigationStore, Func<BaseNotGenericEntityVmd> createVmd) : base(navigationStore, createVmd)
     {
     }
 }

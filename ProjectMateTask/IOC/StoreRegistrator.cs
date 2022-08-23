@@ -10,5 +10,6 @@ internal static class StoreRegistrator
             .AddSingleton<MainMenuNavigationStore>()
             .AddSingleton<SelectedEntityNavigationStore>()
             .AddSingleton<AdditionalPageNavigationStore>();
-    
+
+
 }
