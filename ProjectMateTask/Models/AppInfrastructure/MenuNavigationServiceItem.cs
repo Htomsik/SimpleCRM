@@ -6,20 +6,12 @@ using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.Navigat
 
 namespace ProjectMateTask.Models.AppInfrastructure;
 
-internal sealed class MainMenuItem
+internal class MenuNavigationServiceItem : MenuItem
 {
-    public  string Name { get; }
-
-    public  PackIconKind MaterialIcon { get; }
-
     public  INavigationService NavigationService { get;  }
 
-    public MainMenuItem(string name, PackIconKind materialIconName,INavigationService navigationService)
+    public MenuNavigationServiceItem(string name, PackIconKind materialIconName,INavigationService navigationService) : base(name,materialIconName)
     {
-        Name = name;
-        
-        MaterialIcon= materialIconName;
-        
         NavigationService = navigationService;
     }
    

@@ -14,8 +14,8 @@
 
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
 
-                <ResourceDictionary Source="Resources/Styles/BaseEntityCard.xaml" />
-                <ResourceDictionary Source="Resources/Styles/SimpleEntityCard.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Entity/BaseEntityCard.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Entity/SimpleEntityCard.xaml" />
 
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

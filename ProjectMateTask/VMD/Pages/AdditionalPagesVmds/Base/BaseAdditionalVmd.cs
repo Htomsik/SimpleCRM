@@ -3,7 +3,7 @@ using ProjectMateTask.Infrastructure.CMD.AppInfrastructure;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.CloseNavigationServices;
 using ProjectMateTask.VMD.Base;
 
-namespace ProjectMateTask.VMD.Pages.AdditionalPages.Base;
+namespace ProjectMateTask.VMD.Pages.AdditionalPagesVmds.Base;
 
 internal abstract class BaseAdditionalVmd:BaseVmd
 {

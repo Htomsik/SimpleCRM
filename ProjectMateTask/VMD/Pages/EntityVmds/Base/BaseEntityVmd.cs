@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using ProjectMateTask.DAL.Entities.Base;
 using ProjectMateTask.DAL.Repositories;
 using ProjectMateTask.Infrastructure.CMD;
-using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.TyeNavigationServices;
+using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.TypeNavigationServices;
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
 using ProjectMateTask.VMD.Pages.SelectEntityVmds;
 using ProjectMateTask.VMD.Pages.SelectEntityVmds.Base;

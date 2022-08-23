@@ -11,7 +11,7 @@ namespace ProjectMateTask.VMD.AppInfrastructure;
 
 internal sealed class MainMenuVmd:BaseVmd
 {
-    public ObservableCollection<MainMenuItem> MenuItems { get;}
+    public ObservableCollection<MenuNavigationServiceItem> MenuItems { get;}
     
     public MainMenuVmd(INavigationService managersPageNavigationServices,
         INavigationService clientsPageNavigationService,
@@ -22,14 +22,14 @@ internal sealed class MainMenuVmd:BaseVmd
     {
         MenuNavigationCommand = new LambdaCmd(OnMenuNavigationExecute);
         
-        MenuItems = new ObservableCollection<MainMenuItem>
+        MenuItems = new ObservableCollection<MenuNavigationServiceItem>
         {
-            new MainMenuItem("Домашняя страница",PackIconKind.Home,homePageNavigationService),
-            new MainMenuItem("Менеджеры",PackIconKind.AccountTie,managersPageNavigationServices),
-            new MainMenuItem("Клиенты",PackIconKind.Account,clientsPageNavigationService),
-            new MainMenuItem("Продукты",PackIconKind.Shopping,productsPageNavigationService),
-            new MainMenuItem("Статусы клиентов",PackIconKind.Administrator,clientStatusNavigationServices),
-            new MainMenuItem("Типы продуктов",PackIconKind.FileDocument,productTypeNavigationServices)
+            new MenuNavigationServiceItem("Домашняя страница",PackIconKind.Home,homePageNavigationService),
+            new MenuNavigationServiceItem("Менеджеры",PackIconKind.AccountTie,managersPageNavigationServices),
+            new MenuNavigationServiceItem("Клиенты",PackIconKind.Account,clientsPageNavigationService),
+            new MenuNavigationServiceItem("Продукты",PackIconKind.Shopping,productsPageNavigationService),
+            new MenuNavigationServiceItem("Статусы клиентов",PackIconKind.Administrator,clientStatusNavigationServices),
+            new MenuNavigationServiceItem("Типы продуктов",PackIconKind.FileDocument,productTypeNavigationServices)
         };
 
     }

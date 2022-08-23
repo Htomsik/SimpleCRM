@@ -43,7 +43,7 @@ namespace ProjectMateTask
                 scope.ServiceProvider.GetRequiredService<IDbInitializer>().InitializeAsync().Wait();
             }
               
-            //Инициализация MainEntityPageNavigationService
+            //Инициализация MainEntityPageStoreNavigationService
             var initialNavigationServices = host.Services.GetRequiredService<INavigationService>();
             
             initialNavigationServices.Navigate();

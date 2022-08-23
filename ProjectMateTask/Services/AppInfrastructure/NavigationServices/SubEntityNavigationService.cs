@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using ProjectMateTask.DAL.Entities.Actors;
 using ProjectMateTask.DAL.Entities.Types;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
-using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.TyeNavigationServices;
+using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.TypeNavigationServices;
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
 using ProjectMateTask.VMD.Base;
 using ProjectMateTask.VMD.Pages.SelectEntityVmds;

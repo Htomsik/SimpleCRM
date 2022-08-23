@@ -2,9 +2,9 @@
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
 using ProjectMateTask.VMD.Base;
 
-namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.TyeNavigationServices;
+namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.TypeNavigationServices;
 
-internal class BaseTypeNavigationServices<TVmd>:ITypeNavigationServices where TVmd: BaseVmd
+internal  class BaseTypeNavigationServices<TVmd>:ITypeNavigationServices where TVmd: BaseVmd
 {
     private readonly INavigationStore<TVmd> _navigationStore;
 

@@ -10,60 +10,20 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Resources/Styles/MenuItems/MenuItemByNavigationService.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
 
     <Grid>
-
-        <ListView ItemsSource="{Binding MenuItems}" materialDesign:ListBoxItemAssist.ShowSelection="False">
-
-
-            <ListView.ItemTemplate>
-
-                <DataTemplate DataType="{x:Type MenuItem}">
-
-                    <Border
-                        BorderBrush="{DynamicResource MaterialDesignDivider}"
-                        BorderThickness="0,0,0,1"
-                        Padding="8">
-
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition SharedSizeGroup="Checkerz" />
-                                <ColumnDefinition />
-                            </Grid.ColumnDefinitions>
-
-                            <Button
-                                Command="{Binding DataContext.MenuNavigationCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListView}}}"
-                                CommandParameter="{Binding NavigationService}"
-                                Height="45"
-                                HorizontalAlignment="Center"
-                                Style="{StaticResource MaterialDesignFloatingActionButton}"
-                                ToolTip="{Binding Name}"
-                                VerticalAlignment="Center"
-                                Width="45">
-
-                                <materialDesign:PackIcon
-                                    Height="35"
-                                    Kind="{Binding MaterialIcon}"
-                                    Width="35" />
-
-                            </Button>
-
-                            <TextBlock
-                                FontWeight="Bold"
-                                Grid.Column="1"
-                                HorizontalAlignment="Center"
-                                Margin="8,0,0,0"
-                                Text="{Binding Name}"
-                                VerticalAlignment="Center" />
-
-                        </Grid>
-
-                    </Border>
-                </DataTemplate>
-
-            </ListView.ItemTemplate>
-
-        </ListView>
+        <ListView
+            ItemTemplate="{DynamicResource MenuItemByNavigationServiceTemplate}"
+            ItemsSource="{Binding MenuItems}"
+            materialDesign:ListBoxItemAssist.ShowSelection="False" />
     </Grid>
 
 </UserControl>
