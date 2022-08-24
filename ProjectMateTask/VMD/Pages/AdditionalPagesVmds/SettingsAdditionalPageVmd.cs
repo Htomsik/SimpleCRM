@@ -41,7 +41,7 @@ internal sealed class SettingsAdditionalPageVmd : BaseAdditionalVmd
     public BaseVmd CurrentSettingsPageVmd => _localNavigationStore.CurrentVmd;
     
     
-    public ICommand MenuNavigationCommand { get; set; }
+    public ICommand MenuNavigationCommand { get;}
 
     private void OnMenuNavigationExecute(object vmdType)
     {

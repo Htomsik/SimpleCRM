@@ -7,6 +7,7 @@
         <StartupObject>ProjectMateTask.Program</StartupObject>
         <RootNamespace>ProjectMateTask</RootNamespace>
         <TargetFramework>net6.0-windows</TargetFramework>
+        <ApplicationIcon>Resources\Assets\TestITaskIcon.ico</ApplicationIcon>
     </PropertyGroup>
 
     <ItemGroup>
@@ -27,6 +28,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\CustomControls\CustomControls.csproj" />
       <ProjectReference Include="..\ProjectMateTask.DAL\ProjectMateTask.DAL.csproj" />
     </ItemGroup>
 
@@ -34,6 +36,11 @@
       <None Update="appsettings.json">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Resources\Assets\TestTaskIcon.png" />
+      <Resource Include="Resources\Assets\TestTaskIcon.png" />
     </ItemGroup>
 
 </Project>

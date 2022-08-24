@@ -27,3 +27,4 @@ internal abstract class BaseStoreNavigationServices<TVmd>:INavigationService whe
         _navigationStore.CurrentVmd = null;
     }
 }
+

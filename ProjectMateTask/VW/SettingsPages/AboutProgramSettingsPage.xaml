@@ -7,15 +7,45 @@
     x:Class="ProjectMateTask.VW.SettingsPages.AboutProgramSettingsPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:additionalPages="clr-namespace:ProjectMateTask.VMD.Pages.SettingsVmds"
+    xmlns:customControls="clr-namespace:CustomControls;assembly=CustomControls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:ProjectMateTask.VW.SettingsPages"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Тестовое задние ProjectMate" />
-            <TextBlock Text="Создатель: Константин" />
-            <TextBlock Text="{Binding AppVersion, StringFormat=Версия приложения: {0}}" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.6*" />
+            <RowDefinition Height="0.4*" />
+        </Grid.RowDefinitions>
+
+        <!--  Иконка приложения  -->
+        <Image
+            Margin="10"
+            MaxHeight="400"
+            MaxWidth="400"
+            MinHeight="50"
+            MinWidth="50"
+            Source="pack://application:,,,/Resources/Assets/TestTaskIcon.png"
+            VerticalAlignment="Bottom" />
+        <!--  Информация о приложении  -->
+        <StackPanel
+            Grid.Row="1"
+            HorizontalAlignment="Center"
+            Margin="10"
+            VerticalAlignment="Center">
+
+            <customControls:ParameterCustomTextBlock
+                HeaderFontSize="16"
+                HeaderForeground="{DynamicResource ImportantSolidColorBrush}"
+                HeaderText="Название:"
+                ParamText="Тестовое задание для ProjectMate" />
+
+            <customControls:ParameterCustomTextBlock
+                HeaderFontSize="16"
+                HeaderForeground="{DynamicResource ImportantSolidColorBrush}"
+                HeaderText="Версия приложения:"
+                ParamText="{Binding AppVersion, UpdateSourceTrigger=PropertyChanged}" />
+
         </StackPanel>
     </Grid>
 </UserControl>

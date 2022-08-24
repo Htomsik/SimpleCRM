@@ -1299,6 +1299,19 @@
           }
         }
       },
+      "CustomControls/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/CustomControls.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CustomControls.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "ProjectMateTask.DAL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -3870,6 +3883,11 @@
         "version.txt"
       ]
     },
+    "CustomControls/1.0.0": {
+      "type": "project",
+      "path": "../CustomControls/CustomControls.csproj",
+      "msbuildProject": "../CustomControls/CustomControls.csproj"
+    },
     "ProjectMateTask.DAL/1.0.0": {
       "type": "project",
       "path": "../ProjectMateTask.DAL/ProjectMateTask.DAL.csproj",
@@ -3878,6 +3896,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
+      "CustomControls >= 1.0.0",
       "Mapster >= 7.3.0",
       "MaterialDesignThemes >= 4.5.0",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.7",
@@ -3919,6 +3938,9 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
+            "C:\\Users\\USER\\RiderProjects\\ProjectMateTask\\CustomControls\\CustomControls.csproj": {
+              "projectPath": "C:\\Users\\USER\\RiderProjects\\ProjectMateTask\\CustomControls\\CustomControls.csproj"
+            },
             "C:\\Users\\USER\\RiderProjects\\ProjectMateTask\\ProjectMateTask.DAL\\ProjectMateTask.DAL.csproj": {
               "projectPath": "C:\\Users\\USER\\RiderProjects\\ProjectMateTask\\ProjectMateTask.DAL\\ProjectMateTask.DAL.csproj"
             }

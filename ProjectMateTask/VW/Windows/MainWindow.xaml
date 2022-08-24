@@ -3,7 +3,7 @@
     MinHeight="300"
     MinWidth="400"
     Style="{StaticResource MaterialDesignWindow}"
-    Title="MainWindow"
+    Title="Тестовое задание Несутулов К.С"
     Width="800"
     WindowStartupLocation="CenterScreen"
     d:DataContext="{d:DesignInstance {x:Type AppInfrastructureVmds:MainWindowVmd},
@@ -26,10 +26,16 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+
         <materialDesign:DrawerHost x:Name="DrawerHost">
 
+            <!--  Меню  -->
             <materialDesign:DrawerHost.LeftDrawerContent>
-
 
                 <Grid>
 
@@ -60,7 +66,7 @@
                         <materialDesign:PackIcon Kind="Settings" />
                     </Button>
 
-                    <!--  EntityPages меню  -->
+                    <!--  Выбор Entity страницы  -->
                     <ContentControl
                         Content="{Binding MainMenuCurrentVmd}"
                         Grid.Column="0"
@@ -81,7 +87,7 @@
             </materialDesign:DrawerHost.LeftDrawerContent>
 
 
-            <!--  Основное окно  -->
+            <!--  Основное пространство  -->
             <DockPanel>
 
                 <!--  Верхнее меню  -->
@@ -114,16 +120,6 @@
                     </Grid>
                 </materialDesign:ColorZone>
 
-                <!--  Строка выполнения  -->
-                <materialDesign:ColorZone DockPanel.Dock="Bottom" MaxHeight="30">
-
-                    <TextBlock
-                        HorizontalAlignment="Left"
-                        Text="{Binding LoggingInfo}"
-                        VerticalAlignment="Center" />
-
-                </materialDesign:ColorZone>
-
                 <!--  VMD Pages  -->
                 <ContentControl
                     Content="{Binding EntityPageCurrentVmd}"
@@ -146,9 +142,6 @@
 
                 </ContentControl>
 
-
-
-
             </DockPanel>
 
         </materialDesign:DrawerHost>
@@ -167,6 +160,24 @@
                 </ContentControl.Resources>
             </ContentControl>
         </Grid>
+
+        <!--  Строка статуса  -->
+        <materialDesign:ColorZone
+            BorderBrush="{DynamicResource MaterialDesignDarkSeparatorBackground}"
+            BorderThickness="0,2,0,0"
+            Grid.Row="1"
+            MaxHeight="30"
+            Mode="Dark"
+            VerticalAlignment="Bottom">
+
+            <TextBlock
+                HorizontalAlignment="Left"
+                Text="{Binding LoggingInfo}"
+                VerticalAlignment="Center" />
+
+        </materialDesign:ColorZone>
+
+
     </Grid>
 
 
