@@ -19,7 +19,7 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../../Resources/Styles/MenuItems/MenuItemByType.xaml" />
+                <ResourceDictionary Source="../../Resources/Styles/MenuItems/MenuItemWithCommand.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
@@ -37,7 +37,7 @@
             <ListView
                 DockPanel.Dock="Top"
                 HorizontalAlignment="Stretch"
-                ItemTemplate="{DynamicResource MenuItemByTypeTemplate}"
+                ItemTemplate="{DynamicResource MenuitemWithCommand}"
                 ItemsSource="{Binding MenuItems}"
                 materialDesign:ListBoxItemAssist.ShowSelection="False" />
 

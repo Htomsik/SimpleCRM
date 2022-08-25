@@ -11,7 +11,7 @@ namespace ProjectMateTask.VMD.AppInfrastructure;
 
 internal sealed class MainMenuVmd:BaseVmd
 {
-    public ObservableCollection<MenuNavigationServiceItem> MenuItems { get;}
+    public ObservableCollection<MenuItemWithCommand> MenuItems { get;}
     
     public MainMenuVmd(INavigationService managersPageNavigationServices,
         INavigationService clientsPageNavigationService,
@@ -22,14 +22,14 @@ internal sealed class MainMenuVmd:BaseVmd
     {
         MenuNavigationCommand = new LambdaCmd(OnMenuNavigationExecute);
         
-        MenuItems = new ObservableCollection<MenuNavigationServiceItem>
+        MenuItems = new ObservableCollection<MenuItemWithCommand>
         {
-            new MenuNavigationServiceItem("Домашняя страница",PackIconKind.Home,homePageNavigationService),
-            new MenuNavigationServiceItem("Менеджеры",PackIconKind.AccountTie,managersPageNavigationServices),
-            new MenuNavigationServiceItem("Клиенты",PackIconKind.Account,clientsPageNavigationService),
-            new MenuNavigationServiceItem("Продукты",PackIconKind.Shopping,productsPageNavigationService),
-            new MenuNavigationServiceItem("Статусы клиентов",PackIconKind.Administrator,clientStatusNavigationServices),
-            new MenuNavigationServiceItem("Типы продуктов",PackIconKind.FileDocument,productTypeNavigationServices)
+            new MenuItemWithCommand("Домашняя страница",PackIconKind.Home,MenuNavigationCommand,homePageNavigationService),
+            new MenuItemWithCommand("Менеджеры",PackIconKind.AccountTie,MenuNavigationCommand,managersPageNavigationServices),
+            new MenuItemWithCommand("Клиенты",PackIconKind.Account,MenuNavigationCommand,clientsPageNavigationService),
+            new MenuItemWithCommand("Продукты",PackIconKind.Shopping,MenuNavigationCommand,productsPageNavigationService),
+            new MenuItemWithCommand("Статусы клиентов",PackIconKind.Administrator,MenuNavigationCommand,clientStatusNavigationServices),
+            new MenuItemWithCommand("Типы продуктов",PackIconKind.FileDocument,MenuNavigationCommand,productTypeNavigationServices)
         };
 
     }

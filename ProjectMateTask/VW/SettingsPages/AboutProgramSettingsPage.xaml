@@ -9,7 +9,6 @@
     xmlns:additionalPages="clr-namespace:ProjectMateTask.VMD.Pages.SettingsVmds"
     xmlns:customControls="clr-namespace:CustomControls;assembly=CustomControls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:ProjectMateTask.VW.SettingsPages"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Grid>
@@ -38,13 +37,22 @@
                 HeaderFontSize="16"
                 HeaderForeground="{DynamicResource ImportantSolidColorBrush}"
                 HeaderText="Название:"
+                ParamForeground="{DynamicResource MaterialDesignDarkForeground}"
                 ParamText="Тестовое задание для ProjectMate" />
 
             <customControls:ParameterCustomTextBlock
                 HeaderFontSize="16"
                 HeaderForeground="{DynamicResource ImportantSolidColorBrush}"
-                HeaderText="Версия приложения:"
-                ParamText="{Binding AppVersion, UpdateSourceTrigger=PropertyChanged}" />
+                HeaderText="Создатель:"
+                ParamForeground="{DynamicResource MaterialDesignDarkForeground}"
+                ParamText="Несутулов К.С" />
+
+            <customControls:ParameterCustomTextBlock
+                HeaderFontSize="16"
+                HeaderForeground="{DynamicResource ImportantSolidColorBrush}"
+                HeaderText="Версия:"
+                ParamForeground="{DynamicResource MaterialDesignDarkForeground}"
+                ParamText="{Binding AppVersion}" />
 
         </StackPanel>
     </Grid>

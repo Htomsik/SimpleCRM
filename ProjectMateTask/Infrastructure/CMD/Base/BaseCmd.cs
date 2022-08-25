@@ -15,7 +15,7 @@ public abstract class BaseCmd:ICommand
 
     protected virtual bool CanExecute(object? parameter) => true;
 
-    protected abstract void Execute(object? parameter);
+    protected abstract void Execute(object parameter);
     
 
     public event EventHandler? CanExecuteChanged

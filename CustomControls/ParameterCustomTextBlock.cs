@@ -44,15 +44,14 @@ namespace CustomControls
         #endregion
         
         #region ParamText : Аргумент 
-
+        
         /// <summary>
-        /// Параметр текста
+        /// Заголовок текста
         /// </summary>
-        [Localizability(LocalizationCategory.None)]
         public string ParamText
         {
             get => (string)GetValue(ParamTextProperty);
-            set => SetValue(ParamTextProperty, $"{value}:");
+            set => SetValue(ParamTextProperty, value);
         }
         
         public static DependencyProperty ParamTextProperty = 
@@ -142,6 +141,10 @@ namespace CustomControls
                 "ParamForeground",
                 typeof(Brush),
                 typeof(ParameterCustomTextBlock));
+        
+        
+
+
 
         #endregion
 

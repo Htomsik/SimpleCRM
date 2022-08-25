@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System.Windows.Input;
 using MaterialDesignThemes.Wpf;
 using ProjectMateTask.Infrastructure.CMD;
+using ProjectMateTask.Infrastructure.CMD.AppInfrastructure;
 using ProjectMateTask.Models.AppInfrastructure;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.TypeNavigationServices;
@@ -19,7 +20,7 @@ internal sealed class SettingsAdditionalPageVmd : BaseAdditionalVmd
 
     private ITypeNavigationServices _typeNavigationServices;
 
-    public ObservableCollection<MenuNavigationTypeItem> MenuItems { get;}
+    public ObservableCollection<MenuItemWithCommand> MenuItems { get;}
 
     public SettingsAdditionalPageVmd(CloseAdditionalPageNavigationServices closeAdditionalNavigationService) : base(closeAdditionalNavigationService)
     {
@@ -27,26 +28,26 @@ internal sealed class SettingsAdditionalPageVmd : BaseAdditionalVmd
 
         _localNavigationStore.CurrentVmdChanged += () => OnPropertyChanged(nameof(CurrentSettingsPageVmd));
 
-        _typeNavigationServices = new BaseTypeNavigationServices<BaseVmd>(_localNavigationStore);
         
-        MenuItems = new ObservableCollection<MenuNavigationTypeItem>
+        _typeNavigationServices = new BaseTypeNavigationServices<BaseVmd>(_localNavigationStore);
+
+        MenuNavigationCommand = new TypeNavigationCmd(_typeNavigationServices);
+        
+        MenuItems = new ObservableCollection<MenuItemWithCommand>
         {
-            new MenuNavigationTypeItem("О программе",PackIconKind.Home,typeof(AboutProgramVmd)),
+            new MenuItemWithCommand("О программе",PackIconKind.Home,MenuNavigationCommand,typeof(AboutProgramVmd)),
         };
 
-        MenuNavigationCommand = new LambdaCmd(OnMenuNavigationExecute);
+       
     }
 
 
     public BaseVmd CurrentSettingsPageVmd => _localNavigationStore.CurrentVmd;
     
     
-    public ICommand MenuNavigationCommand { get;}
+    public ICommand MenuNavigationCommand { get; }
 
-    private void OnMenuNavigationExecute(object vmdType)
-    {
-        _typeNavigationServices.Navigate((Type)vmdType);
-    }
+  
     
 
 }

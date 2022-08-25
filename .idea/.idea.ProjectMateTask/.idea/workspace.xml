@@ -5,117 +5,38 @@
     <projectFile>WpfApp1/WpfApp1.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Добавление основы для настроек и тестовой страницы &quot;О программе&quot; в настройки">
-      <change afterPath="$PROJECT_DIR$/CustomControls/AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/CustomControls.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/CustomControls.csproj.user" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/ParameterCustomTextBlock.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/Themes/Generic.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/bin/Debug/net6.0-windows/CustomControls.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/bin/Debug/net6.0-windows/CustomControls.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/bin/Debug/net6.0-windows/CustomControls.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/CustomControls.csproj.nuget.dgspec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/CustomControls.csproj.nuget.g.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/CustomControls.csproj.nuget.g.targets" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls.csproj.AssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls.g.resources" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_5m35cp5l_wpftmp.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_5m35cp5l_wpftmp.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_5m35cp5l_wpftmp.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_5m35cp5l_wpftmp.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_MarkupCompile.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_MarkupCompile.lref" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_jycsd2cy_wpftmp.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_jycsd2cy_wpftmp.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_jycsd2cy_wpftmp.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_jycsd2cy_wpftmp.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_micjazgq_wpftmp.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_micjazgq_wpftmp.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_micjazgq_wpftmp.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_micjazgq_wpftmp.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_raqjtxie_wpftmp.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_raqjtxie_wpftmp.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_raqjtxie_wpftmp.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_raqjtxie_wpftmp.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_rs3tifgu_wpftmp.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_rs3tifgu_wpftmp.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_rs3tifgu_wpftmp.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_rs3tifgu_wpftmp.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_tqo4lckh_wpftmp.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_tqo4lckh_wpftmp.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_tqo4lckh_wpftmp.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_tqo4lckh_wpftmp.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_yptstvof_wpftmp.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_yptstvof_wpftmp.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_yptstvof_wpftmp.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_yptstvof_wpftmp.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_z1s0mrt4_wpftmp.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_z1s0mrt4_wpftmp.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_z1s0mrt4_wpftmp.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_z1s0mrt4_wpftmp.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_zhz2plbr_wpftmp.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_zhz2plbr_wpftmp.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_zhz2plbr_wpftmp.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_zhz2plbr_wpftmp.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_zurqd5pp_wpftmp.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_zurqd5pp_wpftmp.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_zurqd5pp_wpftmp.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls_zurqd5pp_wpftmp.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/GeneratedInternalTypeHelper.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/GeneratedInternalTypeHelper.g.i.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/Themes/Generic.baml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/ref/CustomControls.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/refint/CustomControls.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/project.assets.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/project.nuget.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/project.packagespec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CustomControls/obj/rider.project.restore.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AppInfrastructure/OpenBrowserLinkCmd.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Resources/Assets/TestITaskIcon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Resources/Assets/TestTaskIcon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Resources/Base/Brushes.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/TextBlocks/CustomTextBlocks.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Services/AppInfrastructure/Link.cs" afterDir="false" />
+    <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Добавление кастомного TextBlock для двух текстов">
+      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AppInfrastructure/TypeNavigationCmd.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Models/AppInfrastructure/MenuItemWithCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomControls/ParameterCustomTextBlock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/ParameterCustomTextBlock.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomControls/bin/Debug/net6.0-windows/CustomControls.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/bin/Debug/net6.0-windows/CustomControls.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomControls/bin/Debug/net6.0-windows/CustomControls.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/bin/Debug/net6.0-windows/CustomControls.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls.g.resources" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls.g.resources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/Themes/Generic.baml" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/Themes/Generic.baml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/ref/CustomControls.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/ref/CustomControls.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/refint/CustomControls.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/refint/CustomControls.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomControls/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask.sln" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/App.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/ProjectMateTask.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/ProjectMateTask.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Services/AppInfrastructure/NavigationServices/Base/NavigationServices/BaseStoreNavigationServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Services/AppInfrastructure/NavigationServices/Base/NavigationServices/BaseStoreNavigationServices.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/Base/BaseCmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/Base/BaseCmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Models/AppInfrastructure/MenuNavigationServiceItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Models/AppInfrastructure/MenuNavigationTypeItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/MenuItems/MenuItemByNavigationService.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/MenuItems/MenuItemByType.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/MenuItems/MenuItemWithCommand.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/TextBlocks/CustomTextBlocks.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/AppInfrastructure/MainMenuVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/AppInfrastructure/MainMenuVmd.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/AdditionalPagesVmds/SettingsAdditionalPageVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/AdditionalPagesVmds/SettingsAdditionalPageVmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/SettingsVmds/AboutProgramVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/SettingsVmds/AboutProgramVmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/AdditionalPages/SettingsVW.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/AdditionalPages/SettingsVW.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/AppInfrastructure/MainMenuVW.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/AppInfrastructure/MainMenuVW.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/SettingsPages/AboutProgramSettingsPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/SettingsPages/AboutProgramSettingsPage.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/Windows/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/Windows/MainWindow.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/App.baml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/App.baml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/App.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/App.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/GeneratedInternalTypeHelper.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/GeneratedInternalTypeHelper.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Pages/MainPageVW.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Pages/MainPageVW.g.i.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.i.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/apphost.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/ProjectMateTask.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/ProjectMateTask.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/project.packagespec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/bin/Debug/net6.0/ProjectMateTask.DAL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/bin/Debug/net6.0/ProjectMateTask.DAL.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/bin/Debug/net6.0/ProjectMateTask.DAL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/bin/Debug/net6.0/ProjectMateTask.DAL.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/bin/Debug/net6.0/ProjectMateTaskDalTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/bin/Debug/net6.0/ProjectMateTaskDalTests.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/bin/Debug/net6.0/ProjectMateTaskDalTests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/bin/Debug/net6.0/ProjectMateTaskDalTests.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/ProjectMateTaskDalTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/ProjectMateTaskDalTests.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/ProjectMateTaskDalTests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/ProjectMateTaskDalTests.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -140,6 +61,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/2a573c24102c480d9ef05b440bf16fe716488/0e/26a6c37e/02000017pdb.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/d84fbd81022442c4ac7d736c97fabf76f87a80/49/7906d000/02000826pdb.il" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1b0533e64a734ffcb8be02a66d5f67fa2800/3d/d606b2a0/PackIconExtension.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/30d1accdf4e144c8859596f20b03e3a36c80/04/b0dfde12/IHostBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a326c33272f448f6b38c34ccf1fe92a96aa600/52/db3179d7/MaterialIconKind.cs" root0="SKIP_HIGHLIGHTING" />
@@ -156,17 +78,21 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/15d04b42e5c017a5cc8808226deed6113d2228493c877f598fcca495b229c3/DbContextOptionsBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1bdc36dd4183e28bfc782d741e368f6faf4ad8397bd232ec65613e2373e/Object.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1e493e93cd51dba47ff84e63a0e157dfb12eb1c1754abd7c8754aa2919f25b62/FileLoggerConfigurationExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1fcc28887b2046be9da57a221bc61b59538eb90786795b63f6efcb25834f9a5/InputBinding.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/23e31092363db7107ca21367adea927bccc2e7cf2075f9ee398ad1175b8e87/Nullable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/24f66ab882784c9a426a89f94678e2e37859e32fd7efcac567c13e41ecb52/LoggerFilterConfiguration.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/27b91272f348469b8fccc471c1ccd767f57a64f55a44975790bfae805b4ebb/Future.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2a573c24102c480d9ef05b440bf16fe716488/_de2b2/INotifyDataErrorInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/399935fa436fb846ac62efb6d50a8d34b1034875a201574eb60f33ad5c7f4/RuntimeHelpers.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/40c2a868db45876997e86f64ca5eebf6658a4724272e161f72f9aa58a5b/Control.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/472f97898a25c1e67257dd1fa24fcfff22f6a611187cff170bab5229c75ab2a/Extensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5330988bfaacf93f15e30f9b3dd6018a768f89da3b38d874fda77299c62164/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/538811d0fba15c61b743814ea8b7193d48cfbb84a1a53c5db2512b1b329330/DbSet.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5939cc1db917894f431a56f3c68e6bef1ade5c56e1cc94de5f14d5305d7e2af3/InvalidOperationException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5a9742a8525be1eba17ec58d411798ed7d35a5dbd737749d44faf8c49299f96/CoreStrings.Designer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/72acdd41bd14e7894c57c6d13541982669ef0fb9f4e7df57c6f566e2da72f39/TextElement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7b65d91392de3e7dfe8363cf4a858f4d564ff6579a6a335c2acfb9983beced/LoggerExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7f8f88eb90b2ac9750a31833ab7f89e979a8ec6795f6e8cf1ee149a0b274ef/ButtonBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/83a6026a3743d5193ae2ff787c3727607dabf7d04e72a3355252fe116066/Collection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/85e2484c9d751f811cac58b6a424cf495193b037a5cbb15b09a4655d8afeba/DependencyProperty.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a683b4d0bbcb4c3e98a3c7cffd352553a23690/_4c146/ICollection.cs" root0="SKIP_HIGHLIGHTING" />
@@ -179,7 +105,10 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/df71358f7b7337a1eee3a65abe6d678dd9a065e256b8cc3fd44a2949754/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e517a13111ecae7dc96436f397927beff98c4ee7315595185819b4110a5f97/FontSizeConverter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/eacce541aea4343da72fa852aadb945151e86e945e6ae0b260527f81a84e2e/ILoggerFactory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CustomControls/ParameterCustomTextBlock.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CustomControls/Themes/Generic.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectMateTask/IOC/ServicesRegistrator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ProjectMateTask/VW/SettingsPages/AboutProgramSettingsPage.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -201,7 +130,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "XThreadsFramesViewSplitterKey": "0.10946052",
+    "XThreadsFramesViewSplitterKey": "0.05399061",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "RiderDpaPageId",
     "vue.rearranger.settings.migration": "true"
@@ -285,6 +214,8 @@
       <workItem from="1661207227166" duration="11122000" />
       <workItem from="1661256000512" duration="3003000" />
       <workItem from="1661351253479" duration="8005000" />
+      <workItem from="1661436135759" duration="453000" />
+      <workItem from="1661436637277" duration="5203000" />
     </task>
     <task id="LOCAL-00002" summary="Добавил кнопки перехода по страницам">
       <created>1658922448103</created>

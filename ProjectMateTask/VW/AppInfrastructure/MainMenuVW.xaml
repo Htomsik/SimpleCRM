@@ -13,7 +13,7 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../../Resources/Styles/MenuItems/MenuItemByNavigationService.xaml" />
+                <ResourceDictionary Source="../../Resources/Styles/MenuItems/MenuItemWithCommand.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
@@ -21,7 +21,8 @@
 
     <Grid>
         <ListView
-            ItemTemplate="{DynamicResource MenuItemByNavigationServiceTemplate}"
+            HorizontalContentAlignment="Stretch"
+            ItemTemplate="{DynamicResource MenuitemWithCommand}"
             ItemsSource="{Binding MenuItems}"
             materialDesign:ListBoxItemAssist.ShowSelection="False" />
     </Grid>
