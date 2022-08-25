@@ -15,7 +15,7 @@ internal static class ServicesRegistrator
  
 
     private static SubEntityNavigationService CreateSelectPageNavigationStore(IServiceProvider serviceProvider) => 
-        new (serviceProvider.GetRequiredService<SelectedEntityNavigationStore>());
+        new (serviceProvider.GetRequiredService<SubEntityNavigationStore>());
 
     private static CloseAdditionalPageNavigationServices createCloseAdditionalPageNavigationServices(
         IServiceProvider serviceProvider) =>

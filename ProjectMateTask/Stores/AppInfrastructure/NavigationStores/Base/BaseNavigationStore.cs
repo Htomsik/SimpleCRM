@@ -1,28 +1,32 @@
 ﻿using System;
-using ProjectMateTask.Stores.Base;
 using ProjectMateTask.VMD.Base;
 
 namespace ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
 
+/// <summary>
+///     Базовая реализация навмгационного хранилища
+/// </summary>
+/// <typeparam name="TVmd">Любая тип, наследуемый от BaseVmd</typeparam>
 internal class BaseNavigationStore<TVmd> : INavigationStore<TVmd> where TVmd : BaseVmd
 {
-    private TVmd? _currentVmd;
+    private Lazy<TVmd?> _currentVmd;
 
     public TVmd? CurrentVmd
     {
-        get => _currentVmd;
+        get => _currentVmd?.Value;
         set
         {
-            _currentVmd?.Dispose();
-            _currentVmd = value;
+            _currentVmd?.Value?.Dispose();
+            _currentVmd = new Lazy<TVmd?>(()=>value);
             OnCurrentVmdChanged();
         }
     }
 
     public event Action? CurrentVmdChanged;
 
-    protected virtual void OnCurrentVmdChanged()
-    {
-        CurrentVmdChanged?.Invoke();
-    }
+    /// <summary>
+    ///     Метод, обновляющий увидомитель
+    /// </summary>
+    protected virtual void OnCurrentVmdChanged() => CurrentVmdChanged?.Invoke();
+   
 }

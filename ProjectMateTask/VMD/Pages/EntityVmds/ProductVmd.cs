@@ -27,9 +27,9 @@ internal sealed class ProductVmd:BaseEntityVmd<Product>
     public ProductVmd(
         IRepository<Product?> entitiesRepository,
         SubEntityNavigationService selectedSubEntityNavigationService,
-        SelectedEntityNavigationStore selectedSelectedEntitySelectedNavigationStore) 
+        SubEntityNavigationStore subSubEntitySubNavigationStore) 
         : base(
             entitiesRepository, 
             selectedSubEntityNavigationService, 
-            selectedSelectedEntitySelectedNavigationStore){}
+            subSubEntitySubNavigationStore){}
 }

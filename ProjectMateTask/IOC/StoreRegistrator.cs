@@ -8,7 +8,7 @@ internal static class StoreRegistrator
     public static IServiceCollection StoreRegistration(this IServiceCollection services) =>
         services.AddSingleton<MainEntityNavigationStore>()
             .AddSingleton<MainMenuNavigationStore>()
-            .AddSingleton<SelectedEntityNavigationStore>()
+            .AddSingleton<SubEntityNavigationStore>()
             .AddSingleton<AdditionalPageNavigationStore>();
 
 

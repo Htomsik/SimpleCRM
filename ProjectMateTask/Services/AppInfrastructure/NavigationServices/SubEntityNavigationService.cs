@@ -10,7 +10,7 @@ using ProjectMateTask.VMD.Pages.SelectEntityVmds.Base;
 namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices;
 
 /// <summary>
-/// Метод навигации между связными Entity 
+///     Метод навигации между связными Entity 
 /// </summary>
 internal sealed class SubEntityNavigationService: BaseTypeNavigationServices<BaseNotGenericSubEntityVmd>
 {

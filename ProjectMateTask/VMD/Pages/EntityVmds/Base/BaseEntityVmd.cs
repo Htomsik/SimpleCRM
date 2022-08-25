@@ -17,21 +17,21 @@ internal abstract class BaseEntityVmd<TEntity> : BaseNotGenericEntityVmd where T
 {
     private readonly ITypeNavigationServices _selectedSubEntityNavigationService;
     
-    private readonly INavigationStore<BaseNotGenericSubEntityVmd> _selectedSelectedEntitySelectedNavigationStore;
+    private readonly INavigationStore<BaseNotGenericSubEntityVmd> _subSubEntitySubNavigationStore;
 
     protected readonly IRepository<TEntity> EntitiesRepository;
-    public ISelectEntityVmd? CurrentSelectedEntityPageVmd => (ISelectEntityVmd)_selectedSelectedEntitySelectedNavigationStore.CurrentVmd;
+    public ISelectEntityVmd? CurrentSelectedEntityPageVmd => (ISelectEntityVmd)_subSubEntitySubNavigationStore.CurrentVmd;
     public BaseEntityVmd(IRepository<TEntity> entitiesRepository,
         ITypeNavigationServices selectedSubEntityNavigationService,
-        INavigationStore<BaseNotGenericSubEntityVmd> selectedSelectedEntitySelectedNavigationStore)
+        INavigationStore<BaseNotGenericSubEntityVmd> subSubEntitySubNavigationStore)
     {
         _selectedSubEntityNavigationService = selectedSubEntityNavigationService;
         
-        _selectedSelectedEntitySelectedNavigationStore = selectedSelectedEntitySelectedNavigationStore;
+        _subSubEntitySubNavigationStore = subSubEntitySubNavigationStore;
 
         EntitiesRepository = entitiesRepository;
         
-        _selectedSelectedEntitySelectedNavigationStore.CurrentVmdChanged += () => OnPropertyChanged(nameof(CurrentSelectedEntityPageVmd));
+        _subSubEntitySubNavigationStore.CurrentVmdChanged += () => OnPropertyChanged(nameof(CurrentSelectedEntityPageVmd));
         
         InitializeRepositoryAsync();
 

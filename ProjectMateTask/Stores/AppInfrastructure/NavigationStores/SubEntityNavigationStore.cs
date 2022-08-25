@@ -1,10 +1,12 @@
 ﻿using ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
-using ProjectMateTask.VMD.Base;
 using ProjectMateTask.VMD.Pages.SelectEntityVmds.Base;
 
 namespace ProjectMateTask.Stores.AppInfrastructure.NavigationStores;
 
-internal sealed class SelectedEntityNavigationStore : BaseNavigationStore<BaseNotGenericSubEntityVmd>
+/// <summary>
+///     Навигационное хранилище по связным Entity
+/// </summary>
+internal sealed class SubEntityNavigationStore : BaseNavigationStore<BaseNotGenericSubEntityVmd>
 {
     
 }
