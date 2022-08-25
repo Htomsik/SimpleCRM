@@ -1,18 +1,30 @@
-﻿using MaterialDesignThemes.Wpf;
+﻿using System;
+using MaterialDesignThemes.Wpf;
 
 namespace ProjectMateTask.Models.AppInfrastructure;
 
-public class MenuItem
+internal class MenuItem
 {
-    public  string Name { get; }
+    /// <summary>
+    /// Имя элемента
+    /// </summary>
+    public Lazy<string>  Name { get; }
 
-    public  PackIconKind MaterialIcon { get; }
+    /// <summary>
+    /// Иконпка элемента
+    /// </summary>
+    public Lazy<PackIconKind>  MaterialIcon { get; }
 
 
+    /// <summary>
+    /// Элемент для составления меню
+    /// </summary>
+    /// <param name="name">Имя элемента</param>
+    /// <param name="materialIconName">Иконка элемента</param>
     public MenuItem(string name, PackIconKind materialIconName)
     {
-        Name = name;
+        Name = new Lazy<string>(()=> name) ;
         
-        MaterialIcon= materialIconName;
+        MaterialIcon= new Lazy<PackIconKind>(()=>materialIconName);
     }
 }

@@ -19,18 +19,18 @@
                 </Grid.ColumnDefinitions>
 
                 <Button
-                    Command="{Binding Command}"
-                    CommandParameter="{Binding Parameter}"
+                    Command="{Binding Command.Value}"
+                    CommandParameter="{Binding Parameter.Value}"
                     Height="45"
                     HorizontalAlignment="Left"
                     Style="{StaticResource MaterialDesignFloatingActionButton}"
-                    ToolTip="{Binding Name}"
+                    ToolTip="{Binding Name.Value}"
                     VerticalAlignment="Center"
                     Width="45">
 
                     <materialDesign:PackIcon
                         Height="35"
-                        Kind="{Binding MaterialIcon}"
+                        Kind="{Binding MaterialIcon.Value}"
                         Width="35" />
 
                 </Button>
@@ -40,15 +40,15 @@
                     Grid.Column="1"
                     HorizontalAlignment="Left"
                     Margin="8,0,0,0"
-                    Text="{Binding Name}"
+                    Text="{Binding Name.Value}"
                     VerticalAlignment="Center" />
 
             </Grid>
 
             <Border.InputBindings>
                 <MouseBinding
-                    Command="{Binding Command}"
-                    CommandParameter="{Binding Parameter}"
+                    Command="{Binding Command.Value}"
+                    CommandParameter="{Binding Parameter.Value}"
                     MouseAction="LeftClick" />
             </Border.InputBindings>
 

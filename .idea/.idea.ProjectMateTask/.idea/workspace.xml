@@ -5,39 +5,13 @@
     <projectFile>WpfApp1/WpfApp1.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Добавление кастомного TextBlock для двух текстов">
-      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AppInfrastructure/TypeNavigationCmd.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Models/AppInfrastructure/MenuItemWithCommand.cs" afterDir="false" />
+    <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Создал универсальный MenuItemWithCommand.cs для всех menuItem с командами, подправил внешний вид для меню">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomControls/ParameterCustomTextBlock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/ParameterCustomTextBlock.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomControls/bin/Debug/net6.0-windows/CustomControls.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/bin/Debug/net6.0-windows/CustomControls.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomControls/bin/Debug/net6.0-windows/CustomControls.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/bin/Debug/net6.0-windows/CustomControls.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls.g.resources" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls.g.resources" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/Themes/Generic.baml" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/Themes/Generic.baml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/ref/CustomControls.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/ref/CustomControls.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/refint/CustomControls.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/refint/CustomControls.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomControls/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/Base/BaseCmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/Base/BaseCmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Models/AppInfrastructure/MenuNavigationServiceItem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Models/AppInfrastructure/MenuNavigationTypeItem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/MenuItems/MenuItemByNavigationService.xaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/MenuItems/MenuItemByType.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/MenuItems/MenuItemWithCommand.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/TextBlocks/CustomTextBlocks.xaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/AppInfrastructure/MainMenuVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/AppInfrastructure/MainMenuVmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/AdditionalPagesVmds/SettingsAdditionalPageVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/AdditionalPagesVmds/SettingsAdditionalPageVmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/AdditionalPages/SettingsVW.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/AdditionalPages/SettingsVW.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/AppInfrastructure/MainMenuVW.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/AppInfrastructure/MainMenuVW.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/SettingsPages/AboutProgramSettingsPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/SettingsPages/AboutProgramSettingsPage.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Models/AppInfrastructure/MenuItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Models/AppInfrastructure/MenuItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Models/AppInfrastructure/MenuItemWithCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Models/AppInfrastructure/MenuItemWithCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/MenuItems/MenuItemWithCommand.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/MenuItems/MenuItemWithCommand.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Pages/MainPageVW.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Pages/MainPageVW.g.i.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.i.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +189,7 @@
       <workItem from="1661256000512" duration="3003000" />
       <workItem from="1661351253479" duration="8005000" />
       <workItem from="1661436135759" duration="453000" />
-      <workItem from="1661436637277" duration="5203000" />
+      <workItem from="1661436637277" duration="7144000" />
     </task>
     <task id="LOCAL-00002" summary="Добавил кнопки перехода по страницам">
       <created>1658922448103</created>
@@ -497,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661218638750</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Создал универсальный MenuItemWithCommand.cs для всех menuItem с командами, подправил внешний вид для меню">
+      <created>1661442129004</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1661442129004</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -517,7 +498,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавил карточки для менеджеров" />
     <MESSAGE value="Изменение навигации в главном окне" />
     <MESSAGE value="Добавление каточки редактирования для статусов клиентов&#10;&#10;Добавление нескольких элементов для украшения" />
     <MESSAGE value="Добавление визуального режима редактирования" />
@@ -542,7 +522,8 @@
     <MESSAGE value="Добавлена инфрструктура для Additional Страниц" />
     <MESSAGE value="Рефакторинг названий" />
     <MESSAGE value="Добавление основы для настроек и тестовой страницы &quot;О программе&quot; в настройки" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавление основы для настроек и тестовой страницы &quot;О программе&quot; в настройки" />
+    <MESSAGE value="Создал универсальный MenuItemWithCommand.cs для всех menuItem с командами, подправил внешний вид для меню" />
+    <option name="LAST_COMMIT_MESSAGE" value="Создал универсальный MenuItemWithCommand.cs для всех menuItem с командами, подправил внешний вид для меню" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
