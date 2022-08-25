@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Windows.Input;
 using MaterialDesignThemes.Wpf;
-using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.NavigationServices;
+
 
 namespace ProjectMateTask.Models.AppInfrastructure;
 
+/// <summary>
+/// Элемент меню с поддержкой команд
+/// </summary>
 internal sealed class MenuItemWithCommand : MenuItem
 {
     /// <summary>
@@ -18,7 +21,7 @@ internal sealed class MenuItemWithCommand : MenuItem
     public Lazy<object> Parameter { get; }
     
     /// <summary>
-    /// Элемент меню с командной
+    /// Элемент меню с поддержкой команд
     /// </summary>
     /// <param name="name">Имя элемента</param>
     /// <param name="materialIconName">Иконка элемента</param>

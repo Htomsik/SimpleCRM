@@ -3,6 +3,9 @@ using MaterialDesignThemes.Wpf;
 
 namespace ProjectMateTask.Models.AppInfrastructure;
 
+/// <summary>
+/// Элемент меню
+/// </summary>
 internal class MenuItem
 {
     /// <summary>

@@ -4,6 +4,9 @@ using System.Windows.Controls;
 
 namespace ProjectMateTask.Infrastructure.Selectors;
 
+/// <summary>
+///     Селектор выбора карт для Entity
+/// </summary>
 public class EditEntitySelector : DataTemplateSelector
 {
     public override DataTemplate SelectTemplate(object item, DependencyObject container)
