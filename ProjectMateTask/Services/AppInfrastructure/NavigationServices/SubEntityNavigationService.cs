@@ -2,21 +2,25 @@
 using System.Collections.Generic;
 using ProjectMateTask.DAL.Entities.Actors;
 using ProjectMateTask.DAL.Entities.Types;
-using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.TypeNavigationServices;
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
-using ProjectMateTask.VMD.Base;
 using ProjectMateTask.VMD.Pages.SelectEntityVmds;
 using ProjectMateTask.VMD.Pages.SelectEntityVmds.Base;
 
 namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices;
 
+/// <summary>
+/// Метод навигации между связными Entity 
+/// </summary>
 internal sealed class SubEntityNavigationService: BaseTypeNavigationServices<BaseNotGenericSubEntityVmd>
 {
     public SubEntityNavigationService(INavigationStore<BaseNotGenericSubEntityVmd> navigationStore) : base(navigationStore)
     {
     }
     
+    /// <summary>
+    /// Словарь сапостовления типов
+    /// </summary>
     private static readonly Dictionary<Type,Type> VmdTypes = new()
     {
         {typeof(Client),typeof(ClientSelectVmd)},

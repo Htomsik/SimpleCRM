@@ -4,6 +4,9 @@ using ProjectMateTask.VMD.Pages.AdditionalPagesVmds.Base;
 
 namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices;
 
+/// <summary>
+///     Сервис закрытия допольнительного окна
+/// </summary>
 internal sealed class CloseAdditionalPageNavigationServices : BaseCloseNavigationServices<BaseAdditionalVmd>
 {
     public CloseAdditionalPageNavigationServices(INavigationStore<BaseAdditionalVmd> navigationStore) : base(navigationStore)

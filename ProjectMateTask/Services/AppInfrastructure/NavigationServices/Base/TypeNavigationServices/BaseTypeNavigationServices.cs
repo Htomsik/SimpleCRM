@@ -4,27 +4,41 @@ using ProjectMateTask.VMD.Base;
 
 namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.TypeNavigationServices;
 
+/// <summary>
+///     Базовая реализация севиса навигации по типам
+/// </summary>
+/// <typeparam name="TVmd">Любой тип, наследуемый от BaseVmd</typeparam>
 internal  class BaseTypeNavigationServices<TVmd>:ITypeNavigationServices where TVmd: BaseVmd
 {
-    private readonly INavigationStore<TVmd> _navigationStore;
+    private readonly Lazy<INavigationStore<TVmd>>  _navigationStore;
 
+    /// <summary>
+    ///     Базовая реализация севиса навигации по типам
+    /// </summary>
+    /// <param name="navigationStore">Навигационное хранилище</param>
+    /// <exception cref="ArgumentNullException">Возникает в случае если navigationStore null</exception>
     public BaseTypeNavigationServices(INavigationStore<TVmd> navigationStore)
     {
-        _navigationStore = navigationStore;
+        _navigationStore = new Lazy<INavigationStore<TVmd>>(navigationStore)
+            ?? throw new ArgumentNullException(nameof(_navigationStore));
     }
     
+    /// <summary>
+    ///     Метод навигации
+    /// </summary>
+    /// <param name="vmdType">Тип, заренистирированный в IOC контейнере</param>
+    /// <exception cref="ArgumentNullException">Возникает в случае если не найдено регистрации для типа</exception>
     public virtual void Navigate(Type vmdType)
     {
-        
         var iocVmd = (TVmd)App.Services.GetService(vmdType);
 
-      _navigationStore.CurrentVmd = iocVmd is not null ? iocVmd 
-          : throw new ArgumentNullException($"Отсуствует зарегистрированная Viewmodel для {vmdType}");
+      _navigationStore.Value.CurrentVmd = iocVmd ??
+          throw new ArgumentNullException($"Отсуствует зарегистрированная Viewmodel для {vmdType}");
 
     }
 
     public void Close()
     {
-        _navigationStore.CurrentVmd = null;
+        _navigationStore.Value.CurrentVmd = null;
     }
 }

@@ -21,13 +21,20 @@ internal sealed class AsyncLambdaCmd : BaseCmd
     /// </summary>
     /// <param name="execute">Выполняемое действие</param>
     /// <param name="canExecute">Условие выполнения</param>
+    /// <exception cref="ArgumentNullException">В случае если execute null</exception>
     public AsyncLambdaCmd(Func<object, Task> execute,
         Func<object, bool> canExecute = null)
     {
-        _execute = new Lazy<Func<object, Task>>(()=>execute);
+        _execute = new Lazy<Func<object, Task>>(()=>execute) ?? throw new ArgumentNullException(nameof(execute));;
         _canExecute = new Lazy<Func<object, bool>>(()=>canExecute);
     }
     
+    /// <summary>
+    /// Контруктор для условий только с выходным параметром
+    /// </summary>
+    /// <param name="execute">Выполняемое действие</param>
+    /// <param name="canExecute">Условие выполнения</param>
+    /// <exception cref="ArgumentNullException">В случае если execute null</exception>
     public AsyncLambdaCmd(Func<Task> execute,
         Func<bool> canExecute = null)
         :this(p => execute(), canExecute is null ? null : p => canExecute()){}

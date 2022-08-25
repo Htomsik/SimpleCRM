@@ -4,27 +4,36 @@ using ProjectMateTask.VMD.Base;
 
 namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.NavigationServices;
 
+/// <summary>
+///     Базовая реализация навигации с навигационными хринилищами
+/// </summary>
+/// <typeparam name="TVmd">Любой тип, наследуемый от BaseVmd</typeparam>
 internal abstract class BaseStoreNavigationServices<TVmd>:INavigationService where TVmd : BaseVmd
 {
-    protected readonly INavigationStore<TVmd> _navigationStore;
+    protected readonly Lazy<INavigationStore<TVmd>>  NavigationStore;
     
-    protected readonly Func<TVmd> _createVmd;
+    protected readonly Lazy<Func<TVmd>> CreateVmd;
 
+    /// <summary>
+    ///      Базовая реализация навигации с навигационными хринилищами
+    /// </summary>
+    /// <param name="navigationStore">Навигационное хранилище</param>
+    /// <param name="createVmd">Vmd передаваемое в навигационное хранилище</param>
+    /// <exception cref="ArgumentNullException">Возникает в случае если navigationStore или createVmd null  </exception>
     public BaseStoreNavigationServices(INavigationStore<TVmd> navigationStore, Func<TVmd> createVmd)
     {
-        _navigationStore = navigationStore;
+        NavigationStore = 
+            new Lazy<INavigationStore<TVmd>>(()=>navigationStore) 
+            ?? throw new ArgumentNullException(nameof(NavigationStore));
         
-        _createVmd = createVmd;
+        CreateVmd = 
+            new Lazy<Func<TVmd>>(()=>createVmd) 
+            ?? throw new ArgumentNullException(nameof(CreateVmd));
     }
     
-    public virtual void Navigate()
-    {
-        _navigationStore.CurrentVmd = _createVmd();
-    }
+    public virtual void Navigate() => NavigationStore.Value.CurrentVmd = CreateVmd.Value();
 
-    public void Close()
-    {
-        _navigationStore.CurrentVmd = null;
-    }
+    public virtual void Close() => NavigationStore.Value.CurrentVmd = null;
+ 
 }
 
