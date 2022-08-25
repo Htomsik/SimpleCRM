@@ -31,7 +31,7 @@ internal sealed class SettingsAdditionalPageVmd : BaseAdditionalVmd
         
         _typeNavigationServices = new BaseTypeNavigationServices<BaseVmd>(_localNavigationStore);
 
-        MenuNavigationCommand = new TypeNavigationCmd(_typeNavigationServices);
+        MenuNavigationCommand = new TypeNavigationCmd(_typeNavigationServices, ()=> true);
         
         MenuItems = new ObservableCollection<MenuItemWithCommand>
         {

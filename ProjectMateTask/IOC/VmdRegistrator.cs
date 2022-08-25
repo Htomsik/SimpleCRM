@@ -103,7 +103,6 @@ internal static class VmdRegistrator
         return new MainEntityPageStoreNavigationService(serviceProvider.GetRequiredService<MainEntityNavigationStore>(),
             serviceProvider.GetRequiredService<ClientStatusesVmd>);
     }
-
     private static INavigationService CreateProductTypesPageNavigationServices(IServiceProvider serviceProvider)
     {
         return new MainEntityPageStoreNavigationService(serviceProvider.GetRequiredService<MainEntityNavigationStore>(),

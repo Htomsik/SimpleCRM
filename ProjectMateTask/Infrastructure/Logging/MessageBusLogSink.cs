@@ -5,6 +5,9 @@ using Serilog.Events;
 
 namespace ProjectMateTask.Infrastructure.Logging;
 
+/// <summary>
+/// Раковина для логгера
+/// </summary>
 public class MessageBusLogSink: ILogEventSink
 {
     private readonly Lazy<LoggerMessageBus> _loggerMessageBus;

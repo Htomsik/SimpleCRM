@@ -5,17 +5,19 @@
     <projectFile>WpfApp1/WpfApp1.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Добавление ленивой инициализации для MenuItem.cs и MenuItemWithCommand.cs">
-      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/MessageBuses/Base/BaseMessageBus.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/MessageBuses/Base/IMessageBus.cs" afterDir="false" />
+    <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Создние инфраструктуры для шин сообщений">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/IOC/ServicesRegistrator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/IOC/ServicesRegistrator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/IOC/VmdRegistrator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/IOC/VmdRegistrator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AppInfrastructure/CloseNavigationCmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AppInfrastructure/CloseNavigationCmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AppInfrastructure/NavigationCmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AppInfrastructure/NavigationCmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AppInfrastructure/OpenBrowserLinkCmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AppInfrastructure/OpenBrowserLinkCmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AppInfrastructure/TypeNavigationCmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AppInfrastructure/TypeNavigationCmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AsyncLambdaCmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AsyncLambdaCmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/Base/BaseCmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/Base/BaseCmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/LambdaCmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/LambdaCmd.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/Logging/MessageBusLogSink.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/Logging/MessageBusLogSink.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/MessageBuses/LoggerMessageBus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/MessageBuses/LoggerMessageBus.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/Validations/NotEmptyValidationRule.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Models/AppInfrastructure/Enums/DialogWindowType.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/AppInfrastructure/MainWindowVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/AppInfrastructure/MainWindowVmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/AdditionalPagesVmds/SettingsAdditionalPageVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/AdditionalPagesVmds/SettingsAdditionalPageVmd.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.pdb" afterDir="false" />
     </list>
@@ -43,6 +45,8 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/2a573c24102c480d9ef05b440bf16fe716488/0e/26a6c37e/02000017pdb.il" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/d84fbd81022442c4ac7d736c97fabf76f87a80/49/7906d000/02000826pdb.il" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1b0533e64a734ffcb8be02a66d5f67fa2800/3d/d606b2a0/PackIconExtension.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1b13606a59134d7783d48ec1081f0927b4290/3e/bd6ff93d/IParameterLiteralNodeMatchingPolicy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2a573c24102c480d9ef05b440bf16fe716488/d2/926ffbb4/ICommand.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/30d1accdf4e144c8859596f20b03e3a36c80/04/b0dfde12/IHostBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a326c33272f448f6b38c34ccf1fe92a96aa600/52/db3179d7/MaterialIconKind.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a683b4d0bbcb4c3e98a3c7cffd352553a23690/55/e326d99e/IEquatable`1.cs" root0="SKIP_HIGHLIGHTING" />
@@ -196,7 +200,7 @@
       <workItem from="1661256000512" duration="3003000" />
       <workItem from="1661351253479" duration="8005000" />
       <workItem from="1661436135759" duration="453000" />
-      <workItem from="1661436637277" duration="9400000" />
+      <workItem from="1661436637277" duration="13472000" />
     </task>
     <task id="LOCAL-00002" summary="Добавил кнопки перехода по страницам">
       <created>1658922448103</created>
@@ -492,7 +496,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661444072427</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Создние инфраструктуры для шин сообщений">
+      <created>1661446058814</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1661446058814</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -512,7 +523,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавление каточки редактирования для статусов клиентов&#10;&#10;Добавление нескольких элементов для украшения" />
     <MESSAGE value="Добавление визуального режима редактирования" />
     <MESSAGE value="Добавление возможности удаление Entity" />
     <MESSAGE value="Изменение режима редактирования, добавление заглушки в EntityPagesVW.xaml в виде второго Control для режима редактирования" />
@@ -537,7 +547,8 @@
     <MESSAGE value="Добавление основы для настроек и тестовой страницы &quot;О программе&quot; в настройки" />
     <MESSAGE value="Создал универсальный MenuItemWithCommand.cs для всех menuItem с командами, подправил внешний вид для меню" />
     <MESSAGE value="Добавление ленивой инициализации для MenuItem.cs и MenuItemWithCommand.cs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавление ленивой инициализации для MenuItem.cs и MenuItemWithCommand.cs" />
+    <MESSAGE value="Создние инфраструктуры для шин сообщений" />
+    <option name="LAST_COMMIT_MESSAGE" value="Создние инфраструктуры для шин сообщений" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

@@ -7,17 +7,25 @@ using ProjectMateTask.Infrastructure.CMD.Base;
 
 namespace ProjectMateTask.Infrastructure.CMD;
 
+/// <summary>
+/// Асинхронная команда с условием выполнения
+/// </summary>
 internal sealed class AsyncLambdaCmd : BaseCmd
 {
-    private readonly Func<object, bool> _canExecute;
+    private readonly Lazy<Func<object, bool>>  _canExecute;
 
-    private readonly Func<object, Task> _execute;
+    private readonly Lazy<Func<object, Task>>  _execute;
     
+    /// <summary>
+    /// Контруктор для условий с входным и выходным параметром
+    /// </summary>
+    /// <param name="execute">Выполняемое действие</param>
+    /// <param name="canExecute">Условие выполнения</param>
     public AsyncLambdaCmd(Func<object, Task> execute,
         Func<object, bool> canExecute = null)
     {
-        _execute = execute;
-        _canExecute = canExecute;
+        _execute = new Lazy<Func<object, Task>>(()=>execute);
+        _canExecute = new Lazy<Func<object, bool>>(()=>canExecute);
     }
     
     public AsyncLambdaCmd(Func<Task> execute,
@@ -28,7 +36,7 @@ internal sealed class AsyncLambdaCmd : BaseCmd
     protected override bool CanExecute(object? parameter)
     {
         if (!IsExecuting)
-            return _canExecute?.Invoke(parameter!) ?? true;
+            return _canExecute?.Value?.Invoke(parameter!) ?? true;
         return false;
     }
 
@@ -50,13 +58,19 @@ internal sealed class AsyncLambdaCmd : BaseCmd
         CommandManager.InvalidateRequerySuggested();
     }
 
-    private async Task ExecuteAsync(object parameter)
-    {
-        await _execute(parameter);
-    }
-    
+    /// <summary>
+    /// Асинхронное выполнение команды
+    /// </summary>
+    /// <param name="parameter">Параметр для команды</param>
+    private async Task ExecuteAsync(object parameter) =>await _execute.Value(parameter);
+
+    #region IsExecuting : флаг того что команда выполняется в данный момент
+
     private bool _isExecuting ;
 
+    /// <summary>
+    /// флаг того что команда выполняется в данный момент
+    /// </summary>
     public bool IsExecuting
     {
         get => _isExecuting;
@@ -67,4 +81,7 @@ internal sealed class AsyncLambdaCmd : BaseCmd
             CommandManager.InvalidateRequerySuggested();
         }
     }
+
+    #endregion
+    
 }

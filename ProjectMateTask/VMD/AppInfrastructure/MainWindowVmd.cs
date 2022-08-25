@@ -30,7 +30,7 @@ internal sealed class MainWindowVmd:BaseVmd
         
         _additionalNavigationStore = additionalNavigationStore;
 
-        OpenSettingsCommand = new NavigationCmd(openSettingsNavigationServices, ()=> true);
+        OpenSettingsCommand = new NavigationCmd(openSettingsNavigationServices);
 
         _mainEntityPageNavigationStore.CurrentVmdChanged += () => OnPropertyChanged(nameof(EntityPageCurrentVmd));
         

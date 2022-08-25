@@ -1,33 +1,54 @@
 ﻿using System;
 using ProjectMateTask.Infrastructure.CMD.Base;
-using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.NavigationServices;
 
 namespace ProjectMateTask.Infrastructure.CMD.AppInfrastructure;
 
-internal sealed class NavigationCmd:BaseCmd
+/// <summary>
+///     Навигационная команда через навигационные сервисы
+/// </summary>
+internal sealed class NavigationCmd : BaseCmd
 {
-    private readonly INavigationService _navigationService;
+    private readonly Lazy<Predicate<object>> _canExecute;
     
-    private readonly Predicate<object> _canExecute;
+    private readonly Lazy<INavigationService> _navigationService;
 
     /// <summary>
-    /// Команды смены ViewModel
+    ///     Контруктор для условий выполнения с входным и выходным параметром
     /// </summary>
     /// <param name="navigationService">Сервис взаимодействующий с хранилищем текущего контекстаа</param>
-    /// <param name="canExecute">Параметр при котором команда выполняется</param>
-    public NavigationCmd(INavigationService navigationService,Predicate<object> canExecute = null)
+    /// <param name="canExecute">Условие при котором команда выполняется</param>
+    /// <exception cref="ArgumentNullException">Возникает в случае если navigationService null </exception>
+    public NavigationCmd(INavigationService navigationService, Predicate<object> canExecute = null)
     {
-        _navigationService = navigationService;
-        
-        _canExecute = canExecute;
+        _navigationService =
+            new Lazy<INavigationService>(() => navigationService)
+            ?? throw new ArgumentNullException(nameof(_navigationService));
+
+        _canExecute = new Lazy<Predicate<object>>(() => canExecute);
+    }
+
+    /// <summary>
+    ///     Контруктор для условий выполнения только с выходным параметром
+    /// </summary>
+    /// <param name="navigationService">Сервис взаимодействующий с хранилищем текущего контекстаа</param>
+    /// <param name="canExecute">Условие при котором команда выполняется</param>
+    /// <exception cref="ArgumentNullException">Возникает в случае если navigationService null </exception>
+    public NavigationCmd(INavigationService navigationService, Func<bool> canExecute = null)
+        : this(navigationService, canExecute is null ? null : p => canExecute())
+    {
     }
     
-    public NavigationCmd(INavigationService navigationService,Func<bool> canExecute = null)
-        :this(navigationService,canExecute is null ? null : p => canExecute()){}
+    /// <summary>
+    ///     Контруктор без условий выполнения 
+    /// </summary>
+    /// <param name="navigationService">Сервис взаимодействующий с хранилищем текущего контекстаа</param>
+    /// <exception cref="ArgumentNullException">Возникает в случае если navigationService null </exception>
+    public NavigationCmd(INavigationService navigationService) : this(navigationService,()=> true){}
 
-   
 
-    protected override void Execute(object? parameter) => _navigationService.Navigate();
-    protected override bool CanExecute(object parameter) => _canExecute(parameter);
+    protected override void Execute(object? parameter) =>  _navigationService.Value.Navigate();
+
+    protected override bool CanExecute(object parameter) =>_canExecute.Value(parameter);
+    
 }
