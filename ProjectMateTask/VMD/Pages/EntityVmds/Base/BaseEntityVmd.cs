@@ -9,10 +9,9 @@ using ProjectMateTask.DAL.Repositories;
 using ProjectMateTask.Infrastructure.CMD;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.TypeNavigationServices;
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
-using ProjectMateTask.VMD.Pages.SelectEntityVmds;
 using ProjectMateTask.VMD.Pages.SelectEntityVmds.Base;
 
-namespace ProjectMateTask.VMD.Pages.EntityVmds;
+namespace ProjectMateTask.VMD.Pages.EntityVmds.Base;
 
 internal abstract class BaseEntityVmd<TEntity> : BaseNotGenericEntityVmd where TEntity : INamedEntity,new()
 {

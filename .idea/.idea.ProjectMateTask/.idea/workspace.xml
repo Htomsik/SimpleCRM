@@ -5,12 +5,8 @@
     <projectFile>WpfApp1/WpfApp1.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Рефакторинг всех команд: добавление описания и ленивой инициализации">
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Data/DbInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Data/DbInitializer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Data/DbRegistrator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Data/DbRegistrator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Data/IDbInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Data/IDbInitializer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/MessageBuses/LoggerMessageBus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/MessageBuses/LoggerMessageBus.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/Selectors/EditEntitySelector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/Selectors/EditEntitySelector.cs" afterDir="false" />
+    <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Добавление описания для статических сервисов, изменение путей для некоторых файлов">
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Services/AppInfrastructure/Link.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Services/AppInfrastructure/Link.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +80,11 @@
     <setting file="file://$PROJECT_DIR$/CustomControls/ParameterCustomTextBlock.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CustomControls/Themes/Generic.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectMateTask/IOC/ServicesRegistrator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Infrastructure/MessageBuses/LoggerMessageBus.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Infrastructure/Selectors/EditEntitySelector.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Stores/AppInfrastructure/NavigationStores/MainEntityNavigationStore.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/VMD/Pages/EntityVmds/Base/BaseEntityVmd.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/VMD/Pages/EntityVmds/Base/BaseNotGenericEntityVmd.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectMateTask/VW/SettingsPages/AboutProgramSettingsPage.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -191,7 +192,7 @@
       <workItem from="1661256000512" duration="3003000" />
       <workItem from="1661351253479" duration="8005000" />
       <workItem from="1661436135759" duration="453000" />
-      <workItem from="1661436637277" duration="13806000" />
+      <workItem from="1661436637277" duration="15440000" />
     </task>
     <task id="LOCAL-00002" summary="Добавил кнопки перехода по страницам">
       <created>1658922448103</created>
@@ -501,7 +502,28 @@
       <option name="project" value="LOCAL" />
       <updated>1661450573615</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Рефакторинг и добавление описание для классов отвечающий за инициализацию бд">
+      <created>1661450892103</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1661450892103</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Добавление описание некоторым типам">
+      <created>1661450997507</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1661450997507</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Добавление описания для статических сервисов, изменение путей для некоторых файлов">
+      <created>1661451537573</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1661451537573</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -521,9 +543,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавление возможности удаление Entity" />
-    <MESSAGE value="Изменение режима редактирования, добавление заглушки в EntityPagesVW.xaml в виде второго Control для режима редактирования" />
-    <MESSAGE value="Исправление ошибки в наименованиях" />
     <MESSAGE value="Добавление удаления элемента из вложенной коллекции, p.s. Не отображает изменение в WPF" />
     <MESSAGE value="Реализация неглубокого копирования, а также сравнения обьектов" />
     <MESSAGE value="Переопределение метода Eqauls для всеъ типов Entity" />
@@ -546,7 +565,10 @@
     <MESSAGE value="Добавление ленивой инициализации для MenuItem.cs и MenuItemWithCommand.cs" />
     <MESSAGE value="Создние инфраструктуры для шин сообщений" />
     <MESSAGE value="Рефакторинг всех команд: добавление описания и ленивой инициализации" />
-    <option name="LAST_COMMIT_MESSAGE" value="Рефакторинг всех команд: добавление описания и ленивой инициализации" />
+    <MESSAGE value="Рефакторинг и добавление описание для классов отвечающий за инициализацию бд" />
+    <MESSAGE value="Добавление описание некоторым типам" />
+    <MESSAGE value="Добавление описания для статических сервисов, изменение путей для некоторых файлов" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавление описания для статических сервисов, изменение путей для некоторых файлов" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

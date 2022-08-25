@@ -3,6 +3,7 @@ using ProjectMateTask.DAL.Entities.Base;
 using ProjectMateTask.DAL.Repositories;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices;
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores;
+using ProjectMateTask.VMD.Pages.EntityVmds.Base;
 
 namespace ProjectMateTask.VMD.Pages.EntityVmds;
 
