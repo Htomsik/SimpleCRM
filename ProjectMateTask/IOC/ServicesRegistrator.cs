@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.Extensions.DependencyInjection;
+using ProjectMateTask.Infrastructure.MessageBuses;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices;
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores;
 
@@ -9,7 +10,8 @@ internal static class ServicesRegistrator
 {
     public static IServiceCollection ServicesRegistration(this IServiceCollection services) =>
         services.AddTransient(CreateSelectPageNavigationStore)
-            .AddTransient(createCloseAdditionalPageNavigationServices);
+            .AddTransient(createCloseAdditionalPageNavigationServices)
+            .AddSingleton<LoggerMessageBus>();
  
 
     private static SubEntityNavigationService CreateSelectPageNavigationStore(IServiceProvider serviceProvider) => 

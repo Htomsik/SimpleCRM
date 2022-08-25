@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.Extensions.DependencyInjection;
+using ProjectMateTask.Infrastructure.MessageBuses;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.CloseNavigationServices;
@@ -140,7 +141,7 @@ internal static class VmdRegistrator
         return new MainWindowVmd(
             s.GetRequiredService<MainEntityNavigationStore>(),
             s.GetRequiredService<MainMenuNavigationStore>(),
-            s.GetRequiredService<AdditionalPageNavigationStore>(),CreateSettingsAdditionalPageNavigationServices(s));
+            s.GetRequiredService<AdditionalPageNavigationStore>(),CreateSettingsAdditionalPageNavigationServices(s),s.GetRequiredService<LoggerMessageBus>());
     }
 
     

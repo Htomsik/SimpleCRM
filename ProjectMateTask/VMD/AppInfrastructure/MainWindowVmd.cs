@@ -1,6 +1,7 @@
 ﻿using System.Windows.Input;
 using ProjectMateTask.Infrastructure.CMD.AppInfrastructure;
 using ProjectMateTask.Infrastructure.MessageBuses;
+using ProjectMateTask.Infrastructure.MessageBuses.Base;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.NavigationServices;
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
@@ -21,7 +22,7 @@ internal sealed class MainWindowVmd:BaseVmd
     public MainWindowVmd(INavigationStore<BaseNotGenericEntityVmd> MainEntityPageNavigationStore,
         INavigationStore<BaseVmd> mainMenuNavigationStore,
         INavigationStore<BaseAdditionalVmd> additionalNavigationStore,
-        INavigationService openSettingsNavigationServices)
+        INavigationService openSettingsNavigationServices, IMessageBus<string> loggerMessageBus)
     {
         _mainEntityPageNavigationStore = MainEntityPageNavigationStore;
         
@@ -35,7 +36,7 @@ internal sealed class MainWindowVmd:BaseVmd
         
         _additionalNavigationStore.CurrentVmdChanged += () => OnPropertyChanged(nameof(AdditionalCurrenVmd));
 
-        LoggerMessageBus.Log += (logMes => LoggingInfo = logMes);
+        loggerMessageBus.Bus += (logMes => LoggingInfo = logMes);
     }
 
 

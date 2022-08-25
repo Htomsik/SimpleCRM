@@ -1,11 +1,7 @@
-﻿using System;
+﻿using ProjectMateTask.Infrastructure.MessageBuses.Base;
 
 namespace ProjectMateTask.Infrastructure.MessageBuses;
 
-public static class LoggerMessageBus
+internal sealed class LoggerMessageBus : BaseMessageBus<string>
 {
-    public static event Action<string> Log;
-
-    public static void Send(string logMessage)
-        => Log?.Invoke(logMessage);
 }
