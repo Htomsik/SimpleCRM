@@ -4,8 +4,8 @@ using ProjectMateTask.DAL.Entities.Actors;
 using ProjectMateTask.DAL.Entities.Types;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.TypeNavigationServices;
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
-using ProjectMateTask.VMD.Pages.SelectEntityVmds;
-using ProjectMateTask.VMD.Pages.SelectEntityVmds.Base;
+using ProjectMateTask.VMD.Pages.Entities.SelectEntityVmds;
+using ProjectMateTask.VMD.Pages.Entities.SelectEntityVmds.Base;
 
 namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices;
 

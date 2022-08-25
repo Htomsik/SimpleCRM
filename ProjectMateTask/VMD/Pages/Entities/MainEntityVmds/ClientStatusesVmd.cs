@@ -4,9 +4,9 @@ using ProjectMateTask.DAL.Entities.Types;
 using ProjectMateTask.DAL.Repositories;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices;
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores;
-using ProjectMateTask.VMD.Pages.EntityVmds.Base;
+using ProjectMateTask.VMD.Pages.Entities.MainEntityVmds.Base;
 
-namespace ProjectMateTask.VMD.Pages.EntityVmds;
+namespace ProjectMateTask.VMD.Pages.Entities.MainEntityVmds;
 
 internal sealed class ClientStatusesVmd : BaseEntityVmd<ClientStatus>
 {

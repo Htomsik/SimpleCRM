@@ -1,5 +1,5 @@
 ﻿using ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
-using ProjectMateTask.VMD.Pages.SelectEntityVmds.Base;
+using ProjectMateTask.VMD.Pages.Entities.SelectEntityVmds.Base;
 
 namespace ProjectMateTask.Stores.AppInfrastructure.NavigationStores;
 

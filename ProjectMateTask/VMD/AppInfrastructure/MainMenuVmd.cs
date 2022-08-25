@@ -6,7 +6,7 @@ using ProjectMateTask.Models.AppInfrastructure;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.TypeNavigationServices;
 using ProjectMateTask.VMD.Base;
 using ProjectMateTask.VMD.Pages;
-using ProjectMateTask.VMD.Pages.EntityVmds;
+using ProjectMateTask.VMD.Pages.Entities.MainEntityVmds;
 
 namespace ProjectMateTask.VMD.AppInfrastructure;
 

@@ -1,9 +1,9 @@
 ﻿using ProjectMateTask.DAL.Entities.Types;
 using ProjectMateTask.DAL.Repositories;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices;
-using ProjectMateTask.VMD.Pages.SelectEntityVmds.Base;
+using ProjectMateTask.VMD.Pages.Entities.SelectEntityVmds.Base;
 
-namespace ProjectMateTask.VMD.Pages.SelectEntityVmds;
+namespace ProjectMateTask.VMD.Pages.Entities.SelectEntityVmds;
 
 internal sealed class ClientStatusSelectVmd : BaseSelectEntityVmd<ClientStatus>
 {

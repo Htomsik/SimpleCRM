@@ -12,6 +12,7 @@
 
     <ItemGroup>
       <Folder Include="Services" />
+      <Folder Include="VMD\Pages\Entities" />
     </ItemGroup>
 
     <ItemGroup>

@@ -9,8 +9,8 @@ using ProjectMateTask.Stores.AppInfrastructure.NavigationStores;
 using ProjectMateTask.VMD.AppInfrastructure;
 using ProjectMateTask.VMD.Pages;
 using ProjectMateTask.VMD.Pages.AdditionalPagesVmds;
-using ProjectMateTask.VMD.Pages.EntityVmds;
-using ProjectMateTask.VMD.Pages.SelectEntityVmds;
+using ProjectMateTask.VMD.Pages.Entities.MainEntityVmds;
+using ProjectMateTask.VMD.Pages.Entities.SelectEntityVmds;
 using ProjectMateTask.VMD.Pages.SettingsVmds;
 
 namespace ProjectMateTask.IOC;
