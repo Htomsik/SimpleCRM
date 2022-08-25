@@ -15,17 +15,17 @@ namespace ProjectMateTask.VMD.Pages.EntityVmds.Base;
 
 internal abstract class BaseEntityVmd<TEntity> : BaseNotGenericEntityVmd where TEntity : INamedEntity,new()
 {
-    private readonly ITypeNavigationServices _selectedSubEntityNavigationService;
+    private readonly ITypeNavigationServices _selectedSubEntityTypeNavigationService;
     
     private readonly INavigationStore<BaseNotGenericSubEntityVmd> _subSubEntitySubNavigationStore;
 
     protected readonly IRepository<TEntity> EntitiesRepository;
     public ISelectEntityVmd? CurrentSelectedEntityPageVmd => (ISelectEntityVmd)_subSubEntitySubNavigationStore.CurrentVmd;
     public BaseEntityVmd(IRepository<TEntity> entitiesRepository,
-        ITypeNavigationServices selectedSubEntityNavigationService,
+        ITypeNavigationServices selectedSubEntityTypeNavigationService,
         INavigationStore<BaseNotGenericSubEntityVmd> subSubEntitySubNavigationStore)
     {
-        _selectedSubEntityNavigationService = selectedSubEntityNavigationService;
+        _selectedSubEntityTypeNavigationService = selectedSubEntityTypeNavigationService;
         
         _subSubEntitySubNavigationStore = subSubEntitySubNavigationStore;
 
@@ -332,7 +332,7 @@ internal abstract class BaseEntityVmd<TEntity> : BaseNotGenericEntityVmd where T
         
         var subEntityType = p.GetType().GenericTypeArguments;
         
-        _selectedSubEntityNavigationService.Navigate(subEntityType[0]);
+        _selectedSubEntityTypeNavigationService.Navigate(subEntityType[0]);
 
         CurrentSelectedEntityPageVmd!.AddEntityNotifier += AddSubEntityInCollection;
 
@@ -351,7 +351,7 @@ internal abstract class BaseEntityVmd<TEntity> : BaseNotGenericEntityVmd where T
         
         var subEntityType = p.GetType();
         
-        _selectedSubEntityNavigationService.Navigate(subEntityType);
+        _selectedSubEntityTypeNavigationService.Navigate(subEntityType);
 
         
         CurrentSelectedEntityPageVmd!.AddEntityNotifier += ChangeSubEntity;
@@ -371,7 +371,7 @@ internal abstract class BaseEntityVmd<TEntity> : BaseNotGenericEntityVmd where T
 
     public override void Dispose()
     {
-       _selectedSubEntityNavigationService.Close();
+       _selectedSubEntityTypeNavigationService.Close();
       
         base.Dispose();
     }

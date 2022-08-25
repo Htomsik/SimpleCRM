@@ -12,9 +12,9 @@ namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices;
 /// <summary>
 ///     Метод навигации между связными Entity 
 /// </summary>
-internal sealed class SubEntityNavigationService: BaseTypeNavigationServices<BaseNotGenericSubEntityVmd>
+internal sealed class SubEntityTypeNavigationService: BaseTypeNavigationServices<BaseNotGenericSubEntityVmd>
 {
-    public SubEntityNavigationService(INavigationStore<BaseNotGenericSubEntityVmd> navigationStore) : base(navigationStore)
+    public SubEntityTypeNavigationService(INavigationStore<BaseNotGenericSubEntityVmd> navigationStore) : base(navigationStore)
     {
     }
     

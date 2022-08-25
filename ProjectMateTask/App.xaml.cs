@@ -42,11 +42,6 @@ namespace ProjectMateTask
             {
                 scope.ServiceProvider.GetRequiredService<IDbInitializer>().InitializeAsync().Wait();
             }
-              
-            //Инициализация MainEntityPageStoreNavigationService
-            var initialNavigationServices = host.Services.GetRequiredService<INavigationService>();
-            
-            initialNavigationServices.Navigate();
             
             MainWindow = host.Services.GetRequiredService<MainWindow>();
 

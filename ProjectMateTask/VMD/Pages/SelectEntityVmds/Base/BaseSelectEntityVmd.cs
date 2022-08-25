@@ -87,7 +87,7 @@ internal class BaseSelectEntityVmd<TEntity> : BaseNotGenericSubEntityVmd,ISelect
     #endregion
 
     public BaseSelectEntityVmd(
-        IRepository<TEntity> entitiesRepository, ICloseNavigationServices closeNavigationService)
+        IRepository<TEntity> entitiesRepository, ICloseNavigationServices closeTypeNavigationService)
     {
         _entitiesRepository = entitiesRepository;
         
@@ -97,7 +97,7 @@ internal class BaseSelectEntityVmd<TEntity> : BaseNotGenericSubEntityVmd,ISelect
 
             AddEntityCommand = new LambdaCmd(OnAddEntity);
 
-            CloseSubEntityPageCommand = new CloseNavigationCmd(closeNavigationService);
+            CloseSubEntityPageCommand = new CloseNavigationCmd(closeTypeNavigationService);
             
         #endregion
 

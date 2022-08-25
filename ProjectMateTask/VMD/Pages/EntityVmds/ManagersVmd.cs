@@ -19,10 +19,10 @@ internal sealed class ManagersVmd:BaseEntityVmd<Manager>
 
     public ManagersVmd(
         IRepository<Manager?> entitiesRepository,
-        SubEntityNavigationService selectedSubEntityNavigationService,
+        SubEntityTypeNavigationService selectedSubEntityTypeNavigationService,
         SubEntityNavigationStore subSubEntitySubNavigationStore ) 
         : base(
             entitiesRepository, 
-            selectedSubEntityNavigationService, 
+            selectedSubEntityTypeNavigationService, 
             subSubEntitySubNavigationStore){}
 }

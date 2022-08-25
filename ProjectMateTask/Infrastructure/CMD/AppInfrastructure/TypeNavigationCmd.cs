@@ -30,12 +30,23 @@ internal sealed class TypeNavigationCmd : BaseCmd
     /// <summary>
     ///     Контруктор для условий выполнения только с выходным параметром
     /// </summary>
-    /// <param name="navigationService"></param>
-    /// <param name="canExecute"></param>
+    /// <param name="typeNavigationServices">Сервис навигации по типу</param>
+    /// <param name="canExecute">Условие выполнения команды</param>
     /// <exception cref="ArgumentNullException">Возникает в случае если typeNavigationServices null </exception>
-    public TypeNavigationCmd(ITypeNavigationServices navigationService, Func<bool> canExecute = null)
-        : this(navigationService, canExecute is null ? null : p => canExecute())
+    public TypeNavigationCmd(ITypeNavigationServices typeNavigationServices, Func<bool> canExecute = null)
+        : this(typeNavigationServices, canExecute is null ? null : p => canExecute())
     {
+    }
+
+
+    /// <summary>
+    ///     Конструктор без условий выполнения
+    /// </summary>
+    /// <param name="typeNavigationServices">Сервис навигации по типу</param>
+    /// <exception cref="ArgumentNullException">Возникает в случае если typeNavigationServices null </exception>
+    public TypeNavigationCmd(ITypeNavigationServices typeNavigationServices) : this(typeNavigationServices, () => true)
+    {
+        
     }
 
     protected override void Execute(object? parameter) =>_typeNavigationServices.Value.Navigate((Type)parameter);

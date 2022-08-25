@@ -7,7 +7,7 @@ namespace ProjectMateTask.VMD.Pages.SelectEntityVmds;
 
 internal sealed class ProductSelectVmd:BaseSelectEntityVmd<Product>
 {
-    public ProductSelectVmd(IRepository<Product> entitiesRepository, SubEntityNavigationService closeNavigationService) : base(entitiesRepository, closeNavigationService)
+    public ProductSelectVmd(IRepository<Product> entitiesRepository, SubEntityTypeNavigationService closeTypeNavigationService) : base(entitiesRepository, closeTypeNavigationService)
     {
     }
 }

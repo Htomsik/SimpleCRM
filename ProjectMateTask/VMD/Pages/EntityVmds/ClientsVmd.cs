@@ -29,11 +29,11 @@ internal sealed class ClientsVmd:BaseEntityVmd<Client>
     
     public ClientsVmd(
         IRepository<Client?> entitiesRepository,
-        SubEntityNavigationService selectedSubEntityNavigationService,
+        SubEntityTypeNavigationService selectedSubEntityTypeNavigationService,
         SubEntityNavigationStore subSubEntitySubNavigationStore) 
         : base(
             entitiesRepository, 
-            selectedSubEntityNavigationService, 
+            selectedSubEntityTypeNavigationService, 
             subSubEntitySubNavigationStore){}
     
 }
