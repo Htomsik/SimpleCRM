@@ -375,6 +375,8 @@ internal abstract class BaseEntityVmd<TEntity> : BaseNotGenericEntityVmd where T
       
         base.Dispose();
     }
+    
+   
 
     #endregion
 }
