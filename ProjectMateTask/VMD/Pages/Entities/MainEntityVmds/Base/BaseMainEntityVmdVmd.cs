@@ -16,14 +16,14 @@ using ProjectMateTask.VMD.Pages.Entities.SelectEntityVmds.Base;
 
 namespace ProjectMateTask.VMD.Pages.Entities.MainEntityVmds.Base;
 
-internal abstract class BaseMainEntityVmd<TEntity> : BaseEntityRepositoryVmd<TEntity> where TEntity : INamedEntity, new()
+internal abstract class BaseMainEntityVmdVmd<TEntity> : BaseEntityRepositoryVmd<TEntity> where TEntity : INamedEntity, new()
 {
     private readonly ITypeNavigationServices _selectedSubEntityTypeNavigationService;
     
     private readonly  IVmdNavigationStore<BaseEntityVmd> _subEntityVmdNavigationStore;
     public ISubEntityVmd? CurrentSelectedEntityPageVmd => (ISubEntityVmd)_subEntityVmdNavigationStore.CurrentValue;
     
-    public BaseMainEntityVmd(IRepository<TEntity> entitiesRepository,
+    public BaseMainEntityVmdVmd(IRepository<TEntity> entitiesRepository,
         ITypeNavigationServices selectedSubEntityTypeNavigationService,
         IVmdNavigationStore<BaseEntityVmd> subEntityVmdNavigationStore) : base(entitiesRepository)
     {

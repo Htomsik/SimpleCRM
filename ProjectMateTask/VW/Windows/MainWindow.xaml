@@ -122,7 +122,7 @@
 
                 <!--  VMD Pages  -->
                 <ContentControl
-                    Content="{Binding EntityPageCurrentVmd}"
+                    Content="{Binding MainEntityCurrentVmd}"
                     Margin="5,5,0,0"
                     x:Name="VmdPagesContent">
 

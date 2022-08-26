@@ -22,7 +22,7 @@ internal static class ServicesRegistrator
 
     private static MainEntityStoreTypeNavigationService CreateMainEntityStoreTypeNavigationService(
         IServiceProvider serviceProvider) =>
-        new(serviceProvider.GetRequiredService<MainEntityVmdNavigationStore>());
+        new(serviceProvider.GetRequiredService<MainBaseEntityVmdNavigationStore>());
 
     private static CloseAdditionalPageNavigationServices CreateCloseAdditionalPageNavigationServices(
         IServiceProvider serviceProvider) =>

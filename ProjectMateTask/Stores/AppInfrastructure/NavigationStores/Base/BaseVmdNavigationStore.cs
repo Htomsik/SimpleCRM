@@ -1,8 +1,5 @@
 ﻿using System;
-using System.ComponentModel;
 using ProjectMateTask.VMD.Base;
-using ProjectMateTask.VMD.Pages.Entities.Base;
-using ProjectMateTask.VMD.Pages.Entities.SelectEntityVmds.Base;
 
 namespace ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
 
@@ -13,14 +10,14 @@ namespace ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
 internal class BaseVmdNavigationStore<TVmd> : IVmdNavigationStore<TVmd> where TVmd : BaseVmd
 {
     private Lazy<TVmd?> _currentVmd;
-    
+
     public TVmd? CurrentValue
     {
         get => _currentVmd?.Value;
         set
         {
             _currentVmd?.Value?.Dispose();
-            _currentVmd = new Lazy<TVmd?>(()=>value);
+            _currentVmd = new Lazy<TVmd?>(() => value);
             OnCurrentVmdChanged();
         }
     }
@@ -30,6 +27,8 @@ internal class BaseVmdNavigationStore<TVmd> : IVmdNavigationStore<TVmd> where TV
     /// <summary>
     ///     Метод, обновляющий увидомитель
     /// </summary>
-    protected virtual void OnCurrentVmdChanged() => CurrentValueChanged?.Invoke();
-   
+    protected virtual void OnCurrentVmdChanged()
+    {
+        CurrentValueChanged?.Invoke();
+    }
 }

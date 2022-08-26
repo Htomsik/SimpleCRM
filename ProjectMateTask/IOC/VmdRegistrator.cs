@@ -25,15 +25,15 @@ internal static class VmdRegistrator
 
         #region EditEntity Vmds
 
-        services.AddTransient<ManagersVmd>();
+        services.AddTransient<ManagersVmdVmd>();
 
-        services.AddTransient<ClientsVmd>();
+        services.AddTransient<ClientsVmdVmd>();
 
-        services.AddTransient<ProductsVmd>();
+        services.AddTransient<ProductsVmdVmd>();
 
-        services.AddTransient<ClientStatusesVmd>();
+        services.AddTransient<ClientStatusesVmdVmd>();
 
-        services.AddTransient<ProductTypeVmd>();
+        services.AddTransient<ProductTypeVmdVmd>();
 
         #endregion
 
@@ -86,7 +86,7 @@ internal static class VmdRegistrator
     private static MainWindowVmd CreateMainWindowVmd(IServiceProvider s)
     {
         return new MainWindowVmd(
-            s.GetRequiredService<MainEntityVmdNavigationStore>(),
+            s.GetRequiredService<MainBaseEntityVmdNavigationStore>(),
             s.GetRequiredService<MainMenuVmdNavigationStore>(),
             s.GetRequiredService<AdditionalPageVmdNavigationStore>(),CreateSettingsAdditionalPageNavigationServices(s),s.GetRequiredService<LoggerMessageBus>());
     }

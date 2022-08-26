@@ -2,6 +2,10 @@
 
 namespace ProjectMateTask.Stores.Base;
 
+/// <summary>
+///     Хранилише
+/// </summary>
+/// <typeparam name="TValue">Любой тип</typeparam>
 internal interface IStore<TValue> 
 {
     /// <summary>

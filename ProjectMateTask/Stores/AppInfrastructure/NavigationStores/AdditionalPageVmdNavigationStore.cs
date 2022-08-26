@@ -8,5 +8,4 @@ namespace ProjectMateTask.Stores.AppInfrastructure.NavigationStores;
 /// </summary>
 internal sealed class AdditionalPageVmdNavigationStore : BaseVmdNavigationStore<BaseAdditionalVmd>
 {
-    
 }

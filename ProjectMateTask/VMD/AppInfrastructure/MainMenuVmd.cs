@@ -5,7 +5,6 @@ using ProjectMateTask.Infrastructure.CMD.AppInfrastructure;
 using ProjectMateTask.Models.AppInfrastructure;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.TypeNavigationServices;
 using ProjectMateTask.VMD.Base;
-using ProjectMateTask.VMD.Pages;
 using ProjectMateTask.VMD.Pages.Entities.MainEntityVmds;
 
 namespace ProjectMateTask.VMD.AppInfrastructure;
@@ -21,21 +20,21 @@ internal sealed class MainMenuVmd : BaseVmd
 
         MenuItems = new ObservableCollection<MenuItemWithCommand>
         {
-            new("Менеджеры", PackIconKind.AccountTie, MenuNavigationCommand, typeof(ManagersVmd)),
-            new("Клиенты", PackIconKind.Account, MenuNavigationCommand, typeof(ClientsVmd)),
-            new("Продукты", PackIconKind.Shopping, MenuNavigationCommand, typeof(ProductsVmd)),
-            new("Статусы клиентов", PackIconKind.Administrator, MenuNavigationCommand, typeof(ClientStatusesVmd)),
-            new("Типы продуктов", PackIconKind.FileDocument, MenuNavigationCommand, typeof(ProductTypeVmd))
+            new("Менеджеры", PackIconKind.AccountTie, MenuNavigationCommand, typeof(ManagersVmdVmd)),
+            new("Клиенты", PackIconKind.Account, MenuNavigationCommand, typeof(ClientsVmdVmd)),
+            new("Продукты", PackIconKind.Shopping, MenuNavigationCommand, typeof(ProductsVmdVmd)),
+            new("Статусы клиентов", PackIconKind.Administrator, MenuNavigationCommand, typeof(ClientStatusesVmdVmd)),
+            new("Типы продуктов", PackIconKind.FileDocument, MenuNavigationCommand, typeof(ProductTypeVmdVmd))
         };
     }
 
     /// <summary>
-    ///     Коллекцию для меню
+    ///     Коллекцию навигационного меню
     /// </summary>
     public ObservableCollection<MenuItemWithCommand> MenuItems { get; }
 
     /// <summary>
-    ///         Команда навигации между страницами
+    ///     Команда навигации между страницами
     /// </summary>
     public ICommand MenuNavigationCommand { get; }
 }

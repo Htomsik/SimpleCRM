@@ -8,26 +8,19 @@ using ProjectMateTask.VMD.Pages.Entities.MainEntityVmds.Base;
 
 namespace ProjectMateTask.VMD.Pages.Entities.MainEntityVmds;
 
-internal sealed class ProductsVmd:BaseMainEntityVmd<Product>
+internal sealed class ProductTypeVmdVmd:BaseMainEntityVmdVmd<ProductType>
 {
     
-    protected override void OnDeleteSubEntityFromCollection(object p) => EditableEntity.Clients.Remove((Client)p);
+    protected override void OnDeleteSubEntityFromCollection(object p) => EditableEntity.Products.Remove((Product)p);
     
-    protected override void AddSubEntityInCollection(INamedEntity entity)=> EditableEntity.Clients.Add((Client)entity);
-    protected override void ChangeSubEntity(INamedEntity entity)
-    {
-        if (entity is ProductType)
-        {
-            EditableEntity!.Type = (ProductType)entity;
-        }
-      
-    }
+    protected override void AddSubEntityInCollection(INamedEntity entity)=> EditableEntity.Products.Add((Product)entity);
+    
 
 
-    public ProductsVmd(
-        IRepository<Product?> entitiesRepository,
+    public ProductTypeVmdVmd(
+        IRepository<ProductType?> entitiesRepository,
         SubEntityTypeNavigationService selectedSubEntityTypeNavigationService,
-        SubEntityVmdNavigationStore subEntityVmdSubEntityVmdSubEntityVmdNavigationStore) 
+        SubEntityVmdNavigationStore subEntityVmdSubEntityVmdSubEntityVmdNavigationStore ) 
         : base(
             entitiesRepository, 
             selectedSubEntityTypeNavigationService, 
