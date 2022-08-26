@@ -134,7 +134,7 @@
                         </DataTemplate>
 
                         <!--  Все Entity страницы  -->
-                        <DataTemplate DataType="{x:Type entityPages1:BaseNotGenericEntityVmd}">
+                        <DataTemplate DataType="{x:Type base:BaseVmd}">
                             <pages:EntityPagesVW />
                         </DataTemplate>
 

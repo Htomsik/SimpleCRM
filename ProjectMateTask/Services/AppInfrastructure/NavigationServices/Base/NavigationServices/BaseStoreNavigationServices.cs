@@ -10,20 +10,20 @@ namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.Nav
 /// <typeparam name="TVmd">Любой тип, наследуемый от BaseVmd</typeparam>
 internal abstract class BaseStoreNavigationServices<TVmd>:INavigationService where TVmd : BaseVmd
 {
-    protected readonly Lazy<INavigationStore<TVmd>>  NavigationStore;
+    protected readonly Lazy<IVmdNavigationStore<TVmd>>  NavigationStore;
     
     protected readonly Lazy<Func<TVmd>> CreateVmd;
 
     /// <summary>
     ///      Базовая реализация навигации с навигационными хринилищами
     /// </summary>
-    /// <param name="navigationStore">Навигационное хранилище</param>
+    /// <param name="vmdNavigationStore">Навигационное хранилище</param>
     /// <param name="createVmd">Vmd передаваемое в навигационное хранилище</param>
-    /// <exception cref="ArgumentNullException">Возникает в случае если navigationStore или createVmd null  </exception>
-    public BaseStoreNavigationServices(INavigationStore<TVmd> navigationStore, Func<TVmd> createVmd)
+    /// <exception cref="ArgumentNullException">Возникает в случае если vmdNavigationStore или createVmd null  </exception>
+    public BaseStoreNavigationServices(IVmdNavigationStore<TVmd> vmdNavigationStore, Func<TVmd> createVmd)
     {
         NavigationStore = 
-            new Lazy<INavigationStore<TVmd>>(()=>navigationStore) 
+            new Lazy<IVmdNavigationStore<TVmd>>(()=>vmdNavigationStore) 
             ?? throw new ArgumentNullException(nameof(NavigationStore));
         
         CreateVmd = 
@@ -31,9 +31,9 @@ internal abstract class BaseStoreNavigationServices<TVmd>:INavigationService whe
             ?? throw new ArgumentNullException(nameof(CreateVmd));
     }
     
-    public virtual void Navigate() => NavigationStore.Value.CurrentVmd = CreateVmd.Value();
+    public virtual void Navigate() => NavigationStore.Value.CurrentValue = CreateVmd.Value();
 
-    public virtual void Close() => NavigationStore.Value.CurrentVmd = null;
+    public virtual void Close() => NavigationStore.Value.CurrentValue = null;
  
 }
 

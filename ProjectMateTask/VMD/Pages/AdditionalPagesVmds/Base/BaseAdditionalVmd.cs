@@ -5,7 +5,7 @@ using ProjectMateTask.VMD.Base;
 
 namespace ProjectMateTask.VMD.Pages.AdditionalPagesVmds.Base;
 
-internal abstract class BaseAdditionalVmd:BaseVmd
+internal abstract class BaseAdditionalVmd:BaseVmd,IAdditionalVmd
 {
     public BaseAdditionalVmd(ICloseNavigationServices closeAdditionalNavigationService)
     {

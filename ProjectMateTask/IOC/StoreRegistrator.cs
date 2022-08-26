@@ -6,10 +6,10 @@ namespace ProjectMateTask.IOC;
 internal static class StoreRegistrator
 {
     public static IServiceCollection StoreRegistration(this IServiceCollection services) =>
-        services.AddSingleton<MainEntityNavigationStore>()
-            .AddSingleton<MainMenuNavigationStore>()
-            .AddSingleton<SubEntityNavigationStore>()
-            .AddSingleton<AdditionalPageNavigationStore>();
+        services.AddSingleton<MainEntityVmdNavigationStore>()
+            .AddSingleton<MainMenuVmdNavigationStore>()
+            .AddSingleton<SubEntityVmdNavigationStore>()
+            .AddSingleton<AdditionalPageVmdNavigationStore>();
 
 
 }

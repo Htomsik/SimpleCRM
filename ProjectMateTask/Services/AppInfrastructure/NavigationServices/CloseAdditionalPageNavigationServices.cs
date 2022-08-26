@@ -9,7 +9,7 @@ namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices;
 /// </summary>
 internal sealed class CloseAdditionalPageNavigationServices : BaseCloseNavigationServices<BaseAdditionalVmd>
 {
-    public CloseAdditionalPageNavigationServices(INavigationStore<BaseAdditionalVmd> navigationStore) : base(navigationStore)
+    public CloseAdditionalPageNavigationServices(IVmdNavigationStore<BaseAdditionalVmd> vmdNavigationStore) : base(vmdNavigationStore)
     {
     }
 }

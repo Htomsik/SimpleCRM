@@ -21,7 +21,6 @@ internal sealed class MainMenuVmd : BaseVmd
 
         MenuItems = new ObservableCollection<MenuItemWithCommand>
         {
-            new("Домашняя страница", PackIconKind.Home, MenuNavigationCommand, typeof(MainPageVmd)),
             new("Менеджеры", PackIconKind.AccountTie, MenuNavigationCommand, typeof(ManagersVmd)),
             new("Клиенты", PackIconKind.Account, MenuNavigationCommand, typeof(ClientsVmd)),
             new("Продукты", PackIconKind.Shopping, MenuNavigationCommand, typeof(ProductsVmd)),

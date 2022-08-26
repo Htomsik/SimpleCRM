@@ -16,7 +16,7 @@ namespace ProjectMateTask.VMD.Pages.AdditionalPagesVmds;
 
 internal sealed class SettingsAdditionalPageVmd : BaseAdditionalVmd
 {
-    private readonly INavigationStore<BaseVmd> _localNavigationStore;
+    private readonly IVmdNavigationStore<BaseVmd> _localVmdNavigationStore;
 
     private ITypeNavigationServices _typeNavigationServices;
 
@@ -24,12 +24,12 @@ internal sealed class SettingsAdditionalPageVmd : BaseAdditionalVmd
 
     public SettingsAdditionalPageVmd(CloseAdditionalPageNavigationServices closeAdditionalNavigationService) : base(closeAdditionalNavigationService)
     {
-        _localNavigationStore = new BaseNavigationStore<BaseVmd>();
+        _localVmdNavigationStore = new BaseVmdNavigationStore<BaseVmd>();
 
-        _localNavigationStore.CurrentVmdChanged += () => OnPropertyChanged(nameof(CurrentSettingsPageVmd));
+        _localVmdNavigationStore.CurrentValueChanged += () => OnPropertyChanged(nameof(CurrentSettingsPageVmd));
 
         
-        _typeNavigationServices = new BaseTypeNavigationServices<BaseVmd>(_localNavigationStore);
+        _typeNavigationServices = new BaseTypeNavigationServices<BaseVmd>(_localVmdNavigationStore);
 
         MenuNavigationCommand = new TypeNavigationCmd(_typeNavigationServices, ()=> true);
         
@@ -42,7 +42,7 @@ internal sealed class SettingsAdditionalPageVmd : BaseAdditionalVmd
     }
 
 
-    public BaseVmd CurrentSettingsPageVmd => _localNavigationStore.CurrentVmd;
+    public BaseVmd CurrentSettingsPageVmd => _localVmdNavigationStore.CurrentValue;
     
     
     public ICommand MenuNavigationCommand { get; }

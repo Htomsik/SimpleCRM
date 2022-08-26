@@ -4,7 +4,7 @@ using ProjectMateTask.DAL.Entities.Base;
 
 namespace ProjectMateTask.DAL.Repositories;
 
-public interface IRepository<T> where T : IEntity, new()
+public interface IRepository<T> where T : IEntity
 {
     /// <summary>
     ///     Коллекция всех частично отслеживаемых сущностей

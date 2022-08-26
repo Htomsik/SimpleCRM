@@ -7,10 +7,10 @@ namespace ProjectMateTask.Stores.AppInfrastructure.NavigationStores;
 /// <summary>
 ///     Навигационное ханилище для главного меню
 /// </summary>
-internal class MainMenuNavigationStore : BaseNavigationStore<BaseVmd>
+internal class MainMenuVmdNavigationStore : BaseVmdNavigationStore<BaseVmd>
 {
-    public MainMenuNavigationStore(MainMenuVmd? mainMenuVmd)
+    public MainMenuVmdNavigationStore(MainMenuVmd? mainMenuVmd)
     {
-        CurrentVmd = mainMenuVmd;
+        CurrentValue = mainMenuVmd;
     }
 }

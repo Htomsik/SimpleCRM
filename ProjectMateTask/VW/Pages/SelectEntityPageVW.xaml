@@ -1,5 +1,5 @@
 ﻿<UserControl
-    d:DataContext="{d:DesignInstance {x:Type selectEntityPages:ClientSelectVmd},
+    d:DataContext="{d:DesignInstance {x:Type selectEntityPages:ClientSubVmd},
                                      IsDesignTimeCreatable=True}"
     d:DesignHeight="200"
     d:DesignWidth="100"
@@ -76,7 +76,7 @@
 
                                         <!--  Кнопка добавление  -->
                                         <Button
-                                            Command="{Binding DataContext.AddEntityCommand, ElementName=ListContentControl}"
+                                            Command="{Binding DataContext.AddEntityToMainCommand, ElementName=ListContentControl}"
                                             Grid.Column="1"
                                             Height="15"
                                             HorizontalAlignment="Right"

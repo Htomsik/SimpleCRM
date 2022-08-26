@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows.Data;
@@ -9,36 +10,31 @@ using ProjectMateTask.DAL.Repositories;
 using ProjectMateTask.Infrastructure.CMD;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.TypeNavigationServices;
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
+using ProjectMateTask.VMD.Base;
+using ProjectMateTask.VMD.Pages.Entities.Base;
 using ProjectMateTask.VMD.Pages.Entities.SelectEntityVmds.Base;
 
 namespace ProjectMateTask.VMD.Pages.Entities.MainEntityVmds.Base;
 
-internal abstract class BaseEntityVmd<TEntity> : BaseNotGenericEntityVmd where TEntity : INamedEntity,new()
+internal abstract class BaseMainEntityVmd<TEntity> : BaseEntityRepositoryVmd<TEntity> where TEntity : INamedEntity, new()
 {
     private readonly ITypeNavigationServices _selectedSubEntityTypeNavigationService;
     
-    private readonly INavigationStore<BaseNotGenericSubEntityVmd> _subSubEntitySubNavigationStore;
-
-    protected readonly IRepository<TEntity> EntitiesRepository;
-    public ISelectEntityVmd? CurrentSelectedEntityPageVmd => (ISelectEntityVmd)_subSubEntitySubNavigationStore.CurrentVmd;
-    public BaseEntityVmd(IRepository<TEntity> entitiesRepository,
+    private readonly  IVmdNavigationStore<BaseEntityVmd> _subEntityVmdNavigationStore;
+    public ISubEntityVmd? CurrentSelectedEntityPageVmd => (ISubEntityVmd)_subEntityVmdNavigationStore.CurrentValue;
+    
+    public BaseMainEntityVmd(IRepository<TEntity> entitiesRepository,
         ITypeNavigationServices selectedSubEntityTypeNavigationService,
-        INavigationStore<BaseNotGenericSubEntityVmd> subSubEntitySubNavigationStore)
+        IVmdNavigationStore<BaseEntityVmd> subEntityVmdNavigationStore) : base(entitiesRepository)
     {
         _selectedSubEntityTypeNavigationService = selectedSubEntityTypeNavigationService;
         
-        _subSubEntitySubNavigationStore = subSubEntitySubNavigationStore;
-
-        EntitiesRepository = entitiesRepository;
+        _subEntityVmdNavigationStore = subEntityVmdNavigationStore;
         
-        _subSubEntitySubNavigationStore.CurrentVmdChanged += () => OnPropertyChanged(nameof(CurrentSelectedEntityPageVmd));
+        _subEntityVmdNavigationStore.CurrentValueChanged += () => OnPropertyChanged(nameof(CurrentSelectedEntityPageVmd));
         
-        InitializeRepositoryAsync();
-
         #region Команды
-
-        ClearFilterCommand = new LambdaCmd(() => Filter = null, () => !string.IsNullOrEmpty(Filter));
-
+        
         OpenEditModeCommand = new LambdaCmd(OnOpenEditModeExecute, CanOpenEditMode);
 
         OpenAddModeCommand = new LambdaCmd(OnOpenAddEntityMode, CanOpenAddMode);
@@ -66,11 +62,13 @@ internal abstract class BaseEntityVmd<TEntity> : BaseNotGenericEntityVmd where T
     /// Название страницы
     /// </summary>
     public override string Tittle => typeof(TEntity).Name;
+    
+    #region IsEditMode : Флаг режима редактирования
 
     /// <summary>
     ///     Флаг режима редактирования
     /// </summary>
-    public override bool IsEditMode
+    public bool IsEditMode
     {
         get => _isEditMode;
         set
@@ -91,82 +89,15 @@ internal abstract class BaseEntityVmd<TEntity> : BaseNotGenericEntityVmd where T
         } 
     }
     
+    protected bool _isEditMode;
+
+    #endregion
+    
     #region IsSubAddMode : Флаг режима добавления subEntity
     public bool IsSubAddMode => CurrentSelectedEntityPageVmd is not null && IsEditMode;
     
     #endregion
-
-    /// <summary>
-    ///     Очистка фильтра поиска
-    /// </summary>
-    public ICommand ClearFilterCommand { get; }
-
-    private async Task InitializeRepositoryAsync()
-    {
-        Entities = new ObservableCollection<TEntity>(await EntitiesRepository.PartTrackingItems.ToArrayAsync());
-    }
     
-    #region Оригинльный список
-
-    private ObservableCollection<TEntity> _entities;
-
-    public ObservableCollection<TEntity> Entities
-    {
-        get => _entities;
-        set
-        {
-            
-            if (!Set(ref _entities, value)) return;
-            
-            _entitiesViewSource = new CollectionViewSource
-            {
-                Source = value,
-                SortDescriptions =
-                {
-                    new SortDescription("Name", ListSortDirection.Ascending)
-                }
-            };
-
-            _entitiesViewSource.Filter += OnEntityFilter;
-            _entitiesViewSource.View.Refresh();
-
-            OnPropertyChanged(nameof(EntitiesFilteredView));
-        }
-    }
-
-    #endregion
-
-    #region фильтация списка
-
-    private string _filter;
-
-    public string Filter
-    {
-        get => _filter;
-        set
-        {
-            if (Set(ref _filter, value.ToLower()))
-                _entitiesViewSource.View.Refresh();
-        }
-    }
-
-    private void OnEntityFilter(object sender, FilterEventArgs e)
-    {
-        if (!(e.Item is NamedEntity entity) || string.IsNullOrEmpty(Filter)) return;
-
-        if (!entity.Name.ToLower().Contains(Filter)) e.Accepted = false;
-    }
-
-    #endregion
-
-    #region Отфильтрованный список
-
-    private CollectionViewSource _entitiesViewSource;
-
-    public ICollectionView? EntitiesFilteredView => _entitiesViewSource?.View;
-
-    #endregion
-
     #region Выбранная сущность из списка
 
     private TEntity? _selectedEntity;
@@ -215,7 +146,7 @@ internal abstract class BaseEntityVmd<TEntity> : BaseNotGenericEntityVmd where T
     {
         var selectedEntityId = SelectedEntity.Id;
         
-        EditableEntity = EntitiesRepository.GetAsFullTracking(selectedEntityId);
+        EditableEntity = (TEntity?)EntitiesRepository.GetAsFullTracking(selectedEntityId);
         
         IsEditMode = true;
         AcceptModsCommand = AcceptEditEntityModeCommand;

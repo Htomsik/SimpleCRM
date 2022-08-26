@@ -7,7 +7,7 @@ using ProjectMateTask.VMD.Pages.Entities.MainEntityVmds.Base;
 
 namespace ProjectMateTask.VMD.Pages.Entities.MainEntityVmds;
 
-internal sealed class ManagersVmd:BaseEntityVmd<Manager>
+internal sealed class ManagersVmd:BaseMainEntityVmd<Manager>
 {
     
 
@@ -20,9 +20,9 @@ internal sealed class ManagersVmd:BaseEntityVmd<Manager>
     public ManagersVmd(
         IRepository<Manager?> entitiesRepository,
         SubEntityTypeNavigationService selectedSubEntityTypeNavigationService,
-        SubEntityNavigationStore subSubEntitySubNavigationStore ) 
+        SubEntityVmdNavigationStore subEntityVmdSubEntityVmdSubEntityVmdNavigationStore ) 
         : base(
             entitiesRepository, 
             selectedSubEntityTypeNavigationService, 
-            subSubEntitySubNavigationStore){}
+            subEntityVmdSubEntityVmdSubEntityVmdNavigationStore){}
 }

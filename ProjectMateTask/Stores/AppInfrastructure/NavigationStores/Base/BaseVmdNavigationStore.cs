@@ -1,17 +1,20 @@
 ﻿using System;
+using System.ComponentModel;
 using ProjectMateTask.VMD.Base;
+using ProjectMateTask.VMD.Pages.Entities.Base;
+using ProjectMateTask.VMD.Pages.Entities.SelectEntityVmds.Base;
 
 namespace ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
 
 /// <summary>
-///     Базовая реализация навмгационного хранилища
+///     Базовая реализация навигационного хранилища для обобщенных типов
 /// </summary>
 /// <typeparam name="TVmd">Любая тип, наследуемый от BaseVmd</typeparam>
-internal class BaseNavigationStore<TVmd> : INavigationStore<TVmd> where TVmd : BaseVmd
+internal class BaseVmdNavigationStore<TVmd> : IVmdNavigationStore<TVmd> where TVmd : BaseVmd
 {
     private Lazy<TVmd?> _currentVmd;
-
-    public TVmd? CurrentVmd
+    
+    public TVmd? CurrentValue
     {
         get => _currentVmd?.Value;
         set
@@ -22,11 +25,11 @@ internal class BaseNavigationStore<TVmd> : INavigationStore<TVmd> where TVmd : B
         }
     }
 
-    public event Action? CurrentVmdChanged;
+    public event Action? CurrentValueChanged;
 
     /// <summary>
     ///     Метод, обновляющий увидомитель
     /// </summary>
-    protected virtual void OnCurrentVmdChanged() => CurrentVmdChanged?.Invoke();
+    protected virtual void OnCurrentVmdChanged() => CurrentValueChanged?.Invoke();
    
 }

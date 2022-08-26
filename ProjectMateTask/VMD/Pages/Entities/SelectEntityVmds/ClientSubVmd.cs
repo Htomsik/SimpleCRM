@@ -5,9 +5,9 @@ using ProjectMateTask.VMD.Pages.Entities.SelectEntityVmds.Base;
 
 namespace ProjectMateTask.VMD.Pages.Entities.SelectEntityVmds;
 
-internal sealed class ClientSelectVmd:BaseSelectEntityVmd<Client>
+internal sealed class ClientSubVmd:BaseSubEntityVmd<Client>
 {
-    public ClientSelectVmd(IRepository<Client> entitiesRepository, SubEntityTypeNavigationService closeTypeNavigationService) 
+    public ClientSubVmd(IRepository<Client> entitiesRepository, SubEntityTypeNavigationService closeTypeNavigationService) 
         : base(entitiesRepository, closeTypeNavigationService)
     {
     }

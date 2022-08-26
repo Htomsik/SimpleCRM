@@ -10,7 +10,7 @@ namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices;
 /// </summary>
 internal sealed  class AdditionalPageStoreNavigationService : BaseStoreNavigationServices<BaseAdditionalVmd>
 {
-    public AdditionalPageStoreNavigationService(INavigationStore<BaseAdditionalVmd> navigationStore, Func<BaseAdditionalVmd> createVmd) : base(navigationStore, createVmd)
+    public AdditionalPageStoreNavigationService(IVmdNavigationStore<BaseAdditionalVmd> vmdNavigationStore, Func<BaseAdditionalVmd> createVmd) : base(vmdNavigationStore, createVmd)
     {
     }
 }

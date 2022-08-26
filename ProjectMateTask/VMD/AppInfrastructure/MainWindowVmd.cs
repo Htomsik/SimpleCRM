@@ -7,34 +7,36 @@ using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.Navigat
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
 using ProjectMateTask.VMD.Base;
 using ProjectMateTask.VMD.Pages.AdditionalPagesVmds.Base;
+using ProjectMateTask.VMD.Pages.Entities.Base;
 using ProjectMateTask.VMD.Pages.Entities.MainEntityVmds.Base;
 
 namespace ProjectMateTask.VMD.AppInfrastructure;
 
 internal sealed class MainWindowVmd:BaseVmd
 {
-    private readonly INavigationStore<BaseNotGenericEntityVmd> _mainEntityPageNavigationStore;
+    private readonly IEntityVmdNavigationStore<BaseEntityVmd> _mainPageVmdNavigationStore;
     
-    private readonly INavigationStore<BaseVmd> _mainMenuNavigationStore;
+    private readonly IVmdNavigationStore<BaseVmd> _mainMenuVmdNavigationStore;
     
-    private readonly INavigationStore<BaseAdditionalVmd> _additionalNavigationStore;
+    private readonly IVmdNavigationStore<BaseAdditionalVmd> _additionalVmdNavigationStore;
 
-    public MainWindowVmd(INavigationStore<BaseNotGenericEntityVmd> MainEntityPageNavigationStore,
-        INavigationStore<BaseVmd> mainMenuNavigationStore,
-        INavigationStore<BaseAdditionalVmd> additionalNavigationStore,
-        INavigationService openSettingsNavigationServices, IMessageBus<string> loggerMessageBus)
+    public MainWindowVmd(IEntityVmdNavigationStore<BaseEntityVmd> mainPageVmdNavigationStore,
+        IVmdNavigationStore<BaseVmd> mainMenuVmdNavigationStore,
+        IVmdNavigationStore<BaseAdditionalVmd> additionalVmdNavigationStore,
+        INavigationService openSettingsNavigationServices, 
+        IMessageBus<string> loggerMessageBus)
     {
-        _mainEntityPageNavigationStore = MainEntityPageNavigationStore;
+        _mainPageVmdNavigationStore = mainPageVmdNavigationStore;
         
-        _mainMenuNavigationStore = mainMenuNavigationStore;
+        _mainMenuVmdNavigationStore = mainMenuVmdNavigationStore;
         
-        _additionalNavigationStore = additionalNavigationStore;
+        _additionalVmdNavigationStore = additionalVmdNavigationStore;
 
         OpenSettingsCommand = new NavigationCmd(openSettingsNavigationServices);
 
-        _mainEntityPageNavigationStore.CurrentVmdChanged += () => OnPropertyChanged(nameof(EntityPageCurrentVmd));
+        _mainPageVmdNavigationStore.CurrentValueChanged += () => OnPropertyChanged(nameof(EntityPageCurrentVmd));
         
-        _additionalNavigationStore.CurrentVmdChanged += () => OnPropertyChanged(nameof(AdditionalCurrenVmd));
+        _additionalVmdNavigationStore.CurrentValueChanged += () => OnPropertyChanged(nameof(AdditionalCurrenVmd));
 
         loggerMessageBus.Bus += (logMes => LoggingInfo = logMes);
     }
@@ -42,11 +44,11 @@ internal sealed class MainWindowVmd:BaseVmd
 
     public ICommand OpenSettingsCommand { get; set; }
 
-    public BaseNotGenericEntityVmd? EntityPageCurrentVmd => _mainEntityPageNavigationStore.CurrentVmd;
+    public IEntityVmd? EntityPageCurrentVmd => _mainPageVmdNavigationStore.CurrentValue;
 
-    public BaseAdditionalVmd? AdditionalCurrenVmd => _additionalNavigationStore.CurrentVmd;
+    public IAdditionalVmd? AdditionalCurrenVmd => _additionalVmdNavigationStore.CurrentValue;
 
-    public BaseVmd? MainMenuCurrentVmd => _mainMenuNavigationStore.CurrentVmd;
+    public BaseVmd? MainMenuCurrentVmd => _mainMenuVmdNavigationStore.CurrentValue;
 
 
     private string _loggingInfo;
