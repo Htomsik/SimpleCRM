@@ -8,10 +8,29 @@ using ProjectMateTask.DAL.Repositories;
 
 namespace ProjectMateTask.VMD.Pages.Entities.Base;
 
+/// <summary>
+///     Базовая реализация для EntityVmd типов поддерживающих работу с репозиториями
+/// </summary>
+/// <typeparam name="TEntity"></typeparam>
 internal abstract class BaseEntityRepositoryVmd<TEntity> : BaseEntityVmd where TEntity : INamedEntity
 {
-    protected IRepository<TEntity> EntitiesRepository;
-    
+    /// <summary>
+    ///     Базовая реализация для EntityVmd типов поддерживающих работу с репозиториями
+    /// </summary>
+    /// <param name="entitiesRepository">Entity репозитоий</param>
+    public BaseEntityRepositoryVmd(IRepository<TEntity> entitiesRepository)
+    {
+        #region Инициализация полей и свойств
+
+        EntitiesRepository = entitiesRepository;
+
+        #endregion
+
+        InitializeRepositoryAsync();
+    }
+
+    #region Поля и Свойства
+
     #region Entities : Не фильтрованный список
 
     private ObservableCollection<TEntity> _entities;
@@ -24,9 +43,8 @@ internal abstract class BaseEntityRepositoryVmd<TEntity> : BaseEntityVmd where T
         get => _entities;
         set
         {
-            
             if (!Set(ref _entities, value)) return;
-            
+
             _entitiesViewSource = new CollectionViewSource
             {
                 Source = value,
@@ -44,7 +62,7 @@ internal abstract class BaseEntityRepositoryVmd<TEntity> : BaseEntityVmd where T
     }
 
     #endregion
-    
+
     #region Filter : Парамет фильтрации
 
     private string? _filter;
@@ -62,6 +80,29 @@ internal abstract class BaseEntityRepositoryVmd<TEntity> : BaseEntityVmd where T
         }
     }
 
+    #endregion
+
+    protected readonly IRepository<TEntity> EntitiesRepository;
+    public override string Tittle => typeof(TEntity).Name;
+
+    #endregion
+
+    #region Методы
+
+    /// <summary>
+    ///     Инициаализация репозитория
+    /// </summary>
+    protected virtual async Task InitializeRepositoryAsync()
+    {
+        Entities = new ObservableCollection<TEntity>(await EntitiesRepository.PartTrackingItems.ToArrayAsync());
+    }
+
+
+    /// <summary>
+    ///     Метод фильтрации коллекции
+    /// </summary>
+    /// <param name="sender">Отправитель</param>
+    /// <param name="e">Аргумент фильтрации</param>
     protected virtual void OnEntityFilter(object sender, FilterEventArgs e)
     {
         if (!(e.Item is INamedEntity entity) || string.IsNullOrEmpty(Filter)) return;
@@ -70,16 +111,4 @@ internal abstract class BaseEntityRepositoryVmd<TEntity> : BaseEntityVmd where T
     }
 
     #endregion
-
-    protected virtual async Task InitializeRepositoryAsync()
-    {
-        Entities = new ObservableCollection<TEntity>(await EntitiesRepository.PartTrackingItems.ToArrayAsync());
-    }
-    
-    public BaseEntityRepositoryVmd(IRepository<TEntity> entitiesRepository)
-    {
-        EntitiesRepository = entitiesRepository;
-
-        InitializeRepositoryAsync();
-    }
 }

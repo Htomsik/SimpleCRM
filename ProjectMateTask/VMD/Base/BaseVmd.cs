@@ -8,7 +8,7 @@ namespace ProjectMateTask.VMD.Base;
 /// <summary>
 ///     Базовая реализация INPC
 /// </summary>
-public abstract class BaseVmd:INotifyPropertyChanged, IDisposable
+public abstract class BaseVmd:INotifyPropertyChanged
 {
     public event PropertyChangedEventHandler? PropertyChanged;
 

@@ -1,20 +1,19 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 using System.Windows.Data;
-using Microsoft.EntityFrameworkCore;
-using ProjectMateTask.DAL.Entities.Base;
-using ProjectMateTask.DAL.Repositories;
 using ProjectMateTask.VMD.Base;
 
 namespace ProjectMateTask.VMD.Pages.Entities.Base;
 
 /// <summary>
-///     Базовый класс для Entity
+///     Базовый реализация для EntityVmd типов
 /// </summary>
-internal abstract class BaseEntityVmd: BaseVmd, IEntityVmd 
+internal abstract class BaseEntityVmd : BaseVmd, IEntityVmd
 {
+    /// <summary>
+    ///     Название EntityVmd страницы
+    /// </summary>
+    public abstract string Tittle { get; }
+
     #region EntitiesFilteredView : фильтрованный список Entity
 
     protected CollectionViewSource _entitiesViewSource;
@@ -25,14 +24,4 @@ internal abstract class BaseEntityVmd: BaseVmd, IEntityVmd
     public virtual ICollectionView? EntitiesFilteredView => _entitiesViewSource?.View;
 
     #endregion
-    
-    
-    /// <summary>
-    ///     Название vmd
-    /// </summary>
-    public virtual string Tittle => "Не переопределенная страница";
-    
-   
-    
-
 }

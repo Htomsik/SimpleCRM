@@ -6,7 +6,7 @@ using ProjectMateTask.VMD.Pages.AdditionalPagesVmds.Base;
 namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices;
 
 /// <summary>
-///     Сервис навигации по дополнительному окну
+///     Сервис навигации по дополнительным окнам
 /// </summary>
 internal sealed  class AdditionalPageStoreNavigationService : BaseStoreNavigationServices<BaseAdditionalVmd>
 {

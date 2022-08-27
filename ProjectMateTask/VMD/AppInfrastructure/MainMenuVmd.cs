@@ -14,9 +14,19 @@ namespace ProjectMateTask.VMD.AppInfrastructure;
 /// </summary>
 internal sealed class MainMenuVmd : BaseVmd
 {
-    public MainMenuVmd(ITypeNavigationServices typeNavigationServices)
+    /// <summary>
+    ///     Vmd для главного меню
+    /// </summary>
+    /// <param name="typeMainEntityNavigationServices">Сервис навигации по MainEntityVmd типам</param>
+    public MainMenuVmd(ITypeNavigationServices typeMainEntityNavigationServices)
     {
-        MenuNavigationCommand = new TypeNavigationCmd(typeNavigationServices);
+        #region Инициализация команд
+
+        MenuNavigationCommand = new TypeNavigationCmd(typeMainEntityNavigationServices);
+
+        #endregion
+
+        #region Инициализация свойств
 
         MenuItems = new ObservableCollection<MenuItemWithCommand>
         {
@@ -26,15 +36,25 @@ internal sealed class MainMenuVmd : BaseVmd
             new("Статусы клиентов", PackIconKind.Administrator, MenuNavigationCommand, typeof(ClientStatusesVmdVmd)),
             new("Типы продуктов", PackIconKind.FileDocument, MenuNavigationCommand, typeof(ProductTypeVmdVmd))
         };
+
+        #endregion
     }
 
+    #region Поля и  свойства
+
     /// <summary>
-    ///     Коллекцию навигационного меню
+    ///     Коллекцию навигационного меню для MainEntityVmd страниц
     /// </summary>
     public ObservableCollection<MenuItemWithCommand> MenuItems { get; }
+
+    #endregion
+
+    #region Команды
 
     /// <summary>
     ///     Команда навигации между страницами
     /// </summary>
     public ICommand MenuNavigationCommand { get; }
+
+    #endregion
 }
