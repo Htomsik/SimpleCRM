@@ -1,6 +1,6 @@
 ﻿using System;
+using Microsoft.Extensions.DependencyInjection;
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
-using ProjectMateTask.Stores.Base;
 using ProjectMateTask.VMD.Base;
 
 namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.TypeNavigationServices;
@@ -31,7 +31,7 @@ internal  class BaseTypeNavigationServices<TVmd>:ITypeNavigationServices where T
     /// <exception cref="ArgumentNullException">Возникает в случае если не найдено регистрации для типа</exception>
     public virtual void Navigate(Type vmdType)
     {
-        var iocVmd = (TVmd)App.Services.GetService(vmdType);
+        var iocVmd = (TVmd)App.Services.GetRequiredService(vmdType);
 
       _navigationStore.Value.CurrentValue = iocVmd ??
           throw new ArgumentNullException($"Отсуствует зарегистрированная Viewmodel для {vmdType}");

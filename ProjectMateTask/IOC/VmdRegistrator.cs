@@ -1,8 +1,10 @@
 ﻿using System;
 using Microsoft.Extensions.DependencyInjection;
 using ProjectMateTask.Infrastructure.MessageBuses;
-using ProjectMateTask.Services.AppInfrastructure.NavigationServices;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.NavigationServices;
+using ProjectMateTask.Services.AppInfrastructure.NavigationServices.CloseNavigationServcies;
+using ProjectMateTask.Services.AppInfrastructure.NavigationServices.NavigationServices;
+using ProjectMateTask.Services.AppInfrastructure.NavigationServices.TypeNavigationServices;
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores;
 using ProjectMateTask.VMD.AppInfrastructure;
 using ProjectMateTask.VMD.Pages;
@@ -21,7 +23,7 @@ internal static class VmdRegistrator
 
         services.AddTransient(CreateMainMenuVmd);
 
-        services.AddTransient<MainPageVmd>();
+        services.AddTransient<HomeVmd>();
 
         #region EditEntity Vmds
 
@@ -86,9 +88,12 @@ internal static class VmdRegistrator
     private static MainWindowVmd CreateMainWindowVmd(IServiceProvider s)
     {
         return new MainWindowVmd(
-            s.GetRequiredService<MainBaseEntityVmdNavigationStore>(),
+            s.GetRequiredService<MainEntityVmdNavigationStore>(),
+            s.GetRequiredService<CloseMainEntityVmdNavigationServices>(),
             s.GetRequiredService<MainMenuVmdNavigationStore>(),
-            s.GetRequiredService<AdditionalPageVmdNavigationStore>(),CreateSettingsAdditionalPageNavigationServices(s),s.GetRequiredService<LoggerMessageBus>());
+            s.GetRequiredService<AdditionalPageVmdNavigationStore>(),
+            CreateSettingsAdditionalPageNavigationServices(s),
+            s.GetRequiredService<LoggerMessageBus>());
     }
 
     private static MainMenuVmd CreateMainMenuVmd(IServiceProvider s) => new MainMenuVmd(s.GetRequiredService<MainEntityStoreTypeNavigationService>());

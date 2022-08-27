@@ -1,5 +1,4 @@
-﻿using ProjectMateTask.DAL.Entities.Actors;
-using ProjectMateTask.DAL.Entities.Types;
+﻿using ProjectMateTask.DAL.Entities.Types;
 using ProjectMateTaskDalTests.Resources;
 
 namespace ProjectMateTaskDalTests.EnitiesTests;

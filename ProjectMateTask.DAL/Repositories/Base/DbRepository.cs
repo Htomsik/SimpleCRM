@@ -1,13 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.Extensions.Logging;
 using ProjectMateTask.DAL.Context;
-using ProjectMateTask.DAL.Entities.Actors;
 using ProjectMateTask.DAL.Entities.Base;
 
 namespace ProjectMateTask.DAL.Repositories;
 
-internal abstract class DbRepository<T> : IRepository<T> where T : Entity, new()
+/// <summary>
+///     Репозиторий работы с Entity через бд
+/// </summary>
+/// <typeparam name="T">Любой NamedEntity тип</typeparam>
+internal abstract class DbRepository<T> : IRepository<T> where T : NamedEntity, new()
 {
     protected readonly ProjectMateTaskDb _db;
     
@@ -51,7 +53,7 @@ internal abstract class DbRepository<T> : IRepository<T> where T : Entity, new()
 
     public void Add(T item)
     {
-        _logger.LogInformation($"Добавление {item.GetType().Name} в бд...");
+        _logger.LogInformation($"Добавление {item.Name} в бд...");
         
         try
         {
@@ -59,11 +61,11 @@ internal abstract class DbRepository<T> : IRepository<T> where T : Entity, new()
             _db.Entry(item).State = EntityState.Added;
             _db.SaveChanges();
             
-            _logger.LogInformation($"Добавление {item.GetType().Name} в бд прошло успешно");
+            _logger.LogInformation($"Добавление {item.Name} в бд прошло успешно");
         }
         catch (Exception e)
         {
-          _logger.LogError(e,$"Ошибка добавления {item.GetType().Name} в бд");
+          _logger.LogError(e,$"Ошибка добавления {item.Name} в бд");
         }
         
     }
@@ -71,7 +73,7 @@ internal abstract class DbRepository<T> : IRepository<T> where T : Entity, new()
     public async Task AddAsync(T item, CancellationToken cancelToken = default)
     {
         
-        _logger.LogInformation($"Асинхронное добавление {item.GetType().Name} в бд...");
+        _logger.LogInformation($"Асинхронное добавление {item.Name} в бд...");
 
         try
         {
@@ -79,11 +81,11 @@ internal abstract class DbRepository<T> : IRepository<T> where T : Entity, new()
             _db.Entry(item).State = EntityState.Added;
             await _db.SaveChangesAsync(cancelToken).ConfigureAwait(false);
             
-            _logger.LogInformation($"Асинхронное добавление {item.GetType().Name} в бд успешно");
+            _logger.LogInformation($"Асинхронное добавление {item.Name} в бд успешно");
         }
         catch (Exception e)
         {
-            _logger.LogError(e,$"Ошибка асинхронного добавления {item.GetType().Name} в бд");
+            _logger.LogError(e,$"Ошибка асинхронного добавления {item.Name} в бд");
         }
     
       
@@ -131,7 +133,7 @@ internal abstract class DbRepository<T> : IRepository<T> where T : Entity, new()
     public void Update(T item)
     {
         
-        _logger.LogInformation($"Обновление {item.GetType().Name} в бд...");
+        _logger.LogInformation($"Обновление {item.Name} в бд...");
         
         try
         {
@@ -139,11 +141,11 @@ internal abstract class DbRepository<T> : IRepository<T> where T : Entity, new()
             _db.Entry(item).State = EntityState.Modified;
             _db.SaveChanges();
             
-            _logger.LogInformation($"Обновление {item.GetType().Name} в бд прошло успешно");
+            _logger.LogInformation($"Обновление {item.Name} в бд прошло успешно");
         }
         catch (Exception e)
         {
-            _logger.LogError(e,$"Ошибка обновление {item.GetType().Name} в бд");
+            _logger.LogError(e,$"Ошибка обновление {item.Name} в бд");
         }
         
         
@@ -152,7 +154,7 @@ internal abstract class DbRepository<T> : IRepository<T> where T : Entity, new()
     public async Task UpdateAsync(T item, CancellationToken cancelToken = default)
     {
 
-        _logger.LogInformation($"Асинхронное обновление {item.GetType().Name} в бд...");
+        _logger.LogInformation($"Асинхронное обновление {item.Name} в бд...");
         
         try
         {
@@ -160,11 +162,11 @@ internal abstract class DbRepository<T> : IRepository<T> where T : Entity, new()
             _db.Entry(item).State = EntityState.Modified;
             await _db.SaveChangesAsync(cancelToken).ConfigureAwait(false);
             
-            _logger.LogInformation($"Асинхронное обновление {item.GetType().Name} в бд прошло успешно");
+            _logger.LogInformation($"Асинхронное обновление {item.Name} в бд прошло успешно");
         }
         catch (Exception e)
         {
-            _logger.LogError(e,$"Ошибка асинхронного обновление {item.GetType().Name} в бд");
+            _logger.LogError(e,$"Ошибка асинхронного обновление {item.Name} в бд");
         }
     }
 
@@ -214,7 +216,7 @@ internal abstract class DbRepository<T> : IRepository<T> where T : Entity, new()
     public void Remove(T item)
     {
         
-        _logger.LogInformation($"Удаление {item.GetType().Name} в бд...");
+        _logger.LogInformation($"Удаление {item.Name} в бд...");
         
         try
         {
@@ -222,18 +224,18 @@ internal abstract class DbRepository<T> : IRepository<T> where T : Entity, new()
             _db.Entry(item).State = EntityState.Deleted;
             _db.SaveChanges();
             
-            _logger.LogInformation($"Удаление {item.GetType().Name} в бд прошло успешно");
+            _logger.LogInformation($"Удаление {item.Name} в бд прошло успешно");
         }
         catch (Exception e)
         {
-            _logger.LogError(e,$"Ошибка удаления {item.GetType().Name} в бд");
+            _logger.LogError(e,$"Ошибка удаления {item.Name} в бд");
         }
     }
 
     public async Task RemoveAsync(T item, CancellationToken cancelToken = default)
     {
         
-         _logger.LogInformation($"Асинхронное удаление {item.GetType().Name} в бд...");
+         _logger.LogInformation($"Асинхронное удаление {item.Name} в бд...");
         
          try
          {
@@ -241,11 +243,11 @@ internal abstract class DbRepository<T> : IRepository<T> where T : Entity, new()
              _db.Entry(item).State = EntityState.Deleted;
              await _db.SaveChangesAsync(cancelToken).ConfigureAwait(false);
             
-             _logger.LogInformation($"Асинхронное удаление {item.GetType().Name} в бд прошло успешно");
+             _logger.LogInformation($"Асинхронное удаление {item.Name} в бд прошло успешно");
          }
          catch (Exception e)
          {
-             _logger.LogError(e,$"Ошибка асинхонного удаления {item.GetType().Name} в бд");
+             _logger.LogError(e,$"Ошибка асинхонного удаления {item.Name} в бд");
          }
     }
     
@@ -288,12 +290,23 @@ internal abstract class DbRepository<T> : IRepository<T> where T : Entity, new()
         }
     }
 
+    /// <summary>
+    ///     Метод проверки значения на null
+    /// </summary>
+    /// <param name="item">Проверяемое значение</param>
+    /// <exception cref="ArgumentNullException">Возникает если знаачеине null</exception>
     protected bool NullChecker(T item)
     {
         if (item is null) throw new ArgumentNullException(nameof(item) + " не должным будть пустым");
         return true;
     }
 
+    /// <summary>
+    ///     Метод проверки коллекции на null
+    /// </summary>
+    /// <param name="items">Проверяемая коллекция</param>
+    /// <returns></returns>
+    /// <exception cref="ArgumentNullException">Возникает если коллекция или любое значение в коллекции null</exception>
     protected bool CollectionNullChecker(IEnumerable<T> items)
     {
         if (items is null || items.All(item=>item is null)) throw new ArgumentNullException(nameof(items) + " не должным будть пустым");

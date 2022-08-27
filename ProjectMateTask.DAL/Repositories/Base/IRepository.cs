@@ -1,9 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
-using ProjectMateTask.DAL.Entities.Actors;
-using ProjectMateTask.DAL.Entities.Base;
+﻿using ProjectMateTask.DAL.Entities.Base;
 
 namespace ProjectMateTask.DAL.Repositories;
 
+/// <summary>
+///     Репозитоий работы с Entity
+/// </summary>
+/// <typeparam name="T"></typeparam>
 public interface IRepository<T> where T : IEntity
 {
     /// <summary>

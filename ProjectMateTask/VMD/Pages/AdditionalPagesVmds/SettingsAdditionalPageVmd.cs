@@ -3,8 +3,8 @@ using System.Windows.Input;
 using MaterialDesignThemes.Wpf;
 using ProjectMateTask.Infrastructure.CMD.AppInfrastructure;
 using ProjectMateTask.Models.AppInfrastructure;
-using ProjectMateTask.Services.AppInfrastructure.NavigationServices;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.TypeNavigationServices;
+using ProjectMateTask.Services.AppInfrastructure.NavigationServices.CloseNavigationServcies;
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
 using ProjectMateTask.VMD.Base;
 using ProjectMateTask.VMD.Pages.AdditionalPagesVmds.Base;
@@ -70,6 +70,9 @@ internal sealed class SettingsAdditionalPageVmd : BaseAdditionalVmd
         };
 
         #endregion
+        
+        _typeNavigationServices.Navigate(typeof(AboutProgramVmd));
+        
     }
 
     #region Команды
@@ -86,12 +89,16 @@ internal sealed class SettingsAdditionalPageVmd : BaseAdditionalVmd
     /// <summary>
     ///     Текущая выбранная vmd страница настроек
     /// </summary>
-    public BaseVmd CurrentSettingsPageVmd => _localVmdNavigationStore.CurrentValue;
+    public BaseVmd CurrentSettingsPageVmd => _localVmdNavigationStore?.CurrentValue!;
 
     /// <summary>
     ///     Коллекцию навигационного меню для страниц настроек
     /// </summary>
     public ObservableCollection<MenuItemWithCommand> MenuItems { get; }
+    
+    
 
     #endregion
+
+ 
 }

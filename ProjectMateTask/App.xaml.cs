@@ -1,22 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Threading.Tasks;
 using System.Windows;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ProjectMateTask.DAL.DiRegistrators;
 using ProjectMateTask.Data;
 using ProjectMateTask.IOC;
-using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base;
-using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.NavigationServices;
-using ProjectMateTask.VMD;
 using ProjectMateTask.VMD.AppInfrastructure;
 using ProjectMateTask.VW.Windows;
-using Serilog;
 
 namespace ProjectMateTask
 {
@@ -31,8 +21,7 @@ namespace ProjectMateTask
             => _host ??= Program.CreateHostBuilder(Environment.GetCommandLineArgs()).Build();
         
         public static IServiceProvider Services => Host.Services;
-
-   
+        
         protected override async void OnStartup(StartupEventArgs e)
         {
             var host = Host;

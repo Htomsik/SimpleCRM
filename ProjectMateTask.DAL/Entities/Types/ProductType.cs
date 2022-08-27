@@ -1,5 +1,4 @@
-﻿using System.Collections.ObjectModel;
-using ProjectMateTask.DAL.Entities.Actors;
+﻿using ProjectMateTask.DAL.Entities.Actors;
 using ProjectMateTask.DAL.Entities.Base;
 using ProjectMateTask.DAL.Services;
 using ProjectMateTask.DAL.Stores;

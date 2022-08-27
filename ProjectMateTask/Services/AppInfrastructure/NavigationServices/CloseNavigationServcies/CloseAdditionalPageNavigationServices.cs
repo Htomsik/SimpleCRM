@@ -2,7 +2,7 @@
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
 using ProjectMateTask.VMD.Pages.AdditionalPagesVmds.Base;
 
-namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices;
+namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices.CloseNavigationServcies;
 
 /// <summary>
 ///     Сервис закрытия допольнительного окна

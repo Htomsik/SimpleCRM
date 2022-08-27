@@ -10,6 +10,10 @@ namespace ProjectMateTask.VMD.Base;
 /// </summary>
 public abstract class BaseVmd:INotifyPropertyChanged
 {
+    /// <summary>
+    ///     Название Vmd страницы
+    /// </summary>
+    public virtual string Tittle => "Не переопределено назвнание модели представления";
     public event PropertyChangedEventHandler? PropertyChanged;
 
     /// <summary>

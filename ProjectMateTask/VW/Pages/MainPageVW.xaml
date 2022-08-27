@@ -1,5 +1,5 @@
 ﻿<UserControl
-    d:DataContext="{d:DesignInstance {x:Type vmd:MainPageVmd},
+    d:DataContext="{d:DesignInstance {x:Type vmd:HomeVmd},
                                      IsDesignTimeCreatable=True}"
     d:DesignHeight="300"
     d:DesignWidth="300"

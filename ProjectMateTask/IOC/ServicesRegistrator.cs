@@ -1,7 +1,8 @@
 ﻿using System;
 using Microsoft.Extensions.DependencyInjection;
 using ProjectMateTask.Infrastructure.MessageBuses;
-using ProjectMateTask.Services.AppInfrastructure.NavigationServices;
+using ProjectMateTask.Services.AppInfrastructure.NavigationServices.CloseNavigationServcies;
+using ProjectMateTask.Services.AppInfrastructure.NavigationServices.TypeNavigationServices;
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores;
 
 namespace ProjectMateTask.IOC;
@@ -13,6 +14,7 @@ internal static class ServicesRegistrator
             .AddTransient(CreateSelectPageNavigationStore)
             .AddTransient(CreateCloseAdditionalPageNavigationServices)
             .AddTransient(CreateMainEntityStoreTypeNavigationService)
+            .AddTransient(CreateCloseMainEntityVmdNavigationServices)
             .AddSingleton<LoggerMessageBus>();
  
 
@@ -22,11 +24,18 @@ internal static class ServicesRegistrator
 
     private static MainEntityStoreTypeNavigationService CreateMainEntityStoreTypeNavigationService(
         IServiceProvider serviceProvider) =>
-        new(serviceProvider.GetRequiredService<MainBaseEntityVmdNavigationStore>());
+        new(serviceProvider.GetRequiredService<MainEntityVmdNavigationStore>());
 
     private static CloseAdditionalPageNavigationServices CreateCloseAdditionalPageNavigationServices(
         IServiceProvider serviceProvider) =>
         new(serviceProvider.GetRequiredService<AdditionalPageVmdNavigationStore>());
+
+    private static CloseMainEntityVmdNavigationServices CreateCloseMainEntityVmdNavigationServices(
+        IServiceProvider serviceProvider) =>
+        new(serviceProvider.GetRequiredService<MainEntityVmdNavigationStore>());
+
+
+
 
 
 }

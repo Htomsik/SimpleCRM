@@ -2,7 +2,7 @@
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
 using ProjectMateTask.VMD.Pages.Entities.Base;
 
-namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices;
+namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices.TypeNavigationServices;
 
 /// <summary>
 ///     Сервис навигации между Entity страницами

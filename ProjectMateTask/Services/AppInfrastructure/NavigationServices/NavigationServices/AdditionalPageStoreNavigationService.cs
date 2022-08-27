@@ -3,7 +3,7 @@ using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.Navigat
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
 using ProjectMateTask.VMD.Pages.AdditionalPagesVmds.Base;
 
-namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices;
+namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices.NavigationServices;
 
 /// <summary>
 ///     Сервис навигации по дополнительным окнам

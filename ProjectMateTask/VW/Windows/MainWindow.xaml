@@ -16,9 +16,10 @@
     xmlns:additionalPagesVw="clr-namespace:ProjectMateTask.VW.AdditionalPages"
     xmlns:appInfrastructure="clr-namespace:ProjectMateTask.VW.AppInfrastructure"
     xmlns:base="clr-namespace:ProjectMateTask.VMD.Base"
+    xmlns:base1="clr-namespace:ProjectMateTask.VMD.Pages.Entities.Base"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:entityPages1="clr-namespace:ProjectMateTask.VMD.Pages.Entities.MainEntityVmds.Base"
     xmlns:local="clr-namespace:ProjectMateTask.VW.Windows"
+    xmlns:mainEntityVmds="clr-namespace:ProjectMateTask.VMD.Pages.Entities.MainEntityVmds.Base"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:pages="clr-namespace:ProjectMateTask.VW.Pages"
@@ -29,7 +30,7 @@
 
         <Grid.RowDefinitions>
             <RowDefinition />
-            <RowDefinition Height="30" />
+            <RowDefinition Height="20" />
         </Grid.RowDefinitions>
 
         <materialDesign:DrawerHost x:Name="DrawerHost">
@@ -86,30 +87,50 @@
 
             </materialDesign:DrawerHost.LeftDrawerContent>
 
-
             <!--  Основное пространство  -->
             <DockPanel>
 
                 <!--  Верхнее меню  -->
                 <materialDesign:ColorZone
                     DockPanel.Dock="Top"
+                    MaxHeight="50"
+                    MinHeight="20"
                     Mode="PrimaryMid"
                     x:Name="TopDock">
 
                     <Grid>
 
-                        <!--  Кнопка открытия меню  -->
-                        <ToggleButton
-                            Command="{x:Static materialDesign:DrawerHost.OpenDrawerCommand}"
-                            CommandParameter="{x:Static Dock.Left}"
-                            HorizontalAlignment="Left"
-                            IsChecked="{Binding ElementName=DrawerHost, Path=IsLeftDrawerOpen, UpdateSourceTrigger=PropertyChanged}"
-                            Style="{DynamicResource MaterialDesignHamburgerToggleButton}" />
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <WrapPanel>
+
+                            <!--  Кнопка открытия меню  -->
+                            <ToggleButton
+                                Command="{x:Static materialDesign:DrawerHost.OpenDrawerCommand}"
+                                CommandParameter="{x:Static Dock.Left}"
+                                HorizontalAlignment="Left"
+                                IsChecked="{Binding ElementName=DrawerHost, Path=IsLeftDrawerOpen, UpdateSourceTrigger=PropertyChanged}"
+                                Style="{DynamicResource MaterialDesignHamburgerToggleButton}" />
+
+                            <!--  Кнопка перехода на домашнюю страницу  -->
+                            <Button
+                                Command="{Binding OpenHomeCommand}"
+                                Height="30"
+                                HorizontalAlignment="Right"
+                                Style="{DynamicResource MaterialDesignIconForegroundButton}"
+                                Width="30">
+                                <materialDesign:PackIcon Kind="Home" />
+                            </Button>
+
+                        </WrapPanel>
 
 
                         <!--  Название текущей модели представления  -->
                         <TextBlock
-                            Grid.Column="0"
+                            Grid.Column="1"
                             HorizontalAlignment="Center"
                             Margin="0,0,10,0"
                             Style="{DynamicResource MaterialDesignHeadline5TextBlock}"
@@ -122,21 +143,23 @@
 
                 <!--  VMD Pages  -->
                 <ContentControl
-                    Content="{Binding MainEntityCurrentVmd}"
+                    Content="{Binding MainEntityOrHomeCurrentVmd}"
                     Margin="5,5,0,0"
                     x:Name="VmdPagesContent">
 
                     <ContentControl.Resources>
 
-                        <!--  Главная страница  -->
-                        <DataTemplate DataType="{x:Type vmdPages:MainPageVmd}">
+                        <!--  Домашняя страница  -->
+                        <DataTemplate DataType="{x:Type vmdPages:HomeVmd}">
                             <pages:MainPageVW />
                         </DataTemplate>
 
-                        <!--  Все Entity страницы  -->
-                        <DataTemplate DataType="{x:Type base:BaseVmd}">
+                        <!--  Все MainEntity страницы  -->
+                        <DataTemplate DataType="{x:Type base1:BaseEntityVmd}">
                             <pages:EntityPagesVW />
                         </DataTemplate>
+
+
 
                     </ContentControl.Resources>
 
@@ -166,9 +189,7 @@
             BorderBrush="{DynamicResource MaterialDesignDarkSeparatorBackground}"
             BorderThickness="0,2,0,0"
             Grid.Row="1"
-            MaxHeight="30"
-            Mode="Dark"
-            VerticalAlignment="Bottom">
+            Mode="Dark">
 
             <TextBlock
                 HorizontalAlignment="Left"
@@ -179,8 +200,6 @@
 
 
     </Grid>
-
-
 
 
 </Window>

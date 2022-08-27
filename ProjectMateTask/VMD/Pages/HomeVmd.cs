@@ -3,18 +3,28 @@ using System.Windows.Input;
 using ProjectMateTask.Data;
 using ProjectMateTask.Infrastructure.CMD;
 using ProjectMateTask.VMD.Base;
-using ProjectMateTask.VMD.Pages.Entities.MainEntityVmds.Base;
 
 namespace ProjectMateTask.VMD.Pages;
 
-internal sealed class MainPageVmd:BaseVmd
+/// <summary>
+///     Стартовая страница приложения
+/// </summary>
+internal sealed class HomeVmd : BaseVmd
 {
-    /// <summary>
-    /// Сервис Инициализации бд
-    /// </summary>
+    #region Поля и свойства
+
     private readonly IDbInitializer _dbInitializer;
 
-    public MainPageVmd(IDbInitializer dbInitializer)
+    public override string Tittle => "Домашняя страница";
+
+    #endregion
+   
+
+    /// <summary>
+    /// Стартовая страница приложения
+    /// </summary>
+    /// <param name="dbInitializer">Инициализатор бд</param>
+    public HomeVmd(IDbInitializer dbInitializer)
     {
         _dbInitializer = dbInitializer;
 
@@ -22,7 +32,6 @@ internal sealed class MainPageVmd:BaseVmd
 
         TestDataInitializeCommand = new AsyncLambdaCmd(OnTestDataInitialize);
     }
-
 
     #region RebuildDBCommand : Команда пересборки базы данных
 
@@ -45,5 +54,4 @@ internal sealed class MainPageVmd:BaseVmd
     }
 
     #endregion
-  
 }

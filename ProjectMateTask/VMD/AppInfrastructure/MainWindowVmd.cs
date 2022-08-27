@@ -1,9 +1,13 @@
 ﻿using System.Windows.Input;
+using Microsoft.Extensions.DependencyInjection;
+using ProjectMateTask.Infrastructure.CMD;
 using ProjectMateTask.Infrastructure.CMD.AppInfrastructure;
 using ProjectMateTask.Infrastructure.MessageBuses.Base;
+using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.CloseNavigationServices;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.NavigationServices;
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
 using ProjectMateTask.VMD.Base;
+using ProjectMateTask.VMD.Pages;
 using ProjectMateTask.VMD.Pages.AdditionalPagesVmds.Base;
 using ProjectMateTask.VMD.Pages.Entities.Base;
 
@@ -17,12 +21,14 @@ internal sealed class MainWindowVmd : BaseVmd
     /// <summary>
     ///     Vmd для главного окна
     /// </summary>
-    /// <param name="mainEntityVmdNavigationStore">Навигационное хранилище MainEntityVmd типов</param>
-    /// <param name="mainMenuVmdNavigationStore">Навигационное хранилище menuVmd типов</param>
+    /// <param name="mainEntityVmdNavigationStore">Навигационное хранилище MainEntity vmd типов</param>
+    /// <param name="closeMainEntityNavigationServices">Сервис закрытия MainEntity vmd типов</param>
+    /// <param name="mainMenuVmdNavigationStore">Навигационное хранилище menu vmd типов</param>
     /// <param name="additionalVmdNavigationStore">Навигационное хранилише доп vmd типов</param>
     /// <param name="openSettingsNavigationServices">Сервис открытия настроек</param>
     /// <param name="loggerMessageBus">Шина сообщений от логгера</param>
     public MainWindowVmd(IEntityVmdNavigationStore<BaseEntityVmd> mainEntityVmdNavigationStore,
+        ICloseNavigationServices closeMainEntityNavigationServices,
         IVmdNavigationStore<BaseVmd> mainMenuVmdNavigationStore,
         IVmdNavigationStore<BaseAdditionalVmd> additionalVmdNavigationStore,
         INavigationService openSettingsNavigationServices,
@@ -31,7 +37,7 @@ internal sealed class MainWindowVmd : BaseVmd
         #region Инициализация сервисов или хранилищ
 
         _mainEntityVmdNavigationStore = mainEntityVmdNavigationStore;
-
+        
         _mainMenuVmdNavigationStore = mainMenuVmdNavigationStore;
 
         _additionalVmdNavigationStore = additionalVmdNavigationStore;
@@ -40,7 +46,7 @@ internal sealed class MainWindowVmd : BaseVmd
 
         #region Привязка подписок
 
-        _mainEntityVmdNavigationStore.CurrentValueChanged += () => OnPropertyChanged(nameof(MainEntityCurrentVmd));
+        _mainEntityVmdNavigationStore.CurrentValueChanged += () => OnPropertyChanged(nameof(MainEntityOrHomeCurrentVmd));
 
         _additionalVmdNavigationStore.CurrentValueChanged += () => OnPropertyChanged(nameof(AdditionalCurrenVmd));
 
@@ -52,7 +58,10 @@ internal sealed class MainWindowVmd : BaseVmd
 
         OpenSettingsCommand = new NavigationCmd(openSettingsNavigationServices);
 
+        OpenHomeCommand = new LambdaCmd(()=> closeMainEntityNavigationServices.Close());
+
         #endregion
+
     }
 
     #region Команды
@@ -62,6 +71,11 @@ internal sealed class MainWindowVmd : BaseVmd
     /// </summary>
     public ICommand OpenSettingsCommand { get; }
 
+    /// <summary>
+    ///     Команда открытия домашней страницы
+    /// </summary>
+    public ICommand OpenHomeCommand { get; }
+    
     #endregion
 
     #region Хранилища
@@ -77,19 +91,24 @@ internal sealed class MainWindowVmd : BaseVmd
     private readonly IVmdNavigationStore<BaseVmd> _mainMenuVmdNavigationStore;
 
     /// <summary>
-    ///     Навигционное хранилище MainEntityVmd типов
+    ///     Навигционное хранилище MainEntity vmd типов
     /// </summary>
     private readonly IEntityVmdNavigationStore<BaseEntityVmd> _mainEntityVmdNavigationStore;
-
+    
     #endregion
 
     #region Поля и свойства
 
-    /// <summary>
-    ///     Текущая выбранная MainEntityVmd страница
-    /// </summary>
-    public IEntityVmd? MainEntityCurrentVmd => _mainEntityVmdNavigationStore.CurrentValue;
 
+    #region MainEntityOrHomeCurrentVmd : Текущая выбранная Entity или домашняя страница
+    
+    /// <summary>
+    ///     Текущая выбранная MainEntityVmd или HomeVmd
+    /// </summary>
+    public BaseVmd? MainEntityOrHomeCurrentVmd => (BaseVmd?)_mainEntityVmdNavigationStore.CurrentValue ?? App.Services.GetRequiredService<HomeVmd>();
+
+    #endregion
+    
     /// <summary>
     ///     Текущая выбранная доп страница
     /// </summary>

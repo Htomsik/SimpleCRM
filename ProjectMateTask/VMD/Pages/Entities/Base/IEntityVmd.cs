@@ -12,8 +12,4 @@ internal interface IEntityVmd : INotifyPropertyChanged
     /// </summary>
     public ICollectionView? EntitiesFilteredView { get;}
     
-    /// <summary>
-    ///     Название страницы или используемого типа
-    /// </summary>
-    string Tittle { get; }
 }

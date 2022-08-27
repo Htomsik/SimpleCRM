@@ -9,11 +9,7 @@ namespace ProjectMateTask.VMD.Pages.Entities.Base;
 /// </summary>
 internal abstract class BaseEntityVmd : BaseVmd, IEntityVmd
 {
-    /// <summary>
-    ///     Название EntityVmd страницы
-    /// </summary>
-    public abstract string Tittle { get; }
-
+    
     #region EntitiesFilteredView : фильтрованный список Entity
 
     protected CollectionViewSource _entitiesViewSource;

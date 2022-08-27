@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using ProjectMateTask.Stores.Base;
+﻿using ProjectMateTask.Stores.Base;
 using ProjectMateTask.VMD.Base;
 
 namespace ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;

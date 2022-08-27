@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Microsoft.EntityFrameworkCore;
 using ProjectMateTask.Infrastructure.CMD.Base;
 
 namespace ProjectMateTask.Infrastructure.CMD;
