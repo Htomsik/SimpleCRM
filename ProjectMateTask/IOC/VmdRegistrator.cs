@@ -41,13 +41,13 @@ internal static class VmdRegistrator
 
         services.AddTransient<ClientSubVmd>();
 
-        services.AddTransient<ManagerSubVmd>();
+        services.AddTransient<SubManagerVmd>();
 
-        services.AddTransient<ProductSubVmd>();
+        services.AddTransient<SubProductVmd>();
 
-        services.AddTransient<ProductTypeSubVmd>();
+        services.AddTransient<SubProductTypeVmd>();
 
-        services.AddTransient<ClientStatusSubVmd>();
+        services.AddTransient<SubClientStatusVmd>();
 
         #endregion
 

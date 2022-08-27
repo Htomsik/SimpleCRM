@@ -4,6 +4,9 @@ using ProjectMateTask.VMD.Pages.Entities.SelectEntityVmds.Base;
 
 namespace ProjectMateTask.VMD.Pages.Entities.MainEntityVmds.Base;
 
+/// <summary>
+///     Модель представления для MainEntity типов
+/// </summary>
 internal interface IMainEntityVmd : IEntityVmd
 {
     #region Поля и свойства

@@ -354,15 +354,13 @@ internal abstract class BaseMainEntityVmd<TEntity> : BaseEntityRepositoryVmd<TEn
     /// <summary>
     ///     Метод для подписки на получение нового  subEntity (связного)
     /// </summary>
-    /// <param name="entity">Получаемый новый subEntity (связная) тип</param>
+    /// <param name="subEntity">Получаемый новый subEntity (связная) тип</param>
     /// <exception cref="NotSupportedException">
     ///     Возникает в случае если тип поддерживает смену связного Entity, но фактическая
     ///     реализация отсутсвует.
     /// </exception>
-    protected virtual void ChangeSubEntity(INamedEntity entity)
-    {
-        throw new NotSupportedException($"Для vmd с типом: {typeof(TEntity)} не поддерживается смена связного Entity");
-    }
+    protected virtual void ChangeSubEntity(INamedEntity subEntity) =>  throw new NotSupportedException($"Для vmd с типом: {typeof(TEntity)} не поддерживается смена связного Entity");
+   
 
     #endregion
 

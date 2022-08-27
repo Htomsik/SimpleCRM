@@ -76,7 +76,7 @@
 
                                         <!--  Кнопка добавление  -->
                                         <Button
-                                            Command="{Binding DataContext.AddEntityToMainCommand, ElementName=ListContentControl}"
+                                            Command="{Binding DataContext.AddSubEntityToMainEntityCommand, ElementName=ListContentControl}"
                                             Grid.Column="1"
                                             Height="15"
                                             HorizontalAlignment="Right"

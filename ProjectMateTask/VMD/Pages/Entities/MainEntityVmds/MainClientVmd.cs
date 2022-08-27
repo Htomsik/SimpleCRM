@@ -24,20 +24,16 @@ internal sealed class MainClientVmd : BaseMainEntityVmd<Client>
     {
     }
 
-    protected override void OnDeleteSubEntityFromCollection(INamedEntity removedEntity)
-    {
-        EditableEntity.Products.Remove((Product)removedEntity);
-    }
+    protected override void OnDeleteSubEntityFromCollection(INamedEntity removedEntity) => EditableEntity?.Products.Remove((Product)removedEntity);
+  
 
-    protected override void AddSubEntityInCollection(INamedEntity AddedEntity)
-    {
-        EditableEntity.Products.Add((Product)AddedEntity);
-    }
+    protected override void AddSubEntityInCollection(INamedEntity addedEntity) => EditableEntity?.Products.Add((Product)addedEntity);
+   
 
-    protected override void ChangeSubEntity(INamedEntity entity)
+    protected override void ChangeSubEntity(INamedEntity subEntity)
     {
-        if (entity is ClientStatus)
-            EditableEntity!.Status = (ClientStatus)entity;
-        else if (entity is Manager) EditableEntity!.Manager = (Manager)entity;
+        if (subEntity is ClientStatus)
+            EditableEntity!.Status = (ClientStatus)subEntity;
+        else if (subEntity is Manager) EditableEntity!.Manager = (Manager)subEntity;
     }
 }

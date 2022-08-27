@@ -24,13 +24,9 @@ internal sealed class MainManagerVmd : BaseMainEntityVmd<Manager>
     }
 
 
-    protected override void OnDeleteSubEntityFromCollection(INamedEntity removedEntity)
-    {
-        EditableEntity.Clients.Remove((Client)removedEntity);
-    }
+    protected override void OnDeleteSubEntityFromCollection(INamedEntity removedEntity) => EditableEntity?.Clients.Remove((Client)removedEntity);
+   
 
-    protected override void AddSubEntityInCollection(INamedEntity AddedEntity)
-    {
-        EditableEntity.Clients.Add((Client)AddedEntity);
-    }
+    protected override void AddSubEntityInCollection(INamedEntity addedEntity) => EditableEntity?.Clients.Add((Client)addedEntity);
+  
 }

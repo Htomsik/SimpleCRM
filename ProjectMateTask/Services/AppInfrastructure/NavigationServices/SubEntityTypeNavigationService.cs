@@ -20,10 +20,10 @@ internal sealed class SubEntityTypeNavigationService : BaseTypeNavigationService
     private static readonly Dictionary<Type, Type> VmdTypes = new()
     {
         { typeof(Client), typeof(ClientSubVmd) },
-        { typeof(Product), typeof(ProductSubVmd) },
-        { typeof(Manager), typeof(ManagerSubVmd) },
-        { typeof(ProductType), typeof(ProductTypeSubVmd) },
-        { typeof(ClientStatus), typeof(ClientStatusSubVmd) }
+        { typeof(Product), typeof(SubProductVmd) },
+        { typeof(Manager), typeof(SubManagerVmd) },
+        { typeof(ProductType), typeof(SubProductTypeVmd) },
+        { typeof(ClientStatus), typeof(SubClientStatusVmd) }
     };
 
     public SubEntityTypeNavigationService(IVmdNavigationStore<BaseEntityVmd> vmdNavigationStore) : base(

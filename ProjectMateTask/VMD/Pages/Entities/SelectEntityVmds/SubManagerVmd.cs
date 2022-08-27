@@ -6,13 +6,13 @@ using ProjectMateTask.VMD.Pages.Entities.SelectEntityVmds.Base;
 namespace ProjectMateTask.VMD.Pages.Entities.SelectEntityVmds;
 
 /// <summary>
-///     SubEntity vmd тип для Client типа
+///     SubEntity vmd тип для Manager типа
 /// </summary>
-internal sealed class ClientSubVmd : BaseSubEntityVmd<Client>
+internal sealed class SubManagerVmd : BaseSubEntityVmd<Manager>
 {
-    public ClientSubVmd(IRepository<Client> entitiesRepository,
-        SubEntityTypeNavigationService closeTypeNavigationService)
-        : base(entitiesRepository, closeTypeNavigationService)
+    public SubManagerVmd(IRepository<Manager> entitiesRepository,
+        SubEntityTypeNavigationService closeTypeNavigationService) : base(entitiesRepository,
+        closeTypeNavigationService)
     {
     }
 }

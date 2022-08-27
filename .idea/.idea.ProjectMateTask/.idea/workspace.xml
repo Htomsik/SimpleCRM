@@ -5,31 +5,21 @@
     <projectFile>WpfApp1/WpfApp1.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Рефакторинг описаний некоторых типов">
-      <change afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/Base/BaseMainEntityVmd.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/Base/IMainEntityVmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomControls/bin/Debug/net6.0-windows/CustomControls.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/bin/Debug/net6.0-windows/CustomControls.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomControls/bin/Debug/net6.0-windows/CustomControls.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/bin/Debug/net6.0-windows/CustomControls.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls.pdb" afterDir="false" />
+    <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Рефакторинг описаний MainEntity Vmd типов. Добавление интерфейса для них">
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/IOC/VmdRegistrator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/IOC/VmdRegistrator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/AppInfrastructure/MainMenuVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/AppInfrastructure/MainMenuVmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Base/BaseVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Base/BaseVmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/AdditionalPagesVmds/SettingsAdditionalPageVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/AdditionalPagesVmds/SettingsAdditionalPageVmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/Base/BaseEntityRepositoryVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/Base/BaseEntityRepositoryVmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/Base/BaseMainEntityVmdVmd.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/ClientStatusesVmdVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/MainClientStatusVmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/ClientsVmdVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/MainClientVmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/ManagersVmdVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/MainManagerVmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/ProductTypeVmdVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/MainProductTypeVmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/ProductsVmdVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/MainProductVmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/EntityPagesVW.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/EntityPagesVW.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/ProjectMateTaskDalTests.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/ProjectMateTaskDalTests.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Services/AppInfrastructure/NavigationServices/SubEntityTypeNavigationService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Services/AppInfrastructure/NavigationServices/SubEntityTypeNavigationService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/Base/BaseMainEntityVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/Base/BaseMainEntityVmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/Base/IMainEntityVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/Base/IMainEntityVmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/MainClientStatusVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/MainClientStatusVmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/MainClientVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/MainClientVmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/MainManagerVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/MainManagerVmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/MainProductTypeVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/MainProductTypeVmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/MainProductVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/MainProductVmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/SelectEntityVmds/Base/BaseSubEntityVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/SelectEntityVmds/Base/BaseSubEntityVmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/SelectEntityVmds/Base/ISubEntityVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/SelectEntityVmds/Base/ISubEntityVmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/SelectEntityVmds/ClientStatusSubVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/SelectEntityVmds/SubClientStatusVmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/SelectEntityVmds/ProductTypeSubVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/SelectEntityVmds/SubProductTypeVmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/SelectEntityPageVW.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/SelectEntityPageVW.xaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,13 +215,6 @@
       <workItem from="1661351253479" duration="8005000" />
       <workItem from="1661436135759" duration="453000" />
       <workItem from="1661436637277" duration="23022000" />
-    </task>
-    <task id="LOCAL-00013" summary="Добавление фильтрации по имени">
-      <created>1659103332985</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1659103332985</updated>
     </task>
     <task id="LOCAL-00014" summary="Добавление очистки фильтрации, а также счетчика элементов">
       <created>1659105405965</created>
@@ -569,7 +552,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661560826632</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Рефакторинг описаний MainEntity Vmd типов. Добавление интерфейса для них">
+      <created>1661620921486</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1661620921486</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -589,7 +579,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавление возможности добавлять items в subItems коллекции" />
     <MESSAGE value="Доработка режима редактирования.&#10;Добавлена возможность изменения связных Entity" />
     <MESSAGE value="Добавление полной поддержки типов продуктов" />
     <MESSAGE value="Добавление тестового логирования" />
@@ -614,7 +603,8 @@
     <MESSAGE value="Рефакторинг путей" />
     <MESSAGE value="Добавлений различных абстракций для vmd типов" />
     <MESSAGE value="Рефакторинг описаний некоторых типов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Рефакторинг описаний некоторых типов" />
+    <MESSAGE value="Рефакторинг описаний MainEntity Vmd типов. Добавление интерфейса для них" />
+    <option name="LAST_COMMIT_MESSAGE" value="Рефакторинг описаний MainEntity Vmd типов. Добавление интерфейса для них" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

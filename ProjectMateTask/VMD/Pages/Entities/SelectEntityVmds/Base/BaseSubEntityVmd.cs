@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Threading.Tasks;
-using System.Windows.Data;
 using System.Windows.Input;
-using Microsoft.EntityFrameworkCore;
 using ProjectMateTask.DAL.Entities.Base;
 using ProjectMateTask.DAL.Repositories;
 using ProjectMateTask.Infrastructure.CMD;
@@ -15,36 +9,53 @@ using ProjectMateTask.VMD.Pages.Entities.Base;
 
 namespace ProjectMateTask.VMD.Pages.Entities.SelectEntityVmds.Base;
 
-internal class BaseSubEntityVmd<TEntity> : BaseEntityRepositoryVmd<TEntity>,ISubEntityVmd where TEntity: INamedEntity,new()
+/// <summary>
+///     Базовая реализация для SubEntity vmd типов
+/// </summary>
+/// <typeparam name="TEntity">Любой SubEntityVmd тип</typeparam>
+internal class BaseSubEntityVmd<TEntity> : BaseEntityRepositoryVmd<TEntity>, ISubEntityVmd
+    where TEntity : INamedEntity, new()
 {
+    /// <summary>
+    ///     Базовая реализация для SubEntity vmd типов
+    /// </summary>
+    /// <param name="entitiesRepository">Entity репозиторий</param>
+    /// <param name="closeTypeNavigationService">Навигационный сервис закрытия SubEntity vmd типов</param>
     public BaseSubEntityVmd(
-        IRepository<TEntity> entitiesRepository, ICloseNavigationServices closeTypeNavigationService) : base(entitiesRepository)
+        IRepository<TEntity> entitiesRepository, ICloseNavigationServices closeTypeNavigationService) : base(
+        entitiesRepository)
     {
-        #region Команды
+        #region Инициализация команд
 
-            AddEntityToMainCommand = new LambdaCmd(OnAddEntity);
+        AddSubEntityToMainEntityCommand = new LambdaCmd(OnAddEntity);
 
-            CloseSubEntityPageCommand = new CloseNavigationCmd(closeTypeNavigationService);
-            
+        CloseSubEntityPageCommand = new CloseNavigationCmd(closeTypeNavigationService);
+
         #endregion
     }
 
-    public ICommand CloseSubEntityPageCommand { get; }
-    
-    #region AddEntityToMainCommand : Добавление выбранной сущности к родителю
+    #region Свойства и поля
 
-    public ICommand AddEntityToMainCommand { get; }
+    public event Action<INamedEntity>? AddEntityNotifier;
+
+    #endregion
+
+    #region Команды
+
+    public ICommand CloseSubEntityPageCommand { get; }
+
+    #region AddSubEntityToMainEntityCommand : Добавление выбранной сущности к родителю
+
+    public ICommand AddSubEntityToMainEntityCommand { get; }
 
     private void OnAddEntity(object p)
     {
-        TEntity foundInRepository = EntitiesRepository.GetAsFullTracking(((TEntity)p).Id);
-        
+        var foundInRepository = EntitiesRepository.GetAsFullTracking(((TEntity)p).Id);
+
         AddEntityNotifier?.Invoke(foundInRepository);
     }
 
     #endregion
 
-    public event Action<INamedEntity>? AddEntityNotifier;
-    
-    
+    #endregion
 }

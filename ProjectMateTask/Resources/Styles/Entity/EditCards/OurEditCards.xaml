@@ -3,8 +3,6 @@
     xmlns:base="clr-namespace:ProjectMateTask.DAL.Entities.Base;assembly=ProjectMateTask.DAL"
     xmlns:collections="clr-namespace:System.Collections;assembly=System.Runtime"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-    xmlns:system="clr-namespace:System;assembly=System.Runtime"
-    xmlns:validations="clr-namespace:ProjectMateTask.Infrastructure.Validations"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
 
@@ -31,7 +29,7 @@
                             <!--  Кнопка удаления  -->
                             <!--  БИНДИНГ ПО ИМЕНИ КОНТРОЛА, ПО ВОЗМОЖНОСТИ УДАЛИ  -->
                             <Button
-                                Command="{Binding DataContext.DeleteSubEntityFromCollection, ElementName=SelectedEntityContentControl}"
+                                Command="{Binding DataContext.DeleteSubEntityFromCollectionCommand, ElementName=SelectedEntityContentControl}"
                                 Grid.Column="1"
                                 Height="15"
                                 HorizontalAlignment="Center"

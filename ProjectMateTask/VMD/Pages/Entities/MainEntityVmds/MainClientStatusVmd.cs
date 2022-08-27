@@ -24,13 +24,8 @@ internal sealed class MainClientStatusVmd : BaseMainEntityVmd<ClientStatus>
     {
     }
 
-    protected override void OnDeleteSubEntityFromCollection(INamedEntity removedEntity)
-    {
-        EditableEntity!.Clients.Remove((Client)removedEntity);
-    }
-
-    protected override void AddSubEntityInCollection(INamedEntity addedEntity)
-    {
-        EditableEntity!.Clients.Add((Client)addedEntity);
-    }
+    protected override void OnDeleteSubEntityFromCollection(INamedEntity removedEntity) =>  EditableEntity?.Clients.Remove((Client)removedEntity);
+    
+    protected override void AddSubEntityInCollection(INamedEntity addedEntity) =>  EditableEntity?.Clients.Add((Client)addedEntity);
+    
 }
