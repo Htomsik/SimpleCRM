@@ -5,14 +5,9 @@
     <projectFile>WpfApp1/WpfApp1.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Рефакторинг описаний и путей.&#10;Добавление кнопки выхода на домащнюю страницу&#10;Tittle перенесено в BaseVmd.cs">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/Selectors/EditEntitySelector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/Selectors/EditEntitySelector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/Windows/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/Windows/MainWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.cs" afterDir="false" />
+    <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Изменение селектора для выбора каточки редактирования">
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/Entity/EditCards/ClientEditCard.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/Entity/EditCards/ClientEditCard.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/Entity/EditCards/ClientStatusesEditCard.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/Entity/EditCards/ClientStatusesEditCard.xaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +87,8 @@
     <setting file="file://$PROJECT_DIR$/ProjectMateTask/IOC/ServicesRegistrator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/IOC/VmdRegistrator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Infrastructure/MessageBuses/LoggerMessageBus.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Infrastructure/Selectors/EditEntitySelector.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Infrastructure/Selectors/EditEntitySelector.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Infrastructure/Selectors/EditEntitySelector.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Services/AppInfrastructure/NavigationServices/Base/TypeNavigationServices/BaseTypeNavigationServices.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Services/AppInfrastructure/NavigationServices/MainEntityStoreTypeNavigationService.cs" root0="SKIP_HIGHLIGHTING" />
@@ -210,20 +207,6 @@
       <workItem from="1661351253479" duration="8005000" />
       <workItem from="1661436135759" duration="453000" />
       <workItem from="1661436637277" duration="23022000" />
-    </task>
-    <task id="LOCAL-00016" summary="Добавил карточки для менеджеров">
-      <created>1659118678359</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1659118678359</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Изменение навигации в главном окне">
-      <created>1659122123301</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1659122123301</updated>
     </task>
     <task id="LOCAL-00018" summary="Добавление каточки редактирования для статусов клиентов&#10;&#10;Добавление нескольких элементов для украшения">
       <created>1659172523679</created>
@@ -554,7 +537,21 @@
       <option name="project" value="LOCAL" />
       <updated>1661632222344</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Рефакторинг описаний и путей.&#10;Добавление кнопки выхода на домащнюю страницу&#10;Tittle перенесено в BaseVmd.cs">
+      <created>1661643123290</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1661643123291</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Изменение селектора для выбора каточки редактирования">
+      <created>1661643333979</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1661643333979</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -574,7 +571,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавление тестового логирования" />
     <MESSAGE value="Добавление валидации" />
     <MESSAGE value="Bug fixes." />
     <MESSAGE value="Bug fixes. Add tests" />
@@ -599,7 +595,8 @@
     <MESSAGE value="Рефакторинг описаний MainEntity Vmd типов. Добавление интерфейса для них" />
     <MESSAGE value="Рефакторинг описаний SubEbtity Vmd типов и мелкий рефакторинг описаний для MainEntity типов" />
     <MESSAGE value="Рефакторинг описаний и путей.&#10;Добавление кнопки выхода на домащнюю страницу&#10;Tittle перенесено в BaseVmd.cs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Рефакторинг описаний и путей.&#10;Добавление кнопки выхода на домащнюю страницу&#10;Tittle перенесено в BaseVmd.cs" />
+    <MESSAGE value="Изменение селектора для выбора каточки редактирования" />
+    <option name="LAST_COMMIT_MESSAGE" value="Изменение селектора для выбора каточки редактирования" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

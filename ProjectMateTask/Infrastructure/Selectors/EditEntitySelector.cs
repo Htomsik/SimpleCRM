@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
+using ProjectMateTask.DAL.Entities.Actors;
+using ProjectMateTask.DAL.Entities.Types;
+using ProjectMateTask.VMD.Pages.Entities.SelectEntityVmds;
 
 namespace ProjectMateTask.Infrastructure.Selectors;
 
@@ -18,9 +22,7 @@ public class EditEntitySelector : DataTemplateSelector
             if (element != null && item != null)
             {
                 
-                var itemtype = item.GetType();
-                
-                var resource = element.FindResource($"Edit{itemtype.Name}Card");
+                var resource = element.FindResource(EditCardByEntity[item.GetType()]);
 
                 if (resource is null)
                     throw new ArgumentNullException($"Не найдена карточка редактирования для {nameof(item)}");
@@ -36,4 +38,17 @@ public class EditEntitySelector : DataTemplateSelector
 
         return null;
     }
+
+    /// <summary>
+    ///     Словарь сопоставления Entity с карточками редактирования
+    /// </summary>
+    private static readonly Dictionary<Type, string> EditCardByEntity = new()
+    {
+        { typeof(Client), "EditClientCard" },
+        { typeof(Product),  "EditProductCard" },
+        { typeof(Manager), "EditManagerCard" },
+        { typeof(ProductType), "EditProductTypeCard" },
+        { typeof(ClientStatus), "EditClientStatusCard" }
+        
+    };
 }
