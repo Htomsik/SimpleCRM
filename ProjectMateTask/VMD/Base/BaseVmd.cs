@@ -48,9 +48,17 @@ public abstract class BaseVmd:INotifyPropertyChanged
         OnPropertyChanged(propertyName);
         return true;
     }
+
+    protected bool LaztSet<T>(ref Lazy<T> field, T value, [CallerMemberName] string? propertyName = null)
+    {
+        if (Equals(field, value)) return false;
+        field = new Lazy<T>(()=>value);
+        OnPropertyChanged(propertyName);
+        return true;
+    }
     
     /// <summary>
-    ///     Метод для деструктоа
+    ///     Метод очистки неуправляемых ресурсов
     /// </summary>
     public virtual void Dispose() {}
 

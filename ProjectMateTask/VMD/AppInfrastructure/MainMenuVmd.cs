@@ -30,11 +30,11 @@ internal sealed class MainMenuVmd : BaseVmd
 
         MenuItems = new ObservableCollection<MenuItemWithCommand>
         {
-            new("Менеджеры", PackIconKind.AccountTie, MenuNavigationCommand, typeof(ManagersVmdVmd)),
-            new("Клиенты", PackIconKind.Account, MenuNavigationCommand, typeof(ClientsVmdVmd)),
-            new("Продукты", PackIconKind.Shopping, MenuNavigationCommand, typeof(ProductsVmdVmd)),
-            new("Статусы клиентов", PackIconKind.Administrator, MenuNavigationCommand, typeof(ClientStatusesVmdVmd)),
-            new("Типы продуктов", PackIconKind.FileDocument, MenuNavigationCommand, typeof(ProductTypeVmdVmd))
+            new("Менеджеры", PackIconKind.AccountTie, MenuNavigationCommand, typeof(MainManagerVmd)),
+            new("Клиенты", PackIconKind.Account, MenuNavigationCommand, typeof(MainClientVmd)),
+            new("Продукты", PackIconKind.Shopping, MenuNavigationCommand, typeof(MainProductVmd)),
+            new("Статусы клиентов", PackIconKind.Administrator, MenuNavigationCommand, typeof(MainClientStatusVmd)),
+            new("Типы продуктов", PackIconKind.FileDocument, MenuNavigationCommand, typeof(MainProductTypeVmd))
         };
 
         #endregion

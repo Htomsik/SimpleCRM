@@ -1,5 +1,5 @@
 ﻿<UserControl
-    d:DataContext="{d:DesignInstance {x:Type vmd:ClientsVmdVmd},
+    d:DataContext="{d:DesignInstance {x:Type vmd:MainClientVmd},
                                      IsDesignTimeCreatable=True}"
     d:DesignHeight="300"
     d:DesignWidth="300"
@@ -209,7 +209,7 @@
         </Grid>
 
         <ContentControl
-            Content="{Binding CurrentSelectedEntityPageVmd, ValidatesOnNotifyDataErrors=False}"
+            Content="{Binding CurrentSelectedSubEntityVmd, ValidatesOnNotifyDataErrors=False}"
             Grid.Column="2"
             HorizontalAlignment="Left"
             Margin="5,0,0,0">

@@ -29,7 +29,7 @@ internal sealed class SettingsAdditionalPageVmd : BaseAdditionalVmd
     #region Сервисы
 
     /// <summary>
-    ///     Навигационных сервис страниц настроек для локального хранилища
+    ///     Навигационный сервис vmd страниц настроек для локального хранилища
     /// </summary>
     private readonly ITypeNavigationServices _typeNavigationServices;
 

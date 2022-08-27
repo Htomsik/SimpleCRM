@@ -25,15 +25,15 @@ internal static class VmdRegistrator
 
         #region EditEntity Vmds
 
-        services.AddTransient<ManagersVmdVmd>();
+        services.AddTransient<MainManagerVmd>();
 
-        services.AddTransient<ClientsVmdVmd>();
+        services.AddTransient<MainClientVmd>();
 
-        services.AddTransient<ProductsVmdVmd>();
+        services.AddTransient<MainProductVmd>();
 
-        services.AddTransient<ClientStatusesVmdVmd>();
+        services.AddTransient<MainClientStatusVmd>();
 
-        services.AddTransient<ProductTypeVmdVmd>();
+        services.AddTransient<MainProductTypeVmd>();
 
         #endregion
 

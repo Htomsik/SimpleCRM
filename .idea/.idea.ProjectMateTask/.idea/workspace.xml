@@ -6,12 +6,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Рефакторинг описаний некоторых типов">
+      <change afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/Base/BaseMainEntityVmd.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/Base/IMainEntityVmd.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomControls/bin/Debug/net6.0-windows/CustomControls.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/bin/Debug/net6.0-windows/CustomControls.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomControls/bin/Debug/net6.0-windows/CustomControls.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/bin/Debug/net6.0-windows/CustomControls.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/obj/Debug/net6.0-windows/CustomControls.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/IOC/VmdRegistrator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/IOC/VmdRegistrator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/AppInfrastructure/MainMenuVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/AppInfrastructure/MainMenuVmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/AppInfrastructure/MainWindowVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/AppInfrastructure/MainWindowVmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Base/BaseVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Base/BaseVmd.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/AdditionalPagesVmds/SettingsAdditionalPageVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/AdditionalPagesVmds/SettingsAdditionalPageVmd.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/Base/BaseEntityRepositoryVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/Base/BaseEntityRepositoryVmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/Base/BaseEntityVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/Base/BaseEntityVmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/Base/BaseMainEntityVmdVmd.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/ClientStatusesVmdVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/MainClientStatusVmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/ClientsVmdVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/MainClientVmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/ManagersVmdVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/MainManagerVmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/ProductTypeVmdVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/MainProductTypeVmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/ProductsVmdVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/MainProductVmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/EntityPagesVW.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/EntityPagesVW.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/ProjectMateTaskDalTests.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/ProjectMateTaskDalTests.csproj.AssemblyReference.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +89,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7f8f88eb90b2ac9750a31833ab7f89e979a8ec6795f6e8cf1ee149a0b274ef/ButtonBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/83a6026a3743d5193ae2ff787c3727607dabf7d04e72a3355252fe116066/Collection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/85e2484c9d751f811cac58b6a424cf495193b037a5cbb15b09a4655d8afeba/DependencyProperty.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8ce284dd96769341c0597fc5532bc853df4618b5e61ce04a44ca86b6c1a5/Lazy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8f32a32f69162aa5d9eca4cfd1dd74e6730572787714a59155716c3276/LogEvent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a683b4d0bbcb4c3e98a3c7cffd352553a23690/_4c146/ICollection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a683b4d0bbcb4c3e98a3c7cffd352553a23690/_f2557/ICollection.cs" root0="SKIP_HIGHLIGHTING" />
@@ -206,13 +225,6 @@
       <workItem from="1661351253479" duration="8005000" />
       <workItem from="1661436135759" duration="453000" />
       <workItem from="1661436637277" duration="23022000" />
-    </task>
-    <task id="LOCAL-00012" summary="Добавление системы при которой 1 стрничка на все Entity модели">
-      <created>1659095758368</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1659095758368</updated>
     </task>
     <task id="LOCAL-00013" summary="Добавление фильтрации по имени">
       <created>1659103332985</created>
@@ -550,7 +562,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661559989645</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Рефакторинг описаний некоторых типов">
+      <created>1661560826632</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1661560826632</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -11,13 +11,13 @@ namespace ProjectMateTask.VMD.Pages.Entities.Base;
 /// <summary>
 ///     Базовая реализация для EntityVmd типов поддерживающих работу с репозиториями
 /// </summary>
-/// <typeparam name="TEntity"></typeparam>
+/// <typeparam name="TEntity">Любой NamedEntity тип</typeparam>
 internal abstract class BaseEntityRepositoryVmd<TEntity> : BaseEntityVmd where TEntity : INamedEntity
 {
     /// <summary>
     ///     Базовая реализация для EntityVmd типов поддерживающих работу с репозиториями
     /// </summary>
-    /// <param name="entitiesRepository">Entity репозитоий</param>
+    /// <param name="entitiesRepository">Entity репозиторий</param>
     public BaseEntityRepositoryVmd(IRepository<TEntity> entitiesRepository)
     {
         #region Инициализация полей и свойств
