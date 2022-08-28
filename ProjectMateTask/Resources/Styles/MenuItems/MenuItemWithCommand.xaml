@@ -18,6 +18,7 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
 
+                <!--  Кнопка с командой, привязанной к элементу  -->
                 <Button
                     Command="{Binding Command.Value}"
                     CommandParameter="{Binding Parameter.Value}"
@@ -35,6 +36,7 @@
 
                 </Button>
 
+                <!--  Название элемента  -->
                 <TextBlock
                     FontWeight="Bold"
                     Grid.Column="1"

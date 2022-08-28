@@ -13,7 +13,7 @@ internal sealed class MenuItemWithCommand : MenuItem
     /// <summary>
     /// указатель на команду для item
     /// </summary>
-    public Lazy< ICommand> Command { get; }
+    public Lazy<ICommand> Command { get; }
     
     /// <summary>
     /// Параметр команды
