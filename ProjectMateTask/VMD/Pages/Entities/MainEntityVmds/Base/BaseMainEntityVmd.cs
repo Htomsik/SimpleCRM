@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using ProjectMateTask.DAL.Entities.Base;
 using ProjectMateTask.DAL.Repositories;
 using ProjectMateTask.Infrastructure.CMD;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.TypeNavigationServices;
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
 using ProjectMateTask.VMD.Pages.Entities.Base;
 using ProjectMateTask.VMD.Pages.Entities.SelectEntityVmds.Base;
+using ProjetMateTaskEntities.Entities.Base;
 
 namespace ProjectMateTask.VMD.Pages.Entities.MainEntityVmds.Base;
 

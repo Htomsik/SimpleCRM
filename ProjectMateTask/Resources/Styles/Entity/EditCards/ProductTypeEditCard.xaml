@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:types="clr-namespace:ProjectMateTask.DAL.Entities.Types;assembly=ProjectMateTask.DAL"
+    xmlns:types="clr-namespace:ProjetMateTaskEntities.Entities.Types;assembly=ProjetMateTaskEntities"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <ResourceDictionary.MergedDictionaries>

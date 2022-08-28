@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using ProjectMateTask.DAL.Context;
-using ProjectMateTask.DAL.Entities.Types;
+using ProjetMateTaskEntities.Entities.Types;
 
 namespace ProjectMateTask.DAL.Repositories;
 

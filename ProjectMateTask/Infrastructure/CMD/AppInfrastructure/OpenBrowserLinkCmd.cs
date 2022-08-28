@@ -1,6 +1,7 @@
 ﻿using System;
 using ProjectMateTask.Infrastructure.CMD.Base;
 using ProjectMateTask.Services.AppInfrastructure;
+using ProjectMateTaskExtensions.Services;
 
 namespace ProjectMateTask.Infrastructure.CMD.AppInfrastructure;
 

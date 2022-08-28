@@ -139,3 +139,7 @@ C:\Users\USER\RiderProjects\ProjectMateTask\ProjectMateTaskDalTests\obj\Debug\ne
 C:\Users\USER\RiderProjects\ProjectMateTask\ProjectMateTaskDalTests\obj\Debug\net6.0\ProjectMateTaskDalTests.pdb
 C:\Users\USER\RiderProjects\ProjectMateTask\ProjectMateTaskDalTests\obj\Debug\net6.0\ProjectMateTaskDalTests.genruntimeconfig.cache
 C:\Users\USER\RiderProjects\ProjectMateTask\ProjectMateTaskDalTests\obj\Debug\net6.0\ref\ProjectMateTaskDalTests.dll
+C:\Users\USER\RiderProjects\ProjectMateTask\ProjectMateTaskDalTests\bin\Debug\net6.0\ProjectMateTaskExtensions.dll
+C:\Users\USER\RiderProjects\ProjectMateTask\ProjectMateTaskDalTests\bin\Debug\net6.0\ProjetMateTaskEntities.dll
+C:\Users\USER\RiderProjects\ProjectMateTask\ProjectMateTaskDalTests\bin\Debug\net6.0\ProjectMateTaskExtensions.pdb
+C:\Users\USER\RiderProjects\ProjectMateTask\ProjectMateTaskDalTests\bin\Debug\net6.0\ProjetMateTaskEntities.pdb

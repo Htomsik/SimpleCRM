@@ -1,5 +1,5 @@
-﻿using ProjectMateTask.DAL.Entities.Types;
-using ProjectMateTaskDalTests.Resources;
+﻿using ProjectMateTaskDalTests.Resources;
+using ProjetMateTaskEntities.Entities.Types;
 
 namespace ProjectMateTaskDalTests.EnitiesTests;
 

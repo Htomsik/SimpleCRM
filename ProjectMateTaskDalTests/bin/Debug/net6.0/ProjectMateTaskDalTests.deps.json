@@ -1478,10 +1478,24 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.7",
           "Microsoft.EntityFrameworkCore.Relational": "6.0.7",
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.7"
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.7",
+          "ProjectMateTaskExtensions": "1.0.0"
         },
         "runtime": {
           "ProjectMateTask.DAL.dll": {}
+        }
+      },
+      "ProjectMateTaskExtensions/1.0.0": {
+        "dependencies": {
+          "ProjetMateTaskEntities": "1.0.0"
+        },
+        "runtime": {
+          "ProjectMateTaskExtensions.dll": {}
+        }
+      },
+      "ProjetMateTaskEntities/1.0.0": {
+        "runtime": {
+          "ProjetMateTaskEntities.dll": {}
         }
       }
     }
@@ -2361,6 +2375,16 @@
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
     },
     "ProjectMateTask.DAL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ProjectMateTaskExtensions/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ProjetMateTaskEntities/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

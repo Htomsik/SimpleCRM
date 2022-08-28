@@ -1,0 +1,15 @@
+C:\Users\USER\RiderProjects\ProjectMateTask\ProjectMateTaskExtensions\bin\Debug\net6.0\ProjectMateTaskExtensions.deps.json
+C:\Users\USER\RiderProjects\ProjectMateTask\ProjectMateTaskExtensions\bin\Debug\net6.0\ProjectMateTaskExtensions.dll
+C:\Users\USER\RiderProjects\ProjectMateTask\ProjectMateTaskExtensions\bin\Debug\net6.0\ProjectMateTaskExtensions.pdb
+C:\Users\USER\RiderProjects\ProjectMateTask\ProjectMateTaskExtensions\bin\Debug\net6.0\ProjetMateTaskEntities.dll
+C:\Users\USER\RiderProjects\ProjectMateTask\ProjectMateTaskExtensions\bin\Debug\net6.0\ProjetMateTaskEntities.pdb
+C:\Users\USER\RiderProjects\ProjectMateTask\ProjectMateTaskExtensions\obj\Debug\net6.0\ProjectMateTaskExtensions.csproj.AssemblyReference.cache
+C:\Users\USER\RiderProjects\ProjectMateTask\ProjectMateTaskExtensions\obj\Debug\net6.0\ProjectMateTaskExtensions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\RiderProjects\ProjectMateTask\ProjectMateTaskExtensions\obj\Debug\net6.0\ProjectMateTaskExtensions.AssemblyInfoInputs.cache
+C:\Users\USER\RiderProjects\ProjectMateTask\ProjectMateTaskExtensions\obj\Debug\net6.0\ProjectMateTaskExtensions.AssemblyInfo.cs
+C:\Users\USER\RiderProjects\ProjectMateTask\ProjectMateTaskExtensions\obj\Debug\net6.0\ProjectMateTaskExtensions.csproj.CoreCompileInputs.cache
+C:\Users\USER\RiderProjects\ProjectMateTask\ProjectMateTaskExtensions\obj\Debug\net6.0\ProjectMateTaskExtensions.csproj.CopyComplete
+C:\Users\USER\RiderProjects\ProjectMateTask\ProjectMateTaskExtensions\obj\Debug\net6.0\ProjectMateTaskExtensions.dll
+C:\Users\USER\RiderProjects\ProjectMateTask\ProjectMateTaskExtensions\obj\Debug\net6.0\refint\ProjectMateTaskExtensions.dll
+C:\Users\USER\RiderProjects\ProjectMateTask\ProjectMateTaskExtensions\obj\Debug\net6.0\ProjectMateTaskExtensions.pdb
+C:\Users\USER\RiderProjects\ProjectMateTask\ProjectMateTaskExtensions\obj\Debug\net6.0\ref\ProjectMateTaskExtensions.dll

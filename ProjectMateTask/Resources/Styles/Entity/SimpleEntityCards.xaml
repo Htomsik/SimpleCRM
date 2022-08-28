@@ -1,8 +1,8 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:actors="clr-namespace:ProjectMateTask.DAL.Entities.Actors;assembly=ProjectMateTask.DAL"
-    xmlns:baseEntites="clr-namespace:ProjectMateTask.DAL.Entities.Base;assembly=ProjectMateTask.DAL"
-    xmlns:types="clr-namespace:ProjectMateTask.DAL.Entities.Types;assembly=ProjectMateTask.DAL"
+    xmlns:actors="clr-namespace:ProjetMateTaskEntities.Entities.Actors;assembly=ProjetMateTaskEntities"
+    xmlns:baseEntites="clr-namespace:ProjetMateTaskEntities.Entities.Base;assembly=ProjetMateTaskEntities"
+    xmlns:types="clr-namespace:ProjetMateTaskEntities.Entities.Types;assembly=ProjetMateTaskEntities"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <!--  Описание для simple entity textblock  -->
