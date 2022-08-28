@@ -8,7 +8,6 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:additionalPages="clr-namespace:ProjectMateTask.VMD.Pages.AdditionalPagesVmds"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:ProjectMateTask.VW.AdditionalPages"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:settingsPages="clr-namespace:ProjectMateTask.VW.SettingsPages"

@@ -2,7 +2,7 @@
     d:DesignHeight="300"
     d:DesignWidth="100"
     mc:Ignorable="d"
-    x:Class="ProjectMateTask.VW.AppInfrastructure.MainMenuVW"
+    x:Class="ProjectMateTask.VW.AppInfrastructurePages.MainMenuVW"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:ProjectMateTask.VW.Pages"
@@ -23,8 +23,7 @@
         <ListView
             HorizontalContentAlignment="Stretch"
             ItemTemplate="{DynamicResource MenuitemWithCommand}"
-            ItemsSource="{Binding MenuItems}"
-            materialDesign:ListBoxItemAssist.ShowSelection="False" />
+            ItemsSource="{Binding MenuItems}" />
     </Grid>
 
 </UserControl>

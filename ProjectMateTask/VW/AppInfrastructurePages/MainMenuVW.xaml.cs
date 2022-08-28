@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace ProjectMateTask.VW.AppInfrastructure;
+namespace ProjectMateTask.VW.AppInfrastructurePages;
 
 public partial class MainMenuVW : UserControl
 {
