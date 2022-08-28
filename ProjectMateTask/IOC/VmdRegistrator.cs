@@ -15,6 +15,9 @@ using ProjectMateTask.VMD.Pages.SettingsVmds;
 
 namespace ProjectMateTask.IOC;
 
+/// <summary>
+///     Регистратор Vmd типов в IOC контейнере
+/// </summary>
 internal static class VmdRegistrator
 {
     public static IServiceCollection VmdRegistration(this IServiceCollection services)
@@ -70,21 +73,8 @@ internal static class VmdRegistrator
     }
 
     
-    #region AdditionalPdgeVmdsNavigationServices
-
-    private static INavigationService CreateSettingsAdditionalPageNavigationServices(IServiceProvider serviceProvider)
-    {
-        return new AdditionalPageStoreNavigationService(serviceProvider.GetRequiredService<AdditionalPageVmdNavigationStore>(),
-            serviceProvider.GetRequiredService<SettingsAdditionalPageVmd>);
-    }
-        
-  
-
-    #endregion
-
     #region Vmds
     
-
     private static MainWindowVmd CreateMainWindowVmd(IServiceProvider s)
     {
         return new MainWindowVmd(
@@ -92,12 +82,11 @@ internal static class VmdRegistrator
             s.GetRequiredService<CloseMainEntityVmdNavigationServices>(),
             s.GetRequiredService<MainMenuVmdNavigationStore>(),
             s.GetRequiredService<AdditionalPageVmdNavigationStore>(),
-            CreateSettingsAdditionalPageNavigationServices(s),
+           s.GetRequiredService<AdditionalPageStoreNavigationService>(),
             s.GetRequiredService<LoggerMessageBus>());
     }
 
-    private static MainMenuVmd CreateMainMenuVmd(IServiceProvider s) => new MainMenuVmd(s.GetRequiredService<MainEntityStoreTypeNavigationService>());
-
+    private static MainMenuVmd CreateMainMenuVmd(IServiceProvider s) => new (s.GetRequiredService<MainEntityStoreTypeNavigationService>());
 
     #endregion
 }

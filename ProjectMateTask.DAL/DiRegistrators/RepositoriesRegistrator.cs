@@ -5,6 +5,9 @@ using ProjectMateTask.DAL.Repositories;
 
 namespace ProjectMateTask.DAL.DiRegistrators;
 
+/// <summary>
+///     Регистратор репозиториев для Entity типов
+/// </summary>
 public static class RepositoriesRegistrator
 {
     public static IServiceCollection RepositoriesRegistration(this IServiceCollection services)
