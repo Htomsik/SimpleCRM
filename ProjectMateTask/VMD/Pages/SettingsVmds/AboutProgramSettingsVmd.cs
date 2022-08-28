@@ -18,6 +18,6 @@ internal sealed class AboutProgramVmd : BaseVmd
     {
         _configuration = configuration;
     }
-
+    
     public string AppVersion => _configuration["AppInfo:AppVersion"];
 }

@@ -54,6 +54,7 @@
                         <TextBlock Text="Поиск по имени" />
                     </StackPanel>
                 </materialDesign:HintAssist.Hint>
+
             </TextBox>
 
             <!--  Панель управления кнопок  -->
@@ -139,7 +140,7 @@
 
         </DockPanel>
 
-        <!--  Отображение выбанного/добавляемого/редактируемого entity  -->
+        <!--  Отображение выбанного/добавляемого/редактируемого Entity  -->
         <Grid Grid.Column="1" HorizontalAlignment="Left">
 
             <Grid.RowDefinitions>
@@ -154,7 +155,8 @@
                 Grid.Row="0"
                 IsEnabled="{Binding IsEditMode, Converter={StaticResource InvertBooleanConverter}}"
                 Margin="8,0,0,0"
-                VerticalAlignment="Top" />
+                VerticalAlignment="Top"
+                Visibility="{Binding IsEditMode, Converter={StaticResource InverseBoolToVisConverter}}" />
 
             <!--  Режим редатирования выбранного Entity  -->
             <ContentControl
@@ -168,7 +170,7 @@
                 x:Name="SelectedEntityContentControl" />
 
 
-            <!--  Панель управления кнопок редактирования  -->
+            <!--  Панель управления кнопок в режиме редактирования  -->
             <Grid
                 Grid.Row="1"
                 Height="30"
