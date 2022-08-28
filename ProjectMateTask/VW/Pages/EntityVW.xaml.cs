@@ -2,9 +2,9 @@
 
 namespace ProjectMateTask.VW.Pages;
 
-public partial class EntityPagesVW : UserControl
+public partial class EntityVW : UserControl
 {
-    public EntityPagesVW()
+    public EntityVW()
     {
         InitializeComponent();
     }

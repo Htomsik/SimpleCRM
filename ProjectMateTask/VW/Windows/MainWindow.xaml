@@ -151,12 +151,12 @@
 
                         <!--  Домашняя страница  -->
                         <DataTemplate DataType="{x:Type vmdPages:HomeVmd}">
-                            <pages:MainPageVW />
+                            <pages:HomeVW />
                         </DataTemplate>
 
                         <!--  Все MainEntity страницы  -->
                         <DataTemplate DataType="{x:Type base1:BaseEntityVmd}">
-                            <pages:EntityPagesVW />
+                            <pages:EntityVW />
                         </DataTemplate>
 
 

@@ -2,9 +2,9 @@
 
 namespace ProjectMateTask.VW.SettingsPages;
 
-public partial class AboutProgramSettingsPage : UserControl
+public partial class AboutProgramVW : UserControl
 {
-    public AboutProgramSettingsPage()
+    public AboutProgramVW()
     {
         InitializeComponent();
     }

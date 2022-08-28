@@ -9,7 +9,7 @@
     <DataTemplate DataType="{x:Type collections:ICollection}" x:Key="EditCollectionCard">
 
         <Expander>
-            <!--  Коллекция сущностей  -->
+            <!--  Коллекция редактиуемых subEntity (связных)  -->
             <ListView ItemsSource="{Binding Path=., Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -23,7 +23,6 @@
                             <ContentControl Content="{Binding Path=., Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" x:Name="DataContentControl" />
 
                             <!--  Кнопка удаления  -->
-                            <!--  БИНДИНГ ПО ИМЕНИ КОНТРОЛА, ПО ВОЗМОЖНОСТИ УДАЛИ  -->
                             <Button
                                 Command="{Binding DataContext.DeleteSubEntityFromCollectionCommand, ElementName=SelectedEntityContentControl}"
                                 Grid.Column="1"
@@ -97,7 +96,7 @@
         <Grid IsEnabled="{Binding Path=DataContext.IsEditMode, RelativeSource={RelativeSource AncestorType={x:Type ContentControl}, AncestorLevel=2}, UpdateSourceTrigger=PropertyChanged}">
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="8*" />
+                <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
 
@@ -113,27 +112,24 @@
 
             <!--  Кнопка режима смены сущности  -->
             <Button
-                Command="{Binding DataContext.OpenChangeSubEntityMode, ElementName=SelectedEntityContentControl}"
+                Command="{Binding DataContext.OpenChangeSubEntityMode, RelativeSource={RelativeSource AncestorType={x:Type ContentControl}, AncestorLevel=2}}"
                 CommandParameter="{Binding ., ValidatesOnNotifyDataErrors=False}"
                 Grid.Column="1"
                 Height="20"
                 HorizontalAlignment="Right"
                 Style="{StaticResource MaterialDesignIconButton}"
-                Visibility="{Binding Path=DataContext.IsEditMode, ElementName=SelectedEntityContentControl, Converter={StaticResource BooleanToVisibilityConverter}}"
+                Visibility="{Binding Path=DataContext.IsEditMode, RelativeSource={RelativeSource AncestorType={x:Type ContentControl}, AncestorLevel=2}, Converter={StaticResource BooleanToVisibilityConverter}}"
                 Width="20">
 
                 <materialDesign:PackIcon
                     Height="18"
-                    HorizontalAlignment="Center"
                     Kind="SwapHorizontal"
-                    VerticalAlignment="Center"
                     Width="18" />
             </Button>
 
         </Grid>
 
     </DataTemplate>
-
 
 
     <!--  Для non key значений  -->
@@ -150,15 +146,7 @@
                     Mode="TwoWay"
                     Path="Name"
                     UpdateSourceTrigger="PropertyChanged"
-                    ValidatesOnNotifyDataErrors="True">
-
-
-
-                    <!-- <Binding.ValidationRules> -->
-                    <!--     <validations:NotEmptyValidationRule /> -->
-                    <!-- </Binding.ValidationRules> -->
-
-                </Binding>
+                    ValidatesOnNotifyDataErrors="True" />
             </TextBox.Text>
         </TextBox>
 
