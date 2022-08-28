@@ -2182,13 +2182,37 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.7",
           "Microsoft.EntityFrameworkCore.Relational": "6.0.7",
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.7"
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.7",
+          "ProjectMateTaskExtensions": "1.0.0"
         },
         "compile": {
           "bin/placeholder/ProjectMateTask.DAL.dll": {}
         },
         "runtime": {
           "bin/placeholder/ProjectMateTask.DAL.dll": {}
+        }
+      },
+      "ProjectMateTaskExtensions/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "ProjetMateTaskEntities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ProjectMateTaskExtensions.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ProjectMateTaskExtensions.dll": {}
+        }
+      },
+      "ProjetMateTaskEntities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ProjetMateTaskEntities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ProjetMateTaskEntities.dll": {}
         }
       }
     }
@@ -7771,6 +7795,16 @@
       "type": "project",
       "path": "../ProjectMateTask.DAL/ProjectMateTask.DAL.csproj",
       "msbuildProject": "../ProjectMateTask.DAL/ProjectMateTask.DAL.csproj"
+    },
+    "ProjectMateTaskExtensions/1.0.0": {
+      "type": "project",
+      "path": "../ProjectMateTaskExtensions/ProjectMateTaskExtensions.csproj",
+      "msbuildProject": "../ProjectMateTaskExtensions/ProjectMateTaskExtensions.csproj"
+    },
+    "ProjetMateTaskEntities/1.0.0": {
+      "type": "project",
+      "path": "../ProjetMateTaskEntities/ProjetMateTaskEntities.csproj",
+      "msbuildProject": "../ProjetMateTaskEntities/ProjetMateTaskEntities.csproj"
     }
   },
   "projectFileDependencyGroups": {

@@ -1,7 +1,7 @@
-﻿using ProjectMateTask.DAL.Entities.Actors;
-using ProjectMateTask.DAL.Repositories;
+﻿using ProjectMateTask.DAL.Repositories;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.TypeNavigationServices;
 using ProjectMateTask.VMD.Pages.Entities.SelectEntityVmds.Base;
+using ProjetMateTaskEntities.Entities.Actors;
 
 namespace ProjectMateTask.VMD.Pages.Entities.SelectEntityVmds;
 

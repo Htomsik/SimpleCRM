@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using ProjectMateTask.DAL.Entities.Actors;
-using ProjectMateTask.DAL.Entities.Types;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.TypeNavigationServices;
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
 using ProjectMateTask.VMD.Pages.Entities.Base;
 using ProjectMateTask.VMD.Pages.Entities.SelectEntityVmds;
+using ProjetMateTaskEntities.Entities.Actors;
+using ProjetMateTaskEntities.Entities.Types;
 
 namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices.TypeNavigationServices;
 

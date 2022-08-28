@@ -5,9 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using ProjectMateTask.DAL.Context;
-using ProjectMateTask.DAL.Entities.Actors;
-using ProjectMateTask.DAL.Entities.Types;
 using ProjectMateTask.Services.AppInfrastructure;
+using ProjectMateTaskExtensions.Services;
+using ProjetMateTaskEntities.Entities.Actors;
+using ProjetMateTaskEntities.Entities.Types;
 
 namespace ProjectMateTask.Data;
 

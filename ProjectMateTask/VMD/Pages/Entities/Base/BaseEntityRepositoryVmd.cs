@@ -3,8 +3,8 @@ using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows.Data;
 using Microsoft.EntityFrameworkCore;
-using ProjectMateTask.DAL.Entities.Base;
 using ProjectMateTask.DAL.Repositories;
+using ProjetMateTaskEntities.Entities.Base;
 
 namespace ProjectMateTask.VMD.Pages.Entities.Base;
 

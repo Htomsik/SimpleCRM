@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using ProjectMateTask.DAL.Entities.Actors;
-using ProjectMateTask.DAL.Entities.Types;
 using ProjectMateTask.DAL.Repositories;
+using ProjetMateTaskEntities.Entities.Actors;
+using ProjetMateTaskEntities.Entities.Types;
 
 namespace ProjectMateTask.DAL.DiRegistrators;
 

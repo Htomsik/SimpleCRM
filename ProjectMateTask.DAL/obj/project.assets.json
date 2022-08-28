@@ -597,6 +597,29 @@
             "rid": "win"
           }
         }
+      },
+      "ProjectMateTaskExtensions/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "ProjetMateTaskEntities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ProjectMateTaskExtensions.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ProjectMateTaskExtensions.dll": {}
+        }
+      },
+      "ProjetMateTaskEntities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ProjetMateTaskEntities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ProjetMateTaskEntities.dll": {}
+        }
       }
     }
   },
@@ -1762,13 +1785,24 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "ProjectMateTaskExtensions/1.0.0": {
+      "type": "project",
+      "path": "../ProjectMateTaskExtensions/ProjectMateTaskExtensions.csproj",
+      "msbuildProject": "../ProjectMateTaskExtensions/ProjectMateTaskExtensions.csproj"
+    },
+    "ProjetMateTaskEntities/1.0.0": {
+      "type": "project",
+      "path": "../ProjetMateTaskEntities/ProjetMateTaskEntities.csproj",
+      "msbuildProject": "../ProjetMateTaskEntities/ProjetMateTaskEntities.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.EntityFrameworkCore >= 6.0.7",
       "Microsoft.EntityFrameworkCore.Relational >= 6.0.7",
-      "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.7"
+      "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.7",
+      "ProjectMateTaskExtensions >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1802,7 +1836,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\USER\\RiderProjects\\ProjectMateTask\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj": {
+              "projectPath": "C:\\Users\\USER\\RiderProjects\\ProjectMateTask\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

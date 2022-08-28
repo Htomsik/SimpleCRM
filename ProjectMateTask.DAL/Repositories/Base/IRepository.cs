@@ -1,4 +1,4 @@
-﻿using ProjectMateTask.DAL.Entities.Base;
+﻿using ProjetMateTaskEntities.Entities.Base;
 
 namespace ProjectMateTask.DAL.Repositories;
 

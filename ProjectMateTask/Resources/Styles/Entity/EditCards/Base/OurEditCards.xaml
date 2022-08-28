@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:base="clr-namespace:ProjectMateTask.DAL.Entities.Base;assembly=ProjectMateTask.DAL"
+    xmlns:baseEntities="clr-namespace:ProjetMateTaskEntities.Entities.Base;assembly=ProjetMateTaskEntities"
     xmlns:collections="clr-namespace:System.Collections;assembly=System.Runtime"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
@@ -13,7 +13,7 @@
             <!--  Коллекция редактиуемых subEntity (связных)  -->
             <ListView ItemsSource="{Binding Path=., Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                 <ListView.ItemTemplate>
-                    <DataTemplate DataType="{x:Type base:NamedEntity}">
+                    <DataTemplate DataType="{x:Type baseEntities:NamedEntity}">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition
@@ -109,7 +109,7 @@
 
 
     <!--  Для всех Entity значений  -->
-    <DataTemplate DataType="{x:Type base:NamedEntity}" x:Key="KeyEntityEditTemplate">
+    <DataTemplate DataType="{x:Type baseEntities:NamedEntity}" x:Key="KeyEntityEditTemplate">
 
         <Grid IsEnabled="{Binding Path=DataContext.IsEditMode, RelativeSource={RelativeSource AncestorType={x:Type ContentControl}, AncestorLevel=2}, UpdateSourceTrigger=PropertyChanged}">
 
@@ -151,7 +151,7 @@
 
 
     <!--  Для non key значений  -->
-    <DataTemplate DataType="{x:Type base:NamedEntity}" x:Key="NonKeyFieldEditTemplate">
+    <DataTemplate DataType="{x:Type baseEntities:NamedEntity}" x:Key="NonKeyFieldEditTemplate">
 
         <!--  Имя Entity  -->
         <TextBox

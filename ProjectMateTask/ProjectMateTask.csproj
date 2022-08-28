@@ -30,6 +30,7 @@
     <ItemGroup>
       <ProjectReference Include="..\CustomControls\CustomControls.csproj" />
       <ProjectReference Include="..\ProjectMateTask.DAL\ProjectMateTask.DAL.csproj" />
+      <ProjectReference Include="..\ProjectMateTaskExtensions\ProjectMateTaskExtensions.csproj" />
     </ItemGroup>
 
     <ItemGroup>

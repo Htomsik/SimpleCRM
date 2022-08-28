@@ -1,6 +1,6 @@
-﻿using ProjectMateTask.DAL.Entities.Actors;
-using ProjectMateTask.DAL.Entities.Types;
-using ProjectMateTask.DAL.Stores;
+﻿using ProjetMateTaskEntities.Entities.Actors;
+using ProjetMateTaskEntities.Entities.Types;
+using ProjetMateTaskEntities.Stores;
 
 namespace ProjectMateTaskDalTests.Resources;
 
