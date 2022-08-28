@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
@@ -30,10 +31,15 @@ public class DbInitializer : IDbInitializer
     private readonly ProjectMateTaskDb _db;
 
     private readonly ILogger<DbInitializer> _logger;
+    
     private ClientStatus[] _clientTypes;
+    
     private ProductType[] _productTypes;
+    
     private Client[] _testClients;
+    
     private Manager[] _testManagers;
+    
     private Product[] _testProducts;
 
     public DbInitializer(ProjectMateTaskDb db, ILogger<DbInitializer> logger)
@@ -185,6 +191,7 @@ public class DbInitializer : IDbInitializer
         };
 
         await _db.ClientStatus.AddRangeAsync(_clientTypes);
+        
         _db.SaveChanges();
 
         _logger.LogInformation("Инициализация типов клиентов выполнена за {0} мс",
@@ -285,7 +292,7 @@ public class DbInitializer : IDbInitializer
                 Name = $"Тестовый клиент #{i}",
                 Manager = rnd.NextItem(managers),
                 Status = rnd.NextItem(clientTypes),
-                Products = GenereteClientsProductsTest(products)
+                Products = new ObservableCollection<Product>(GenereteClientsProductsTest(products))
             }).ToArray();
 
         _db.Clients.AddRange(_testClients);

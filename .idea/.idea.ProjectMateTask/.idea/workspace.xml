@@ -5,27 +5,23 @@
     <projectFile>WpfApp1/WpfApp1.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Рефакторинг описаний для расширений и базовых Entity типов">
+    <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Update Migration System">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomControls/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/Debug/net6.0/ProjectMateTask.DAL.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/Debug/net6.0/ProjectMateTask.DAL.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Data/DbInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Data/DbInitializer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Data/DbRegistrator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Data/DbRegistrator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/App.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/App.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/GeneratedInternalTypeHelper.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/GeneratedInternalTypeHelper.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.i.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/bin/Debug/net6.0/ProjectMateTask.DAL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/bin/Debug/net6.0/ProjectMateTask.DAL.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/bin/Debug/net6.0/ProjectMateTask.DAL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/bin/Debug/net6.0/ProjectMateTask.DAL.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/bin/Debug/net6.0/ProjectMateTaskDalTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/bin/Debug/net6.0/ProjectMateTaskDalTests.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/bin/Debug/net6.0/ProjectMateTaskDalTests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/bin/Debug/net6.0/ProjectMateTaskDalTests.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/ProjectMateTaskDalTests.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/ProjectMateTaskDalTests.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/ProjectMateTaskDalTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/ProjectMateTaskDalTests.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/ProjectMateTaskDalTests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/ProjectMateTaskDalTests.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskExtensions/obj/Debug/net6.0/ProjectMateTaskExtensions.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskExtensions/obj/Debug/net6.0/ProjectMateTaskExtensions.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskExtensions/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskExtensions/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskExtensions/bin/Debug/net6.0/ProjetMateTaskEntities.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskExtensions/bin/Debug/net6.0/ProjetMateTaskEntities.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskExtensions/bin/Debug/net6.0/ProjetMateTaskEntities.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskExtensions/bin/Debug/net6.0/ProjetMateTaskEntities.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/Stores/EntityCollectionStore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/Stores/EntityCollectionStore.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/bin/Debug/net6.0/ProjetMateTaskEntities.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/bin/Debug/net6.0/ProjetMateTaskEntities.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/bin/Debug/net6.0/ProjetMateTaskEntities.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/bin/Debug/net6.0/ProjetMateTaskEntities.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/Debug/net6.0/ProjetMateTaskEntities.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/Debug/net6.0/ProjetMateTaskEntities.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/Debug/net6.0/ProjetMateTaskEntities.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/Debug/net6.0/ProjetMateTaskEntities.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,13 +205,7 @@
       <workItem from="1661436135759" duration="453000" />
       <workItem from="1661436637277" duration="23022000" />
       <workItem from="1661723616346" duration="577000" />
-    </task>
-    <task id="LOCAL-00033" summary="Добавление полной поддержки типов продуктов">
-      <created>1660685599064</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1660685599064</updated>
+      <workItem from="1661724577353" duration="1076000" />
     </task>
     <task id="LOCAL-00034" summary="Добавление тестового логирования">
       <created>1660774676559</created>
@@ -553,7 +543,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661723475951</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="Update Migration System">
+      <created>1661724667914</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1661724667915</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,7 +570,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Рефакторинг всех команд: добавление описания и ленивой инициализации" />
     <MESSAGE value="Рефакторинг и добавление описание для классов отвечающий за инициализацию бд" />
     <MESSAGE value="Добавление описание некоторым типам" />
     <MESSAGE value="Добавление описания для статических сервисов, изменение путей для некоторых файлов" />
@@ -598,7 +594,8 @@
     <MESSAGE value="Разбиение больший solution на подмножества" />
     <MESSAGE value="Разбиение больших solution на подмножества" />
     <MESSAGE value="Рефакторинг описаний для расширений и базовых Entity типов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Рефакторинг описаний для расширений и базовых Entity типов" />
+    <MESSAGE value="Update Migration System" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Migration System" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

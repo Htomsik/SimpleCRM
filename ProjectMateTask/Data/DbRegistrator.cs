@@ -6,6 +6,9 @@ using ProjectMateTask.DAL.Context;
 
 namespace ProjectMateTask.Data;
 
+/// <summary>
+///     Регистратор базы данных в  IOC контейнере
+/// </summary>
 internal static class DbRegistrator
 {
     public static IServiceCollection AddDatabase(this IServiceCollection services, IConfiguration configuration)
