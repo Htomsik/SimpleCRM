@@ -5,16 +5,27 @@
     <projectFile>WpfApp1/WpfApp1.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Разбиение больших solution на подмножества">
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskExtensions/Services/Link.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskExtensions/Services/Link.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/Entities/Actors/Client.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/Entities/Actors/Client.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/Entities/Actors/Manager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/Entities/Actors/Manager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/Entities/Actors/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/Entities/Actors/Product.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/Entities/Types/ClientStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/Entities/Types/ClientStatus.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/Entities/Types/ProductType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/Entities/Types/ProductType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/Services/EntityServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/Services/EntityCollectionServices.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/Stores/EntityCollectionStore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/Stores/EntityCollectionStore.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/Stores/IEntityCollectionStore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/Stores/IEntityCollectionStore.cs" afterDir="false" />
+    <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Рефакторинг описаний для расширений и базовых Entity типов">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomControls/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/Debug/net6.0/ProjectMateTask.DAL.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/Debug/net6.0/ProjectMateTask.DAL.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.i.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/bin/Debug/net6.0/ProjectMateTask.DAL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/bin/Debug/net6.0/ProjectMateTask.DAL.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/bin/Debug/net6.0/ProjectMateTask.DAL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/bin/Debug/net6.0/ProjectMateTask.DAL.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/bin/Debug/net6.0/ProjectMateTaskDalTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/bin/Debug/net6.0/ProjectMateTaskDalTests.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/bin/Debug/net6.0/ProjectMateTaskDalTests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/bin/Debug/net6.0/ProjectMateTaskDalTests.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/ProjectMateTaskDalTests.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/ProjectMateTaskDalTests.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/ProjectMateTaskDalTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/ProjectMateTaskDalTests.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/ProjectMateTaskDalTests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/ProjectMateTaskDalTests.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskExtensions/obj/Debug/net6.0/ProjectMateTaskExtensions.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskExtensions/obj/Debug/net6.0/ProjectMateTaskExtensions.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskExtensions/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskExtensions/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,38 +106,8 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ed65b09e807c2e8ac5804f527ede34c8296cfa6457a3d5c48dceeb321a78f0e3/ListView.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CustomControls/ParameterCustomTextBlock.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CustomControls/Themes/Generic.xaml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask.DAL/Context/ProjectMateTaskDb.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask.DAL/DiRegistrators/RepositoriesRegistrator.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask.DAL/Repositories/Base/IRepository.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectMateTask/IOC/ServicesRegistrator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/IOC/ServicesRegistrator.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/IOC/StoreRegistrator.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/IOC/VmdRegistrator.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/IOC/VmdRegistrator.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Infrastructure/MessageBuses/LoggerMessageBus.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Infrastructure/Selectors/EditEntitySelector.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Infrastructure/Selectors/EditEntitySelector.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Infrastructure/Selectors/EditEntitySelector.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Resources/Styles/Entity/EditCards/ClientEditCard.xaml" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Resources/Styles/Entity/EditCards/ClientStatusesEditCard.xaml" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Resources/Styles/Entity/EditCards/ClientStatusesEditCard.xaml" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Services/AppInfrastructure/NavigationServices/Base/TypeNavigationServices/BaseTypeNavigationServices.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Services/AppInfrastructure/NavigationServices/MainEntityStoreTypeNavigationService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Services/AppInfrastructure/NavigationServices/SubEntityTypeNavigationService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Stores/AppInfrastructure/NavigationStores/MainEntityNavigationStore.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Stores/AppInfrastructure/NavigationStores/MainEntityNavigationStore.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Stores/AppInfrastructure/NavigationStores/SubEntityNavigationStore.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/VMD/AppInfrastructure/MainMenuVmd.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/VMD/AppInfrastructure/MainWindowVmd.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/VMD/Base/BaseVmd.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/VMD/Pages/EntityVmds/Base/BaseEntityVmd.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/VMD/Pages/EntityVmds/Base/BaseEntityVmd.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/VMD/Pages/EntityVmds/Base/BaseNotGenericEntityVmd.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/VMD/Pages/MainPageVmd.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/VW/Pages/EntityPagesVW.xaml" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/VW/Pages/SelectEntityPageVW.xaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectMateTask/VW/SettingsPages/AboutProgramVW.xaml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/VW/Windows/MainWindow.xaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -143,22 +124,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "XThreadsFramesViewSplitterKey": "0.0539484",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "RiderDpaPageId",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.0539484&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;RiderDpaPageId&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlserver.localdb"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlserver.localdb&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Project.ProjectMateTask">
     <configuration name="ProjectMateTask" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -227,13 +208,7 @@
       <workItem from="1661351253479" duration="8005000" />
       <workItem from="1661436135759" duration="453000" />
       <workItem from="1661436637277" duration="23022000" />
-    </task>
-    <task id="LOCAL-00032" summary="Доработка режима редактирования.&#10;Добавлена возможность изменения связных Entity">
-      <created>1660673212630</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1660673212630</updated>
+      <workItem from="1661723616346" duration="577000" />
     </task>
     <task id="LOCAL-00033" summary="Добавление полной поддержки типов продуктов">
       <created>1660685599064</created>
@@ -571,7 +546,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661721924176</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="Рефакторинг описаний для расширений и базовых Entity типов">
+      <created>1661723475951</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1661723475951</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -591,7 +573,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Создние инфраструктуры для шин сообщений" />
     <MESSAGE value="Рефакторинг всех команд: добавление описания и ленивой инициализации" />
     <MESSAGE value="Рефакторинг и добавление описание для классов отвечающий за инициализацию бд" />
     <MESSAGE value="Добавление описание некоторым типам" />
@@ -616,7 +597,8 @@
     <MESSAGE value="Рефакторинг описаний для всех Entity типов" />
     <MESSAGE value="Разбиение больший solution на подмножества" />
     <MESSAGE value="Разбиение больших solution на подмножества" />
-    <option name="LAST_COMMIT_MESSAGE" value="Разбиение больших solution на подмножества" />
+    <MESSAGE value="Рефакторинг описаний для расширений и базовых Entity типов" />
+    <option name="LAST_COMMIT_MESSAGE" value="Рефакторинг описаний для расширений и базовых Entity типов" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
