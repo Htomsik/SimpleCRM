@@ -5,33 +5,23 @@
     <projectFile>WpfApp1/WpfApp1.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Рефакторинг Entity карт редактирования">
+    <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Рефакторинг VW: изменение путей, названий.">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomControls/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/ProjectMateTask.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/ProjectMateTask.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/MenuItems/MenuItemWithCommand.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Resources/Styles/MenuItems/MenuItemWithCommand.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/Context/ProjectMateTaskDb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/Context/ProjectMateTaskDb.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/DiRegistrators/RepositoriesRegistrator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/DiRegistrators/RepositoriesRegistrator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/App.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/IOC/ServicesRegistrator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/IOC/ServicesRegistrator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/IOC/StoreRegistrator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/IOC/StoreRegistrator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/IOC/VmdRegistrator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/IOC/VmdRegistrator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/AdditionalPages/SettingsVW.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/AdditionalPages/SettingsVW.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/AppInfrastructurePages/MainMenuVW.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/AppInfrastructurePages/MainMenuVW.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/AppInfrastructurePages/MainMenuVW.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/AppInfrastructurePages/MainMenuVW.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/EntityVW.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/MainEntityVW.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/EntityVW.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/MainEntityVW.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/HomeVW.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/HomeVW.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/SubEntityVW.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/SubEntityVW.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/SettingsPages/AboutProgramVW.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/SettingsPages/AboutProgramVW.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/Windows/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/Windows/MainWindow.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/App.baml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/App.baml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/App.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/App.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/ProjectMateTask.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/ProjectMateTask.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/ProjectMateTaskDalTests.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/ProjectMateTaskDalTests.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,20 +226,6 @@
       <workItem from="1661351253479" duration="8005000" />
       <workItem from="1661436135759" duration="453000" />
       <workItem from="1661436637277" duration="23022000" />
-    </task>
-    <task id="LOCAL-00025" summary="Переопределение метода Eqauls для всеъ типов Entity">
-      <created>1659470005189</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1659470005189</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Обновление IRepository.cs, добавление возможности удаления/добавление/обновления для IEnumerable коллекций">
-      <created>1659519859273</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1659519859274</updated>
     </task>
     <task id="LOCAL-00027" summary="Добавление возможности получения обьекта с полным/частичным отслеживанием.">
       <created>1659534764440</created>
@@ -580,7 +556,21 @@
       <option name="project" value="LOCAL" />
       <updated>1661707317506</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="Рефакторинг Vmds">
+      <created>1661713830712</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1661713830712</updated>
+    </task>
+    <task id="LOCAL-00075" summary="Рефакторинг VW: изменение путей, названий.">
+      <created>1661713854683</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1661713854683</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -600,8 +590,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Bug fixes. Add tests" />
-    <MESSAGE value="Добавлена инфрструктура для Additional Страниц" />
     <MESSAGE value="Рефакторинг названий" />
     <MESSAGE value="Добавление основы для настроек и тестовой страницы &quot;О программе&quot; в настройки" />
     <MESSAGE value="Создал универсальный MenuItemWithCommand.cs для всех menuItem с командами, подправил внешний вид для меню" />
@@ -625,7 +613,9 @@
     <MESSAGE value="Изменение селектора для выбора каточки редактирования" />
     <MESSAGE value="Рефакторинг Entity карт рредактирования" />
     <MESSAGE value="Рефакторинг Entity карт редактирования" />
-    <option name="LAST_COMMIT_MESSAGE" value="Рефакторинг Entity карт редактирования" />
+    <MESSAGE value="Рефакторинг Vmds" />
+    <MESSAGE value="Рефакторинг VW: изменение путей, названий." />
+    <option name="LAST_COMMIT_MESSAGE" value="Рефакторинг VW: изменение путей, названий." />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

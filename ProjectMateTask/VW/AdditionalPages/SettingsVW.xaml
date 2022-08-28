@@ -37,8 +37,7 @@
                 DockPanel.Dock="Top"
                 HorizontalAlignment="Stretch"
                 ItemTemplate="{DynamicResource MenuitemWithCommand}"
-                ItemsSource="{Binding MenuItems}"
-                materialDesign:ListBoxItemAssist.ShowSelection="False" />
+                ItemsSource="{Binding MenuItems}" />
 
             <!--  Кнопка возврата назад, инфомация о версии приложения  -->
             <Grid DockPanel.Dock="Bottom" VerticalAlignment="Bottom">

@@ -6,18 +6,13 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-
                 <materialDesign:BundledTheme
                     BaseTheme="Dark"
                     PrimaryColor="LightBlue"
                     SecondaryColor="LightBlue" />
-
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
-
                 <ResourceDictionary Source="Resources/Base/Brushes.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Entity/SimpleEntityCards.xaml" />
-
-
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

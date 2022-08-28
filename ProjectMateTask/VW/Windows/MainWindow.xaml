@@ -79,6 +79,7 @@
                         </ContentControl.Resources>
 
                     </ContentControl>
+
                 </Grid>
 
             </materialDesign:DrawerHost.LeftDrawerContent>
@@ -137,7 +138,7 @@
                     </Grid>
                 </materialDesign:ColorZone>
 
-                <!--  VMD Pages  -->
+                <!--  MainEntity или Home vmds  -->
                 <ContentControl
                     Content="{Binding MainEntityOrHomeCurrentVmd}"
                     Margin="5,5,0,0"
