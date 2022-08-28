@@ -81,7 +81,7 @@ public sealed class Product : NamedEntity
 
         if (!base.Equals(other) || !Type.Equals(otherEntity.Type)) return false;
 
-        return EntityServices<Client>.IsCollectionsEqualsNoDeep(Clients, otherEntity.Clients);
+        return EntityCollectionServices.IsCollectionsEqualsNoDeep(Clients, otherEntity.Clients);
     }
 
     protected override bool SubHasErrors()

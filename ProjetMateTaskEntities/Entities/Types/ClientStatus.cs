@@ -70,7 +70,7 @@ public sealed class ClientStatus : NamedEntity
 
         if (!base.Equals(other)) return false;
 
-        return EntityServices<Client>.IsCollectionsEqualsNoDeep(Clients, otherEntity.Clients);
+        return EntityCollectionServices.IsCollectionsEqualsNoDeep(Clients, otherEntity.Clients);
     }
     
     public override object Clone()

@@ -3,7 +3,7 @@
 namespace ProjectMateTaskExtensions.Services;
 
 /// <summary>
-///     Сервис работы со ссылками
+///     Сервис работающий со ссылками
 /// </summary>
 public static class Link
 {

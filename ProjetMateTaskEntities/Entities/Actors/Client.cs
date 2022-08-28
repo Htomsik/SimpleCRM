@@ -121,7 +121,7 @@ public sealed class Client : NamedEntity
            )
             return false;
 
-        return EntityServices<Product>.IsCollectionsEqualsNoDeep(Products, otherEntity.Products);
+        return EntityCollectionServices.IsCollectionsEqualsNoDeep(Products, otherEntity.Products);
     }
 
     public override object Clone()
