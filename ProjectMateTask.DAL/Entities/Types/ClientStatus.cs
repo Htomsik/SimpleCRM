@@ -5,30 +5,60 @@ using ProjectMateTask.DAL.Stores;
 
 namespace ProjectMateTask.DAL.Entities.Types;
 
+/// <summary>
+///     Существующие в бд статусы клиентов с NamedEntity типом
+/// </summary>
 public sealed class ClientStatus : NamedEntity
 {
     #region Конструкторы
 
+    /// <summary>
+    ///     Конструктор для создания нового клиента без заранее известных атрибутов
+    /// </summary>
     public ClientStatus()
     {
     }
 
+    /// <summary>
+    ///      Конструктор на случай если известны все атрибуты существующего в бд статуса клиентов 
+    /// </summary>
+    /// <param name="id">Идентификатор в бд</param>
+    /// <param name="name">Наименование</param>
+    /// <param name="clients">Список клиентов с данным статусом</param>
     public ClientStatus(int id, string name, ICollection<Client> clients) : base(id, name)
     {
         Clients = clients;
     }
 
+    /// <summary>
+    ///     Конструктор с частично известными атрибутами в бд
+    /// </summary>
+    /// <param name="id">Идентификатор в бд</param>
+    /// <param name="name">Наименование</param>
     public ClientStatus(int id, string name) : base(id, name)
     {
     }
     
+    /// <summary>
+    ///     Конструктор для создания нового статуса для клиентов с заранее частично известными атрибутами
+    /// </summary>
+    /// <param name="name">Наименование</param>
     public ClientStatus(string name) : base(name)
     {
     }
 
     #endregion
+
+    #region Свойства и поля
     
+    /// <summary>
+    ///     Клиенты с данным статусом
+    /// </summary>
     public ICollection<Client> Clients { get; set; } = new EntityCollectionStore<Client>();
+    
+    #endregion
+    
+    #region Методы
 
     protected override bool Equals(IEntity other)
     {
@@ -42,10 +72,7 @@ public sealed class ClientStatus : NamedEntity
 
         return EntityServices<Client>.IsCollectionsEqualsNoDeep(Clients, otherEntity.Clients);
     }
-
-    protected override bool SubHasErrors() => false;
-   
-
+    
     public override object Clone()
     {
         return new ClientStatus(Id,
@@ -54,4 +81,7 @@ public sealed class ClientStatus : NamedEntity
                 Clients.Select(item => item).ToArray()
             ));
     }
+
+    #endregion
+  
 }

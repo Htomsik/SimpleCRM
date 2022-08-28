@@ -6,33 +6,57 @@ using ProjectMateTask.DAL.Stores;
 
 namespace ProjectMateTask.DAL.Entities.Actors;
 
+/// <summary>
+///     Существующие в бд клиенты с NamedEntity типом
+/// </summary>
 public sealed class Client : NamedEntity
 {
     #region Конструкторы
 
+    /// <summary>
+    ///     Конструктор для создания нового клиента без заранее известных атрибутов
+    /// </summary>
     public Client()
     {
         Status = new ClientStatus();
         Manager = new Manager();
     }
-    
+
+    /// <summary>
+    ///     Конструктор на случай если известны все атрибуты существующего в бд клиента 
+    /// </summary>
+    /// <param name="id">Идентификатор в бд</param>
+    /// <param name="name">Имя клиента</param>
+    /// <param name="clientStatus">Статус клиента</param>
+    /// <param name="manager">Менеджер</param>
+    /// <param name="products">Купленные товары</param>
     public Client(int id, string name, ClientStatus clientStatus, Manager manager, ICollection<Product> products) :
         this(id, name, clientStatus, manager)
     {
         Products = new EntityCollectionStore<Product>(products);
     }
 
-    public Client(int id, string name) : base(id, name)
-    {
-    }
-    
-    public Client(string name):base(name){}
 
+    /// <summary>
+    ///     Конструктор для на случай реально известных реальных атрибутов
+    /// </summary>
+    /// <param name="id">Идентификатор в бд</param>
+    /// <param name="name">Имя клиента</param>
+    /// <param name="clientStatus">Статус клиента</param>
+    /// <param name="manager">Привязанный менеджер</param>
     public Client(int id, string name, ClientStatus clientStatus, Manager manager) : this(id, name, clientStatus)
     {
         Manager = manager;
     }
 
+
+    /// <summary>
+    ///     Конструктор для на случай реальных известных частичных атрибутов
+    /// </summary>
+    /// <param name="id">Идентификатор в бд</param>
+    /// <param name="name">Имя клиента</param>
+    /// <param name="clientStatus">Статус клиента</param>
+    /// <param name="manager">Привязанный менеджер</param>
     public Client(int id, string name, ClientStatus clientStatus) : base(id, name)
     {
         Status = clientStatus;
@@ -40,35 +64,48 @@ public sealed class Client : NamedEntity
 
     #endregion
 
+    #region Свойства и поля
+
     #region Status : статус/тип клиента
 
     private ClientStatus _status;
 
+    /// <summary>
+    ///     Статус клиента
+    /// </summary>
     [Required]
     public ClientStatus Status
     {
         get => _status;
-        set
-        {
-            Set(ref _status,value);
-        }
+        set => Set(ref _status, value);
     }
 
     #endregion
 
-    #region Manager : cвязаный менедже
+    #region Manager : cвязаный менеджер
 
     private Manager _manager;
-    public Manager Manager 
-    { 
-        get => _manager; 
-        set => Set(ref _manager,value); 
+
+    /// <summary>
+    ///     Связный менедже
+    /// </summary>
+    public Manager Manager
+    {
+        get => _manager;
+        set => Set(ref _manager, value);
     }
 
     #endregion
 
 
+    /// <summary>
+    ///     Купленные товары
+    /// </summary>
     public ICollection<Product> Products { get; set; } = new EntityCollectionStore<Product>();
+
+    #endregion
+
+    #region Методы
 
     protected override bool Equals(IEntity other)
     {
@@ -98,8 +135,10 @@ public sealed class Client : NamedEntity
             ));
     }
 
-    protected override bool SubHasErrors() => Status.HasErrors || Manager.HasErrors;
-    
-}
+    protected override bool SubHasErrors()
+    {
+        return Status.HasErrors || Manager.HasErrors;
+    }
 
-   
+    #endregion
+}

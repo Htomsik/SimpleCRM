@@ -4,30 +4,44 @@ using ProjectMateTask.DAL.Stores;
 
 namespace ProjectMateTask.DAL.Entities.Actors;
 
+/// <summary>
+///     Существующие в бд менеджеры с NamedEntity типом
+/// </summary>
 public sealed class Manager : NamedEntity
 {
+    #region Свойства и поля
+
+    /// <summary>
+    ///     Связные клиенты (Клиенты, которых обслуживает данный менеджер)
+    /// </summary>
+    public ICollection<Client> Clients { get; set; } = new EntityCollectionStore<Client>();
+
+    #endregion
+
     #region Конструкторы
 
+    /// <summary>
+    ///     Конструктор для создания нового менеджера без заранее известных атрибутов
+    /// </summary>
     public Manager()
     {
     }
-
+    
+    /// <summary>
+    ///     Конструктор для менеджера со всеми известными реальными атрибутами в бд (Обычно используется для копирования)
+    /// </summary>
+    /// <param name="id">Идентификатор в бд</param>
+    /// <param name="name">Имя менеджера</param>
+    /// <param name="clients">Связные клиенты</param>
     public Manager(int id, string name, ICollection<Client> clients) : base(id, name)
     {
         Clients = new EntityCollectionStore<Client>(clients);
     }
-
-    public Manager(int id, string name) : base(id, name)
-    {
-    }
     
-    public Manager(string name) : base(name)
-    {
-    }
-
     #endregion
-    public ICollection<Client> Clients { get; set; } = new EntityCollectionStore<Client>();
-    
+
+    #region Методы
+
     protected override bool Equals(IEntity other)
     {
         var otherEntity = other as Manager;
@@ -41,10 +55,6 @@ public sealed class Manager : NamedEntity
         return EntityServices<Client>.IsCollectionsEqualsNoDeep(Clients, otherEntity.Clients);
     }
 
-    protected override bool SubHasErrors() => false;
-    
-
-
     public override object Clone()
     {
         return new Manager(Id,
@@ -53,4 +63,6 @@ public sealed class Manager : NamedEntity
                 Clients.Select(item => item)
             ));
     }
+
+    #endregion
 }

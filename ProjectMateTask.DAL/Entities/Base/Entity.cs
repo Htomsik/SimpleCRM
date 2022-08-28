@@ -1,14 +1,16 @@
-﻿namespace ProjectMateTask.DAL.Entities.Base;
+﻿using System.ComponentModel.DataAnnotations;
 
+namespace ProjectMateTask.DAL.Entities.Base;
+
+/// <summary>
+///     Базовая реализация неизвестных Entity
+/// </summary>
 public abstract class Entity : IEntity
 {
-    public virtual object Clone()
-    {
-        return MemberwiseClone();
-    }
-
+    [Key]
     public int Id { get; set; }
-
+    public virtual object Clone() => MemberwiseClone();
+    
     public bool Equals(object other)
     {
         if (other == null)
@@ -23,6 +25,11 @@ public abstract class Entity : IEntity
         return Equals(other as IEntity);
     }
 
+    /// <summary>
+    ///     Метод сравнения для наследников, входит в состав общей системы сравнения
+    /// </summary>
+    /// <param name="other">Entity с которой сравнивают</param>
+    /// <returns></returns>
     protected virtual bool Equals(IEntity other)
     {
         if (Id.Equals(other.Id))

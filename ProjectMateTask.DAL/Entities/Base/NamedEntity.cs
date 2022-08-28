@@ -6,24 +6,45 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProjectMateTask.DAL.Entities.Base;
 
+/// <summary>
+///     Базовая реализация Entity c известным типом в бд
+/// </summary>
 public abstract class NamedEntity : Entity, INamedEntity
 {
+    #region Конструкторы
+
+    /// <summary>
+    ///     Конструктор для случаев когда известны все атрибуты NamedEntity (обычно используется для импорта Entity из бд)
+    /// </summary>
+    /// <param name="id">Идентификатор</param>
+    /// <param name="name">Название</param>
     public NamedEntity(int id, string name):this(name)
     {
         Id = id;
-        
     }
     
+    /// <summary>
+    ///     Конструктор для случаев когда создается новый NamedEntity на основе заранее частично известных атрибутов.
+    /// </summary>
+    /// <param name="name">Название</param>
     public NamedEntity(string name)
     {
         Name = name;
     }
 
+    /// <summary>
+    ///     Конструктор без параметров для создания нового NamedEntity
+    /// </summary>
     public NamedEntity()
     {
         Name = string.Empty;
     }
 
+    #endregion
+    
+    #region Свойства и поля
+    
+    #region Name : Наименование
 
     private string _name;
     
@@ -43,34 +64,86 @@ public abstract class NamedEntity : Entity, INamedEntity
         }
             
     }
-    
-    private void CheckErrors(string value, [CallerMemberName] string propertyName = null)
+
+    #endregion
+
+    /// <summary>
+    ///     Список валидационных ошибок для атрибутов
+    /// </summary>
+    protected Lazy<Dictionary<string, List<string>>> errors =
+        new ();
+
+    #endregion
+
+    #region Методы
+
+    /// <summary>
+    ///     Проверка валидации для Name
+    /// </summary>
+    /// <param name="value">Значение</param>
+    /// <param name="propertyName">Имя вызывающего атрибута</param>
+    protected void CheckNameErrors(string value, [CallerMemberName] string? propertyName = null)
     {
-        Lazy<List<string>> errors = new Lazy<List<string>>();
+      var lazyErrors = new Lazy<List<string>>();
+      
         switch (value)
         {
               
-            case string n when string.IsNullOrEmpty(n):
-                errors.Value.Add("Требуемый тип");
+            case { } n when string.IsNullOrEmpty(n):
+                lazyErrors.Value.Add("Требуемый тип");
                 break;
                 
-            case string n when n.Length < 2:
-                errors.Value.Add("Имя не может быть меньше 2");
+            case { Length: < 2 }:
+                lazyErrors.Value.Add("Имя не может быть меньше 2");
                 break;
                 
-            case string n when n.Length > 150:
-                errors.Value.Add("Имя не может быть больше 150");
+            case { Length: > 150 }:
+                lazyErrors.Value.Add("Имя не может быть больше 150");
                 break;
 
             default:
                 ClearErrors(propertyName);
                 break;
         }
-        if (errors.IsValueCreated)
+        if (lazyErrors.IsValueCreated)
         {
-            SetErrors(errors.Value,propertyName);
+            SetErrors(lazyErrors.Value,propertyName);
         }
     }
+    
+    
+    /// <summary>
+    ///     Установка ошибок для атрибутов
+    /// </summary>
+    /// <param name="propertyErrors">Коллекция устанавливааемых ошибок</param>
+    /// <param name="propertyName">Имя атрибута которому будет происходить установка ошибок</param>
+    private void SetErrors(List<string> propertyErrors,[CallerMemberName]string? propertyName = null)
+    {
+        errors.Value.Remove(propertyName!);
+        errors.Value.Add(propertyName!, propertyErrors);
+    }
+    
+    /// <summary>
+    ///     Очистка ошибок атрибутов
+    /// </summary>
+    /// <param name="propertyName">Имя атрибута которому будет происходить удаление ошибок</param>
+    private void ClearErrors([CallerMemberName]string? propertyName = null)
+    {
+        if (errors.IsValueCreated && errors.Value.Count >0)
+        {
+            errors.Value.Remove(propertyName!);
+            ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(propertyName));
+            errors = new Lazy<Dictionary<string, List<string>>>();
+        }
+        
+    }
+
+    /// <summary>
+    ///     Метод проверки валидации для наследников
+    /// </summary>
+    /// <returns></returns>
+    protected virtual bool SubHasErrors() => false;
+    
     
     protected override bool Equals(IEntity other)
     {
@@ -87,9 +160,11 @@ public abstract class NamedEntity : Entity, INamedEntity
         return false;
         
     }
+
+    #endregion
     
     #region INotifyPropertyChanged : обновление модели во view
-
+    
     public event PropertyChangedEventHandler? PropertyChanged;
     
     protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
@@ -109,63 +184,35 @@ public abstract class NamedEntity : Entity, INamedEntity
 
     #region INotifyDataErrorInfo : валидация данных
 
-    public  IEnumerable GetErrors(string? propertyName)
+    public IEnumerable GetErrors(string? propertyName)
     {
         switch (propertyName)
         {
-            case string n when string.IsNullOrEmpty(n):
+            case { } n when string.IsNullOrEmpty(n):
                     return (errors.Value.Values);
               
-            case string n when errors.Value.ContainsKey(n):
+            case { } n when errors.Value.ContainsKey(n):
                 return (errors.Value[propertyName]);
             
             default:
-                return null;
+                return null!;
                 
         }
         
     }
-
-    protected void SetErrors(List<string> propertyErrors,[CallerMemberName]string? propertyName = null)
-    {
-        errors.Value.Remove(propertyName);
-        errors.Value.Add(propertyName, propertyErrors);
-    }
     
-    protected void ClearErrors([CallerMemberName]string? propertyName = null)
-    {
-        if (errors.IsValueCreated && errors.Value.Count >0)
-        {
-            errors.Value.Remove(propertyName);
-            ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(propertyName));
-            errors = new Lazy<Dictionary<string, List<string>>>();
-        }
-        
-    }
-
-    private Lazy<Dictionary<string, List<string>>> errors =
-        new Lazy<Dictionary<string, List<string>>>();
-
     [NotMapped]
     public bool HasErrors
     {
         get
         { 
-            CheckErrors(Name,nameof(Name));
+            CheckNameErrors(Name,nameof(Name));
             return errors.Value.Count > 0 || SubHasErrors();
         }
     }
-
-    protected abstract bool SubHasErrors();
     
     public event EventHandler<DataErrorsChangedEventArgs>? ErrorsChanged;
     
     #endregion
-
-    
-   
-
-    
-    
     
 }

@@ -5,23 +5,17 @@
     <projectFile>WpfApp1/WpfApp1.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Рефакторинг VW: изменение путей, названий.">
+    <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Рефакторинг описаний некотоых файлов">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/Context/ProjectMateTaskDb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/Context/ProjectMateTaskDb.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/DiRegistrators/RepositoriesRegistrator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/DiRegistrators/RepositoriesRegistrator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/App.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/IOC/ServicesRegistrator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/IOC/ServicesRegistrator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/IOC/StoreRegistrator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/IOC/StoreRegistrator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/IOC/VmdRegistrator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/IOC/VmdRegistrator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/AdditionalPages/SettingsVW.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/AdditionalPages/SettingsVW.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/AppInfrastructurePages/MainMenuVW.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/AppInfrastructurePages/MainMenuVW.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/Windows/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/Windows/MainWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/App.baml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/App.baml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/App.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/App.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/Entities/Actors/Client.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/Entities/Actors/Client.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/Entities/Actors/Manager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/Entities/Actors/Manager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/Entities/Actors/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/Entities/Actors/Product.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/Entities/Base/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/Entities/Base/Entity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/Entities/Base/IEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/Entities/Base/IEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/Entities/Base/INamedEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/Entities/Base/INamedEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/Entities/Base/NamedEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/Entities/Base/NamedEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/Entities/Types/ClientStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/Entities/Types/ClientStatus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/Entities/Types/ProductType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/Entities/Types/ProductType.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +55,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dcac68e73d1e42a3ab2ea47f475055288ae800/92/06293ea8/PackIconKind.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dcac68e73d1e42a3ab2ea47f475055288ae800/96/ee6ca857/PackIcon.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fdb86467771b44cfa7cc545dc4aac82ab5c98/0f/84f6d47d/TypeConverter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/11a55dc9487546d19e5e6ef381fe5fc42da98/_7bd20/KeyAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/15d04b42e5c017a5cc8808226deed6113d2228493c877f598fcca495b229c3/DbContextOptionsBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1bdc36dd4183e28bfc782d741e368f6faf4ad8397bd232ec65613e2373e/Object.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1e493e93cd51dba47ff84e63a0e157dfb12eb1c1754abd7c8754aa2919f25b62/FileLoggerConfigurationExtensions.cs" root0="SKIP_HIGHLIGHTING" />
@@ -72,7 +67,9 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3839fc8fee5ae62538a4469ed86bbba1ccd15d4e0da63bba779abe1719da3/IConfiguration.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/399935fa436fb846ac62efb6d50a8d34b1034875a201574eb60f33ad5c7f4/RuntimeHelpers.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/40c2a868db45876997e86f64ca5eebf6658a4724272e161f72f9aa58a5b/Control.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4174966c3e7903fa6664fd9654332a08540e6893be050394afd8664936ccba9/RequiredAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/472f97898a25c1e67257dd1fa24fcfff22f6a611187cff170bab5229c75ab2a/Extensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/519d702c2430bd59c968c834a02af06dd74ee174ce53edd4c484d4ac2794a1/ValidationAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5330988bfaacf93f15e30f9b3dd6018a768f89da3b38d874fda77299c62164/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/538811d0fba15c61b743814ea8b7193d48cfbb84a1a53c5db2512b1b329330/DbSet.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5939cc1db917894f431a56f3c68e6bef1ade5c56e1cc94de5f14d5305d7e2af3/InvalidOperationException.cs" root0="SKIP_HIGHLIGHTING" />
@@ -99,8 +96,13 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ed65b09e807c2e8ac5804f527ede34c8296cfa6457a3d5c48dceeb321a78f0e3/ListView.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CustomControls/ParameterCustomTextBlock.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CustomControls/Themes/Generic.xaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask.DAL/Context/ProjectMateTaskDb.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask.DAL/DiRegistrators/RepositoriesRegistrator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask.DAL/Repositories/Base/IRepository.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectMateTask/IOC/ServicesRegistrator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/IOC/ServicesRegistrator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/IOC/StoreRegistrator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/IOC/VmdRegistrator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/IOC/VmdRegistrator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Infrastructure/MessageBuses/LoggerMessageBus.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Infrastructure/Selectors/EditEntitySelector.cs" root0="SKIP_HIGHLIGHTING" />
@@ -226,20 +228,6 @@
       <workItem from="1661351253479" duration="8005000" />
       <workItem from="1661436135759" duration="453000" />
       <workItem from="1661436637277" duration="23022000" />
-    </task>
-    <task id="LOCAL-00027" summary="Добавление возможности получения обьекта с полным/частичным отслеживанием.">
-      <created>1659534764440</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1659534764440</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Добавил UnitTest для проблемной зоны Equals у Entity">
-      <created>1659549476305</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1659549476305</updated>
     </task>
     <task id="LOCAL-00029" summary="Добавление IReadOnlyCollectionStore для хранения SubEntity  коллекции и взаимодействия с разных ViewModel во время режима редактирования">
       <created>1659561587067</created>
@@ -570,7 +558,21 @@
       <option name="project" value="LOCAL" />
       <updated>1661713854683</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="Рефакторинг VW: изменение путей, названий.">
+      <created>1661715530665</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1661715530665</updated>
+    </task>
+    <task id="LOCAL-00077" summary="Рефакторинг описаний некотоых файлов">
+      <created>1661715547364</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1661715547364</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -590,7 +592,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Рефакторинг названий" />
     <MESSAGE value="Добавление основы для настроек и тестовой страницы &quot;О программе&quot; в настройки" />
     <MESSAGE value="Создал универсальный MenuItemWithCommand.cs для всех menuItem с командами, подправил внешний вид для меню" />
     <MESSAGE value="Добавление ленивой инициализации для MenuItem.cs и MenuItemWithCommand.cs" />
@@ -615,7 +616,8 @@
     <MESSAGE value="Рефакторинг Entity карт редактирования" />
     <MESSAGE value="Рефакторинг Vmds" />
     <MESSAGE value="Рефакторинг VW: изменение путей, названий." />
-    <option name="LAST_COMMIT_MESSAGE" value="Рефакторинг VW: изменение путей, названий." />
+    <MESSAGE value="Рефакторинг описаний некотоых файлов" />
+    <option name="LAST_COMMIT_MESSAGE" value="Рефакторинг описаний некотоых файлов" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
