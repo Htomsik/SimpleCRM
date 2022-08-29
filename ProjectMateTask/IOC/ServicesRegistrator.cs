@@ -5,6 +5,8 @@ using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.Navigat
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.CloseNavigationServcies;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.NavigationServices;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.TypeNavigationServices;
+using ProjectMateTask.Services.AppInfrastructure.UserDialogServices;
+using ProjectMateTask.Services.AppInfrastructure.UserDialogServices.Base;
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores;
 using ProjectMateTask.VMD.Pages.AdditionalPagesVmds;
 
@@ -22,6 +24,7 @@ internal static class ServicesRegistrator
             .AddTransient(CreateMainEntityStoreTypeNavigationService)
             .AddTransient(CreateCloseMainEntityVmdNavigationServices)
             .AddTransient(CreateSettingsAdditionalPageNavigationServices)
+            .AddTransient<IUserDialogService,MessageBoxUserDialogService>()
             .AddSingleton<LoggerMessageBus>();
     
     #region Navigation services
