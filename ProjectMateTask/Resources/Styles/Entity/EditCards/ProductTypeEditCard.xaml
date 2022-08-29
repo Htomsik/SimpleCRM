@@ -1,0 +1,33 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:types="clr-namespace:ProjetMateTaskEntities.Entities.Types;assembly=ProjetMateTaskEntities"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Base/OurEditCards.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+
+    <!--  Карточка редактирования продуктов  -->
+    <DataTemplate DataType="{x:Type types:ProductType}" x:Key="EditProductTypeCard">
+
+        <StackPanel>
+
+            <!--  Название типа продукта  -->
+            <ContentControl
+                Content="{Binding Path=., ValidatesOnNotifyDataErrors=False}"
+                ContentTemplate="{DynamicResource NonKeyFieldEditTemplate}"
+                ToolTip="Название типа" />
+
+            <!--  Продукты у конкретного типа  -->
+            <ContentControl
+                Content="{Binding Products, ValidatesOnNotifyDataErrors=False}"
+                ContentTemplate="{DynamicResource EditCollectionCard}"
+                ToolTip="Товары:" />
+
+
+        </StackPanel>
+
+    </DataTemplate>
+
+</ResourceDictionary>

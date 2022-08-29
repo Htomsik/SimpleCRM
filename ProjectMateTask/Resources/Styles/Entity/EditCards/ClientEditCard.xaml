@@ -1,0 +1,42 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:actors="clr-namespace:ProjetMateTaskEntities.Entities.Actors;assembly=ProjetMateTaskEntities"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Base/OurEditCards.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!--  Карточка редактирования клиентов  -->
+    <DataTemplate DataType="{x:Type actors:Client}" x:Key="EditClientCard">
+
+        <StackPanel>
+
+            <!--  Имя  -->
+            <ContentControl
+                Content="{Binding Path=., Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=False}"
+                ContentTemplate="{DynamicResource NonKeyFieldEditTemplate}"
+                ToolTip="Имя" />
+
+            <!--  Статус  -->
+            <ContentControl
+                Content="{Binding Status, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=False}"
+                ContentTemplate="{DynamicResource KeyEntityEditTemplate}"
+                ToolTip="Статус" />
+
+            <!--  Менеджер  -->
+            <ContentControl
+                Content="{Binding Manager, ValidatesOnNotifyDataErrors=False}"
+                ContentTemplate="{DynamicResource KeyEntityEditTemplate}"
+                ToolTip="Менеджер" />
+
+            <!--  Купленные продукты  -->
+            <ContentControl
+                Content="{Binding Products, ValidatesOnNotifyDataErrors=False}"
+                ContentTemplate="{DynamicResource EditCollectionCard}"
+                ToolTip="Товары:" />
+
+        </StackPanel>
+
+    </DataTemplate>
+</ResourceDictionary>

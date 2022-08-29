@@ -1,0 +1,33 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:types="clr-namespace:ProjetMateTaskEntities.Entities.Types;assembly=ProjetMateTaskEntities"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Base/OurEditCards.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!--  Карточка редактирования Статусов клиентов  -->
+    <DataTemplate DataType="{x:Type types:ClientStatus}" x:Key="EditClientStatusCard">
+
+        <StackPanel>
+
+            <!--  Название  -->
+            <ContentControl
+                Content="{Binding Path=., ValidatesOnNotifyDataErrors=False}"
+                ContentTemplate="{DynamicResource NonKeyFieldEditTemplate}"
+                ToolTip="Назвние статуса:" />
+
+
+            <!--  Клиенты, c такими статусами  -->
+
+            <ContentControl
+                Content="{Binding Clients, ValidatesOnNotifyDataErrors=False}"
+                ContentTemplate="{DynamicResource EditCollectionCard}"
+                ToolTip="Клиенты:" />
+
+
+        </StackPanel>
+
+    </DataTemplate>
+</ResourceDictionary>

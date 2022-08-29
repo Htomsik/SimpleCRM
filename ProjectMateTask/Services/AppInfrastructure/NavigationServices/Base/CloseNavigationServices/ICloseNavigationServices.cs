@@ -1,0 +1,12 @@
+﻿namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.CloseNavigationServices;
+
+/// <summary>
+///     Сервис закытия чего либо
+/// </summary>
+internal interface ICloseNavigationServices
+{
+    /// <summary>
+    ///     Функция закрытия
+    /// </summary>
+    void Close();
+}
