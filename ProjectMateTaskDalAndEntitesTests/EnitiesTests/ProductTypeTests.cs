@@ -8,14 +8,12 @@ namespace ProjectMateTaskDalTests.EnitiesTests;
 public class ProductTypeTests
 {
     [TestMethod]
-    public void IsTwoRandomProductTypesEquals()
+    public void IsTwoRandomProductTypesCopyEquals()
     {
         // Arrange
         var rnd = new Random();
         
-        var initializer = new EntitiesTestDataInitializer();
-        
-        ProductType randomEntity = initializer.ProductTypes[rnd.Next(0, EntitiesTestDataInitializer.TestProductTypesCount)];
+        ProductType randomEntity = GlobalResources.Initializer.ProductTypes[rnd.Next(0, EntitiesTestDataInitializer.TestProductTypesCount)];
 
         ProductType randomEntityCopy = (ProductType)randomEntity.Clone();
         

@@ -10,7 +10,7 @@ namespace ProjetMateTaskEntities.Entities.Base;
 /// <summary>
 ///     Базовая реализация Entity c известным типом в бд
 /// </summary>
-public abstract class NamedEntity : Entity, INamedEntity
+public class NamedEntity : Entity, INamedEntity
 {
     #region Конструкторы
 

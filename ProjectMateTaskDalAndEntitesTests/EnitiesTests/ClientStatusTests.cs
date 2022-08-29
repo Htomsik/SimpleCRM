@@ -1,24 +1,21 @@
 ﻿using System;
 using ProjectMateTaskDalTests.Resources;
-using ProjetMateTaskEntities.Entities.Actors;
+using ProjetMateTaskEntities.Entities.Types;
 
 namespace ProjectMateTaskDalTests.EnitiesTests;
 
 [TestClass]
-public class ClientTests
+public class ClientStatusTests
 {
     [TestMethod]
-    public void IsTwoRandomClientsEquals()
+    public void IsTwoRandomClientStatusesCopyEquals()
     {
-     
         // Arrange
         var rnd = new Random();
         
-        var initializer = new EntitiesTestDataInitializer();
-        
-        Client randomEntity = initializer.TestClients[rnd.Next(0, EntitiesTestDataInitializer.TestClientsCount)];
+        ClientStatus randomEntity = GlobalResources.Initializer.ClientTypes[rnd.Next(0, EntitiesTestDataInitializer.TestClientTypesCount)];
 
-        Client randomEntityCopy = (Client)randomEntity.Clone();
+        ClientStatus randomEntityCopy = (ClientStatus)randomEntity.Clone();
         
         //Act
         var originalResult = randomEntity.Equals(randomEntityCopy);

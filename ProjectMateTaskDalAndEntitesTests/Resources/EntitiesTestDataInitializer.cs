@@ -6,7 +6,7 @@ using ProjetMateTaskEntities.Stores;
 
 namespace ProjectMateTaskDalTests.Resources;
 
-internal class EntitiesTestDataInitializer
+internal sealed class EntitiesTestDataInitializer
 {
     public const int TestClientTypesCount = 2;
     public ClientStatus[] ClientTypes;
@@ -23,13 +23,11 @@ internal class EntitiesTestDataInitializer
     public const int TestClientsCount = 20;
     public Client[] TestClients;
 
-    private Random _rnd;
+    private readonly Random _rnd;
     
     public EntitiesTestDataInitializer()
     {
-       
         _rnd = new Random();
-        
         InitializeTestClientTypes();
         InitializeTestProductTypes();
         InitializeTestManagers();
@@ -129,7 +127,7 @@ internal class EntitiesTestDataInitializer
             products[i] = TestProducts[rnd.Next(0,TestProductsCount)];
         }
 
-        return products;
+        return products.ToHashSet().ToArray();
     }
 
     #endregion

@@ -8,6 +8,13 @@ namespace ProjetMateTaskEntities.Services;
 /// <typeparam name="T">Любой Entity тип</typeparam>
 public static class EntityCollectionServices
 {
+    /// <summary>
+    ///     Проверка на соривеисвме коллекций по id элементов в них
+    /// </summary>
+    /// <param name="mainCollection">Первая коллекция</param>
+    /// <param name="subCollection">Вторая коллекция</param>
+    /// <typeparam name="TEntity">тип элементов в коллекции (любый Entity)</typeparam>
+    /// <returns></returns>
     public static bool IsCollectionsEqualsNoDeep<TEntity>(ICollection<TEntity> mainCollection,
         ICollection<TEntity> subCollection) where TEntity : IEntity
     {
@@ -17,6 +24,12 @@ public static class EntityCollectionServices
 
         return mainCollection.Count(item => subCollection.All(subItem => subItem.Id != item.Id)) == 0;
     }
+
+    public static bool IsCollectionHaveDuplicateByIds<TEntity>(IEnumerable<TEntity> collection) where TEntity : IEntity
+        =>
+        collection.GroupBy(x => x.Id)
+        .SelectMany(g => g.Skip(1)).Count() != 0;
+    
 
     /// <summary>
     ///     Поиск по Entity коллекции
@@ -29,4 +42,5 @@ public static class EntityCollectionServices
     {
         return scanCollection.FirstOrDefault(elem => elem.Id == id);
     }
+    
 }

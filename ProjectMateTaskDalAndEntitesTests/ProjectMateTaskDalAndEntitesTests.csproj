@@ -6,6 +6,8 @@
         <Nullable>enable</Nullable>
 
         <IsPackable>false</IsPackable>
+
+        <RootNamespace>ProjectMateTaskDalTests</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -17,6 +19,10 @@
 
     <ItemGroup>
       <ProjectReference Include="..\ProjectMateTask.DAL\ProjectMateTask.DAL.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="ServiccesTests" />
     </ItemGroup>
 
 </Project>

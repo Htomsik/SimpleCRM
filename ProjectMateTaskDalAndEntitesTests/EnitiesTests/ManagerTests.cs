@@ -8,15 +8,13 @@ namespace ProjectMateTaskDalTests.EnitiesTests;
 public class ManagerTests
 {
     [TestMethod]
-    public void IsTwoRandomManagersEquals()
+    public void IsTwoRandomManagersCopyEquals()
     {
      
         // Arrange
         var rnd = new Random();
         
-        var initializer = new EntitiesTestDataInitializer();
-        
-        Manager randomEntity = initializer.TestManagers[rnd.Next(0, EntitiesTestDataInitializer.TestManagersCount)];
+        Manager randomEntity = GlobalResources.Initializer.TestManagers[rnd.Next(0, EntitiesTestDataInitializer.TestManagersCount)];
 
         Manager randomEntityCopy = (Manager)randomEntity.Clone();
         
