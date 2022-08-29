@@ -1,4 +1,6 @@
-﻿namespace ProjectMateTaskExtensions.Services;
+﻿using System;
+
+namespace ProjectMateTaskExtensions.Services;
 
 /// <summary>
 ///     Сервис работающий с random

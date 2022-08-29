@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {
       "ProjetMateTaskEntities/1.0.0": {
+        "dependencies": {
+          "ProjectMateTaskExtensions": "1.0.0"
+        },
         "runtime": {
           "ProjetMateTaskEntities.dll": {}
+        }
+      },
+      "ProjectMateTaskExtensions/1.0.0": {
+        "runtime": {
+          "ProjectMateTaskExtensions.dll": {}
         }
       }
     }
   },
   "libraries": {
     "ProjetMateTaskEntities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ProjectMateTaskExtensions/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -52,8 +52,8 @@ public partial class App : Application
 
             default:
                 UserDialogService.ConfirmCriticalError(
-                    $"Произошло необработанное исключение:{e.Message}. Подробности смотрите в Log файле",
-                    "Неизвестная ошибка");
+                    $"Произошло необработанное исключение: {e.Message}. Подробности смотрите в Log файле",
+                    "Необработанная ошибка");
                 Logger.LogCritical($"Неизветная ошибка:{e.Message}");
                 Current.Shutdown();
                 break;

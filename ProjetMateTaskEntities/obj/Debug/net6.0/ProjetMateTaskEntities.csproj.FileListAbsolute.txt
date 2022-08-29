@@ -10,3 +10,6 @@ C:\Users\USER\RiderProjects\ProjectMateTask\ProjetMateTaskEntities\obj\Debug\net
 C:\Users\USER\RiderProjects\ProjectMateTask\ProjetMateTaskEntities\obj\Debug\net6.0\refint\ProjetMateTaskEntities.dll
 C:\Users\USER\RiderProjects\ProjectMateTask\ProjetMateTaskEntities\obj\Debug\net6.0\ProjetMateTaskEntities.pdb
 C:\Users\USER\RiderProjects\ProjectMateTask\ProjetMateTaskEntities\obj\Debug\net6.0\ref\ProjetMateTaskEntities.dll
+C:\Users\USER\RiderProjects\ProjectMateTask\ProjetMateTaskEntities\bin\Debug\net6.0\ProjectMateTaskExtensions.dll
+C:\Users\USER\RiderProjects\ProjectMateTask\ProjetMateTaskEntities\bin\Debug\net6.0\ProjectMateTaskExtensions.pdb
+C:\Users\USER\RiderProjects\ProjectMateTask\ProjetMateTaskEntities\obj\Debug\net6.0\ProjetMateTaskEntities.csproj.CopyComplete

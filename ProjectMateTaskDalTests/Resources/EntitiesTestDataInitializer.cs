@@ -1,4 +1,6 @@
-﻿using ProjetMateTaskEntities.Entities.Actors;
+﻿using System;
+using System.Linq;
+using ProjetMateTaskEntities.Entities.Actors;
 using ProjetMateTaskEntities.Entities.Types;
 using ProjetMateTaskEntities.Stores;
 

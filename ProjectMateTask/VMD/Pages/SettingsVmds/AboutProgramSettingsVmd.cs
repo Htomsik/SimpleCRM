@@ -19,5 +19,5 @@ internal sealed class AboutProgramVmd : BaseVmd
         _configuration = configuration;
     }
     
-    public string AppVersion => _configuration["AppInfo:AppVersion"];
+    public string AppVersion => _configuration["AppInfo:AppVersion"] ?? "Не удалось определить версию. Файл конфигурации поврежден.";
 }
