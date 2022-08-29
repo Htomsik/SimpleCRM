@@ -1,8 +1,8 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Windows.Input;
 using ProjectMateTask.Data;
 using ProjectMateTask.Infrastructure.CMD;
+using ProjectMateTask.Infrastructure.CMD.AppInfrastructure;
 using ProjectMateTask.VMD.Base;
 
 namespace ProjectMateTask.VMD.Pages;
@@ -32,8 +32,29 @@ internal sealed class HomeVmd : BaseVmd
         RebuildDbCommand = new AsyncLambdaCmd(OnRebuildDB);
 
         TestDataInitializeCommand = new AsyncLambdaCmd(OnTestDataInitialize);
-        
+
+        #region Инициализция команд
+
+        OpenHtomsikGithubCommnad = new OpenBrowserLinkCmd("https://github.com/Htomsik");
+
+        OpenProjectGithubCommnad = new OpenBrowserLinkCmd("https://github.com/Htomsik/ProjectMateTask");
+
+        OpenProjectAssetsCommand =
+            new OpenBrowserLinkCmd("https://github.com/Htomsik/ProjectMateTask/tree/master/Assets");
+
+
+        #endregion
+
     }
+
+
+    #region Команды
+
+    public ICommand OpenHtomsikGithubCommnad { get; }
+    
+    public ICommand OpenProjectGithubCommnad { get; }
+    
+    public ICommand OpenProjectAssetsCommand { get; }
 
     #region RebuildDBCommand : Команда пересборки базы данных
 
@@ -54,6 +75,11 @@ internal sealed class HomeVmd : BaseVmd
     {
         await _dbInitializer.InitializeTestDataAsync();
     }
+    
+ 
+    #endregion
 
     #endregion
+
+  
 }

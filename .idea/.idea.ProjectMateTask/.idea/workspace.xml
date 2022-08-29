@@ -5,11 +5,19 @@
     <projectFile>WpfApp1/WpfApp1.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Добавление отловки необработанных исключений">
+    <list default="true" id="6002d470-be5e-4d59-a476-7ae6c7664e99" name="Changes" comment="Добавление ресурсов проекта">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/WPF задание.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomControls/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/App.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/AppInfrastructure/MainWindowVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/AppInfrastructure/MainWindowVmd.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/HomeVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/HomeVmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/HomeVW.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VW/Pages/HomeVW.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskExtensions/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskExtensions/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/Services/EntityServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/Services/EntityServices.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,11 +106,9 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ed65b09e807c2e8ac5804f527ede34c8296cfa6457a3d5c48dceeb321a78f0e3/ListView.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CustomControls/ParameterCustomTextBlock.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CustomControls/Themes/Generic.xaml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/App.xaml.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectMateTask/IOC/ServicesRegistrator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Program.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/VMD/AppInfrastructure/MainWindowVmd.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectMateTask/VW/SettingsPages/AboutProgramVW.xaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/GeneratedInternalTypeHelper.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -124,7 +130,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.0539484&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.05399061&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;RiderDpaPageId&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -176,7 +182,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Create Base Infrastructure" />
+      <changelist id="6002d470-be5e-4d59-a476-7ae6c7664e99" name="Changes" comment="Добавление ресурсов проекта" />
       <created>1658916523884</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -205,6 +211,7 @@
       <workItem from="1661436637277" duration="23022000" />
       <workItem from="1661723616346" duration="577000" />
       <workItem from="1661724577353" duration="14148000" />
+      <workItem from="1661789436032" duration="1022000" />
     </task>
     <task id="LOCAL-00038" summary="Добавлена инфрструктура для Additional Страниц">
       <created>1661110512567</created>
