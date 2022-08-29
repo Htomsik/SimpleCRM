@@ -23,6 +23,6 @@ internal sealed class OpenBrowserLinkCmd : BaseCmd
             throw new ArgumentNullException(nameof(UrlLink));;
     }
 
-    protected override void Execute(object? parameter) => Link.OpenInBrowser(UrlLink.Value);
+    protected override void Execute(object? parameter) => LinkExstensions.OpenInBrowser(UrlLink.Value);
   
 }

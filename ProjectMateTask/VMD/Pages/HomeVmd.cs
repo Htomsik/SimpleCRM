@@ -80,7 +80,7 @@ internal sealed class HomeVmd : BaseVmd
 
         Task.WaitAll();
         
-        Application.Current.Shutdown();
+        //Application.Current.Shutdown();
 
     }
 
@@ -99,7 +99,7 @@ internal sealed class HomeVmd : BaseVmd
         
         Task.WaitAll();
         
-        Application.Current.Shutdown();
+       // Application.Current.Shutdown();
     }
     
  

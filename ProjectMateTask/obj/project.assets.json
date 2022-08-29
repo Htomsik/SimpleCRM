@@ -1188,7 +1188,8 @@
           "Microsoft.EntityFrameworkCore": "6.0.7",
           "Microsoft.EntityFrameworkCore.Relational": "6.0.7",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.7",
-          "ProjectMateTaskExtensions": "1.0.0"
+          "ProjectMateTaskExtensions": "1.0.0",
+          "ProjetMateTaskEntities": "1.0.0"
         },
         "compile": {
           "bin/placeholder/ProjectMateTask.DAL.dll": {}
@@ -1200,9 +1201,6 @@
       "ProjectMateTaskExtensions/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "ProjetMateTaskEntities": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/ProjectMateTaskExtensions.dll": {}
         },
@@ -1213,6 +1211,9 @@
       "ProjetMateTaskEntities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "ProjectMateTaskExtensions": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/ProjetMateTaskEntities.dll": {}
         },
@@ -3233,6 +3234,7 @@
       "Microsoft.Extensions.Hosting >= 6.0.1",
       "ProjectMateTask.DAL >= 1.0.0",
       "ProjectMateTaskExtensions >= 1.0.0",
+      "ProjetMateTaskEntities >= 1.0.0",
       "Serilog.AspNetCore >= 6.0.1"
     ]
   },
@@ -3276,6 +3278,9 @@
             },
             "C:\\Users\\USER\\RiderProjects\\ProjectMateTask\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj": {
               "projectPath": "C:\\Users\\USER\\RiderProjects\\ProjectMateTask\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj"
+            },
+            "C:\\Users\\USER\\RiderProjects\\ProjectMateTask\\ProjetMateTaskEntities\\ProjetMateTaskEntities.csproj": {
+              "projectPath": "C:\\Users\\USER\\RiderProjects\\ProjectMateTask\\ProjetMateTaskEntities\\ProjetMateTaskEntities.csproj"
             }
           }
         }

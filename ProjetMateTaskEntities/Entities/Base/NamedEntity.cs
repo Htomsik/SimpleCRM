@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.CompilerServices;
+using ProjectMateTaskExtensions.Services;
 
 namespace ProjetMateTaskEntities.Entities.Base;
 
@@ -59,7 +60,8 @@ public abstract class NamedEntity : Entity, INamedEntity
         } 
         set
         {
-            Set(ref _name, value);
+          
+            Set(ref _name, StringExtensions.RemoveDuplicate(ref value," "));
           
         }
             
@@ -154,7 +156,7 @@ public abstract class NamedEntity : Entity, INamedEntity
             if (string.IsNullOrEmpty(Name) && string.IsNullOrEmpty(otherNamedEntity!.Name))
                 return true;
             
-            return string.Compare(Name, otherNamedEntity!.Name, StringComparison.CurrentCulture) == 0;
+            return string.Compare(Name.Trim(), otherNamedEntity!.Name.Trim(), StringComparison.CurrentCulture) == 0;
         }
 
         return false;

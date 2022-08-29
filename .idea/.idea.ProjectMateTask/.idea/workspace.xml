@@ -5,14 +5,52 @@
     <projectFile>WpfApp1/WpfApp1.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6002d470-be5e-4d59-a476-7ae6c7664e99" name="Changes" comment="Добавление асинхонной команды, выполняемой после подтверждения в IUserDialog">
+    <list default="true" id="6002d470-be5e-4d59-a476-7ae6c7664e99" name="Changes" comment="Добавление названий для всех MainEntity vmd типов">
+      <change afterPath="$PROJECT_DIR$/ProjectMateTaskExtensions/Services/StringExtensions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/MainClientStatusVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/MainClientStatusVmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/MainClientVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/MainClientVmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/MainManagerVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/MainManagerVmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/MainProductTypeVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/MainProductTypeVmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/MainProductVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/Entities/MainEntityVmds/MainProductVmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomControls/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/ProjectMateTask.DAL.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/ProjectMateTask.DAL.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/Debug/net6.0/ProjectMateTask.DAL.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/Debug/net6.0/ProjectMateTask.DAL.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/Debug/net6.0/ProjectMateTask.DAL.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/Debug/net6.0/ProjectMateTask.DAL.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/ProjectMateTask.DAL.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/ProjectMateTask.DAL.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Data/DbInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Data/DbInitializer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AppInfrastructure/OpenBrowserLinkCmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AppInfrastructure/OpenBrowserLinkCmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/ProjectMateTask.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/ProjectMateTask.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/HomeVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/HomeVmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.i.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.i.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/ProjectMateTask.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/ProjectMateTask.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/bin/Debug/net6.0/CoverletSourceRootsMapping" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/bin/Debug/net6.0/CoverletSourceRootsMapping" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/ProjectMateTaskDalTests.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/ProjectMateTaskDalTests.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/ProjectMateTaskDalTests.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/ProjectMateTaskDalTests.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/ProjectMateTaskDalTests.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/ProjectMateTaskDalTests.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskExtensions/ProjectMateTaskExtensions.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskExtensions/ProjectMateTaskExtensions.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskExtensions/Services/Link.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskExtensions/Services/LinkExstensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskExtensions/obj/Debug/net6.0/ProjectMateTaskExtensions.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskExtensions/obj/Debug/net6.0/ProjectMateTaskExtensions.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskExtensions/obj/ProjectMateTaskExtensions.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskExtensions/obj/ProjectMateTaskExtensions.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskExtensions/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskExtensions/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskExtensions/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskExtensions/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskExtensions/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskExtensions/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskExtensions/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskExtensions/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/Entities/Base/NamedEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/Entities/Base/NamedEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/ProjetMateTaskEntities.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/ProjetMateTaskEntities.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/ProjetMateTaskEntities.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/ProjetMateTaskEntities.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,19 +139,10 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ed65b09e807c2e8ac5804f527ede34c8296cfa6457a3d5c48dceeb321a78f0e3/ListView.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CustomControls/ParameterCustomTextBlock.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CustomControls/Themes/Generic.xaml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/App.xaml.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectMateTask/IOC/ServicesRegistrator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Infrastructure/CMD/AsyncLambdaCmd.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Infrastructure/CMD/AsyncLambdaCmd.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Infrastructure/CMD/LambdaCmd.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/VMD/Pages/HomeVmd.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/VMD/Pages/HomeVmd.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/VMD/Pages/HomeVmd.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/VW/Pages/HomeVW.xaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectMateTask/VW/SettingsPages/AboutProgramVW.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/GeneratedInternalTypeHelper.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjetMateTaskEntities/Services/EntityServices.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -129,22 +158,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "XThreadsFramesViewSplitterKey": "0.0539484",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "RiderDpaPageId",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.0539484&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;RiderDpaPageId&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlserver.localdb"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlserver.localdb&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Project.ProjectMateTask">
     <configuration name="ProjectMateTask" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -215,14 +244,8 @@
       <workItem from="1661436637277" duration="23022000" />
       <workItem from="1661723616346" duration="577000" />
       <workItem from="1661724577353" duration="14148000" />
-      <workItem from="1661789436032" duration="5567000" />
-    </task>
-    <task id="LOCAL-00042" summary="Создал универсальный MenuItemWithCommand.cs для всех menuItem с командами, подправил внешний вид для меню">
-      <created>1661442129004</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1661442129004</updated>
+      <workItem from="1661789436032" duration="6389000" />
+      <workItem from="1661795856824" duration="1138000" />
     </task>
     <task id="LOCAL-00043" summary="Добавление ленивой инициализации для MenuItem.cs и MenuItemWithCommand.cs">
       <created>1661444072427</created>
@@ -560,7 +583,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661794243952</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="Добавление названий для всех MainEntity vmd типов">
+      <created>1661795060940</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1661795060940</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -580,7 +610,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Рефакторинг путей" />
     <MESSAGE value="Добавлений различных абстракций для vmd типов" />
     <MESSAGE value="Рефакторинг описаний некоторых типов" />
     <MESSAGE value="Рефакторинг описаний MainEntity Vmd типов. Добавление интерфейса для них" />
@@ -605,7 +634,8 @@
     <MESSAGE value="Добавление на главной странице ссылок на гитхаб" />
     <MESSAGE value="Добавление команды, выполняемой после подтвеждения через IUserDialogService" />
     <MESSAGE value="Добавление асинхонной команды, выполняемой после подтверждения в IUserDialog" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавление асинхонной команды, выполняемой после подтверждения в IUserDialog" />
+    <MESSAGE value="Добавление названий для всех MainEntity vmd типов" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавление названий для всех MainEntity vmd типов" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

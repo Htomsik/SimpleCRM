@@ -5,7 +5,7 @@ namespace ProjectMateTaskExtensions.Services;
 /// <summary>
 ///     Сервис работающий со ссылками
 /// </summary>
-public static class Link
+public static class LinkExstensions
 {
     /// <summary>
     ///     Открытие ссылки в браузере (Только для виндовс)

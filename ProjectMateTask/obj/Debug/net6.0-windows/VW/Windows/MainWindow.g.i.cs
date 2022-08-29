@@ -94,7 +94,7 @@ namespace ProjectMateTask.VW.Windows {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ProjectMateTask;component/vw/windows/mainwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ProjectMateTask;V1.0.0.0;component/vw/windows/mainwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\VW\Windows\MainWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

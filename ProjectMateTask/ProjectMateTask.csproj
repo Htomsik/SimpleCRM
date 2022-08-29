@@ -29,6 +29,7 @@
       <ProjectReference Include="..\CustomControls\CustomControls.csproj" />
       <ProjectReference Include="..\ProjectMateTask.DAL\ProjectMateTask.DAL.csproj" />
       <ProjectReference Include="..\ProjectMateTaskExtensions\ProjectMateTaskExtensions.csproj" />
+      <ProjectReference Include="..\ProjetMateTaskEntities\ProjetMateTaskEntities.csproj" />
     </ItemGroup>
 
     <ItemGroup>
