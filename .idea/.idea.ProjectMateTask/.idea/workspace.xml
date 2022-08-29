@@ -6,29 +6,11 @@
     <projectFile>ProjectMateTaskWpfTests/ProjectMateTaskWpfTests.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6002d470-be5e-4d59-a476-7ae6c7664e99" name="Changes" comment="Удаление неиспользуемого">
-      <change afterPath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/Resources/GlobalResources.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/StoresTests/EntityCollectionStoresTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask.sln" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/EnitiesTests/ClientStatusTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/EnitiesTests/ClientStatusTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/EnitiesTests/ClientTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/EnitiesTests/ClientTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/EnitiesTests/ManagerTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/EnitiesTests/ManagerTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/EnitiesTests/ProductTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/EnitiesTests/ProductTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/EnitiesTests/ProductTypeTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/EnitiesTests/ProductTypeTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/ProjectMateTaskDalTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/ProjectMateTaskDalAndEntitesTests.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/Resources/EntitiesTestDataInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/Resources/EntitiesTestDataInitializer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/Usings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/Usings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/Entities/Base/NamedEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/Entities/Base/NamedEntity.cs" afterDir="false" />
+    <list default="true" id="6002d470-be5e-4d59-a476-7ae6c7664e99" name="Changes" comment="Добавление тестов для EntityCollectionStore.cs. Добавление запрета на создание EntityCollectionStore.cs с дубликатами по Id">
+      <change afterPath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/ServiccesTests/EntityCollectionServicesTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/ProjectMateTaskDalAndEntitesTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/ProjectMateTaskDalAndEntitesTests.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/Services/EntityCollectionServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/Services/EntityCollectionServices.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/Stores/EntityCollectionStore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/Stores/EntityCollectionStore.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/bin/Debug/net6.0/ProjetMateTaskEntities.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/bin/Debug/net6.0/ProjetMateTaskEntities.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/bin/Debug/net6.0/ProjetMateTaskEntities.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/bin/Debug/net6.0/ProjetMateTaskEntities.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/Debug/net6.0/ProjetMateTaskEntities.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/Debug/net6.0/ProjetMateTaskEntities.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/Debug/net6.0/ProjetMateTaskEntities.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/Debug/net6.0/ProjetMateTaskEntities.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/Debug/net6.0/ProjetMateTaskEntities.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/Debug/net6.0/ProjetMateTaskEntities.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/Debug/net6.0/ref/ProjetMateTaskEntities.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/Debug/net6.0/ref/ProjetMateTaskEntities.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/Debug/net6.0/refint/ProjetMateTaskEntities.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/Debug/net6.0/refint/ProjetMateTaskEntities.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/Services/EntityServices.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +138,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected=".NET Project.ProjectMateTask">
+  <component name="RunManager" selected="db0b222f-afe6-4670-a9f2-b3e1d03047e0">
     <configuration name="ProjectMateTask" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -245,14 +227,7 @@
       <workItem from="1661723616346" duration="577000" />
       <workItem from="1661724577353" duration="14148000" />
       <workItem from="1661789436032" duration="6389000" />
-      <workItem from="1661795856824" duration="11774000" />
-    </task>
-    <task id="LOCAL-00047" summary="Добавление описание некоторым типам">
-      <created>1661450997507</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1661450997507</updated>
+      <workItem from="1661795856824" duration="12206000" />
     </task>
     <task id="LOCAL-00048" summary="Добавление описания для статических сервисов, изменение путей для некоторых файлов">
       <created>1661451537573</created>
@@ -590,7 +565,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661801687178</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="Добавление тестов для EntityCollectionStore.cs. Добавление запрета на создание EntityCollectionStore.cs с дубликатами по Id">
+      <created>1661809190189</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1661809190189</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -635,7 +617,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Рефакторинг описаний SubEbtity Vmd типов и мелкий рефакторинг описаний для MainEntity типов" />
     <MESSAGE value="Рефакторинг описаний и путей.&#10;Добавление кнопки выхода на домащнюю страницу&#10;Tittle перенесено в BaseVmd.cs" />
     <MESSAGE value="Изменение селектора для выбора каточки редактирования" />
     <MESSAGE value="Рефакторинг Entity карт рредактирования" />
@@ -660,26 +641,10 @@
     <MESSAGE value="Изменение названий некоторым расширениям.&#10;Восстановлена работа инициализации бд" />
     <MESSAGE value="Добавление закрытия меню при отведении мыши" />
     <MESSAGE value="Удаление неиспользуемого" />
-    <option name="LAST_COMMIT_MESSAGE" value="Удаление неиспользуемого" />
+    <MESSAGE value="Добавление тестов для EntityCollectionStore.cs. Добавление запрета на создание EntityCollectionStore.cs с дубликатами по Id" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавление тестов для EntityCollectionStore.cs. Добавление запрета на создание EntityCollectionStore.cs с дубликатами по Id" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/StoresTests/EntityCollectionStoresTests.cs</url>
-          <line>66</line>
-          <properties documentPath="C:\Users\USER\RiderProjects\ProjectMateTask\ProjectMateTaskDalAndEntitesTests\StoresTests\EntityCollectionStoresTests.cs" initialLine="66" containingFunctionPresentation="method 'IsCollectionCantContainIdCopiesWhenCreateByOtherCollection'">
-            <startOffsets>
-              <option value="2162" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2163" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="DotNetProject">
         <watch expression="otherEntity.Type" />
