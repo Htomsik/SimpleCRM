@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using ProjectMateTask.Data;
 using ProjectMateTask.Infrastructure.CMD;
@@ -31,6 +32,7 @@ internal sealed class HomeVmd : BaseVmd
         RebuildDbCommand = new AsyncLambdaCmd(OnRebuildDB);
 
         TestDataInitializeCommand = new AsyncLambdaCmd(OnTestDataInitialize);
+        
     }
 
     #region RebuildDBCommand : Команда пересборки базы данных

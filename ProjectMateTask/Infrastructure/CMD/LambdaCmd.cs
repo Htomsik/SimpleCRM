@@ -38,5 +38,5 @@ public sealed class LambdaCmd : BaseCmd
     protected override bool CanExecute(object parameter) => _canExecute?.Value?.Invoke(parameter) ?? true;
 
     protected override void Execute(object parameter) => _execute.Value(parameter);
-   
+    
 }

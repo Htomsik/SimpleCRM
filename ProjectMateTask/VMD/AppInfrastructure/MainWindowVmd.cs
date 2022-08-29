@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using System;
+using System.Windows.Input;
 using Microsoft.Extensions.DependencyInjection;
 using ProjectMateTask.Infrastructure.CMD;
 using ProjectMateTask.Infrastructure.CMD.AppInfrastructure;
@@ -61,7 +62,7 @@ internal sealed class MainWindowVmd : BaseVmd
         OpenHomeCommand = new LambdaCmd(()=> closeMainEntityNavigationServices.Close());
 
         #endregion
-
+        
     }
 
     #region Команды
