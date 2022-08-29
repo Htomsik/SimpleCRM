@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+RAlC0hR19bvuwadjYRG5+hAwzVFoTYiUPrmQ7lDhyFuPKWeYdjGJPehwHWxHuJYQaNlns4Zj0scgnAmQm8W9w==",
+  "dgSpecHash": "UtHyCgiDsvjgOs6GJ+3ro3ospLqASLdAzN2cWZp5opKcDFc2msPEOJmlfn7vL3GaF6qBz6X1RqnGIGBfjwJBpA==",
   "success": true,
   "projectFilePath": "C:\\Users\\USER\\RiderProjects\\ProjectMateTask\\ProjectMateTask\\ProjectMateTask.csproj",
   "expectedPackageFiles": [
@@ -55,6 +55,7 @@
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\serilog\\2.10.0\\serilog.2.10.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\serilog.aspnetcore\\6.0.1\\serilog.aspnetcore.6.0.1.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\serilog.extensions.hosting\\5.0.1\\serilog.extensions.hosting.5.0.1.nupkg.sha512",

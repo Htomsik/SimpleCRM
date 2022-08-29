@@ -19,8 +19,7 @@ internal sealed class HomeVmd : BaseVmd
     public override string Tittle => "Домашняя страница";
 
     #endregion
-   
-
+    
     /// <summary>
     /// Стартовая страница приложения
     /// </summary>
@@ -29,9 +28,9 @@ internal sealed class HomeVmd : BaseVmd
     {
         _dbInitializer = dbInitializer;
 
-        RebuildDbCommand = new UserDialogAsyncCmd(OnRebuildDB,"Выполнение данной команды требует ручного перезапуска приложения. Хотите продолжить?");
+        RebuildDbOnWorkingModeCommand = new UserDialogAsyncCmd(OnRebuildDB,"Все текущие данные в базе очистится и произойдет начальная подготовка для полноценной работы с приложением. Выполнение данной команды требует ручного перезапуска приложения. Хотите продолжить?");
 
-        TestDataInitializeCommand = new UserDialogAsyncCmd(OnTestDataInitialize,"Выполнение данной команды требует ручного перезапуска приложения. Хотите продолжить?");
+        RebuildDbOnTestModeCommand = new UserDialogAsyncCmd(OnTestDataInitialize,"Все текущие данные в базе очистится и произойдет начальная подготовка для работы с приложением вместе с заполнением демонстрационными данными. Выполнение данной команды требует ручного перезапуска приложения. Хотите продолжить?");
 
         #region Инициализция команд
 
@@ -67,39 +66,41 @@ internal sealed class HomeVmd : BaseVmd
 
     #endregion
     
-    #region RebuildDBCommand : Команда пересборки базы данных
+    #region RebuildDbOnWorkingModeCommand : Команда пересборки базы данных
 
     /// <summary>
     ///     Команда пересборки бд
     /// </summary>
-    public ICommand RebuildDbCommand { get; }
+    public ICommand RebuildDbOnWorkingModeCommand { get; }
 
     private async Task OnRebuildDB()
     {
         await _dbInitializer.RebuildDataBaseAsync();
 
         Task.WaitAll();
-        
-        //Application.Current.Shutdown();
+            
+        Application.Current.Shutdown();
 
     }
 
     #endregion
 
-    #region TestDataInitializeCommand : Команда заполнения базы данных тестовыми данными
+    #region RebuildDbOnTestModeCommand : Команда заполнения базы данных тестовыми данными
 
     /// <summary>
     ///     Команда инициализации бд
     /// </summary>
-    public ICommand TestDataInitializeCommand { get; }
+    public ICommand RebuildDbOnTestModeCommand { get; }
 
     private async Task OnTestDataInitialize()
     {
+        await _dbInitializer.RebuildDataBaseAsync();
+        
         await _dbInitializer.InitializeTestDataAsync();
         
         Task.WaitAll();
         
-       // Application.Current.Shutdown();
+        Application.Current.Shutdown();
     }
     
  

@@ -55,24 +55,24 @@
                 <!--  Кнопки  -->
                 <StackPanel Grid.Row="1">
                     <Button
-                        Command="{Binding RebuildDbCommand}"
-                        Content="Пересобрать БД"
+                        Command="{Binding RebuildDbOnWorkingModeCommand}"
+                        Content="Рабочий режим"
                         Margin="5"
                         Padding="5"
                         Style="{StaticResource MaterialDesignFlatButton}"
-                        materialDesign:ButtonProgressAssist.IsIndeterminate="{Binding RebuildDbCommand.IsExecuting}"
+                        materialDesign:ButtonProgressAssist.IsIndeterminate="{Binding RebuildDbOnWorkingModeCommand.IsExecuting}"
                         materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
                         materialDesign:ButtonProgressAssist.Value="-1" />
 
                     <Button
-                        Command="{Binding TestDataInitializeCommand}"
+                        Command="{Binding RebuildDbOnTestModeCommand}"
                         Margin="5"
                         Padding="5"
                         Style="{StaticResource MaterialDesignFlatButton}"
-                        materialDesign:ButtonProgressAssist.IsIndeterminate="{Binding TestDataInitializeCommand.IsExecuting}"
+                        materialDesign:ButtonProgressAssist.IsIndeterminate="{Binding RebuildDbOnTestModeCommand.IsExecuting}"
                         materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
                         materialDesign:ButtonProgressAssist.Value="-1">
-                        <TextBlock>Добавить тестовые данные</TextBlock>
+                        <TextBlock>Демонстрационные режим</TextBlock>
                     </Button>
 
                 </StackPanel>

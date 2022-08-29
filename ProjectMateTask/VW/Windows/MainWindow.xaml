@@ -15,8 +15,10 @@
     xmlns:additionalPagesVmds="clr-namespace:ProjectMateTask.VMD.Pages.AdditionalPagesVmds"
     xmlns:appInfrastructurePages="clr-namespace:ProjectMateTask.VW.AppInfrastructurePages"
     xmlns:appInfrastructureVmds="clr-namespace:ProjectMateTask.VMD.AppInfrastructure"
+    xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:baseEntities="clr-namespace:ProjectMateTask.VMD.Pages.Entities.Base"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:pages="clr-namespace:ProjectMateTask.VW.Pages"
@@ -31,11 +33,13 @@
         </Grid.RowDefinitions>
 
         <materialDesign:DrawerHost x:Name="DrawerHost">
-
             <!--  Меню  -->
             <materialDesign:DrawerHost.LeftDrawerContent>
 
-                <Grid>
+                <Grid
+                    Background="Transparent"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch">
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="{Binding ElementName=TopDock, Path=ActualHeight, UpdateSourceTrigger=PropertyChanged}" />
@@ -80,8 +84,15 @@
 
                     </ContentControl>
 
-                </Grid>
+                    <i:Interaction.Triggers>
 
+                        <i:EventTrigger EventName="MouseLeave">
+                            <i:InvokeCommandAction Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}" CommandParameter="{x:Static Dock.Left}" />
+                        </i:EventTrigger>
+
+                    </i:Interaction.Triggers>
+
+                </Grid>
             </materialDesign:DrawerHost.LeftDrawerContent>
 
             <!--  Основное пространство  -->
