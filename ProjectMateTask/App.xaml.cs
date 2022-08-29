@@ -8,66 +8,62 @@ using ProjectMateTask.IOC;
 using ProjectMateTask.VMD.AppInfrastructure;
 using ProjectMateTask.VW.Windows;
 
-namespace ProjectMateTask
+namespace ProjectMateTask;
+
+/// <summary>
+///     Interaction logic for App.xaml
+/// </summary>
+public partial class App : Application
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
-    public partial class App : Application
+    private static IHost _host;
+
+    public static IHost Host
+        => _host ??= Program.CreateHostBuilder(Environment.GetCommandLineArgs()).Build();
+
+    public static IServiceProvider Services => Host.Services;
+
+    protected override async void OnStartup(StartupEventArgs e)
     {
-        private static IHost _host;
+        var host = Host;
 
-        public static IHost Host
-            => _host ??= Program.CreateHostBuilder(Environment.GetCommandLineArgs()).Build();
-        
-        public static IServiceProvider Services => Host.Services;
-        
-        protected override async void OnStartup(StartupEventArgs e)
+        //Инициализция бд
+        using (var scope = host.Services.CreateScope())
         {
-            var host = Host;
-
-            //Инициализция бд
-            using (var scope = host.Services.CreateScope())
-            {
-                scope.ServiceProvider.GetRequiredService<IDbInitializer>().InitializeAsync().Wait();
-            }
-            
-            MainWindow = host.Services.GetRequiredService<MainWindow>();
-
-            MainWindow.Show();
-            
-            base.OnStartup(e);
-
-            await host.StartAsync();
+            scope.ServiceProvider.GetRequiredService<IDbInitializer>().InitializeAsync().Wait();
         }
 
-        protected override async void OnExit(ExitEventArgs e)
+        MainWindow = host.Services.GetRequiredService<MainWindow>();
+
+        MainWindow.Show();
+
+        base.OnStartup(e);
+
+        await host.StartAsync();
+    }
+
+    protected override async void OnExit(ExitEventArgs e)
+    {
+        var host = Host;
+
+        base.OnExit(e);
+
+        await host.StopAsync();
+
+        host.Dispose();
+    }
+
+    internal static void ConfigureServices(HostBuilderContext host, IServiceCollection services)
+    {
+        services.AddSingleton(s => new MainWindow
         {
-            var host = Host;
+            DataContext = s.GetRequiredService<MainWindowVmd>()
+        });
 
-            base.OnExit(e);
-
-            await host.StopAsync();
-
-            host.Dispose();
-            
-        }
-        
-        internal static void ConfigureServices(HostBuilderContext host, IServiceCollection services)
-        {
-            services.AddSingleton(s => new MainWindow
-            {
-                DataContext = s.GetRequiredService<MainWindowVmd>()
-            });
-
-            services
-                .StoreRegistration()
-                .ServicesRegistration()
-                .VmdRegistration()
-                .RepositoriesRegistration()
-                .AddDatabase(host.Configuration.GetSection("Database"));
-        }
-
-        
+        services
+            .StoreRegistration()
+            .ServicesRegistration()
+            .VmdRegistration()
+            .RepositoriesRegistration()
+            .AddDatabase(host.Configuration.GetSection("Database"));
     }
 }

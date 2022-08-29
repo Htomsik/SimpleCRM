@@ -15,7 +15,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Mapster" Version="7.3.0" />
       <PackageReference Include="MaterialDesignThemes" Version="4.5.0" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.7">
         <PrivateAssets>all</PrivateAssets>
@@ -24,7 +23,6 @@
       <PackageReference Include="Microsoft.Extensions.Caching.SqlServer" Version="6.0.7" />
       <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
       <PackageReference Include="Serilog.AspNetCore" Version="6.0.1" />
-      <PackageReference Include="System.Windows.Interactivity.WPF" Version="2.0.20525" />
     </ItemGroup>
 
     <ItemGroup>

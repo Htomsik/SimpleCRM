@@ -5,23 +5,28 @@
     <projectFile>WpfApp1/WpfApp1.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Update Migration System">
+    <list default="true" id="b2c6cfbe-5476-43f3-b805-9fbaf9f733bf" name="Changes" comment="Изменение описания некотоых типам">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Data/DbInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Data/DbInitializer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Data/DbRegistrator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Data/DbRegistrator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomControls/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/CustomControls/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/Debug/net6.0/ProjectMateTask.DAL.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/Debug/net6.0/ProjectMateTask.DAL.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/App.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/ProjectMateTask.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/ProjectMateTask.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/bin/Debug/net6.0-windows/ProjectMateTask.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/App.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/App.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/GeneratedInternalTypeHelper.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/GeneratedInternalTypeHelper.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/VW/Windows/MainWindow.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskExtensions/bin/Debug/net6.0/ProjetMateTaskEntities.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskExtensions/bin/Debug/net6.0/ProjetMateTaskEntities.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskExtensions/bin/Debug/net6.0/ProjetMateTaskEntities.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskExtensions/bin/Debug/net6.0/ProjetMateTaskEntities.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/Stores/EntityCollectionStore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/Stores/EntityCollectionStore.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/bin/Debug/net6.0/ProjetMateTaskEntities.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/bin/Debug/net6.0/ProjetMateTaskEntities.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/bin/Debug/net6.0/ProjetMateTaskEntities.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/bin/Debug/net6.0/ProjetMateTaskEntities.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/Debug/net6.0/ProjetMateTaskEntities.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/Debug/net6.0/ProjetMateTaskEntities.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/Debug/net6.0/ProjetMateTaskEntities.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/Debug/net6.0/ProjetMateTaskEntities.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/ProjectMateTask.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/ProjectMateTask.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/ProjectMateTaskDalTests.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/Debug/net6.0/ProjectMateTaskDalTests.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalTests/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskExtensions/obj/Debug/net6.0/ProjectMateTaskExtensions.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskExtensions/obj/Debug/net6.0/ProjectMateTaskExtensions.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskExtensions/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskExtensions/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +51,8 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/2a573c24102c480d9ef05b440bf16fe716488/0e/26a6c37e/02000017pdb.il" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/d84fbd81022442c4ac7d736c97fabf76f87a80/49/7906d000/02000826pdb.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0576b3bfcbaa4181b422b9b8c666ee1821698/65/22011cf1/ILogger.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0576b3bfcbaa4181b422b9b8c666ee1821698/66/cfdbe3aa/ILogger`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1b0533e64a734ffcb8be02a66d5f67fa2800/3d/d606b2a0/PackIconExtension.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1b13606a59134d7783d48ec1081f0927b4290/3e/bd6ff93d/IParameterLiteralNodeMatchingPolicy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2a573c24102c480d9ef05b440bf16fe716488/d2/926ffbb4/ICommand.cs" root0="SKIP_HIGHLIGHTING" />
@@ -75,6 +82,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/40c2a868db45876997e86f64ca5eebf6658a4724272e161f72f9aa58a5b/Control.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4174966c3e7903fa6664fd9654332a08540e6893be050394afd8664936ccba9/RequiredAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/472f97898a25c1e67257dd1fa24fcfff22f6a611187cff170bab5229c75ab2a/Extensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4c75a39152c6ea672be27a386dbf424c0f2d222d51114dffb436ecd6b570ce/RxApp.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/519d702c2430bd59c968c834a02af06dd74ee174ce53edd4c484d4ac2794a1/ValidationAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5330988bfaacf93f15e30f9b3dd6018a768f89da3b38d874fda77299c62164/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/538811d0fba15c61b743814ea8b7193d48cfbb84a1a53c5db2512b1b329330/DbSet.cs" root0="SKIP_HIGHLIGHTING" />
@@ -95,6 +103,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b8d2795a624ec1ca285de7c049f728624e8b8a82388f8d67db20c33442b28f53/NullReferenceException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c32172f87fe7c203c4cb78b02e748a85b86f97cd3fbf051f55c9d3b709de/FrameworkElement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c634264f8b33be948ce3f4574d3186fe8a6a56f74cc232f19ad5c28fb3d73e7/Expander.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c8158a49f02fd07d15ad9c8d12dc6a1d9ea982c27d020ae27b699723f3d4b64/Dispatcher.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/de7cca8bbad440a84863dc9a66814897f9b51cd9916dcdce4857992d5d492c/HashSet.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/df71358f7b7337a1eee3a65abe6d678dd9a065e256b8cc3fd44a2949754/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e517a13111ecae7dc96436f397927beff98c4ee7315595185819b4110a5f97/FontSizeConverter.cs" root0="SKIP_HIGHLIGHTING" />
@@ -205,14 +214,7 @@
       <workItem from="1661436135759" duration="453000" />
       <workItem from="1661436637277" duration="23022000" />
       <workItem from="1661723616346" duration="577000" />
-      <workItem from="1661724577353" duration="1076000" />
-    </task>
-    <task id="LOCAL-00034" summary="Добавление тестового логирования">
-      <created>1660774676559</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1660774676559</updated>
+      <workItem from="1661724577353" duration="5403000" />
     </task>
     <task id="LOCAL-00035" summary="Добавление валидации">
       <created>1660869748042</created>
@@ -550,7 +552,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661724667915</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="Изменение описания некотоых типам">
+      <created>1661725725629</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1661725725630</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -570,7 +579,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Рефакторинг и добавление описание для классов отвечающий за инициализацию бд" />
     <MESSAGE value="Добавление описание некоторым типам" />
     <MESSAGE value="Добавление описания для статических сервисов, изменение путей для некоторых файлов" />
     <MESSAGE value="Рефакторинг навигационных сервисов: Добавление описания" />
@@ -595,9 +603,27 @@
     <MESSAGE value="Разбиение больших solution на подмножества" />
     <MESSAGE value="Рефакторинг описаний для расширений и базовых Entity типов" />
     <MESSAGE value="Update Migration System" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Migration System" />
+    <MESSAGE value="Изменение описания некотоых типам" />
+    <option name="LAST_COMMIT_MESSAGE" value="Изменение описания некотоых типам" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ProjectMateTask/Services/AppInfrastructure/GlobalExceptionHandler.cs</url>
+          <line>25</line>
+          <properties documentPath="C:\Users\USER\RiderProjects\ProjectMateTask\ProjectMateTask\Services\AppInfrastructure\GlobalExceptionHandler.cs" initialLine="25" containingFunctionPresentation="method 'OnError'">
+            <startOffsets>
+              <option value="557" />
+            </startOffsets>
+            <endOffsets>
+              <option value="581" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="DotNetProject">
         <watch expression="otherEntity.Type" />

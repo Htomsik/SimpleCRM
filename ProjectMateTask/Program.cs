@@ -17,6 +17,8 @@ public class Program
         app.InitializeComponent();
 
         app.Run();
+
+  
     }
     
     public static IHostBuilder CreateHostBuilder(string[] Args)
