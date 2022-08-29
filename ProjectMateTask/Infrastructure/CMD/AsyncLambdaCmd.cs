@@ -8,7 +8,7 @@ namespace ProjectMateTask.Infrastructure.CMD;
 /// <summary>
 /// Асинхронная команда с условием выполнения
 /// </summary>
-internal sealed class AsyncLambdaCmd : BaseCmd
+internal class AsyncLambdaCmd : BaseCmd
 {
     private readonly Lazy<Func<object, bool>>  _canExecute;
 

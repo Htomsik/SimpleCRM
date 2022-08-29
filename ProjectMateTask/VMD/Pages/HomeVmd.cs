@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using ProjectMateTask.Data;
-using ProjectMateTask.Infrastructure.CMD;
 using ProjectMateTask.Infrastructure.CMD.AppInfrastructure;
 using ProjectMateTask.VMD.Base;
 
@@ -29,9 +29,9 @@ internal sealed class HomeVmd : BaseVmd
     {
         _dbInitializer = dbInitializer;
 
-        RebuildDbCommand = new AsyncLambdaCmd(OnRebuildDB);
+        RebuildDbCommand = new UserDialogAsyncCmd(OnRebuildDB,"Выполнение данной команды требует ручного перезапуска приложения. Хотите продолжить?");
 
-        TestDataInitializeCommand = new AsyncLambdaCmd(OnTestDataInitialize);
+        TestDataInitializeCommand = new UserDialogAsyncCmd(OnTestDataInitialize,"Выполнение данной команды требует ручного перезапуска приложения. Хотите продолжить?");
 
         #region Инициализция команд
 
@@ -46,40 +46,66 @@ internal sealed class HomeVmd : BaseVmd
         #endregion
 
     }
-
-
+    
     #region Команды
 
+    #region Команды-ссылки
+
+    /// <summary>
+    ///     Команда открытия ссылки на создателя
+    /// </summary>
     public ICommand OpenHtomsikGithubCommnad { get; }
     
+    /// <summary>
+    ///     Команда открытия ссылки на проект
+    /// </summary>
     public ICommand OpenProjectGithubCommnad { get; }
     
+    /// <summary>
+    ///     Команда открытия ссылки на ресурсы проекта
+    /// </summary>
     public ICommand OpenProjectAssetsCommand { get; }
 
+    #endregion
+    
     #region RebuildDBCommand : Команда пересборки базы данных
 
+    /// <summary>
+    ///     Команда пересборки бд
+    /// </summary>
     public ICommand RebuildDbCommand { get; }
 
     private async Task OnRebuildDB()
     {
         await _dbInitializer.RebuildDataBaseAsync();
+
+        Task.WaitAll();
+        
+        Application.Current.Shutdown();
+
     }
 
     #endregion
 
     #region TestDataInitializeCommand : Команда заполнения базы данных тестовыми данными
 
+    /// <summary>
+    ///     Команда инициализации бд
+    /// </summary>
     public ICommand TestDataInitializeCommand { get; }
 
     private async Task OnTestDataInitialize()
     {
         await _dbInitializer.InitializeTestDataAsync();
+        
+        Task.WaitAll();
+        
+        Application.Current.Shutdown();
     }
     
  
     #endregion
 
     #endregion
-
-  
+    
 }

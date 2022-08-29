@@ -5,11 +5,11 @@
     <projectFile>WpfApp1/WpfApp1.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6002d470-be5e-4d59-a476-7ae6c7664e99" name="Changes" comment="Добавление на главной странице ссылок на гитхаб">
-      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AppInfrastructure/UserDialogCmd.cs" afterDir="false" />
+    <list default="true" id="6002d470-be5e-4d59-a476-7ae6c7664e99" name="Changes" comment="Добавление команды, выполняемой после подтвеждения через IUserDialogService">
+      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AppInfrastructure/UserDialogAsyncCmd.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AppInfrastructure/UserDialogCmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AppInfrastructure/UserDialogCmd.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AsyncLambdaCmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AsyncLambdaCmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/LambdaCmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/LambdaCmd.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/HomeVmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/VMD/Pages/HomeVmd.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,6 +101,9 @@
     <setting file="file://$PROJECT_DIR$/CustomControls/Themes/Generic.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/App.xaml.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectMateTask/IOC/ServicesRegistrator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Infrastructure/CMD/AsyncLambdaCmd.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Infrastructure/CMD/LambdaCmd.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/VMD/Pages/HomeVmd.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/VMD/Pages/HomeVmd.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/VW/Pages/HomeVW.xaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectMateTask/VW/SettingsPages/AboutProgramVW.xaml" root0="FORCE_HIGHLIGHTING" />
@@ -208,14 +211,7 @@
       <workItem from="1661436637277" duration="23022000" />
       <workItem from="1661723616346" duration="577000" />
       <workItem from="1661724577353" duration="14148000" />
-      <workItem from="1661789436032" duration="3130000" />
-    </task>
-    <task id="LOCAL-00040" summary="Добавление основы для настроек и тестовой страницы &quot;О программе&quot; в настройки">
-      <created>1661218590220</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1661218590220</updated>
+      <workItem from="1661789436032" duration="4494000" />
     </task>
     <task id="LOCAL-00041" summary="Добавление основы для настроек и тестовой страницы &quot;О программе&quot; в настройки">
       <created>1661218638750</created>
@@ -553,7 +549,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661790685900</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="Добавление команды, выполняемой после подтвеждения через IUserDialogService">
+      <created>1661792597286</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1661792597286</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,7 +576,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Замена типа навигации для MainMenuVmd.cs" />
     <MESSAGE value="Изменение баовой реализации INPC" />
     <MESSAGE value="Рефакторинг путей" />
     <MESSAGE value="Добавлений различных абстракций для vmd типов" />
@@ -598,7 +600,8 @@
     <MESSAGE value="Добавление отловки необработанных исключений" />
     <MESSAGE value="Изменение ресурсов проекта" />
     <MESSAGE value="Добавление на главной странице ссылок на гитхаб" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавление на главной странице ссылок на гитхаб" />
+    <MESSAGE value="Добавление команды, выполняемой после подтвеждения через IUserDialogService" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавление команды, выполняемой после подтвеждения через IUserDialogService" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
