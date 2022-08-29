@@ -24,6 +24,8 @@ internal sealed class MainClientVmd : BaseMainEntityVmd<Client>
     {
     }
 
+    public override string Tittle  => "Клиенты";
+
     protected override void OnDeleteSubEntityFromCollection(INamedEntity removedEntity) => EditableEntity?.Products.Remove((Product)removedEntity);
   
 

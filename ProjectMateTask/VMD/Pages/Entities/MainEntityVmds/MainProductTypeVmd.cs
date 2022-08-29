@@ -24,6 +24,8 @@ internal sealed class MainProductTypeVmd : BaseMainEntityVmd<ProductType>
     {
     }
 
+    public override string Tittle  => "Типы продуктов";
+    
     protected override void OnDeleteSubEntityFromCollection(INamedEntity removedEntity) =>  EditableEntity?.Products.Remove((Product)removedEntity);
 
 

@@ -23,6 +23,8 @@ internal sealed class MainClientStatusVmd : BaseMainEntityVmd<ClientStatus>
             subEntityVmdSubEntityVmdSubEntityVmdNavigationStore)
     {
     }
+    
+    public override string Tittle  => "Статусы клиентов";
 
     protected override void OnDeleteSubEntityFromCollection(INamedEntity removedEntity) =>  EditableEntity?.Clients.Remove((Client)removedEntity);
     

@@ -41,8 +41,7 @@ internal sealed class HomeVmd : BaseVmd
 
         OpenProjectAssetsCommand =
             new OpenBrowserLinkCmd("https://github.com/Htomsik/ProjectMateTask/tree/master/Assets");
-
-
+        
         #endregion
 
     }
