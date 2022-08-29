@@ -6,14 +6,14 @@ namespace ProjectMateTask.Infrastructure.CMD;
 /// <summary>
 /// Команда с условием выполнения
 /// </summary>
-public sealed class LambdaCmd : BaseCmd
+internal class LambdaCmd : BaseCmd
 {
     private readonly Lazy<Func<object, bool>>  _canExecute;
     
     private readonly Lazy<Action<object>>  _execute;
     
     /// <summary>
-    /// Контруктор для условий с входным и выходным параметром
+    ///     Контруктор для условий с входным и выходным параметром
     /// </summary>
     /// <param name="execute">Выполняемое действие</param>
     /// <param name="canExecute">Условие выполнения</param>
@@ -26,7 +26,7 @@ public sealed class LambdaCmd : BaseCmd
     }
 
     /// <summary>
-    /// Контруктор для условий только с выходным параметром
+    ///     Контруктор для условий только с выходным параметром
     /// </summary>
     /// <param name="execute"></param>
     /// <param name="canExecute"></param>
