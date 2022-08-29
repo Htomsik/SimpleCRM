@@ -1,29 +1,25 @@
-﻿using System;
+﻿using ProjectMateTaskDalTests.EnitiesTests.Base;
 using ProjectMateTaskDalTests.Resources;
 using ProjetMateTaskEntities.Entities.Actors;
+using ProjetMateTaskEntities.Entities.Types;
 
 namespace ProjectMateTaskDalTests.EnitiesTests;
 
 [TestClass]
-public class ProductTests
+public class ProductTests : NamedEntityTests<Product>
 {
-    [TestMethod]
-    public void IsTwoRandomProductsCopyEquals()
-    {
-     
-        // Arrange
-        var rnd = new Random();
+  public override void SpecifiedCheckInHaveErrors(Product namedEntity)
+  {
+    namedEntity.Name = string.Concat(Enumerable.Repeat("S" , 151));
         
-        Product randomEntity = GlobalResources.Initializer.TestProducts[rnd.Next(0, EntitiesTestDataInitializer.TestProductsCount)];
+    Assert.IsTrue(namedEntity.HasErrors);
 
-        Product randomEntityCopy = (Product)randomEntity.Clone();
+    namedEntity.Name = "SomeNamedEntity";
         
-        //Act
-        var originalResult = randomEntity.Equals(randomEntityCopy);
-
-        var copyResult = randomEntityCopy.Equals(randomEntity);
-        
-        //Assert
-        Assert.AreEqual(originalResult,copyResult);
-    }
+    Assert.IsTrue(namedEntity.HasErrors);
+    
+    namedEntity.Type = GlobalResources.GetRandomEntity<ProductType>();
+    
+    Assert.IsFalse(namedEntity.HasErrors);
+  }
 }

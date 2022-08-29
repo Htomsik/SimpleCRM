@@ -43,7 +43,7 @@ public static class EntityCollectionServices
     /// <param name="scanCollection">Ссылка на коллекцию</param>
     /// <param name="id">id по которому поизводится поиск в коллекции</param>
     /// <returns>TEntity если найдено, Default для TEntity если не найдено</returns>
-    public static TEntity? FindElemByIdInCollection<TEntity>(ref IEnumerable<TEntity> scanCollection, int id)
+    public static TEntity? FindElemByIdInCollection<TEntity>(IEnumerable<TEntity> scanCollection, int id)
         where TEntity : IEntity
     {
         return scanCollection.FirstOrDefault(elem => elem.Id == id);

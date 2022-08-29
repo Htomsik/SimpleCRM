@@ -1,28 +1,30 @@
-﻿using System;
+﻿using ProjectMateTaskDalTests.EnitiesTests.Base;
 using ProjectMateTaskDalTests.Resources;
 using ProjetMateTaskEntities.Entities.Actors;
+using ProjetMateTaskEntities.Entities.Base;
+using ProjetMateTaskEntities.Entities.Types;
 
 namespace ProjectMateTaskDalTests.EnitiesTests;
 
 [TestClass]
-public class ClientTests
+public class ClientTests : NamedEntityTests<Client>
 {
-    [TestMethod]
-    public void IsTwoRandomClientsCopyEquals()
+    public override void SpecifiedCheckInHaveErrors(Client namedEntity)
     {
-        // Arrange
-        var rnd = new Random();
+        namedEntity.Name = string.Concat(Enumerable.Repeat("S" , 151));
         
-        Client randomEntity = GlobalResources.Initializer.TestClients[rnd.Next(0, EntitiesTestDataInitializer.TestClientsCount)];
+        Assert.IsTrue(namedEntity.HasErrors);
 
-        Client randomEntityCopy = (Client)randomEntity.Clone();
+        namedEntity.Name = "SomeNamedEntity";
         
-        //Act
-        var originalResult = randomEntity.Equals(randomEntityCopy);
+        Assert.IsTrue(namedEntity.HasErrors);
+        
+        namedEntity.Manager = GlobalResources.GetRandomEntity<Manager>();
+        
+        Assert.IsTrue(namedEntity.HasErrors);
 
-        var copyResult = randomEntityCopy.Equals(randomEntity);
+        namedEntity.Status = GlobalResources.GetRandomEntity<ClientStatus>();
         
-        //Assert
-        Assert.AreEqual(originalResult,copyResult);
+        Assert.IsFalse(namedEntity.HasErrors);
     }
 }

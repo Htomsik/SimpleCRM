@@ -39,8 +39,6 @@ public class EntityCollectionStoresTests
     public void IsCollectionCantContainIdCopiesWhenCreateByOtherCollection()
     {
        //Arrange
-       EntityCollectionStore<NamedEntity> namedEntities;
-
        var someEntityArray = new NamedEntity[]
        {
            new (0,"SomeEntity"),
@@ -55,13 +53,13 @@ public class EntityCollectionStoresTests
        
        //Act+Assert
        Assert.ThrowsException<ArgumentException>(() =>
-           namedEntities = new EntityCollectionStore<NamedEntity>(someEntityArray));
+           new EntityCollectionStore<NamedEntity>(someEntityArray));
        
        Assert.ThrowsException<ArgumentException>(() =>
-           namedEntities = new EntityCollectionStore<NamedEntity>(someEntityLists));
+           new EntityCollectionStore<NamedEntity>(someEntityLists));
        
        Assert.ThrowsException<ArgumentException>(() =>
-           namedEntities = new EntityCollectionStore<NamedEntity>(someEntityCollection));
+           new EntityCollectionStore<NamedEntity>(someEntityCollection));
        
     }
 

@@ -144,7 +144,7 @@ public class NamedEntity : Entity, INamedEntity
     ///     Метод проверки валидации для наследников
     /// </summary>
     /// <returns></returns>
-    protected virtual bool SubHasErrors() => false;
+    protected virtual bool SubHaveErrors() => false;
     
     
     protected override bool Equals(IEntity other)
@@ -209,7 +209,7 @@ public class NamedEntity : Entity, INamedEntity
         get
         { 
             CheckNameErrors(Name,nameof(Name));
-            return errors.Value.Count > 0 || SubHasErrors();
+            return errors.Value.Count > 0 || SubHaveErrors();
         }
     }
     
