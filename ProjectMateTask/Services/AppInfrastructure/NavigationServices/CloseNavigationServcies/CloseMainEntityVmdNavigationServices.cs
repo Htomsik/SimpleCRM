@@ -7,7 +7,7 @@ namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices.CloseNav
 /// <summary>
 ///     Сервис закрытия MainEntityVmd
 /// </summary>
-internal sealed class CloseMainEntityVmdNavigationServices : BaseCloseNavigationServices<BaseEntityVmd>
+public sealed class CloseMainEntityVmdNavigationServices : BaseCloseNavigationServices<BaseEntityVmd>
 {
     public CloseMainEntityVmdNavigationServices(IVmdNavigationStore<BaseEntityVmd> vmdNavigationStore) : base(vmdNavigationStore)
     {

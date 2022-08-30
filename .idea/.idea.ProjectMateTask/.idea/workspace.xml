@@ -7,7 +7,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6002d470-be5e-4d59-a476-7ae6c7664e99" name="Changes" comment="Добавление тестов для IStore хранилищ">
+      <change afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/ServicesTests/NavigationServicesTests/Base/BaseCloseNavigationServicesAbstractTest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/ServicesTests/NavigationServicesTests/Base/BaseStoreNavigationServicesAbstractTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/ServicesTests/NavigationServicesTests/CloseNavigationServicesTests/BaseCloseNavigationServicesRealizeTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/ServicesTests/NavigationServicesTests/CloseNavigationServicesTests/CloseAdditionalPageNavigationServicesTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/ServicesTests/NavigationServicesTests/CloseNavigationServicesTests/CloseMainEntityVmdNavigationServicesTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/ServicesTests/NavigationServicesTests/NavigationServicesTests/AdditionalPageStoreNavigationServiceTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/ServicesTests/NavigationServicesTests/NavigationServicesTests/BaseStoreNavigationServicesRealizeTests.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Services/AppInfrastructure/NavigationServices/Base/CloseNavigationServices/BaseCloseNavigationServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Services/AppInfrastructure/NavigationServices/Base/CloseNavigationServices/BaseCloseNavigationServices.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Services/AppInfrastructure/NavigationServices/Base/NavigationServices/BaseStoreNavigationServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Services/AppInfrastructure/NavigationServices/Base/NavigationServices/BaseStoreNavigationServices.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Services/AppInfrastructure/NavigationServices/Base/TypeNavigationServices/BaseTypeNavigationServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Services/AppInfrastructure/NavigationServices/Base/TypeNavigationServices/BaseTypeNavigationServices.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Services/AppInfrastructure/NavigationServices/CloseNavigationServcies/CloseAdditionalPageNavigationServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Services/AppInfrastructure/NavigationServices/CloseNavigationServcies/CloseAdditionalPageNavigationServices.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Services/AppInfrastructure/NavigationServices/CloseNavigationServcies/CloseMainEntityVmdNavigationServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Services/AppInfrastructure/NavigationServices/CloseNavigationServcies/CloseMainEntityVmdNavigationServices.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Services/AppInfrastructure/NavigationServices/NavigationServices/AdditionalPageStoreNavigationService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Services/AppInfrastructure/NavigationServices/NavigationServices/AdditionalPageStoreNavigationService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Stores/AppInfrastructure/NavigationStores/Base/IVmdNavigationStore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Stores/AppInfrastructure/NavigationStores/Base/IVmdNavigationStore.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/GeneratedInternalTypeHelper.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/GeneratedInternalTypeHelper.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskWpfTests/ProjectMateTaskWpfTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/ProjectMateTaskWpfTests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskWpfTests/bin/Debug/net6.0-windows/ProjectMateTask.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/bin/Debug/net6.0-windows/ProjectMateTask.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskWpfTests/bin/Debug/net6.0-windows/ProjectMateTask.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/bin/Debug/net6.0-windows/ProjectMateTask.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskWpfTests/bin/Debug/net6.0-windows/ProjectMateTaskWpfTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/bin/Debug/net6.0-windows/ProjectMateTaskWpfTests.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskWpfTests/bin/Debug/net6.0-windows/ProjectMateTaskWpfTests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/bin/Debug/net6.0-windows/ProjectMateTaskWpfTests.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskWpfTests/obj/Debug/net6.0-windows/ProjectMateTaskWpfTests.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/obj/Debug/net6.0-windows/ProjectMateTaskWpfTests.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskWpfTests/obj/Debug/net6.0-windows/ProjectMateTaskWpfTests.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/obj/Debug/net6.0-windows/ProjectMateTaskWpfTests.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskWpfTests/obj/Debug/net6.0-windows/ProjectMateTaskWpfTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/obj/Debug/net6.0-windows/ProjectMateTaskWpfTests.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskWpfTests/obj/Debug/net6.0-windows/ProjectMateTaskWpfTests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/obj/Debug/net6.0-windows/ProjectMateTaskWpfTests.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskWpfTests/obj/Debug/net6.0-windows/ref/ProjectMateTaskWpfTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/obj/Debug/net6.0-windows/ref/ProjectMateTaskWpfTests.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskWpfTests/obj/Debug/net6.0-windows/refint/ProjectMateTaskWpfTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/obj/Debug/net6.0-windows/refint/ProjectMateTaskWpfTests.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +161,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="ed8eaf60-7456-4098-b626-84d00127ae70">
+  <component name="RunManager" selected="d31d6c9b-400f-4110-bbf8-4f136f2cc626">
     <configuration name="ProjectMateTask" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -224,14 +250,7 @@
       <workItem from="1661723616346" duration="577000" />
       <workItem from="1661724577353" duration="14148000" />
       <workItem from="1661789436032" duration="6389000" />
-      <workItem from="1661795856824" duration="24979000" />
-    </task>
-    <task id="LOCAL-00054" summary="Замена типа навигации для MainMenuVmd.cs">
-      <created>1661458581001</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1661458581002</updated>
+      <workItem from="1661795856824" duration="28858000" />
     </task>
     <task id="LOCAL-00055" summary="Изменение баовой реализации INPC">
       <created>1661460038281</created>
@@ -569,7 +588,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661856671022</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="Добавление тестов для IStore хранилищ">
+      <created>1661858099193</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1661858099193</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

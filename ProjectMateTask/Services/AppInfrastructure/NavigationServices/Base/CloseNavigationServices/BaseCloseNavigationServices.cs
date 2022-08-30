@@ -8,7 +8,7 @@ namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.Clo
 ///     Базовая релизация сервиса закрытия
 /// </summary>
 /// <typeparam name="TVmd"></typeparam>
-internal abstract class BaseCloseNavigationServices<TVmd> : ICloseNavigationServices where TVmd : BaseVmd
+public class BaseCloseNavigationServices<TVmd> : ICloseNavigationServices where TVmd : BaseVmd
 {
     private readonly Lazy<IVmdNavigationStore<TVmd>>  _navigationStore;
 
