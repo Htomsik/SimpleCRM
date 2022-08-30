@@ -72,7 +72,7 @@
                         materialDesign:ButtonProgressAssist.IsIndeterminate="{Binding RebuildDbOnTestModeCommand.IsExecuting}"
                         materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
                         materialDesign:ButtonProgressAssist.Value="-1">
-                        <TextBlock>Демонстрационные режим</TextBlock>
+                        <TextBlock>Демонстрационный режим</TextBlock>
                     </Button>
 
                 </StackPanel>

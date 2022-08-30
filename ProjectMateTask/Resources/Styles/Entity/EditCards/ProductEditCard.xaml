@@ -10,7 +10,13 @@
     <!--  Карточка редактирования продуктов  -->
     <DataTemplate DataType="{x:Type actors:Product}" x:Key="EditProductCard">
 
-        <StackPanel>
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
 
             <!--  Название продукта  -->
             <ContentControl
@@ -22,16 +28,18 @@
             <ContentControl
                 Content="{Binding Type, ValidatesOnNotifyDataErrors=False}"
                 ContentTemplate="{DynamicResource KeyEntityEditTemplate}"
+                Grid.Row="1"
                 ToolTip="Тип продукта" />
 
             <!--  Клиенты, купившие продукты  -->
             <ContentControl
                 Content="{Binding Clients, ValidatesOnNotifyDataErrors=False}"
                 ContentTemplate="{DynamicResource EditCollectionCard}"
+                Grid.Row="2"
                 ToolTip="Клиенты:" />
 
 
-        </StackPanel>
+        </Grid>
 
     </DataTemplate>
 </ResourceDictionary>

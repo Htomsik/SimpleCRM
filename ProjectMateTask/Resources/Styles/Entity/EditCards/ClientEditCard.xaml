@@ -10,33 +10,44 @@
     <!--  Карточка редактирования клиентов  -->
     <DataTemplate DataType="{x:Type actors:Client}" x:Key="EditClientCard">
 
-        <StackPanel>
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
 
             <!--  Имя  -->
             <ContentControl
                 Content="{Binding Path=., Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=False}"
                 ContentTemplate="{DynamicResource NonKeyFieldEditTemplate}"
+                Grid.Row="0"
                 ToolTip="Имя" />
 
             <!--  Статус  -->
             <ContentControl
                 Content="{Binding Status, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=False}"
                 ContentTemplate="{DynamicResource KeyEntityEditTemplate}"
+                Grid.Row="1"
                 ToolTip="Статус" />
 
             <!--  Менеджер  -->
             <ContentControl
                 Content="{Binding Manager, ValidatesOnNotifyDataErrors=False}"
                 ContentTemplate="{DynamicResource KeyEntityEditTemplate}"
+                Grid.Row="2"
                 ToolTip="Менеджер" />
 
             <!--  Купленные продукты  -->
             <ContentControl
                 Content="{Binding Products, ValidatesOnNotifyDataErrors=False}"
                 ContentTemplate="{DynamicResource EditCollectionCard}"
+                Grid.Row="3"
                 ToolTip="Товары:" />
 
-        </StackPanel>
+        </Grid>
 
     </DataTemplate>
 </ResourceDictionary>

@@ -206,6 +206,7 @@
 
         </Grid>
 
+        <!--  Выбор SubEntity  -->
         <ContentControl
             Content="{Binding CurrentSelectedSubEntityVmd, ValidatesOnNotifyDataErrors=False}"
             Grid.Column="2"
@@ -213,7 +214,6 @@
             Margin="5,0,0,0">
 
             <ContentControl.Resources>
-
                 <!--  Все SelectedEntity страницы  -->
                 <DataTemplate DataType="{x:Type baseEntity:BaseEntityVmd}">
                     <local:SubEntityVW />
@@ -222,8 +222,6 @@
             </ContentControl.Resources>
 
         </ContentControl>
-
-
 
 
     </Grid>
