@@ -26,10 +26,10 @@ public abstract class NamedEntityTests<TEntity> where TEntity : INamedEntity, ne
     }
     
     /// <summary>
-    ///     Проверяет правильность срабатывание HasErrors свойства по мере заполнения атрибутов
+    ///     Проверка правильности срабатывания HasErrors свойства по мере заполнения атрибутов (для всех NamedEntity одинаковая часть)
     /// </summary>
     [TestMethod]
-    public virtual void INamedEntityHaveErrorsIsRight() 
+    public void INamedEntityHaveErrorsIsRight() 
     {
         //Arrange
         var namedEntity = new TEntity();
@@ -41,6 +41,10 @@ public abstract class NamedEntityTests<TEntity> where TEntity : INamedEntity, ne
         
     }
     
+    /// <summary>
+    ///     Проверка правильность срабатывания HasErrors свойства по мере заполнения атрибутов (Индивидуальня часть для разных NamedEntity)
+    /// </summary>
+    /// <param name="namedEntity">Проверяемый NamedEntity</param>
     public virtual void SpecifiedCheckInHaveErrors(TEntity namedEntity)
     {
         namedEntity.Name = string.Concat(Enumerable.Repeat("S" , 151));

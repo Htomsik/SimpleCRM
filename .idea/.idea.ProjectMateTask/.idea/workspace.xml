@@ -6,31 +6,9 @@
     <projectFile>ProjectMateTaskWpfTests/ProjectMateTaskWpfTests.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6002d470-be5e-4d59-a476-7ae6c7664e99" name="Changes" comment="Рефакторинг сервиса взаиомдействия с коллекциями.">
-      <change afterPath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/EnitiesTests/Base/NamedEntityTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/Debug/net6.0/ProjectMateTask.DAL.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/Debug/net6.0/ProjectMateTask.DAL.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/EnitiesTests/ClientStatusTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/EnitiesTests/ClientStatusTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/EnitiesTests/ClientTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/EnitiesTests/ClientTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/EnitiesTests/ManagerTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/EnitiesTests/ManagerTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/EnitiesTests/ProductTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/EnitiesTests/ProductTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/EnitiesTests/ProductTypeTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/EnitiesTests/ProductTypeTests.cs" afterDir="false" />
+    <list default="true" id="6002d470-be5e-4d59-a476-7ae6c7664e99" name="Changes" comment="Рефакторинг тестов. Добавление тестов на HasErrors для NamedEntity типов">
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/EnitiesTests/Base/NamedEntityTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/EnitiesTests/Base/NamedEntityTests.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/Resources/GlobalResources.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/Resources/GlobalResources.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/ServiccesTests/EntityCollectionServicesTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/ServicesTests/EntityCollectionServicesTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/StoresTests/EntityCollectionStoresTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskDalAndEntitesTests/StoresTests/EntityCollectionStoresTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/Entities/Actors/Client.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/Entities/Actors/Client.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/Entities/Actors/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/Entities/Actors/Product.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/Entities/Base/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/Entities/Base/Entity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/Entities/Base/NamedEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/Entities/Base/NamedEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/Services/EntityCollectionServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/Services/EntityCollectionServices.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/bin/Debug/net6.0/ProjetMateTaskEntities.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/bin/Debug/net6.0/ProjetMateTaskEntities.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/bin/Debug/net6.0/ProjetMateTaskEntities.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/bin/Debug/net6.0/ProjetMateTaskEntities.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/Debug/net6.0/ProjetMateTaskEntities.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/Debug/net6.0/ProjetMateTaskEntities.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/Debug/net6.0/ProjetMateTaskEntities.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/Debug/net6.0/ProjetMateTaskEntities.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/Debug/net6.0/ProjetMateTaskEntities.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/Debug/net6.0/ProjetMateTaskEntities.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/Debug/net6.0/ref/ProjetMateTaskEntities.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/Debug/net6.0/ref/ProjetMateTaskEntities.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/Debug/net6.0/refint/ProjetMateTaskEntities.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetMateTaskEntities/obj/Debug/net6.0/refint/ProjetMateTaskEntities.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,14 +225,7 @@
       <workItem from="1661723616346" duration="577000" />
       <workItem from="1661724577353" duration="14148000" />
       <workItem from="1661789436032" duration="6389000" />
-      <workItem from="1661795856824" duration="17568000" />
-    </task>
-    <task id="LOCAL-00049" summary="Добавление описания для статических сервисов, изменение путей для некоторых файлов">
-      <created>1661452503390</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1661452503390</updated>
+      <workItem from="1661795856824" duration="19412000" />
     </task>
     <task id="LOCAL-00050" summary="Рефакторинг навигационных сервисов: Добавление описания">
       <created>1661454069541</created>
@@ -592,7 +563,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661809445337</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="Рефакторинг тестов. Добавление тестов на HasErrors для NamedEntity типов">
+      <created>1661815157902</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1661815157902</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -637,7 +615,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Изменение селектора для выбора каточки редактирования" />
     <MESSAGE value="Рефакторинг Entity карт рредактирования" />
     <MESSAGE value="Рефакторинг Entity карт редактирования" />
     <MESSAGE value="Рефакторинг Vmds" />
@@ -662,7 +639,8 @@
     <MESSAGE value="Удаление неиспользуемого" />
     <MESSAGE value="Добавление тестов для EntityCollectionStore.cs. Добавление запрета на создание EntityCollectionStore.cs с дубликатами по Id" />
     <MESSAGE value="Рефакторинг сервиса взаиомдействия с коллекциями." />
-    <option name="LAST_COMMIT_MESSAGE" value="Рефакторинг сервиса взаиомдействия с коллекциями." />
+    <MESSAGE value="Рефакторинг тестов. Добавление тестов на HasErrors для NamedEntity типов" />
+    <option name="LAST_COMMIT_MESSAGE" value="Рефакторинг тестов. Добавление тестов на HasErrors для NamedEntity типов" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
