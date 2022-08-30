@@ -6,6 +6,6 @@ namespace ProjectMateTask.Stores.AppInfrastructure.NavigationStores;
 /// <summary>
 ///     Навигационное хранилище для дополнительного окна
 /// </summary>
-internal sealed class AdditionalPageVmdNavigationStore : BaseVmdNavigationStore<BaseAdditionalVmd>
+public sealed class AdditionalPageVmdNavigationStore : BaseVmdNavigationStore<BaseAdditionalVmd>
 {
 }

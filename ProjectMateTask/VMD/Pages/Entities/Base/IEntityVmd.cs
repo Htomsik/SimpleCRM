@@ -5,7 +5,7 @@ namespace ProjectMateTask.VMD.Pages.Entities.Base;
 /// <summary>
 ///     Модель представления для Entity типов
 /// </summary>
-internal interface IEntityVmd : INotifyPropertyChanged
+public interface IEntityVmd : INotifyPropertyChanged
 {
     /// <summary>
     ///     Список Entity

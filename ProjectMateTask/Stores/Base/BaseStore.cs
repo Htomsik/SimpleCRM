@@ -25,8 +25,6 @@ public class BaseStore<T> : IStore<T> where T : class
     /// <summary>
     ///     Метод, обновляющий увидомитель
     /// </summary>
-    protected virtual void OnCurrentValueChanged()
-    {
-        CurrentValueChanged?.Invoke();
-    }
+    protected virtual void OnCurrentValueChanged() =>CurrentValueChanged?.Invoke();
+  
 }

@@ -12,7 +12,7 @@ namespace ProjectMateTask.VMD.Pages.Entities.Base;
 ///     Базовая реализация для EntityVmd типов поддерживающих работу с репозиториями
 /// </summary>
 /// <typeparam name="TEntity">Любой NamedEntity тип</typeparam>
-internal abstract class BaseEntityRepositoryVmd<TEntity> : BaseEntityVmd where TEntity : INamedEntity
+public class BaseEntityRepositoryVmd<TEntity> : BaseEntityVmd where TEntity : INamedEntity
 {
     /// <summary>
     ///     Базовая реализация для EntityVmd типов поддерживающих работу с репозиториями

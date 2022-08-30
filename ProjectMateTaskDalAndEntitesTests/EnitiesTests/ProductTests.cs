@@ -8,18 +8,18 @@ namespace ProjectMateTaskDalTests.EnitiesTests;
 [TestClass]
 public class ProductTests : NamedEntityTests<Product>
 {
-  public override void SpecifiedCheckInHaveErrors(Product namedEntity)
-  {
-    namedEntity.Name = string.Concat(Enumerable.Repeat("S" , 151));
-        
-    Assert.IsTrue(namedEntity.HasErrors);
+    public override void SpecifiedCheckInHaveErrors(Product namedEntity)
+    {
+        namedEntity.Name = string.Concat(Enumerable.Repeat("S", 151));
 
-    namedEntity.Name = "SomeNamedEntity";
-        
-    Assert.IsTrue(namedEntity.HasErrors);
-    
-    namedEntity.Type = GlobalResources.GetRandomEntity<ProductType>();
-    
-    Assert.IsFalse(namedEntity.HasErrors);
-  }
+        Assert.IsTrue(namedEntity.HasErrors);
+
+        namedEntity.Name = "SomeNamedEntity";
+
+        Assert.IsTrue(namedEntity.HasErrors);
+
+        namedEntity.Type = GlobalResources.GetRandomEntity<ProductType>();
+
+        Assert.IsFalse(namedEntity.HasErrors);
+    }
 }

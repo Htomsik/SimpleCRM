@@ -8,7 +8,7 @@ namespace ProjectMateTask.VMD.Pages.AdditionalPagesVmds.Base;
 /// <summary>
 ///     Базовая реализзация Vmd для доп окон
 /// </summary>
-internal abstract class BaseAdditionalVmd : BaseVmd, IAdditionalVmd
+public class BaseAdditionalVmd : BaseVmd, IAdditionalVmd
 {
     /// <summary>
     ///     Сервис закрытия доп окна
@@ -21,6 +21,14 @@ internal abstract class BaseAdditionalVmd : BaseVmd, IAdditionalVmd
         CloseAdditionalCommand = new CloseNavigationCmd(closeAdditionalNavigationService);
 
         #endregion
+    }
+
+    /// <summary>
+    ///     Конструктор для тестов
+    /// </summary>
+    public BaseAdditionalVmd()
+    {
+        
     }
 
     #region Команды

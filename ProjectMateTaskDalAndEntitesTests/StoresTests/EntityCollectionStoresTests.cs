@@ -10,7 +10,7 @@ namespace ProjectMateTaskDalTests.StoresTests;
 public class EntityCollectionStoresTests
 {
     /// <summary>
-    ///    Не может ли EntityCollectionStore содержать дубликаты по Id 
+    ///     Не может ли EntityCollectionStore содержать дубликаты по Id
     /// </summary>
     [TestMethod]
     public void IsCantAddIdCopiesInCollection()
@@ -29,7 +29,6 @@ public class EntityCollectionStoresTests
 
         //Act+Assert
         Assert.AreEqual(false, namedEntityCollection.Contains(entityWithSomeId));
-
     }
 
     /// <summary>
@@ -38,29 +37,28 @@ public class EntityCollectionStoresTests
     [TestMethod]
     public void IsCollectionCantContainIdCopiesWhenCreateByOtherCollection()
     {
-       //Arrange
-       var someEntityArray = new NamedEntity[]
-       {
-           new (0,"SomeEntity"),
-           new (0,"SomeEntity1"),
-           new (1,"SomeEntity2"),
-           new (2,"SomeEntity3"),
-       };
-       
-       var someEntityLists = new List<NamedEntity>(someEntityArray);
-       
-       var someEntityCollection = new ObservableCollection<NamedEntity>(someEntityArray);
-       
-       //Act+Assert
-       Assert.ThrowsException<ArgumentException>(() =>
-           new EntityCollectionStore<NamedEntity>(someEntityArray));
-       
-       Assert.ThrowsException<ArgumentException>(() =>
-           new EntityCollectionStore<NamedEntity>(someEntityLists));
-       
-       Assert.ThrowsException<ArgumentException>(() =>
-           new EntityCollectionStore<NamedEntity>(someEntityCollection));
-       
+        //Arrange
+        var someEntityArray = new NamedEntity[]
+        {
+            new(0, "SomeEntity"),
+            new(0, "SomeEntity1"),
+            new(1, "SomeEntity2"),
+            new(2, "SomeEntity3")
+        };
+
+        var someEntityLists = new List<NamedEntity>(someEntityArray);
+
+        var someEntityCollection = new ObservableCollection<NamedEntity>(someEntityArray);
+
+        //Act+Assert
+        Assert.ThrowsException<ArgumentException>(() =>
+            new EntityCollectionStore<NamedEntity>(someEntityArray));
+
+        Assert.ThrowsException<ArgumentException>(() =>
+            new EntityCollectionStore<NamedEntity>(someEntityLists));
+
+        Assert.ThrowsException<ArgumentException>(() =>
+            new EntityCollectionStore<NamedEntity>(someEntityCollection));
     }
 
 
@@ -73,7 +71,7 @@ public class EntityCollectionStoresTests
         //Arrange
         var someEntityCollections = new EntityCollectionStore<Client>(GlobalResources.Initializer.TestClients);
 
-        Client[] copySomeEntityArray = new Client[someEntityCollections.Count];
+        var copySomeEntityArray = new Client[someEntityCollections.Count];
 
         //Act
         someEntityCollections.CopyTo(copySomeEntityArray, 0);
@@ -84,5 +82,3 @@ public class EntityCollectionStoresTests
         Assert.AreEqual(true, someEntityCollections.Equals(copySomeEntityCollections));
     }
 }
-
-    

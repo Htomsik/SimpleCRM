@@ -21,6 +21,7 @@
     xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:menuVMds="clr-namespace:ProjectMateTask.VMD.AppInfrastructure.MenuVMds"
     xmlns:pages="clr-namespace:ProjectMateTask.VW.Pages"
     xmlns:vmdPages="clr-namespace:ProjectMateTask.VMD.Pages"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
@@ -77,7 +78,7 @@
                         VerticalAlignment="Stretch">
 
                         <ContentControl.Resources>
-                            <DataTemplate DataType="{x:Type appInfrastructureVmds:MainMenuVmd}">
+                            <DataTemplate DataType="{x:Type menuVMds:MainMenuVmd}">
                                 <appInfrastructurePages:MainMenuVW />
                             </DataTemplate>
                         </ContentControl.Resources>

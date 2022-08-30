@@ -6,7 +6,7 @@ namespace ProjectMateTask.Models.AppInfrastructure;
 /// <summary>
 /// Элемент меню
 /// </summary>
-internal class MenuItem
+public class MenuItem
 {
     /// <summary>
     /// Имя элемента

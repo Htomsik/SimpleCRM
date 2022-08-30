@@ -13,8 +13,8 @@ public abstract class NamedEntityTests<TEntity> where TEntity : INamedEntity, ne
     {
         // Arrange
         var originalNameEntity = GlobalResources.GetRandomEntity<TEntity>();
-        
-        TEntity namedEntityCopy = (TEntity)originalNameEntity.Clone();
+
+        var namedEntityCopy = (TEntity)originalNameEntity.Clone();
 
         //Act
         var originalResult = namedEntityCopy.Equals(originalNameEntity);
@@ -24,36 +24,36 @@ public abstract class NamedEntityTests<TEntity> where TEntity : INamedEntity, ne
         //Assert
         Assert.AreEqual(originalResult, copyResult);
     }
-    
+
     /// <summary>
-    ///     Проверка правильности срабатывания HasErrors свойства по мере заполнения атрибутов (для всех NamedEntity одинаковая часть)
+    ///     Проверка правильности срабатывания HasErrors свойства по мере заполнения атрибутов (для всех NamedEntity одинаковая
+    ///     часть)
     /// </summary>
     [TestMethod]
-    public void INamedEntityHaveErrorsIsRight() 
+    public void INamedEntityHaveErrorsIsRight()
     {
         //Arrange
         var namedEntity = new TEntity();
-        
+
         //Act+Assert
         Assert.IsTrue(namedEntity.HasErrors);
-        
+
         SpecifiedCheckInHaveErrors(namedEntity);
-        
     }
-    
+
     /// <summary>
-    ///     Проверка правильность срабатывания HasErrors свойства по мере заполнения атрибутов (Индивидуальня часть для разных NamedEntity)
+    ///     Проверка правильность срабатывания HasErrors свойства по мере заполнения атрибутов (Индивидуальня часть для разных
+    ///     NamedEntity)
     /// </summary>
     /// <param name="namedEntity">Проверяемый NamedEntity</param>
     public virtual void SpecifiedCheckInHaveErrors(TEntity namedEntity)
     {
-        namedEntity.Name = string.Concat(Enumerable.Repeat("S" , 151));
-        
+        namedEntity.Name = string.Concat(Enumerable.Repeat("S", 151));
+
         Assert.IsTrue(namedEntity.HasErrors);
 
         namedEntity.Name = "SomeNamedEntity";
-        
+
         Assert.IsFalse(namedEntity.HasErrors);
     }
-   
 }

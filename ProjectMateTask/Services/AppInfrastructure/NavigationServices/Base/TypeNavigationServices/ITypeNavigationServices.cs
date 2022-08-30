@@ -6,7 +6,7 @@ namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.Typ
 /// <summary>
 ///     Сервис навигации по типам
 /// </summary>
-internal interface ITypeNavigationServices : ICloseNavigationServices
+public interface ITypeNavigationServices : ICloseNavigationServices
 {
     /// <summary>
     ///     Метод навигации

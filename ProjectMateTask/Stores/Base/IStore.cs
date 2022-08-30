@@ -6,7 +6,7 @@ namespace ProjectMateTask.Stores.Base;
 ///     Хранилише
 /// </summary>
 /// <typeparam name="TValue">Любой тип</typeparam>
-internal interface IStore<TValue> 
+public interface IStore<TValue> 
 {
     /// <summary>
     ///     Текущее значение хранилища

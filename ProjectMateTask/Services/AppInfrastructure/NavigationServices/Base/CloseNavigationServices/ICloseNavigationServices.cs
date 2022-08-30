@@ -3,7 +3,7 @@
 /// <summary>
 ///     Сервис закытия чего либо
 /// </summary>
-internal interface ICloseNavigationServices
+public interface ICloseNavigationServices
 {
     /// <summary>
     ///     Функция закрытия

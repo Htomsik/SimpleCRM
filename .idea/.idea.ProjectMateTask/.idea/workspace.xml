@@ -6,12 +6,8 @@
     <projectFile>ProjectMateTaskWpfTests/ProjectMateTaskWpfTests.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6002d470-be5e-4d59-a476-7ae6c7664e99" name="Changes" comment="Рефакторинг тестов. Добавление описаний">
-      <change afterPath="$PROJECT_DIR$/ProjectMateTask/Stores/Base/BaseStore.cs" afterDir="false" />
+    <list default="true" id="6002d470-be5e-4d59-a476-7ae6c7664e99" name="Changes" comment="Добавление тестов для IStore хранилищ">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Stores/AppInfrastructure/NavigationStores/Base/BaseVmdNavigationStore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Stores/AppInfrastructure/NavigationStores/Base/BaseVmdNavigationStore.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/GeneratedInternalTypeHelper.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/GeneratedInternalTypeHelper.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/ProjectMateTask.csproj.AssemblyReference.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +135,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected=".NET Project.ProjectMateTask">
+  <component name="RunManager" selected="ed8eaf60-7456-4098-b626-84d00127ae70">
     <configuration name="ProjectMateTask" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -228,28 +224,7 @@
       <workItem from="1661723616346" duration="577000" />
       <workItem from="1661724577353" duration="14148000" />
       <workItem from="1661789436032" duration="6389000" />
-      <workItem from="1661795856824" duration="20052000" />
-    </task>
-    <task id="LOCAL-00051" summary="Рефакторинг навигационных сервисов: Добавление описания и ленивой инициализации">
-      <created>1661454122441</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1661454122441</updated>
-    </task>
-    <task id="LOCAL-00052" summary="Рефакторинг навигационных хранилищ: Добавление описания и ленивой инициализации">
-      <created>1661455542773</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1661455542773</updated>
-    </task>
-    <task id="LOCAL-00053" summary="Рефакторинг навигационных хранилищ: Добавление описания и ленивой инициализации">
-      <created>1661455629577</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1661455629577</updated>
+      <workItem from="1661795856824" duration="24979000" />
     </task>
     <task id="LOCAL-00054" summary="Замена типа навигации для MainMenuVmd.cs">
       <created>1661458581001</created>
@@ -573,7 +548,28 @@
       <option name="project" value="LOCAL" />
       <updated>1661851551626</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="Добавление реализации для базового хранилища. BaseStore.cs">
+      <created>1661852500716</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1661852500716</updated>
+    </task>
+    <task id="LOCAL-00101" summary="Добавление тестов для IStore хранилищ">
+      <created>1661856648732</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1661856648732</updated>
+    </task>
+    <task id="LOCAL-00102" summary="Добавление тестов для IStore хранилищ">
+      <created>1661856671021</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1661856671022</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -618,8 +614,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Рефакторинг Entity карт редактирования" />
-    <MESSAGE value="Рефакторинг Vmds" />
     <MESSAGE value="Рефакторинг VW: изменение путей, названий." />
     <MESSAGE value="Рефакторинг описаний некотоых файлов" />
     <MESSAGE value="Рефакторинг описаний для всех Entity типов" />
@@ -643,7 +637,9 @@
     <MESSAGE value="Рефакторинг сервиса взаиомдействия с коллекциями." />
     <MESSAGE value="Рефакторинг тестов. Добавление тестов на HasErrors для NamedEntity типов" />
     <MESSAGE value="Рефакторинг тестов. Добавление описаний" />
-    <option name="LAST_COMMIT_MESSAGE" value="Рефакторинг тестов. Добавление описаний" />
+    <MESSAGE value="Добавление реализации для базового хранилища. BaseStore.cs" />
+    <MESSAGE value="Добавление тестов для IStore хранилищ" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавление тестов для IStore хранилищ" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
