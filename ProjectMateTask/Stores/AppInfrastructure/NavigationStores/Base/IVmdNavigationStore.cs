@@ -7,6 +7,6 @@ namespace ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
 ///     Навигационное хранилище для обобщенных vmd типов
 /// </summary>
 /// <typeparam name="TVmd">Любой тип, наследуемый от BaseVmd</typeparam>
-internal interface IVmdNavigationStore<TVmd> : IStore<TVmd> where TVmd : BaseVmd
+public interface IVmdNavigationStore<TVmd> : IStore<TVmd> where TVmd : BaseVmd
 {
 }

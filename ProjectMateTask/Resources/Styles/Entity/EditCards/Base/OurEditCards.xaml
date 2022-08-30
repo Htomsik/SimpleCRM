@@ -12,6 +12,7 @@
 
             <!--  Коллекция редактиуемых subEntity (связных)  -->
             <ListView ItemsSource="{Binding Path=., Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+
                 <ListView.ItemTemplate>
                     <DataTemplate DataType="{x:Type baseEntities:NamedEntity}">
                         <Grid>

@@ -14,37 +14,148 @@
 
     <UniformGrid>
 
-        <!--  Отладка  -->
-        <GroupBox Header="Отладочные команды">
+        <!--  Раздел взаимодействия с бд  -->
+        <materialDesign:Card Margin="5">
+            <Grid>
 
-            <StackPanel>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
 
-                <Button
-                    Command="{Binding RebuildDbCommand}"
-                    Content="Пересобрать БД"
-                    Margin="5"
-                    Padding="5"
-                    Style="{StaticResource MaterialDesignRaisedButton}"
-                    materialDesign:ButtonProgressAssist.IsIndeterminate="{Binding RebuildDbCommand.IsExecuting}"
-                    materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
-                    materialDesign:ButtonProgressAssist.Value="-1" />
+                <!--  Иконка и информация об разделе  -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
 
-                <Button
-                    Command="{Binding TestDataInitializeCommand}"
-                    Margin="5"
-                    Padding="5"
-                    Style="{StaticResource MaterialDesignRaisedButton}"
-                    materialDesign:ButtonProgressAssist.IsIndeterminate="{Binding TestDataInitializeCommand.IsExecuting}"
-                    materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
-                    materialDesign:ButtonProgressAssist.Value="-1">
-                    <TextBlock>Добавить тестовые данные</TextBlock>
-                </Button>
+                    <materialDesign:PackIcon
+                        Height="100"
+                        HorizontalAlignment="Center"
+                        Kind="Database"
+                        VerticalAlignment="Center"
+                        Width="100" />
 
-            </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <TextBlock
+                            Margin="16,16,16,8"
+                            Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                            Text="Взаимодействие с бд" />
 
-        </GroupBox>
+                        <TextBlock
+                            Foreground="{DynamicResource MaterialDesignBodyLight}"
+                            Margin="16,0,16,8"
+                            Text="Тестовый раздел для заполнения данными в бд для показа функционала"
+                            TextWrapping="Wrap"
+                            VerticalAlignment="Top" />
+                    </StackPanel>
+                </Grid>
 
-        <GroupBox />
+                <!--  Кнопки  -->
+                <StackPanel Grid.Row="1">
+                    <Button
+                        Command="{Binding RebuildDbOnWorkingModeCommand}"
+                        Content="Рабочий режим"
+                        Margin="5"
+                        Padding="5"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        materialDesign:ButtonProgressAssist.IsIndeterminate="{Binding RebuildDbOnWorkingModeCommand.IsExecuting}"
+                        materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                        materialDesign:ButtonProgressAssist.Value="-1" />
+
+                    <Button
+                        Command="{Binding RebuildDbOnTestModeCommand}"
+                        Margin="5"
+                        Padding="5"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        materialDesign:ButtonProgressAssist.IsIndeterminate="{Binding RebuildDbOnTestModeCommand.IsExecuting}"
+                        materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                        materialDesign:ButtonProgressAssist.Value="-1">
+                        <TextBlock>Демонстрационный режим</TextBlock>
+                    </Button>
+
+                </StackPanel>
+
+            </Grid>
+        </materialDesign:Card>
+
+        <!--  Раздел со ссылками  -->
+        <materialDesign:Card Margin="5">
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <!--  Иконка и информация об разделе  -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <materialDesign:PackIcon
+                        Height="100"
+                        HorizontalAlignment="Center"
+                        Kind="Github"
+                        VerticalAlignment="Center"
+                        Width="100" />
+
+                    <StackPanel Grid.Column="1">
+                        <TextBlock
+                            Margin="16,16,16,8"
+                            Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                            Text="Ссылки на ресурсы" />
+
+                        <TextBlock
+                            Foreground="{DynamicResource MaterialDesignBodyLight}"
+                            Margin="16,0,16,8"
+                            Text="Раздел с гитхаб ссылками на различные ресурсы по проекту"
+                            TextWrapping="Wrap"
+                            VerticalAlignment="Top" />
+                    </StackPanel>
+                </Grid>
+
+                <!--  Кнопки  -->
+                <UniformGrid Grid.Row="1" Margin="5">
+
+                    <Button Command="{Binding OpenHtomsikGithubCommnad}" Style="{StaticResource MaterialDesignFlatButton}">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Github" />
+                            <TextBlock
+                                Margin="8,0,0,0"
+                                Text="Htomsik"
+                                VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Button>
+
+                    <Button Command="{Binding OpenProjectGithubCommnad}" Style="{StaticResource MaterialDesignFlatButton}">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Github" />
+                            <TextBlock
+                                Margin="8,0,0,0"
+                                Text="Project"
+                                VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Button>
+
+                    <Button Command="{Binding OpenProjectAssetsCommand}" Style="{StaticResource MaterialDesignFlatButton}">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="FileDocument" />
+                            <TextBlock
+                                Margin="8,0,0,0"
+                                Text="Project assets"
+                                VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Button>
+
+
+                </UniformGrid>
+
+            </Grid>
+        </materialDesign:Card>
 
     </UniformGrid>
 

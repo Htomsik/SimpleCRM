@@ -8,7 +8,7 @@ namespace ProjectMateTask.Models.AppInfrastructure;
 /// <summary>
 /// Элемент меню с поддержкой команд
 /// </summary>
-internal sealed class MenuItemWithCommand : MenuItem
+public sealed class MenuItemWithCommand : MenuItem
 {
     /// <summary>
     /// указатель на команду для item

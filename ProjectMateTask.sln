@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectMateTask", "ProjectM
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectMateTask.DAL", "ProjectMateTask.DAL\ProjectMateTask.DAL.csproj", "{06B4CECD-FE44-48E8-92DF-44BD73772ABC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectMateTaskDalTests", "ProjectMateTaskDalTests\ProjectMateTaskDalTests.csproj", "{9DFB55A1-1C13-45FA-A367-5A0CCEC445D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectMateTaskDalAndEntitesTests", "ProjectMateTaskDalAndEntitesTests\ProjectMateTaskDalAndEntitesTests.csproj", "{9DFB55A1-1C13-45FA-A367-5A0CCEC445D7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomControls", "CustomControls\CustomControls.csproj", "{5E4FAE55-3195-41CB-BE9C-02174D88EB59}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF", "WPF", "{2B2C0ADE-ED2C-490D-BBE4-86C87D2EF241}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BaseData", "BaseData", "{589D48E5-1301-4AD4-B0CF-8608A50E8BE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectMateTaskWpfTests", "ProjectMateTaskWpfTests\ProjectMateTaskWpfTests.csproj", "{5B177036-D850-47A7-A96B-949B32BC5683}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{5DDEB4C6-9ADC-4322-A702-9A81BD0503CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DDEB4C6-9ADC-4322-A702-9A81BD0503CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DDEB4C6-9ADC-4322-A702-9A81BD0503CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B177036-D850-47A7-A96B-949B32BC5683}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B177036-D850-47A7-A96B-949B32BC5683}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B177036-D850-47A7-A96B-949B32BC5683}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B177036-D850-47A7-A96B-949B32BC5683}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,5 +70,6 @@ Global
 		{15046A28-AA2A-4B97-969A-50A495E97FD4} = {2B2C0ADE-ED2C-490D-BBE4-86C87D2EF241}
 		{61A61C37-6296-435C-BA7D-21AA9A04C9FF} = {589D48E5-1301-4AD4-B0CF-8608A50E8BE3}
 		{5DDEB4C6-9ADC-4322-A702-9A81BD0503CB} = {589D48E5-1301-4AD4-B0CF-8608A50E8BE3}
+		{5B177036-D850-47A7-A96B-949B32BC5683} = {0E423549-DA03-4906-BF6A-92D2DD509403}
 	EndGlobalSection
 EndGlobal

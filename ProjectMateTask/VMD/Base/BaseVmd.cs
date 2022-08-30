@@ -8,7 +8,7 @@ namespace ProjectMateTask.VMD.Base;
 /// <summary>
 ///     Базовая реализация INPC
 /// </summary>
-public abstract class BaseVmd:INotifyPropertyChanged
+public class BaseVmd:INotifyPropertyChanged
 {
     /// <summary>
     ///     Название Vmd страницы

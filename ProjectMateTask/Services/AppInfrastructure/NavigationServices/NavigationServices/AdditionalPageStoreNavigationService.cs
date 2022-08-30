@@ -8,7 +8,7 @@ namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices.Navigati
 /// <summary>
 ///     Сервис навигации по дополнительным окнам
 /// </summary>
-internal sealed  class AdditionalPageStoreNavigationService : BaseStoreNavigationServices<BaseAdditionalVmd>
+public sealed  class AdditionalPageStoreNavigationService : BaseStoreNavigationServices<BaseAdditionalVmd>
 {
     public AdditionalPageStoreNavigationService(IVmdNavigationStore<BaseAdditionalVmd> vmdNavigationStore, Func<BaseAdditionalVmd> createVmd) : base(vmdNavigationStore, createVmd)
     {

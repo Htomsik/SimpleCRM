@@ -7,6 +7,7 @@ using ProjectMateTask.Services.AppInfrastructure.NavigationServices.NavigationSe
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.TypeNavigationServices;
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores;
 using ProjectMateTask.VMD.AppInfrastructure;
+using ProjectMateTask.VMD.AppInfrastructure.MenuVMds;
 using ProjectMateTask.VMD.Pages;
 using ProjectMateTask.VMD.Pages.AdditionalPagesVmds;
 using ProjectMateTask.VMD.Pages.Entities.MainEntityVmds;
@@ -71,7 +72,6 @@ internal static class VmdRegistrator
         
         return services;
     }
-
     
     #region Vmds
     

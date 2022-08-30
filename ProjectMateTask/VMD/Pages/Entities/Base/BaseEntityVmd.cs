@@ -7,7 +7,7 @@ namespace ProjectMateTask.VMD.Pages.Entities.Base;
 /// <summary>
 ///     Базовый реализация для EntityVmd типов
 /// </summary>
-internal abstract class BaseEntityVmd : BaseVmd, IEntityVmd
+public class BaseEntityVmd : BaseVmd, IEntityVmd
 {
     
     #region EntitiesFilteredView : фильтрованный список Entity

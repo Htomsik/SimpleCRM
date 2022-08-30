@@ -11,7 +11,12 @@
     <!--  Карточка редактирования продуктов  -->
     <DataTemplate DataType="{x:Type types:ProductType}" x:Key="EditProductTypeCard">
 
-        <StackPanel>
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
 
             <!--  Название типа продукта  -->
             <ContentControl
@@ -23,10 +28,11 @@
             <ContentControl
                 Content="{Binding Products, ValidatesOnNotifyDataErrors=False}"
                 ContentTemplate="{DynamicResource EditCollectionCard}"
+                Grid.Row="1"
                 ToolTip="Товары:" />
 
 
-        </StackPanel>
+        </Grid>
 
     </DataTemplate>
 

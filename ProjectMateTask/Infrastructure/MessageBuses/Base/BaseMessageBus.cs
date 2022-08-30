@@ -6,7 +6,7 @@ namespace ProjectMateTask.Infrastructure.MessageBuses.Base;
 ///     Базовый тип для шин сообщений
 /// </summary>
 /// <typeparam name="T">Любой тип</typeparam>
-internal abstract class BaseMessageBus<T> : IMessageBus<T>
+public class BaseMessageBus<T> : IMessageBus<T>
 {
     public event Action<T>? Bus;
 

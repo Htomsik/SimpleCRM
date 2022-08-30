@@ -34,6 +34,9 @@
             "projectReferences": {
               "C:\\Users\\USER\\RiderProjects\\ProjectMateTask\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj": {
                 "projectPath": "C:\\Users\\USER\\RiderProjects\\ProjectMateTask\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj"
+              },
+              "C:\\Users\\USER\\RiderProjects\\ProjectMateTask\\ProjetMateTaskEntities\\ProjetMateTaskEntities.csproj": {
+                "projectPath": "C:\\Users\\USER\\RiderProjects\\ProjectMateTask\\ProjetMateTaskEntities\\ProjetMateTaskEntities.csproj"
               }
             }
           }
@@ -107,11 +110,7 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {
-              "C:\\Users\\USER\\RiderProjects\\ProjectMateTask\\ProjetMateTaskEntities\\ProjetMateTaskEntities.csproj": {
-                "projectPath": "C:\\Users\\USER\\RiderProjects\\ProjectMateTask\\ProjetMateTaskEntities\\ProjetMateTaskEntities.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -169,7 +168,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\USER\\RiderProjects\\ProjectMateTask\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj": {
+                "projectPath": "C:\\Users\\USER\\RiderProjects\\ProjectMateTask\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

@@ -3,13 +3,14 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.CompilerServices;
+using ProjectMateTaskExtensions.Services;
 
 namespace ProjetMateTaskEntities.Entities.Base;
 
 /// <summary>
 ///     Базовая реализация Entity c известным типом в бд
 /// </summary>
-public abstract class NamedEntity : Entity, INamedEntity
+public class NamedEntity : Entity, INamedEntity
 {
     #region Конструкторы
 
@@ -59,7 +60,8 @@ public abstract class NamedEntity : Entity, INamedEntity
         } 
         set
         {
-            Set(ref _name, value);
+          
+            Set(ref _name, StringExtensions.RemoveDuplicate(ref value," "));
           
         }
             
@@ -142,7 +144,7 @@ public abstract class NamedEntity : Entity, INamedEntity
     ///     Метод проверки валидации для наследников
     /// </summary>
     /// <returns></returns>
-    protected virtual bool SubHasErrors() => false;
+    protected virtual bool SubHaveErrors() => false;
     
     
     protected override bool Equals(IEntity other)
@@ -154,7 +156,7 @@ public abstract class NamedEntity : Entity, INamedEntity
             if (string.IsNullOrEmpty(Name) && string.IsNullOrEmpty(otherNamedEntity!.Name))
                 return true;
             
-            return string.Compare(Name, otherNamedEntity!.Name, StringComparison.CurrentCulture) == 0;
+            return string.Compare(Name.Trim(), otherNamedEntity!.Name.Trim(), StringComparison.CurrentCulture) == 0;
         }
 
         return false;
@@ -207,7 +209,7 @@ public abstract class NamedEntity : Entity, INamedEntity
         get
         { 
             CheckNameErrors(Name,nameof(Name));
-            return errors.Value.Count > 0 || SubHasErrors();
+            return errors.Value.Count > 0 || SubHaveErrors();
         }
     }
     

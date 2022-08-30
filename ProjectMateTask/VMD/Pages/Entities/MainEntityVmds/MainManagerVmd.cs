@@ -23,6 +23,7 @@ internal sealed class MainManagerVmd : BaseMainEntityVmd<Manager>
     {
     }
 
+    public override string Tittle  => "Менеджеры";
 
     protected override void OnDeleteSubEntityFromCollection(INamedEntity removedEntity) => EditableEntity?.Clients.Remove((Client)removedEntity);
    

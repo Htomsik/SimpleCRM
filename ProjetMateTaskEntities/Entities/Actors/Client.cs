@@ -135,7 +135,7 @@ public sealed class Client : NamedEntity
             ));
     }
 
-    protected override bool SubHasErrors()
+    protected override bool SubHaveErrors()
     {
         return Status.HasErrors || Manager.HasErrors;
     }

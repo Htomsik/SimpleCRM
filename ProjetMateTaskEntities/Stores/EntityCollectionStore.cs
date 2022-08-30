@@ -1,5 +1,7 @@
 ﻿using System.Collections.ObjectModel;
+using System.Data;
 using ProjetMateTaskEntities.Entities.Base;
+using ProjetMateTaskEntities.Services;
 
 namespace ProjetMateTaskEntities.Stores;
 
@@ -12,11 +14,26 @@ public class EntityCollectionStore<TEntity>:ObservableCollection<TEntity>,IEntit
     #region Конструкторы
 
     public EntityCollectionStore(){}
-    public EntityCollectionStore(IEnumerable<TEntity> collection) : base(collection){}
-    
-    public EntityCollectionStore(List<TEntity> list) : base(list){}
-    
-    public EntityCollectionStore(TEntity[] entities) : base(entities){}
+
+    public EntityCollectionStore(IEnumerable<TEntity> collection) : base(collection)
+    {
+        if (EntityCollectionServices.IsCollectionHaveDuplicateByIds(collection))
+            throw new ArgumentException($"Коллекция c {typeof(TEntity)} не может содержать id дубликаты");
+        
+     
+    }
+
+    public EntityCollectionStore(List<TEntity> list) : base(list)
+    {
+        if (EntityCollectionServices.IsCollectionHaveDuplicateByIds(list))
+            throw new ArgumentException($"Коллекция c {typeof(TEntity)} не может содержать id дубликаты");
+    }
+
+    public EntityCollectionStore(TEntity[] entities) : base(entities)
+    {
+        if (EntityCollectionServices.IsCollectionHaveDuplicateByIds(entities))
+            throw new ArgumentException($"Коллекция c {typeof(TEntity)} не может содержать id дубликаты");
+    }
 
     #endregion
 
@@ -61,7 +78,7 @@ public class EntityCollectionStore<TEntity>:ObservableCollection<TEntity>,IEntit
         base.Add(item);
     }
 
-    public bool Contains(TEntity item) => Contains(item.Id);
+    public bool Contains(TEntity item) => Find(item.Id).Equals(item);
     
     /// <summary>
     ///     Поиск в коллекции Entity по id

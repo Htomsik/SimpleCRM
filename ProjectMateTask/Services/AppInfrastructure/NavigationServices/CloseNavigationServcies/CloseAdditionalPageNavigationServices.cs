@@ -7,7 +7,7 @@ namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices.CloseNav
 /// <summary>
 ///     Сервис закрытия допольнительного окна
 /// </summary>
-internal sealed class CloseAdditionalPageNavigationServices : BaseCloseNavigationServices<BaseAdditionalVmd>
+public sealed class CloseAdditionalPageNavigationServices : BaseCloseNavigationServices<BaseAdditionalVmd>
 {
     public CloseAdditionalPageNavigationServices(IVmdNavigationStore<BaseAdditionalVmd> vmdNavigationStore) : base(vmdNavigationStore)
     {

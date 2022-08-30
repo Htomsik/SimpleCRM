@@ -8,7 +8,7 @@ namespace ProjectMateTask.Infrastructure.CMD;
 /// <summary>
 /// Асинхронная команда с условием выполнения
 /// </summary>
-internal sealed class AsyncLambdaCmd : BaseCmd
+public class AsyncLambdaCmd : BaseCmd
 {
     private readonly Lazy<Func<object, bool>>  _canExecute;
 
@@ -23,7 +23,10 @@ internal sealed class AsyncLambdaCmd : BaseCmd
     public AsyncLambdaCmd(Func<object, Task> execute,
         Func<object, bool> canExecute = null)
     {
-        _execute = new Lazy<Func<object, Task>>(()=>execute) ?? throw new ArgumentNullException(nameof(execute));;
+        _execute = execute is null 
+            ? throw new ArgumentNullException(nameof(execute)) 
+            : new Lazy<Func<object, Task>>(()=>execute);
+        
         _canExecute = new Lazy<Func<object, bool>>(()=>canExecute);
     }
     
@@ -35,7 +38,12 @@ internal sealed class AsyncLambdaCmd : BaseCmd
     /// <exception cref="ArgumentNullException">В случае если execute null</exception>
     public AsyncLambdaCmd(Func<Task> execute,
         Func<bool> canExecute = null)
-        :this(p => execute(), canExecute is null ? null : p => canExecute()){}
+        :this(execute is null 
+            ? throw new ArgumentNullException(nameof(execute))  
+            :  _ => execute()
+            , canExecute is null 
+                ? null 
+                : _ => canExecute()){}
     
     
     protected override bool CanExecute(object? parameter)

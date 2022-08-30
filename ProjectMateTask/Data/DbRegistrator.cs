@@ -21,7 +21,7 @@ internal static class DbRegistrator
                 case "MSSQL":
                     opt.UseSqlServer(configuration.GetConnectionString(type));
                     break;
-                case null: throw new InvalidOperationException("Не определён тип базы данных");
+                case null: throw new InvalidOperationException("Не определён тип базы данных или файл конфигурации повреждён. Тип определяется в appsettings.json");
                 default: throw new InvalidOperationException($"Тип {type} не поддерживается");
             }
         });

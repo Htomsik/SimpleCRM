@@ -18,10 +18,7 @@
 
 
     <Grid>
-        <ListView
-            HorizontalContentAlignment="Stretch"
-            ItemTemplate="{DynamicResource MenuitemWithCommand}"
-            ItemsSource="{Binding MenuItems}" />
+        <ListView ItemTemplate="{DynamicResource MenuitemWithCommand}" ItemsSource="{Binding MenuItems}" />
     </Grid>
 
 </UserControl>

@@ -6,6 +6,6 @@ namespace ProjectMateTask.Stores.AppInfrastructure.NavigationStores;
 /// <summary>
 ///     Навигационное ханилище для Entity страниц
 /// </summary>
-internal sealed class MainEntityVmdNavigationStore : BaseEntityVmdNavigationStore<BaseEntityVmd>
+public sealed class MainEntityVmdNavigationStore : BaseEntityVmdNavigationStore<BaseEntityVmd>
 {
 }

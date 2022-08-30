@@ -186,13 +186,18 @@ public class DbInitializer : IDbInitializer
 
         _clientTypes = new ClientStatus[ClientTypesCount]
         {
-            new() { Name = "Ключевой" },
-            new() { Name = "Обычный" }
+            new() { Name = "Ключевой"},
+            new() { Name = "Обычный"}
         };
 
         await _db.ClientStatus.AddRangeAsync(_clientTypes);
         
         _db.SaveChanges();
+
+        foreach (var item in _db.ClientStatus)
+        {
+            item.Clients = new ObservableCollection<Client>(item.Clients);
+        }
 
         _logger.LogInformation("Инициализация типов клиентов выполнена за {0} мс",
             loggerTimer.Elapsed.TotalMilliseconds);
@@ -209,14 +214,19 @@ public class DbInitializer : IDbInitializer
 
         _productTypes = new ProductType[ProductTypeCount]
         {
-            new() { Name = "Постоянная лицензия" },
-            new() { Name = "Месячная подписка" },
-            new() { Name = "Квартальная подписка" },
-            new() { Name = "Годовая подписка" }
+            new() { Name = "Постоянная лицензия"},
+            new() { Name = "Месячная подписка"},
+            new() { Name = "Квартальная подписка"},
+            new() { Name = "Годовая подписка"}
         };
 
         await _db.ProductTypes.AddRangeAsync(_productTypes);
         _db.SaveChanges();
+        
+        foreach (var item in _db.ProductTypes)
+        {
+            item.Products = new ObservableCollection<Product>(item.Products);
+        }
 
         _logger.LogInformation("Инициализация типов продуктов выполнена за {0} мс",
             loggerTimer.Elapsed.TotalMilliseconds);
@@ -234,16 +244,21 @@ public class DbInitializer : IDbInitializer
         _logger.LogInformation("Инициализация продуктов ...");
 
         var productTypes = _db.ProductTypes.ToArray();
-
+        
         _testProducts = Enumerable.Range(0, TestProductsCount)
             .Select(i => new Product
             {
                 Name = $"Тестовый продукт #{i}",
-                Type = rnd.NextItem(productTypes)
+                Type = rnd.NextItem(productTypes),
             }).ToArray();
 
         await _db.Products.AddRangeAsync(_testProducts);
         _db.SaveChanges();
+        
+        foreach (var item in _db.Products)
+        {
+            item.Clients = new ObservableCollection<Client>(item.Clients);
+        }
 
         _logger.LogInformation("Инициализация продуктов выполнена за {0} мс", loggerTimer.Elapsed.TotalMilliseconds);
     }
@@ -260,11 +275,16 @@ public class DbInitializer : IDbInitializer
         _testManagers = Enumerable.Range(0, TestManagersCount)
             .Select(i => new Manager
             {
-                Name = $"Тестовый менеджер #{i}"
+                Name = $"Тестовый менеджер #{i}",
             }).ToArray();
 
         await _db.Managers.AddRangeAsync(_testManagers);
         _db.SaveChanges();
+        
+        foreach (var item in _db.Managers)
+        {
+            item.Clients = new ObservableCollection<Client>(item.Clients);
+        }
 
         _logger.LogInformation("Инициализация менеджеров выполнена за {0} мс", loggerTimer.Elapsed.TotalMilliseconds);
     }

@@ -14,6 +14,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\ProjectMateTaskExtensions\ProjectMateTaskExtensions.csproj" />
+      <ProjectReference Include="..\ProjetMateTaskEntities\ProjetMateTaskEntities.csproj" />
     </ItemGroup>
 
 </Project>

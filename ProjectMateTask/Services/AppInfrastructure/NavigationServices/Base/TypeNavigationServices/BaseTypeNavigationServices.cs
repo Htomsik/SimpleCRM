@@ -9,7 +9,7 @@ namespace ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.Typ
 ///     Базовая реализация севиса навигации по типам
 /// </summary>
 /// <typeparam name="TVmd">Любой тип, наследуемый от BaseVmd</typeparam>
-internal  class BaseTypeNavigationServices<TVmd>:ITypeNavigationServices where TVmd: BaseVmd
+internal class BaseTypeNavigationServices<TVmd>:ITypeNavigationServices where TVmd: BaseVmd
 {
     private readonly Lazy<IVmdNavigationStore<TVmd>>  _navigationStore;
 

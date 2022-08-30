@@ -7,6 +7,7 @@ using ProjectMateTask.Infrastructure.MessageBuses.Base;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.CloseNavigationServices;
 using ProjectMateTask.Services.AppInfrastructure.NavigationServices.Base.NavigationServices;
 using ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
+using ProjectMateTask.VMD.AppInfrastructure.MenuVMds.Base;
 using ProjectMateTask.VMD.Base;
 using ProjectMateTask.VMD.Pages;
 using ProjectMateTask.VMD.Pages.AdditionalPagesVmds.Base;
@@ -30,7 +31,7 @@ internal sealed class MainWindowVmd : BaseVmd
     /// <param name="loggerMessageBus">Шина сообщений от логгера</param>
     public MainWindowVmd(IEntityVmdNavigationStore<BaseEntityVmd> mainEntityVmdNavigationStore,
         ICloseNavigationServices closeMainEntityNavigationServices,
-        IVmdNavigationStore<BaseVmd> mainMenuVmdNavigationStore,
+        IVmdNavigationStore<BaseMenuNavigationVmd> mainMenuVmdNavigationStore,
         IVmdNavigationStore<BaseAdditionalVmd> additionalVmdNavigationStore,
         INavigationService openSettingsNavigationServices,
         IMessageBus<string> loggerMessageBus)
@@ -89,7 +90,7 @@ internal sealed class MainWindowVmd : BaseVmd
     /// <summary>
     ///     Навигационное хранилище menuVmd типов
     /// </summary>
-    private readonly IVmdNavigationStore<BaseVmd> _mainMenuVmdNavigationStore;
+    private readonly IVmdNavigationStore<BaseMenuNavigationVmd> _mainMenuVmdNavigationStore;
 
     /// <summary>
     ///     Навигционное хранилище MainEntity vmd типов

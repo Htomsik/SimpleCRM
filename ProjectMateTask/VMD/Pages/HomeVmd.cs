@@ -1,8 +1,8 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using ProjectMateTask.Data;
-using ProjectMateTask.Infrastructure.CMD;
+using ProjectMateTask.Infrastructure.CMD.AppInfrastructure;
 using ProjectMateTask.VMD.Base;
 
 namespace ProjectMateTask.VMD.Pages;
@@ -19,8 +19,7 @@ internal sealed class HomeVmd : BaseVmd
     public override string Tittle => "Домашняя страница";
 
     #endregion
-   
-
+    
     /// <summary>
     /// Стартовая страница приложения
     /// </summary>
@@ -29,31 +28,84 @@ internal sealed class HomeVmd : BaseVmd
     {
         _dbInitializer = dbInitializer;
 
-        RebuildDbCommand = new AsyncLambdaCmd(OnRebuildDB);
+        RebuildDbOnWorkingModeCommand = new UserDialogAsyncCmd(OnRebuildDB,"Все текущие данные в базе очистится и произойдет начальная подготовка для полноценной работы с приложением. Выполнение данной команды требует ручного перезапуска приложения. Хотите продолжить?");
 
-        TestDataInitializeCommand = new AsyncLambdaCmd(OnTestDataInitialize);
+        RebuildDbOnTestModeCommand = new UserDialogAsyncCmd(OnTestDataInitialize,"Все текущие данные в базе очистится и произойдет начальная подготовка для работы с приложением вместе с заполнением демонстрационными данными. Выполнение данной команды требует ручного перезапуска приложения. Хотите продолжить?");
+
+        #region Инициализция команд
+
+        OpenHtomsikGithubCommnad = new OpenBrowserLinkCmd("https://github.com/Htomsik");
+
+        OpenProjectGithubCommnad = new OpenBrowserLinkCmd("https://github.com/Htomsik/ProjectMateTask");
+
+        OpenProjectAssetsCommand =
+            new OpenBrowserLinkCmd("https://github.com/Htomsik/ProjectMateTask/tree/master/Assets");
         
+        #endregion
+
     }
+    
+    #region Команды
 
-    #region RebuildDBCommand : Команда пересборки базы данных
+    #region Команды-ссылки
 
-    public ICommand RebuildDbCommand { get; }
+    /// <summary>
+    ///     Команда открытия ссылки на создателя
+    /// </summary>
+    public ICommand OpenHtomsikGithubCommnad { get; }
+    
+    /// <summary>
+    ///     Команда открытия ссылки на проект
+    /// </summary>
+    public ICommand OpenProjectGithubCommnad { get; }
+    
+    /// <summary>
+    ///     Команда открытия ссылки на ресурсы проекта
+    /// </summary>
+    public ICommand OpenProjectAssetsCommand { get; }
+
+    #endregion
+    
+    #region RebuildDbOnWorkingModeCommand : Команда пересборки базы данных
+
+    /// <summary>
+    ///     Команда пересборки бд
+    /// </summary>
+    public ICommand RebuildDbOnWorkingModeCommand { get; }
 
     private async Task OnRebuildDB()
     {
         await _dbInitializer.RebuildDataBaseAsync();
+
+        Task.WaitAll();
+            
+        Application.Current.Shutdown();
+
     }
 
     #endregion
 
-    #region TestDataInitializeCommand : Команда заполнения базы данных тестовыми данными
+    #region RebuildDbOnTestModeCommand : Команда заполнения базы данных тестовыми данными
 
-    public ICommand TestDataInitializeCommand { get; }
+    /// <summary>
+    ///     Команда инициализации бд
+    /// </summary>
+    public ICommand RebuildDbOnTestModeCommand { get; }
 
     private async Task OnTestDataInitialize()
     {
+        await _dbInitializer.RebuildDataBaseAsync();
+        
         await _dbInitializer.InitializeTestDataAsync();
+        
+        Task.WaitAll();
+        
+        Application.Current.Shutdown();
     }
+    
+ 
+    #endregion
 
     #endregion
+    
 }

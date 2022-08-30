@@ -23,8 +23,9 @@ internal sealed class TypeNavigationCmd : BaseCmd
     {
         _canExecute = new Lazy<Predicate<object>>(() => canExecute);
 
-        _typeNavigationServices = new Lazy<ITypeNavigationServices>(() => typeNavigationServices) ??
-                                  throw new ArgumentNullException(nameof(_typeNavigationServices));
+        _typeNavigationServices = typeNavigationServices is null
+                ? throw new ArgumentNullException(nameof(_typeNavigationServices))
+                : new Lazy<ITypeNavigationServices>(() => typeNavigationServices);
     }
 
     /// <summary>
@@ -34,7 +35,7 @@ internal sealed class TypeNavigationCmd : BaseCmd
     /// <param name="canExecute">Условие выполнения команды</param>
     /// <exception cref="ArgumentNullException">Возникает в случае если typeNavigationServices null </exception>
     public TypeNavigationCmd(ITypeNavigationServices typeNavigationServices, Func<bool> canExecute = null)
-        : this(typeNavigationServices, canExecute is null ? null : p => canExecute())
+        : this(typeNavigationServices ?? throw new ArgumentNullException(nameof(_typeNavigationServices)), canExecute is null ? null : p => canExecute())
     {
     }
 
@@ -44,7 +45,7 @@ internal sealed class TypeNavigationCmd : BaseCmd
     /// </summary>
     /// <param name="typeNavigationServices">Сервис навигации по типу</param>
     /// <exception cref="ArgumentNullException">Возникает в случае если typeNavigationServices null </exception>
-    public TypeNavigationCmd(ITypeNavigationServices typeNavigationServices) : this(typeNavigationServices, () => true)
+    public TypeNavigationCmd(ITypeNavigationServices typeNavigationServices) : this(typeNavigationServices ?? throw new ArgumentNullException(nameof(_typeNavigationServices)), () => true)
     {
         
     }

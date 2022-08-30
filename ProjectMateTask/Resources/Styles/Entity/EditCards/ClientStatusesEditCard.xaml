@@ -10,7 +10,12 @@
     <!--  Карточка редактирования Статусов клиентов  -->
     <DataTemplate DataType="{x:Type types:ClientStatus}" x:Key="EditClientStatusCard">
 
-        <StackPanel>
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
 
             <!--  Название  -->
             <ContentControl
@@ -20,14 +25,14 @@
 
 
             <!--  Клиенты, c такими статусами  -->
-
             <ContentControl
                 Content="{Binding Clients, ValidatesOnNotifyDataErrors=False}"
                 ContentTemplate="{DynamicResource EditCollectionCard}"
+                Grid.Row="1"
                 ToolTip="Клиенты:" />
 
 
-        </StackPanel>
+        </Grid>
 
     </DataTemplate>
 </ResourceDictionary>

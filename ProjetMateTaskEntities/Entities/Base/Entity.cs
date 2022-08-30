@@ -5,7 +5,7 @@ namespace ProjetMateTaskEntities.Entities.Base;
 /// <summary>
 ///     Базовая реализация неизвестных Entity
 /// </summary>
-public abstract class Entity : IEntity
+public class Entity : IEntity
 {
     [Key]
     public int Id { get; set; }

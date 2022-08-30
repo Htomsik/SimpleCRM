@@ -1,4 +1,5 @@
 ﻿using System;
+using ProjectMateTask.Stores.Base;
 using ProjectMateTask.VMD.Base;
 
 namespace ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
@@ -7,28 +8,17 @@ namespace ProjectMateTask.Stores.AppInfrastructure.NavigationStores.Base;
 ///     Базовая реализация навигационного хранилища для обобщенных типов
 /// </summary>
 /// <typeparam name="TVmd">Любая тип, наследуемый от BaseVmd</typeparam>
-internal class BaseVmdNavigationStore<TVmd> : IVmdNavigationStore<TVmd> where TVmd : BaseVmd
+public class BaseVmdNavigationStore<TVmd> : BaseStore<TVmd>, IVmdNavigationStore<TVmd> where TVmd : BaseVmd
 {
-    private Lazy<TVmd?> _currentVmd;
-
-    public TVmd? CurrentValue
+    public override TVmd? CurrentValue
     {
-        get => _currentVmd?.Value;
+        get => _currentValue?.Value;
         set
         {
-            _currentVmd?.Value?.Dispose();
-            _currentVmd = new Lazy<TVmd?>(() => value);
-            OnCurrentVmdChanged();
+            _currentValue?.Value?.Dispose();
+            _currentValue = new Lazy<TVmd?>(() => value);
+            OnCurrentValueChanged();
         }
     }
-
-    public event Action? CurrentValueChanged;
-
-    /// <summary>
-    ///     Метод, обновляющий увидомитель
-    /// </summary>
-    protected virtual void OnCurrentVmdChanged()
-    {
-        CurrentValueChanged?.Invoke();
-    }
+    
 }

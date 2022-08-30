@@ -24,12 +24,12 @@ internal sealed class MainProductVmd : BaseMainEntityVmd<Product>
     {
     }
 
+    public override string Tittle  => "Продукты";
+    
     protected override void OnDeleteSubEntityFromCollection(INamedEntity removedEntity) => EditableEntity?.Clients.Remove((Client)removedEntity);
-  
-
+    
     protected override void AddSubEntityInCollection(INamedEntity addedEntity) =>  EditableEntity?.Clients.Add((Client)addedEntity);
-   
-
+    
     protected override void ChangeSubEntity(INamedEntity subEntity)
     {
         if (subEntity is ProductType) EditableEntity!.Type = (ProductType)subEntity;

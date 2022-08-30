@@ -11,7 +11,12 @@
     <!--  Карточка редактирования менеджеров  -->
     <DataTemplate DataType="{x:Type actors:Manager}" x:Key="EditManagerCard">
 
-        <StackPanel>
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
 
             <!--  Имя  -->
             <ContentControl
@@ -23,10 +28,11 @@
             <ContentControl
                 Content="{Binding Clients, ValidatesOnNotifyDataErrors=False}"
                 ContentTemplate="{DynamicResource EditCollectionCard}"
+                Grid.Row="1"
                 ToolTip="Клиенты:" />
 
 
-        </StackPanel>
+        </Grid>
 
     </DataTemplate>
 </ResourceDictionary>
