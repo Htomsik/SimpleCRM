@@ -32,7 +32,7 @@
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition MaxWidth="250" MinWidth="150" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
