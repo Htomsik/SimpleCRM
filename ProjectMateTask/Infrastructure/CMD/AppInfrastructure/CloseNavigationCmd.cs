@@ -20,9 +20,9 @@ internal sealed class CloseNavigationCmd : BaseCmd
     /// <exception cref="ArgumentNullException">Возникает в случае если _closeNavigationServices null</exception>
     public CloseNavigationCmd(ICloseNavigationServices closeNavigationServices, Predicate<object> canExecute = null)
     {
-        _closeNavigationServices = 
-            new Lazy<ICloseNavigationServices>(()=>closeNavigationServices)
-            ?? throw new ArgumentNullException(nameof(_closeNavigationServices));
+        _closeNavigationServices =  closeNavigationServices is null
+                ? throw new ArgumentNullException(nameof(_closeNavigationServices)) :
+            new Lazy<ICloseNavigationServices>(()=>closeNavigationServices);
 
         _canExecute = new Lazy<Predicate<object>>(()=>canExecute);
     }
@@ -34,7 +34,8 @@ internal sealed class CloseNavigationCmd : BaseCmd
     /// <param name="canExecute">Условие выполнения команды</param>
     /// <exception cref="ArgumentNullException">Возникает в случае если _closeNavigationServices null</exception>
     public CloseNavigationCmd(ICloseNavigationServices closeNavigationServices, Func<bool> canExecute = null)
-        : this(closeNavigationServices ??
+        : this(
+            closeNavigationServices ??
             throw new ArgumentNullException(nameof(_closeNavigationServices))
             , canExecute is null ? null : p => canExecute())
     {

@@ -6,13 +6,11 @@
     <projectFile>ProjectMateTaskWpfTests/ProjectMateTaskWpfTests.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6002d470-be5e-4d59-a476-7ae6c7664e99" name="Changes" comment="Добавление тестов для базовых команд">
-      <change afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/InfrastructureTests/MessageBusTests/BaseMessageBusRealizeTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/InfrastructureTests/MessageBusTests/BaseMessageBusTests/BaseMessageBusAbstractTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/InfrastructureTests/MessageBusTests/LoggerMessageBusTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/MessageBuses/Base/BaseMessageBus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/MessageBuses/Base/BaseMessageBus.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/MessageBuses/LoggerMessageBus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/MessageBuses/LoggerMessageBus.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskWpfTests/ProjectMateTaskWpfTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/ProjectMateTaskWpfTests.csproj" afterDir="false" />
+    <list default="true" id="6002d470-be5e-4d59-a476-7ae6c7664e99" name="Changes" comment="Добавление тестов для Шин сообщений">
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AppInfrastructure/CloseNavigationCmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AppInfrastructure/CloseNavigationCmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AppInfrastructure/NavigationCmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AppInfrastructure/NavigationCmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AppInfrastructure/TypeNavigationCmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AppInfrastructure/TypeNavigationCmd.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AppInfrastructure/UserDialogAsyncCmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AppInfrastructure/UserDialogAsyncCmd.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +28,7 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="Core" />
       </map>
     </option>
   </component>
@@ -108,6 +106,7 @@
     <setting file="file://$PROJECT_DIR$/CustomControls/Themes/Generic.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectMateTask/IOC/ServicesRegistrator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Infrastructure/CMD/AppInfrastructure/CloseNavigationCmd.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Infrastructure/MessageBuses/Base/BaseMessageBus.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Infrastructure/MessageBuses/Base/BaseMessageBus.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectMateTask/VW/SettingsPages/AboutProgramVW.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/GeneratedInternalTypeHelper.g.cs" root0="FORCE_HIGHLIGHTING" />
@@ -233,21 +232,7 @@
       <workItem from="1661795856824" duration="30131000" />
       <workItem from="1661863022736" duration="17000" />
       <workItem from="1661863147237" duration="83000" />
-      <workItem from="1661863242656" duration="4127000" />
-    </task>
-    <task id="LOCAL-00057" summary="Рефакторинг путей">
-      <created>1661464721512</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1661464721512</updated>
-    </task>
-    <task id="LOCAL-00058" summary="Добавлений различных абстракций для vmd типов">
-      <created>1661476692674</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1661476692674</updated>
+      <workItem from="1661863242656" duration="4899000" />
     </task>
     <task id="LOCAL-00059" summary="Рефакторинг описаний некоторых типов">
       <created>1661519210394</created>
@@ -578,7 +563,21 @@
       <option name="project" value="LOCAL" />
       <updated>1661866782783</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="Добавление тестов для Шин сообщений">
+      <created>1661867394612</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1661867394612</updated>
+    </task>
+    <task id="LOCAL-00107" summary="Добавление тестов для Шин сообщений">
+      <created>1661867400059</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1661867400059</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -623,7 +622,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Рефакторинг описаний для всех Entity типов" />
     <MESSAGE value="Разбиение больший solution на подмножества" />
     <MESSAGE value="Разбиение больших solution на подмножества" />
     <MESSAGE value="Рефакторинг описаний для расширений и базовых Entity типов" />
@@ -648,7 +646,8 @@
     <MESSAGE value="Добавление тестов для IStore хранилищ" />
     <MESSAGE value="Добавление тестов для Навигационных сервисов" />
     <MESSAGE value="Добавление тестов для базовых команд" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавление тестов для базовых команд" />
+    <MESSAGE value="Добавление тестов для Шин сообщений" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавление тестов для Шин сообщений" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

@@ -21,9 +21,9 @@ internal sealed class NavigationCmd : BaseCmd
     /// <exception cref="ArgumentNullException">Возникает в случае если navigationService null </exception>
     public NavigationCmd(INavigationService navigationService, Predicate<object> canExecute = null)
     {
-        _navigationService =
-            new Lazy<INavigationService>(() => navigationService)
-            ?? throw new ArgumentNullException(nameof(_navigationService));
+        _navigationService = navigationService is null 
+            ? throw new ArgumentNullException(nameof(_navigationService)) :
+            new Lazy<INavigationService>(() => navigationService);
 
         _canExecute = new Lazy<Predicate<object>>(() => canExecute);
     }
@@ -35,7 +35,7 @@ internal sealed class NavigationCmd : BaseCmd
     /// <param name="canExecute">Условие при котором команда выполняется</param>
     /// <exception cref="ArgumentNullException">Возникает в случае если navigationService null </exception>
     public NavigationCmd(INavigationService navigationService, Func<bool> canExecute = null)
-        : this(navigationService, canExecute is null ? null : p => canExecute())
+        : this(navigationService ?? throw new ArgumentNullException(nameof(_navigationService)), canExecute is null ? null : p => canExecute())
     {
     }
     
@@ -44,7 +44,7 @@ internal sealed class NavigationCmd : BaseCmd
     /// </summary>
     /// <param name="navigationService">Сервис взаимодействующий с хранилищем текущего контекстаа</param>
     /// <exception cref="ArgumentNullException">Возникает в случае если navigationService null </exception>
-    public NavigationCmd(INavigationService navigationService) : this(navigationService,()=> true){}
+    public NavigationCmd(INavigationService navigationService) : this(navigationService  ?? throw new ArgumentNullException(nameof(_navigationService)) ,()=> true){}
 
 
     protected override void Execute(object? parameter) =>  _navigationService.Value.Navigate();
