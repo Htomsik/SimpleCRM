@@ -6,26 +6,13 @@
     <projectFile>ProjectMateTaskWpfTests/ProjectMateTaskWpfTests.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6002d470-be5e-4d59-a476-7ae6c7664e99" name="Changes" comment="Добавление тестов для Навигационных сервисов">
-      <change afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/InfrastructureTests/AsyncLambdaCmdTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/InfrastructureTests/CommandTests/Base/BaseCmdTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/InfrastructureTests/CommandTests/LambdaCmdTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectMateTask/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/Debug/net6.0/ProjectMateTask.DAL.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask.DAL/obj/Debug/net6.0/ProjectMateTask.DAL.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AppInfrastructure/CloseNavigationCmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AppInfrastructure/CloseNavigationCmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AsyncLambdaCmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/AsyncLambdaCmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/Base/BaseCmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/Base/BaseCmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/LambdaCmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/CMD/LambdaCmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskWpfTests/bin/Debug/net6.0-windows/ProjectMateTask.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/bin/Debug/net6.0-windows/ProjectMateTask.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskWpfTests/bin/Debug/net6.0-windows/ProjectMateTask.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/bin/Debug/net6.0-windows/ProjectMateTask.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskWpfTests/bin/Debug/net6.0-windows/ProjectMateTaskWpfTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/bin/Debug/net6.0-windows/ProjectMateTaskWpfTests.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskWpfTests/bin/Debug/net6.0-windows/ProjectMateTaskWpfTests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/bin/Debug/net6.0-windows/ProjectMateTaskWpfTests.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskWpfTests/obj/Debug/net6.0-windows/ProjectMateTaskWpfTests.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/obj/Debug/net6.0-windows/ProjectMateTaskWpfTests.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskWpfTests/obj/Debug/net6.0-windows/ProjectMateTaskWpfTests.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/obj/Debug/net6.0-windows/ProjectMateTaskWpfTests.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskWpfTests/obj/Debug/net6.0-windows/ProjectMateTaskWpfTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/obj/Debug/net6.0-windows/ProjectMateTaskWpfTests.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskWpfTests/obj/Debug/net6.0-windows/ProjectMateTaskWpfTests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/obj/Debug/net6.0-windows/ProjectMateTaskWpfTests.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskWpfTests/obj/Debug/net6.0-windows/ref/ProjectMateTaskWpfTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/obj/Debug/net6.0-windows/ref/ProjectMateTaskWpfTests.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMateTaskWpfTests/obj/Debug/net6.0-windows/refint/ProjectMateTaskWpfTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/obj/Debug/net6.0-windows/refint/ProjectMateTaskWpfTests.dll" afterDir="false" />
+    <list default="true" id="6002d470-be5e-4d59-a476-7ae6c7664e99" name="Changes" comment="Добавление тестов для базовых команд">
+      <change afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/InfrastructureTests/MessageBusTests/BaseMessageBusRealizeTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/InfrastructureTests/MessageBusTests/BaseMessageBusTests/BaseMessageBusAbstractTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/InfrastructureTests/MessageBusTests/LoggerMessageBusTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/MessageBuses/Base/BaseMessageBus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/MessageBuses/Base/BaseMessageBus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/MessageBuses/LoggerMessageBus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTask/Infrastructure/MessageBuses/LoggerMessageBus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectMateTaskWpfTests/ProjectMateTaskWpfTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMateTaskWpfTests/ProjectMateTaskWpfTests.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,6 +107,8 @@
     <setting file="file://$PROJECT_DIR$/CustomControls/ParameterCustomTextBlock.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CustomControls/Themes/Generic.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectMateTask/IOC/ServicesRegistrator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Infrastructure/CMD/AppInfrastructure/CloseNavigationCmd.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/USER/RiderProjects/ProjectMateTask/ProjectMateTask/Infrastructure/MessageBuses/Base/BaseMessageBus.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectMateTask/VW/SettingsPages/AboutProgramVW.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ProjectMateTask/obj/Debug/net6.0-windows/GeneratedInternalTypeHelper.g.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -244,14 +233,7 @@
       <workItem from="1661795856824" duration="30131000" />
       <workItem from="1661863022736" duration="17000" />
       <workItem from="1661863147237" duration="83000" />
-      <workItem from="1661863242656" duration="3222000" />
-    </task>
-    <task id="LOCAL-00056" summary="Изменение баовой реализации INPC">
-      <created>1661460065226</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1661460065227</updated>
+      <workItem from="1661863242656" duration="4127000" />
     </task>
     <task id="LOCAL-00057" summary="Рефакторинг путей">
       <created>1661464721512</created>
@@ -589,7 +571,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661861783393</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="Добавление тестов для базовых команд">
+      <created>1661866782783</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1661866782783</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -634,7 +623,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Рефакторинг описаний некотоых файлов" />
     <MESSAGE value="Рефакторинг описаний для всех Entity типов" />
     <MESSAGE value="Разбиение больший solution на подмножества" />
     <MESSAGE value="Разбиение больших solution на подмножества" />
@@ -659,7 +647,8 @@
     <MESSAGE value="Добавление реализации для базового хранилища. BaseStore.cs" />
     <MESSAGE value="Добавление тестов для IStore хранилищ" />
     <MESSAGE value="Добавление тестов для Навигационных сервисов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавление тестов для Навигационных сервисов" />
+    <MESSAGE value="Добавление тестов для базовых команд" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавление тестов для базовых команд" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
