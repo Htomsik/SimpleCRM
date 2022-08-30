@@ -6,8 +6,9 @@ namespace ProjectMateTask.Infrastructure.CMD.Base;
 /// <summary>
 ///  Базовая реализация для команд
 /// </summary>
-public abstract class BaseCmd:ICommand
+public abstract class BaseCmd : ICommand
 {
+    
     bool ICommand.CanExecute(object? parameter) => _executable && CanExecute(parameter);
 
     void ICommand.Execute(object? parameter)

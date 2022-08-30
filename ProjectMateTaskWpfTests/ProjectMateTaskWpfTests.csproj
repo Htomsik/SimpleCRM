@@ -19,4 +19,8 @@
       <ProjectReference Include="..\ProjectMateTask\ProjectMateTask.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="InfrastructureTests\MessageBusTests" />
+    </ItemGroup>
+
 </Project>

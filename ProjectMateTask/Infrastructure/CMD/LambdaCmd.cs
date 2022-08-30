@@ -6,7 +6,7 @@ namespace ProjectMateTask.Infrastructure.CMD;
 /// <summary>
 /// Команда с условием выполнения
 /// </summary>
-internal class LambdaCmd : BaseCmd
+public class LambdaCmd : BaseCmd
 {
     private readonly Lazy<Func<object, bool>>  _canExecute;
     
@@ -20,7 +20,9 @@ internal class LambdaCmd : BaseCmd
     /// <exception cref="ArgumentNullException">В случае если execute null</exception>
     public LambdaCmd(Action<object> execute, Func<object, bool> canExecute = null)
     {
-        _execute = new Lazy<Action<object>>(()=>execute) ?? throw new ArgumentNullException(nameof(execute));
+        _execute = execute is null ?
+            throw new ArgumentNullException(nameof(execute)) 
+            : new Lazy<Action<object>>(()=>execute);
 
         _canExecute = new Lazy<Func<object, bool>>(()=>canExecute);
     }
@@ -32,7 +34,7 @@ internal class LambdaCmd : BaseCmd
     /// <param name="canExecute"></param>
     /// <exception cref="ArgumentNullException">В случае если execute null</exception>
     public LambdaCmd(Action execute, Func<bool> canExecute = null)
-        : this(p => execute(), canExecute is null ? null : p => canExecute()){}
+        : this(execute is null ? throw new ArgumentNullException(nameof(execute)) : p => execute(), canExecute is null ? null : p => canExecute()){}
     
 
     protected override bool CanExecute(object parameter) => _canExecute?.Value?.Invoke(parameter) ?? true;
