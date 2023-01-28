@@ -1,0 +1,432 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskWpfTests\\ProjectMateTaskWpfTests.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\CustomControls\\CustomControls.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\CustomControls\\CustomControls.csproj",
+        "projectName": "CustomControls",
+        "projectPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\CustomControls\\CustomControls.csproj",
+        "packagesPath": "C:\\Users\\Jake\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\CustomControls\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Jake\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTask.DAL\\ProjectMateTask.DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTask.DAL\\ProjectMateTask.DAL.csproj",
+        "projectName": "ProjectMateTask.DAL",
+        "projectPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTask.DAL\\ProjectMateTask.DAL.csproj",
+        "packagesPath": "C:\\Users\\Jake\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTask.DAL\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Jake\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj": {
+                "projectPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj"
+              },
+              "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjetMateTaskEntities\\ProjetMateTaskEntities.csproj": {
+                "projectPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjetMateTaskEntities\\ProjetMateTaskEntities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj",
+        "projectName": "ProjectMateTaskExtensions",
+        "projectPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj",
+        "packagesPath": "C:\\Users\\Jake\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskExtensions\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Jake\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskWpfTests\\ProjectMateTaskWpfTests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskWpfTests\\ProjectMateTaskWpfTests.csproj",
+        "projectName": "ProjectMateTaskWpfTests",
+        "projectPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskWpfTests\\ProjectMateTaskWpfTests.csproj",
+        "packagesPath": "C:\\Users\\Jake\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskWpfTests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Jake\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
+            "projectReferences": {
+              "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTask\\ProjectMateTask.csproj": {
+                "projectPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTask\\ProjectMateTask.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[2.2.8, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[2.2.8, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.1.0, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTask\\ProjectMateTask.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTask\\ProjectMateTask.csproj",
+        "projectName": "ProjectMateTask",
+        "projectPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTask\\ProjectMateTask.csproj",
+        "packagesPath": "C:\\Users\\Jake\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTask\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Jake\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
+            "projectReferences": {
+              "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\CustomControls\\CustomControls.csproj": {
+                "projectPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\CustomControls\\CustomControls.csproj"
+              },
+              "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTask.DAL\\ProjectMateTask.DAL.csproj": {
+                "projectPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTask.DAL\\ProjectMateTask.DAL.csproj"
+              },
+              "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj": {
+                "projectPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj"
+              },
+              "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjetMateTaskEntities\\ProjetMateTaskEntities.csproj": {
+                "projectPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjetMateTaskEntities\\ProjetMateTaskEntities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "MaterialDesignThemes": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.Extensions.Caching.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Microsoft.Xaml.Behaviors.Wpf": {
+              "target": "Package",
+              "version": "[1.1.39, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjetMateTaskEntities\\ProjetMateTaskEntities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjetMateTaskEntities\\ProjetMateTaskEntities.csproj",
+        "projectName": "ProjetMateTaskEntities",
+        "projectPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjetMateTaskEntities\\ProjetMateTaskEntities.csproj",
+        "packagesPath": "C:\\Users\\Jake\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjetMateTaskEntities\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Jake\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj": {
+                "projectPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

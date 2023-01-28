@@ -1,0 +1,15 @@
+C:\Users\Jake\Source\Repos\Htomsik\SimpleCRM\ProjetMateTaskEntities\bin\Debug\net6.0\ProjetMateTaskEntities.deps.json
+C:\Users\Jake\Source\Repos\Htomsik\SimpleCRM\ProjetMateTaskEntities\bin\Debug\net6.0\ProjetMateTaskEntities.dll
+C:\Users\Jake\Source\Repos\Htomsik\SimpleCRM\ProjetMateTaskEntities\bin\Debug\net6.0\ProjetMateTaskEntities.pdb
+C:\Users\Jake\Source\Repos\Htomsik\SimpleCRM\ProjetMateTaskEntities\bin\Debug\net6.0\ProjectMateTaskExtensions.dll
+C:\Users\Jake\Source\Repos\Htomsik\SimpleCRM\ProjetMateTaskEntities\bin\Debug\net6.0\ProjectMateTaskExtensions.pdb
+C:\Users\Jake\Source\Repos\Htomsik\SimpleCRM\ProjetMateTaskEntities\obj\Debug\net6.0\ProjetMateTaskEntities.csproj.AssemblyReference.cache
+C:\Users\Jake\Source\Repos\Htomsik\SimpleCRM\ProjetMateTaskEntities\obj\Debug\net6.0\ProjetMateTaskEntities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jake\Source\Repos\Htomsik\SimpleCRM\ProjetMateTaskEntities\obj\Debug\net6.0\ProjetMateTaskEntities.AssemblyInfoInputs.cache
+C:\Users\Jake\Source\Repos\Htomsik\SimpleCRM\ProjetMateTaskEntities\obj\Debug\net6.0\ProjetMateTaskEntities.AssemblyInfo.cs
+C:\Users\Jake\Source\Repos\Htomsik\SimpleCRM\ProjetMateTaskEntities\obj\Debug\net6.0\ProjetMateTaskEntities.csproj.CoreCompileInputs.cache
+C:\Users\Jake\Source\Repos\Htomsik\SimpleCRM\ProjetMateTaskEntities\obj\Debug\net6.0\ProjetMateTaskEntities.csproj.CopyComplete
+C:\Users\Jake\Source\Repos\Htomsik\SimpleCRM\ProjetMateTaskEntities\obj\Debug\net6.0\ProjetMateTaskEntities.dll
+C:\Users\Jake\Source\Repos\Htomsik\SimpleCRM\ProjetMateTaskEntities\obj\Debug\net6.0\refint\ProjetMateTaskEntities.dll
+C:\Users\Jake\Source\Repos\Htomsik\SimpleCRM\ProjetMateTaskEntities\obj\Debug\net6.0\ProjetMateTaskEntities.pdb
+C:\Users\Jake\Source\Repos\Htomsik\SimpleCRM\ProjetMateTaskEntities\obj\Debug\net6.0\ref\ProjetMateTaskEntities.dll
