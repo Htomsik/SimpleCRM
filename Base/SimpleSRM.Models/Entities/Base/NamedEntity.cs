@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.CompilerServices;
-using ProjectMateTaskExtensions.Services;
+using SimpleSRM.Extensions.Services;
 
 namespace SimpleSRM.Models.Entities.Base;
 

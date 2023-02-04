@@ -5,8 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using ProjectMateTaskExtensions.Services;
 using SimpleSRM.DAL.Context;
+using SimpleSRM.Extensions.Services;
 using SimpleSRM.Models.Entities.Actors;
 using SimpleSRM.Models.Entities.Types;
 

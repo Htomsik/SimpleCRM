@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace ProjectMateTask.DAL.Migrations
+namespace SimpleSRM.DAL.Migrations
 {
     public partial class Init : Migration
     {

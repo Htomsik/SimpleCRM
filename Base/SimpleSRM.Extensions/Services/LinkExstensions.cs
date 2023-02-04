@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace ProjectMateTaskExtensions.Services;
+namespace SimpleSRM.Extensions.Services;
 
 /// <summary>
 ///     Сервис работающий со ссылками

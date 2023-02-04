@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace ProjectMateTaskExtensions.Services;
+namespace SimpleSRM.Extensions.Services;
 
 /// <summary>
 ///     Сервис обработки string значений

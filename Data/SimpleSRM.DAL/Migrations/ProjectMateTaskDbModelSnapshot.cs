@@ -7,7 +7,7 @@ using SimpleSRM.DAL.Context;
 
 #nullable disable
 
-namespace ProjectMateTask.DAL.Migrations
+namespace SimpleSRM.DAL.Migrations
 {
     [DbContext(typeof(DataDb))]
     partial class ProjectMateTaskDbModelSnapshot : ModelSnapshot

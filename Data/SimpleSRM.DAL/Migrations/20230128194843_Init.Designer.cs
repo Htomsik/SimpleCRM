@@ -8,7 +8,7 @@ using SimpleSRM.DAL.Context;
 
 #nullable disable
 
-namespace ProjectMateTask.DAL.Migrations
+namespace SimpleSRM.DAL.Migrations
 {
     [DbContext(typeof(DataDb))]
     [Migration("20230128194843_Init")]

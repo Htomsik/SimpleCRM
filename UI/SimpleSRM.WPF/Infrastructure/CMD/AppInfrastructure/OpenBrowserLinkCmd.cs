@@ -1,5 +1,5 @@
 ﻿using System;
-using ProjectMateTaskExtensions.Services;
+using SimpleSRM.Extensions.Services;
 using SimpleSRM.WPF.Infrastructure.CMD.Base;
 
 namespace SimpleSRM.WPF.Infrastructure.CMD.AppInfrastructure;

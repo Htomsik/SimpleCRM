@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ProjectMateTaskExtensions.Services;
+﻿namespace SimpleSRM.Extensions.Services;
 
 /// <summary>
 ///     Сервис работающий с random
