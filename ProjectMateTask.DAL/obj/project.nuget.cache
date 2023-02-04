@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UR88gquZsVi8Vws1PZ4O81T8uZl3hkfiTp/CJdQJpqBil6mGmVqoen9AjFUmBIh9u6KCXqteRG1wtffiM+KBww==",
+  "dgSpecHash": "5i7xikOATb5gWJS4FSZUzrcpqt4F6CTfIaeguCsqKUIF6Srk06B4bNKxX1b6LuJp5570VigaPsrwBPRc9TujRg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTask.DAL\\ProjectMateTask.DAL.csproj",
+  "projectFilePath": "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTask.DAL\\ProjectMateTask.DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jake\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Jake\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",

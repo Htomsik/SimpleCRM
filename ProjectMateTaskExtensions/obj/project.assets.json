@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj",
+      "projectUniqueName": "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj",
       "projectName": "ProjectMateTaskExtensions",
-      "projectPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj",
+      "projectPath": "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj",
       "packagesPath": "C:\\Users\\Jake\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskExtensions\\obj\\",
+      "outputPath": "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTaskExtensions\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Jake\\AppData\\Roaming\\NuGet\\NuGet.Config",

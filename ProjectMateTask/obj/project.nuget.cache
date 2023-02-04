@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CuCcGuj3TOpFX9hlJS2ybU0fYOnvBS9lVfr5q4iLFlwgcbssKNf9lOmiYfrOaP0s6Dqjp5iS6fOoM384zk91jw==",
+  "dgSpecHash": "EdVuivXuMqSQ9PfHNv13v5f2sDJRAMO/k7z4SaM/T2Qlt5GV3UAe6k2INsJPHYv2S17iDzbJIIOrvV/FvQj0ow==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTask\\ProjectMateTask.csproj",
+  "projectFilePath": "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTask\\ProjectMateTask.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jake\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Jake\\.nuget\\packages\\materialdesigncolors\\2.0.6\\materialdesigncolors.2.0.6.nupkg.sha512",

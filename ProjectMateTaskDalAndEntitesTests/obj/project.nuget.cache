@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nDujeKlZZcy9c4rPNuvdEMLKMBHBVBZlSVn45bH49AV/nbMhjYzQz9nGhkywVjavZjN//A0V78SmZv9mmr8Jlw==",
+  "dgSpecHash": "CqzNjubEQx5FBCp4+AiyL9UXqGi1Ze9cMAxyNqOUTpuljk2DxpMsI+cp6JpU4hCwlhrmV8g5Yvz2rkSB9HG3cw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskDalAndEntitesTests\\ProjectMateTaskDalAndEntitesTests.csproj",
+  "projectFilePath": "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTaskDalAndEntitesTests\\ProjectMateTaskDalAndEntitesTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jake\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\Jake\\.nuget\\packages\\microsoft.codecoverage\\17.1.0\\microsoft.codecoverage.17.1.0.nupkg.sha512",

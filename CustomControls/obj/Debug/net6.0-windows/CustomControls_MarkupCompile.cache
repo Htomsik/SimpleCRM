@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\Users\Jake\Source\Repos\Htomsik\SimpleCRM\CustomControls\obj\Debug\net6.0-windows\
+D:\WorkBench\Repositories\SimpleCRM\CustomControls\obj\Debug\net6.0-windows\
 CustomControls
 none
 false
@@ -16,5 +16,5 @@ TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 194237474483
 Themes\Generic.xaml;
 
-False
+True
 

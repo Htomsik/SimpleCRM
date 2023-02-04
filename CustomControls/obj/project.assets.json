@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\CustomControls\\CustomControls.csproj",
+      "projectUniqueName": "D:\\WorkBench\\Repositories\\SimpleCRM\\CustomControls\\CustomControls.csproj",
       "projectName": "CustomControls",
-      "projectPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\CustomControls\\CustomControls.csproj",
+      "projectPath": "D:\\WorkBench\\Repositories\\SimpleCRM\\CustomControls\\CustomControls.csproj",
       "packagesPath": "C:\\Users\\Jake\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\CustomControls\\obj\\",
+      "outputPath": "D:\\WorkBench\\Repositories\\SimpleCRM\\CustomControls\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Jake\\AppData\\Roaming\\NuGet\\NuGet.Config",

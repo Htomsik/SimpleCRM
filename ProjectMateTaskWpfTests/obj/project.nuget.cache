@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ObxelcWGoAAFcTaihtGL9ggeEVWUPfGhI310/2ArkecMkOuvkVPI8rXGzZieBBJ7K+BEAzvEyBN5QW1kqKiijg==",
+  "dgSpecHash": "Bovue/aJmlO83n5hdXSYnzM5TyyxvdKD1RyTejXjj4jfx2yeEohDCH6ScvWAcp7r+gknaC2xrtKXc3In/CPClw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskWpfTests\\ProjectMateTaskWpfTests.csproj",
+  "projectFilePath": "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTaskWpfTests\\ProjectMateTaskWpfTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jake\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\Jake\\.nuget\\packages\\materialdesigncolors\\2.0.6\\materialdesigncolors.2.0.6.nupkg.sha512",

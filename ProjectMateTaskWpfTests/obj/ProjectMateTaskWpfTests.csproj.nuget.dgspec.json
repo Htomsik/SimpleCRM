@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskWpfTests\\ProjectMateTaskWpfTests.csproj": {}
+    "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTaskWpfTests\\ProjectMateTaskWpfTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\CustomControls\\CustomControls.csproj": {
+    "D:\\WorkBench\\Repositories\\SimpleCRM\\CustomControls\\CustomControls.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\CustomControls\\CustomControls.csproj",
+        "projectUniqueName": "D:\\WorkBench\\Repositories\\SimpleCRM\\CustomControls\\CustomControls.csproj",
         "projectName": "CustomControls",
-        "projectPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\CustomControls\\CustomControls.csproj",
+        "projectPath": "D:\\WorkBench\\Repositories\\SimpleCRM\\CustomControls\\CustomControls.csproj",
         "packagesPath": "C:\\Users\\Jake\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\CustomControls\\obj\\",
+        "outputPath": "D:\\WorkBench\\Repositories\\SimpleCRM\\CustomControls\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jake\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -62,14 +62,14 @@
         }
       }
     },
-    "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTask.DAL\\ProjectMateTask.DAL.csproj": {
+    "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTask.DAL\\ProjectMateTask.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTask.DAL\\ProjectMateTask.DAL.csproj",
+        "projectUniqueName": "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTask.DAL\\ProjectMateTask.DAL.csproj",
         "projectName": "ProjectMateTask.DAL",
-        "projectPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTask.DAL\\ProjectMateTask.DAL.csproj",
+        "projectPath": "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTask.DAL\\ProjectMateTask.DAL.csproj",
         "packagesPath": "C:\\Users\\Jake\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTask.DAL\\obj\\",
+        "outputPath": "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTask.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jake\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -86,11 +86,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj": {
-                "projectPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj"
+              "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj": {
+                "projectPath": "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj"
               },
-              "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjetMateTaskEntities\\ProjetMateTaskEntities.csproj": {
-                "projectPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjetMateTaskEntities\\ProjetMateTaskEntities.csproj"
+              "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjetMateTaskEntities\\ProjetMateTaskEntities.csproj": {
+                "projectPath": "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjetMateTaskEntities\\ProjetMateTaskEntities.csproj"
               }
             }
           }
@@ -138,14 +138,14 @@
         }
       }
     },
-    "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj": {
+    "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj",
+        "projectUniqueName": "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj",
         "projectName": "ProjectMateTaskExtensions",
-        "projectPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj",
+        "projectPath": "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj",
         "packagesPath": "C:\\Users\\Jake\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskExtensions\\obj\\",
+        "outputPath": "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTaskExtensions\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jake\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -193,14 +193,14 @@
         }
       }
     },
-    "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskWpfTests\\ProjectMateTaskWpfTests.csproj": {
+    "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTaskWpfTests\\ProjectMateTaskWpfTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskWpfTests\\ProjectMateTaskWpfTests.csproj",
+        "projectUniqueName": "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTaskWpfTests\\ProjectMateTaskWpfTests.csproj",
         "projectName": "ProjectMateTaskWpfTests",
-        "projectPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskWpfTests\\ProjectMateTaskWpfTests.csproj",
+        "projectPath": "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTaskWpfTests\\ProjectMateTaskWpfTests.csproj",
         "packagesPath": "C:\\Users\\Jake\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskWpfTests\\obj\\",
+        "outputPath": "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTaskWpfTests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jake\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -217,8 +217,8 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTask\\ProjectMateTask.csproj": {
-                "projectPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTask\\ProjectMateTask.csproj"
+              "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTask\\ProjectMateTask.csproj": {
+                "projectPath": "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTask\\ProjectMateTask.csproj"
               }
             }
           }
@@ -270,14 +270,14 @@
         }
       }
     },
-    "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTask\\ProjectMateTask.csproj": {
+    "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTask\\ProjectMateTask.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTask\\ProjectMateTask.csproj",
+        "projectUniqueName": "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTask\\ProjectMateTask.csproj",
         "projectName": "ProjectMateTask",
-        "projectPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTask\\ProjectMateTask.csproj",
+        "projectPath": "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTask\\ProjectMateTask.csproj",
         "packagesPath": "C:\\Users\\Jake\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTask\\obj\\",
+        "outputPath": "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTask\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jake\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -294,17 +294,17 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\CustomControls\\CustomControls.csproj": {
-                "projectPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\CustomControls\\CustomControls.csproj"
+              "D:\\WorkBench\\Repositories\\SimpleCRM\\CustomControls\\CustomControls.csproj": {
+                "projectPath": "D:\\WorkBench\\Repositories\\SimpleCRM\\CustomControls\\CustomControls.csproj"
               },
-              "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTask.DAL\\ProjectMateTask.DAL.csproj": {
-                "projectPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTask.DAL\\ProjectMateTask.DAL.csproj"
+              "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTask.DAL\\ProjectMateTask.DAL.csproj": {
+                "projectPath": "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTask.DAL\\ProjectMateTask.DAL.csproj"
               },
-              "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj": {
-                "projectPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj"
+              "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj": {
+                "projectPath": "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj"
               },
-              "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjetMateTaskEntities\\ProjetMateTaskEntities.csproj": {
-                "projectPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjetMateTaskEntities\\ProjetMateTaskEntities.csproj"
+              "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjetMateTaskEntities\\ProjetMateTaskEntities.csproj": {
+                "projectPath": "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjetMateTaskEntities\\ProjetMateTaskEntities.csproj"
               }
             }
           }
@@ -369,14 +369,14 @@
         }
       }
     },
-    "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjetMateTaskEntities\\ProjetMateTaskEntities.csproj": {
+    "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjetMateTaskEntities\\ProjetMateTaskEntities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjetMateTaskEntities\\ProjetMateTaskEntities.csproj",
+        "projectUniqueName": "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjetMateTaskEntities\\ProjetMateTaskEntities.csproj",
         "projectName": "ProjetMateTaskEntities",
-        "projectPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjetMateTaskEntities\\ProjetMateTaskEntities.csproj",
+        "projectPath": "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjetMateTaskEntities\\ProjetMateTaskEntities.csproj",
         "packagesPath": "C:\\Users\\Jake\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjetMateTaskEntities\\obj\\",
+        "outputPath": "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjetMateTaskEntities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jake\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -393,8 +393,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj": {
-                "projectPath": "C:\\Users\\Jake\\Source\\Repos\\Htomsik\\SimpleCRM\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj"
+              "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj": {
+                "projectPath": "D:\\WorkBench\\Repositories\\SimpleCRM\\ProjectMateTaskExtensions\\ProjectMateTaskExtensions.csproj"
               }
             }
           }
