@@ -1,0 +1,50 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:appInfrastructure="clr-namespace:SimpleSRM.WPF.Models.AppInfrastructure">
+
+    <!--  Кликабельное меню с командами  -->
+    <DataTemplate
+        x:Key="MenuitemWithCommand"
+        DataType="{x:Type appInfrastructure:MenuItemWithCommand}">
+        <Border
+            Background="Transparent"
+            BorderBrush="{DynamicResource MaterialDesignDivider}"
+            BorderThickness="0,0,0,1">
+
+            <Border.InputBindings>
+                <MouseBinding
+                    Command="{Binding Command.Value}"
+                    CommandParameter="{Binding Parameter.Value}"
+                    MouseAction="LeftClick" />
+            </Border.InputBindings>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+
+                <!--  Иконка меню  -->
+                <materialDesign:PackIcon
+                    Width="35"
+                    Height="35"
+                    Kind="{Binding MaterialIcon.Value}" />
+
+                <!--  Название элемента  -->
+                <TextBlock
+                    Grid.Column="1"
+                    Margin="8,0,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    FontWeight="Bold"
+                    Text="{Binding Name.Value}" />
+
+            </Grid>
+
+        </Border>
+    </DataTemplate>
+
+</ResourceDictionary>

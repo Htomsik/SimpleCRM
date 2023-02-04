@@ -1,0 +1,158 @@
+﻿<UserControl
+    x:Class="SimpleSRM.WPF.VW.Pages.SubEntityVW"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:selectEntityVmds="clr-namespace:SimpleSRM.WPF.VMD.Pages.Entities.SelectEntityVmds"
+    d:DataContext="{d:DesignInstance {x:Type selectEntityVmds:ClientSubVmd},
+                                     IsDesignTimeCreatable=True}"
+    d:DesignHeight="200"
+    d:DesignWidth="100"
+    mc:Ignorable="d">
+    <DockPanel>
+
+        <!--  Строка поиска  -->
+        <TextBox
+            materialDesign:TextFieldAssist.HasClearButton="True"
+            DockPanel.Dock="Top"
+            FontSize="16"
+            Text="{Binding Filter, UpdateSourceTrigger=PropertyChanged}">
+
+            <materialDesign:HintAssist.Hint>
+                <StackPanel
+                    Margin="-2,0,0,0"
+                    Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Magnify" />
+                    <TextBlock Text="Поиск по имени" />
+                </StackPanel>
+            </materialDesign:HintAssist.Hint>
+        </TextBox>
+
+        <!--  Панель управления кнопок  -->
+        <Grid
+            Height="30"
+            DockPanel.Dock="Bottom">
+
+
+            <!--  Редактирование  -->
+            <Button
+                HorizontalAlignment="Center"
+                Command="{Binding CloseSubEntityPageCommand}">
+                <materialDesign:PackIcon
+                    Width="20"
+                    Height="20"
+                    Kind="Check" />
+            </Button>
+
+
+        </Grid>
+
+        <!--  List Entity  -->
+        <materialDesign:Badged
+            Margin="0,15"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            HorizontalContentAlignment="Stretch"
+            Badge="{Binding EntitiesFilteredView.Count}"
+            BadgePlacementMode="Top">
+
+            <ContentControl
+                x:Name="ListContentControl"
+                Content="{Binding EntitiesFilteredView, UpdateSourceTrigger=PropertyChanged}">
+
+                <ContentControl.Resources>
+
+                    <DataTemplate
+                        x:Key="Default"
+                        DataType="{x:Type ListCollectionView}">
+
+                        <ListView ItemsSource="{Binding}">
+
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid
+                                        HorizontalAlignment="Stretch"
+                                        VerticalAlignment="Stretch">
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <ContentControl
+                                            x:Name="SubItemsContentControl"
+                                            Content="{Binding Path=.}" />
+
+                                        <!--  Кнопка добавление  -->
+                                        <Button
+                                            Grid.Column="1"
+                                            Width="15"
+                                            Height="15"
+                                            HorizontalAlignment="Right"
+                                            Command="{Binding DataContext.AddSubEntityToMainEntityCommand, ElementName=ListContentControl}"
+                                            Style="{StaticResource MaterialDesignIconButton}">
+
+                                            <materialDesign:PackIcon
+                                                Width="13"
+                                                Height="13"
+                                                Kind="Add" />
+
+                                            <Button.CommandParameter>
+                                                <Binding
+                                                    ElementName="SubItemsContentControl"
+                                                    Path="DataContext" />
+                                            </Button.CommandParameter>
+
+                                        </Button>
+
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+                    </DataTemplate>
+
+                    <DataTemplate
+                        x:Key="NoFind"
+                        DataType="{x:Type ListCollectionView}">
+                        <TextBlock
+                            Margin="0,15,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Text="Не найдено элементов" />
+                    </DataTemplate>
+
+                </ContentControl.Resources>
+
+                <ContentControl.Style>
+
+                    <Style TargetType="{x:Type ContentControl}">
+
+                        <!--  Стандатный шаблон  -->
+                        <Setter Property="ContentTemplate" Value="{StaticResource Default}" />
+
+                        <!--  Если привязанная коллекци пуста, то отобрзить NoFind  -->
+                        <Style.Triggers>
+
+                            <DataTrigger
+                                Binding="{Binding EntitiesFilteredView.Count}"
+                                Value="0">
+                                <Setter Property="ContentTemplate" Value="{StaticResource NoFind}" />
+                            </DataTrigger>
+
+                        </Style.Triggers>
+
+                    </Style>
+                </ContentControl.Style>
+
+            </ContentControl>
+
+        </materialDesign:Badged>
+
+
+
+
+    </DockPanel>
+</UserControl>

@@ -1,0 +1,170 @@
+﻿<UserControl
+    x:Class="SimpleSRM.WPF.VW.Pages.HomeVW"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vmd="clr-namespace:SimpleSRM.WPF.VMD.Pages"
+    d:DataContext="{d:DesignInstance {x:Type vmd:HomeVmd},
+                                     IsDesignTimeCreatable=True}"
+    d:DesignHeight="300"
+    d:DesignWidth="300"
+    mc:Ignorable="d">
+
+    <UniformGrid>
+
+        <!--  Раздел взаимодействия с бд  -->
+        <materialDesign:Card Margin="5">
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <!--  Иконка и информация об разделе  -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <materialDesign:PackIcon
+                        Width="100"
+                        Height="100"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Kind="Database" />
+
+                    <StackPanel Grid.Column="1">
+                        <TextBlock
+                            Margin="16,16,16,8"
+                            Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                            Text="Взаимодействие с бд" />
+
+                        <TextBlock
+                            Margin="16,0,16,8"
+                            VerticalAlignment="Top"
+                            Foreground="{DynamicResource MaterialDesignBodyLight}"
+                            Text="Тестовый раздел для заполнения данными в бд для показа функционала"
+                            TextWrapping="Wrap" />
+                    </StackPanel>
+                </Grid>
+
+                <!--  Кнопки  -->
+                <StackPanel Grid.Row="1">
+                    <Button
+                        Margin="5"
+                        Padding="5"
+                        materialDesign:ButtonProgressAssist.IsIndeterminate="{Binding RebuildDbOnWorkingModeCommand.IsExecuting}"
+                        materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                        materialDesign:ButtonProgressAssist.Value="-1"
+                        Command="{Binding RebuildDbOnWorkingModeCommand}"
+                        Content="Рабочий режим"
+                        Style="{StaticResource MaterialDesignFlatButton}" />
+
+                    <Button
+                        Margin="5"
+                        Padding="5"
+                        materialDesign:ButtonProgressAssist.IsIndeterminate="{Binding RebuildDbOnTestModeCommand.IsExecuting}"
+                        materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                        materialDesign:ButtonProgressAssist.Value="-1"
+                        Command="{Binding RebuildDbOnTestModeCommand}"
+                        Style="{StaticResource MaterialDesignFlatButton}">
+                        <TextBlock>Демонстрационный режим</TextBlock>
+                    </Button>
+
+                </StackPanel>
+
+            </Grid>
+        </materialDesign:Card>
+
+        <!--  Раздел со ссылками  -->
+        <materialDesign:Card Margin="5">
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <!--  Иконка и информация об разделе  -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <materialDesign:PackIcon
+                        Width="100"
+                        Height="100"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Kind="Github" />
+
+                    <StackPanel Grid.Column="1">
+                        <TextBlock
+                            Margin="16,16,16,8"
+                            Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                            Text="Ссылки на ресурсы" />
+
+                        <TextBlock
+                            Margin="16,0,16,8"
+                            VerticalAlignment="Top"
+                            Foreground="{DynamicResource MaterialDesignBodyLight}"
+                            Text="Раздел с гитхаб ссылками на различные ресурсы по проекту"
+                            TextWrapping="Wrap" />
+                    </StackPanel>
+                </Grid>
+
+                <!--  Кнопки  -->
+                <UniformGrid
+                    Grid.Row="1"
+                    Margin="5">
+
+                    <Button
+                        Command="{Binding OpenHtomsikGithubCommnad}"
+                        Style="{StaticResource MaterialDesignFlatButton}">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Github" />
+                            <TextBlock
+                                Margin="8,0,0,0"
+                                VerticalAlignment="Center"
+                                Text="Htomsik" />
+                        </StackPanel>
+                    </Button>
+
+                    <Button
+                        Command="{Binding OpenProjectGithubCommnad}"
+                        Style="{StaticResource MaterialDesignFlatButton}">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Github" />
+                            <TextBlock
+                                Margin="8,0,0,0"
+                                VerticalAlignment="Center"
+                                Text="Project" />
+                        </StackPanel>
+                    </Button>
+
+                    <Button
+                        Command="{Binding OpenProjectAssetsCommand}"
+                        Style="{StaticResource MaterialDesignFlatButton}">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="FileDocument" />
+                            <TextBlock
+                                Margin="8,0,0,0"
+                                VerticalAlignment="Center"
+                                Text="Project assets" />
+                        </StackPanel>
+                    </Button>
+
+
+                </UniformGrid>
+
+            </Grid>
+        </materialDesign:Card>
+
+    </UniformGrid>
+
+</UserControl>

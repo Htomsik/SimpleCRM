@@ -1,0 +1,250 @@
+﻿<UserControl
+    x:Class="SimpleSRM.WPF.VW.Pages.MainEntityVW"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mainEntityVmds="clr-namespace:SimpleSRM.WPF.VMD.Pages.Entities.MainEntityVmds"
+    xmlns:selectors="clr-namespace:SimpleSRM.WPF.Infrastructure.Selectors"
+    xmlns:baseEntity="clr-namespace:SimpleSRM.WPF.VMD.Pages.Entities.Base"
+    xmlns:pages="clr-namespace:SimpleSRM.WPF.VW.Pages"
+    d:DataContext="{d:DesignInstance {x:Type mainEntityVmds:MainClientVmd},
+                                     IsDesignTimeCreatable=True}"
+    d:DesignHeight="300"
+    d:DesignWidth="300"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Resources/Styles/Entity/EditCards/ClientEditCard.xaml" />
+                <ResourceDictionary Source="../../Resources/Styles/Entity/EditCards/ProductEditCard.xaml" />
+                <ResourceDictionary Source="../../Resources/Styles/Entity/EditCards/ManagerEditCard.xaml" />
+                <ResourceDictionary Source="../../Resources/Styles/Entity/EditCards/ProductTypeEditCard.xaml" />
+                <ResourceDictionary Source="../../Resources/Styles/Entity/EditCards/ClientStatusesEditCard.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <selectors:EditEntitySelector x:Key="EditEntitySelector" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition
+                MinWidth="150"
+                MaxWidth="250" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!--  Панель выбора Entity  -->
+        <DockPanel>
+
+            <!--  Строка поиска  -->
+            <TextBox
+                materialDesign:TextFieldAssist.HasClearButton="True"
+                DockPanel.Dock="Top"
+                FontSize="16"
+                IsEnabled="{Binding IsEditMode, Converter={StaticResource InvertBooleanConverter}}"
+                Text="{Binding Filter, UpdateSourceTrigger=PropertyChanged}">
+
+                <materialDesign:HintAssist.Hint>
+                    <StackPanel
+                        Margin="-2,0,0,0"
+                        Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Magnify" />
+                        <TextBlock Text="Поиск по имени" />
+                    </StackPanel>
+                </materialDesign:HintAssist.Hint>
+
+            </TextBox>
+
+            <!--  Панель управления кнопок  -->
+            <Grid
+                Height="30"
+                DockPanel.Dock="Bottom">
+
+                <!--  Добавление  -->
+                <Button
+                    HorizontalAlignment="Left"
+                    Command="{Binding OpenAddModeCommand}">
+                    <materialDesign:PackIcon
+                        Width="20"
+                        Height="20"
+                        Kind="Plus" />
+
+                </Button>
+
+                <!--  Редактирование  -->
+                <Button
+                    HorizontalAlignment="Center"
+                    Command="{Binding OpenEditModeCommand}">
+                    <materialDesign:PackIcon
+                        Width="20"
+                        Height="20"
+                        Kind="Pencil" />
+                </Button>
+
+                <!--  Удаление  -->
+                <Button
+                    HorizontalAlignment="Right"
+                    Command="{Binding DeleteSelectedEntityCommand}">
+                    <materialDesign:PackIcon
+                        Width="20"
+                        Height="20"
+                        Kind="Delete" />
+                </Button>
+
+            </Grid>
+
+            <!--  List Entity  -->
+            <materialDesign:Badged
+                Margin="0,15"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                HorizontalContentAlignment="Stretch"
+                Badge="{Binding EntitiesFilteredView.Count}"
+                BadgePlacementMode="Top"
+                IsEnabled="{Binding IsEditMode, Converter={StaticResource InvertBooleanConverter}}">
+
+                <ContentControl Content="{Binding EntitiesFilteredView, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=False}">
+
+                    <ContentControl.Resources>
+
+                        <DataTemplate
+                            x:Key="Default"
+                            DataType="{x:Type ListCollectionView}">
+                            <ListView
+                                ItemsSource="{Binding ., ValidatesOnNotifyDataErrors=False}"
+                                SelectedItem="{Binding ValidatesOnNotifyDataErrors=False, RelativeSource={RelativeSource AncestorType=ContentControl}, Path=DataContext.SelectedEntity}" />
+                        </DataTemplate>
+
+                        <DataTemplate
+                            x:Key="NoFind"
+                            DataType="{x:Type ListCollectionView}">
+                            <TextBlock
+                                Margin="0,15,0,0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Text="Не найдено элементов" />
+                        </DataTemplate>
+
+                    </ContentControl.Resources>
+
+                    <ContentControl.Style>
+
+                        <Style TargetType="{x:Type ContentControl}">
+
+                            <!--  Стандатный шаблон  -->
+                            <Setter Property="ContentTemplate" Value="{StaticResource Default}" />
+
+                            <!--  Если привязанная коллекци пуста, то отобрзить NoFind  -->
+                            <Style.Triggers>
+
+                                <DataTrigger
+                                    Binding="{Binding EntitiesFilteredView.Count}"
+                                    Value="0">
+                                    <Setter Property="ContentTemplate" Value="{StaticResource NoFind}" />
+                                </DataTrigger>
+
+                            </Style.Triggers>
+
+                        </Style>
+                    </ContentControl.Style>
+
+                </ContentControl>
+
+            </materialDesign:Badged>
+
+        </DockPanel>
+
+        <!--  Отображение выбанного/добавляемого/редактируемого Entity  -->
+        <Grid
+            Grid.Column="1"
+            HorizontalAlignment="Left">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!--  Информация о выбранном Entity  -->
+            <ContentControl
+                Grid.Row="0"
+                Margin="8,0,0,0"
+                VerticalAlignment="Top"
+                Content="{Binding SelectedEntity, ValidatesOnNotifyDataErrors=False}"
+                ContentTemplateSelector="{StaticResource EditEntitySelector}"
+                IsEnabled="{Binding IsEditMode, Converter={StaticResource InvertBooleanConverter}}"
+                Visibility="{Binding IsEditMode, Converter={StaticResource InverseBoolToVisConverter}}" />
+
+            <!--  Режим редатирования выбранного Entity  -->
+            <ContentControl
+                x:Name="SelectedEntityContentControl"
+                Grid.Row="0"
+                Margin="8,0,0,0"
+                VerticalAlignment="Top"
+                Content="{Binding EditableEntity, ValidatesOnNotifyDataErrors=False}"
+                ContentTemplateSelector="{StaticResource EditEntitySelector}"
+                IsEnabled="{Binding IsEditMode}"
+                Visibility="{Binding IsEditMode, Converter={StaticResource BooleanToVisibilityConverter}}" />
+
+
+            <!--  Панель управления кнопок в режиме редактирования  -->
+            <Grid
+                Grid.Row="1"
+                Height="30"
+                VerticalAlignment="Bottom"
+                Visibility="{Binding IsEditMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Button
+                    Grid.Column="0"
+                    Margin="0,0,10,0"
+                    HorizontalAlignment="Right"
+                    Command="{Binding AcceptModsCommand, UpdateSourceTrigger=PropertyChanged}">
+                    <materialDesign:PackIcon
+                        Width="20"
+                        Height="20"
+                        Kind="Check" />
+                </Button>
+
+                <Button
+                    Grid.Column="1"
+                    HorizontalAlignment="Left"
+                    Command="{Binding CloseAllModsCommand}">
+                    <materialDesign:PackIcon
+                        Width="20"
+                        Height="20"
+                        Kind="CloseThick" />
+                </Button>
+
+            </Grid>
+
+        </Grid>
+
+        <!--  Выбор SubEntity  -->
+        <ContentControl
+            Grid.Column="2"
+            Margin="5,0,0,0"
+            HorizontalAlignment="Left"
+            Content="{Binding CurrentSelectedSubEntityVmd, ValidatesOnNotifyDataErrors=False}">
+
+            <ContentControl.Resources>
+                <!--  Все SelectedEntity страницы  -->
+                <DataTemplate DataType="{x:Type baseEntity:BaseEntityVmd}">
+                    <pages:SubEntityVW />
+                </DataTemplate>
+
+            </ContentControl.Resources>
+
+        </ContentControl>
+
+
+    </Grid>
+</UserControl>

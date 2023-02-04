@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>SimpleSRM.Extensions</AssemblyName>
+        <RootNamespace>SimpleSRM.Extensions</RootNamespace>
+        <PackageId>SimpleSRM.Extensions</PackageId>
+        <Authors>JessJake</Authors>
+        <Company>JessJake</Company>
+        <Product>SimpleSRM.Extensions</Product>
+    </PropertyGroup>
+
+</Project>
