@@ -33,7 +33,7 @@ namespace SimpleSRM.DAL.Migrations
 
                     b.HasIndex("ProductsId");
 
-                    b.ToTable("ClientProduct");
+                    b.ToTable("ClientProduct", (string)null);
                 });
 
             modelBuilder.Entity("SimpleSRM.Models.Entities.Actors.Client", b =>
@@ -61,7 +61,7 @@ namespace SimpleSRM.DAL.Migrations
 
                     b.HasIndex("StatusId");
 
-                    b.ToTable("Clients");
+                    b.ToTable("Clients", (string)null);
                 });
 
             modelBuilder.Entity("SimpleSRM.Models.Entities.Actors.Manager", b =>
@@ -79,7 +79,7 @@ namespace SimpleSRM.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Managers");
+                    b.ToTable("Managers", (string)null);
                 });
 
             modelBuilder.Entity("SimpleSRM.Models.Entities.Actors.Product", b =>
@@ -102,7 +102,7 @@ namespace SimpleSRM.DAL.Migrations
 
                     b.HasIndex("TypeId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("SimpleSRM.Models.Entities.Types.ClientStatus", b =>
@@ -120,7 +120,7 @@ namespace SimpleSRM.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ClientStatus");
+                    b.ToTable("ClientStatus", (string)null);
                 });
 
             modelBuilder.Entity("SimpleSRM.Models.Entities.Types.ProductType", b =>
@@ -138,7 +138,7 @@ namespace SimpleSRM.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ProductTypes");
+                    b.ToTable("ProductTypes", (string)null);
                 });
 
             modelBuilder.Entity("ClientProduct", b =>
