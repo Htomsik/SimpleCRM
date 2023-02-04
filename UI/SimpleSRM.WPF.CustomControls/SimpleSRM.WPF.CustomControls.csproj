@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>SimpleSRM.WPF.CustomControls</AssemblyName>
+    <RootNamespace>SimpleSRM.WPF.CustomControls</RootNamespace>
+    <PackageId>SimpleSRM.WPF.CustomControls</PackageId>
+    <Authors>JessJake</Authors>
+    <Company>JessJake</Company>
+    <Product>SimpleSRM.WPF.CustomControls</Product>
+  </PropertyGroup>
+
+</Project>

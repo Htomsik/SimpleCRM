@@ -1,0 +1,190 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:collections="clr-namespace:System.Collections;assembly=System.Runtime"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:baseEntities="clr-namespace:SimpleSRM.Models.Entities.Base;assembly=SimpleSRM.Models">
+
+    <!--  Редактирование всех коллекций со связными сущностями  -->
+    <DataTemplate
+        x:Key="EditCollectionCard"
+        DataType="{x:Type collections:ICollection}">
+
+        <Expander x:Name="Expander">
+
+            <!--  Коллекция редактиуемых subEntity (связных)  -->
+            <ListView ItemsSource="{Binding Path=., Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate DataType="{x:Type baseEntities:NamedEntity}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition
+                                    Width="*"
+                                    MinWidth="100"
+                                    MaxWidth="300" />
+                                <ColumnDefinition
+                                    Width="Auto"
+                                    MaxWidth="40" />
+                            </Grid.ColumnDefinitions>
+
+                            <ContentControl
+                                x:Name="DataContentControl"
+                                Content="{Binding Path=., Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                            <!--  Кнопка удаления  -->
+                            <Button
+                                Grid.Column="1"
+                                Width="15"
+                                Height="15"
+                                Margin="5,0,0,0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Command="{Binding DataContext.DeleteSubEntityFromCollectionCommand, ElementName=SelectedEntityContentControl}"
+                                IsEnabled="{Binding Path=DataContext.IsEditMode, ElementName=SelectedEntityContentControl}"
+                                Style="{StaticResource MaterialDesignIconButton}"
+                                Visibility="{Binding Path=DataContext.IsEditMode, ElementName=SelectedEntityContentControl, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                <materialDesign:PackIcon
+                                    Width="13"
+                                    Height="13"
+                                    Kind="Delete" />
+
+                                <Button.CommandParameter>
+
+                                    <Binding
+                                        ElementName="DataContentControl"
+                                        Path="DataContext" />
+
+                                </Button.CommandParameter>
+                            </Button>
+
+
+
+
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Expander.Header>
+                <Grid>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel
+                        Grid.Column="1"
+                        Orientation="Horizontal">
+                        <!--  Наименование типа, задается через ToolTip  -->
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Text="{Binding Path=ToolTip, RelativeSource={RelativeSource FindAncestor, AncestorType=ContentControl, AncestorLevel=3}}" />
+
+                        <!--  Количество элементов в коллекции  -->
+                        <TextBlock
+                            Margin="5,0,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Text="{Binding .Count}" />
+                    </StackPanel>
+
+
+
+                    <!--  Кнопка режима добавления нового subEntity (связного) в коллекцию  -->
+                    <Button
+                        Grid.Column="0"
+                        Width="20"
+                        Height="20"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Command="{Binding DataContext.OpenAddSubEntityModeInCollectionCommand, ElementName=SelectedEntityContentControl}"
+                        CommandParameter="{Binding}"
+                        IsEnabled="{Binding Path=DataContext.IsEditMode, ElementName=SelectedEntityContentControl}"
+                        Style="{StaticResource MaterialDesignIconButton}"
+                        Visibility="{Binding Path=DataContext.IsEditMode, ElementName=SelectedEntityContentControl, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <materialDesign:PackIcon
+                            Width="18"
+                            Height="18"
+                            Kind="Add" />
+                    </Button>
+                </Grid>
+
+            </Expander.Header>
+        </Expander>
+
+    </DataTemplate>
+
+
+
+    <!--  Для всех Entity значений  -->
+    <DataTemplate
+        x:Key="KeyEntityEditTemplate"
+        DataType="{x:Type baseEntities:NamedEntity}">
+
+        <Grid IsEnabled="{Binding Path=DataContext.IsEditMode, RelativeSource={RelativeSource AncestorType={x:Type ContentControl}, AncestorLevel=2}, UpdateSourceTrigger=PropertyChanged}">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+
+            <!--  Имя Entity  -->
+            <TextBox
+                Grid.Column="0"
+                VerticalAlignment="Center"
+                materialDesign:HintAssist.Hint="{Binding Path=ToolTip, RelativeSource={RelativeSource FindAncestor, AncestorType=ContentControl}}"
+                IsReadOnly="True"
+                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                Text="{Binding Name, ValidatesOnNotifyDataErrors=True, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" />
+
+            <!--  Кнопка режима смены сущности  -->
+            <Button
+                Grid.Column="1"
+                Width="20"
+                Height="20"
+                HorizontalAlignment="Right"
+                Command="{Binding DataContext.OpenChangeSubEntityMode, RelativeSource={RelativeSource AncestorType={x:Type ContentControl}, AncestorLevel=2}}"
+                CommandParameter="{Binding ., ValidatesOnNotifyDataErrors=False}"
+                Style="{StaticResource MaterialDesignIconButton}"
+                Visibility="{Binding Path=DataContext.IsEditMode, RelativeSource={RelativeSource AncestorType={x:Type ContentControl}, AncestorLevel=2}, Converter={StaticResource BooleanToVisibilityConverter}}">
+
+                <materialDesign:PackIcon
+                    Width="18"
+                    Height="18"
+                    Kind="SwapHorizontal" />
+            </Button>
+
+        </Grid>
+
+    </DataTemplate>
+
+
+    <!--  Для non key значений  -->
+    <DataTemplate
+        x:Key="NonKeyFieldEditTemplate"
+        DataType="{x:Type baseEntities:NamedEntity}">
+
+        <!--  Имя Entity  -->
+        <TextBox
+            VerticalAlignment="Center"
+            materialDesign:HintAssist.Hint="{Binding Path=ToolTip, RelativeSource={RelativeSource FindAncestor, AncestorType=ContentControl}}"
+            IsEnabled="{Binding Path=DataContext.IsEditMode, RelativeSource={RelativeSource AncestorType={x:Type ContentControl}, AncestorLevel=2}, UpdateSourceTrigger=PropertyChanged}"
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+            <TextBox.Text>
+                <Binding
+                    Mode="TwoWay"
+                    Path="Name"
+                    UpdateSourceTrigger="PropertyChanged"
+                    ValidatesOnNotifyDataErrors="True" />
+            </TextBox.Text>
+        </TextBox>
+
+
+    </DataTemplate>
+
+
+</ResourceDictionary>   

@@ -1,0 +1,47 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:actors="clr-namespace:SimpleSRM.Models.Entities.Actors;assembly=SimpleSRM.Models">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Base/OurEditCards.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!--  Карточка редактирования продуктов  -->
+    <DataTemplate
+        x:Key="EditProductCard"
+        DataType="{x:Type actors:Product}">
+
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!--  Название продукта  -->
+            <ContentControl
+                Content="{Binding Path=., ValidatesOnNotifyDataErrors=False}"
+                ContentTemplate="{DynamicResource NonKeyFieldEditTemplate}"
+                ToolTip="Название продукта" />
+
+            <!--  Тип продукта  -->
+            <ContentControl
+                Grid.Row="1"
+                Content="{Binding Type, ValidatesOnNotifyDataErrors=False}"
+                ContentTemplate="{DynamicResource KeyEntityEditTemplate}"
+                ToolTip="Тип продукта" />
+
+            <!--  Клиенты, купившие продукты  -->
+            <ContentControl
+                Grid.Row="2"
+                Content="{Binding Clients, ValidatesOnNotifyDataErrors=False}"
+                ContentTemplate="{DynamicResource EditCollectionCard}"
+                ToolTip="Клиенты:" />
+
+
+        </Grid>
+
+    </DataTemplate>
+</ResourceDictionary>
